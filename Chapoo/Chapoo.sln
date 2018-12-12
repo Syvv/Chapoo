@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapoo", "Chapoo\Chapoo.csproj", "{9A445E76-2F94-4AD5-AC3F-B5BF282A63D5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{0D07733E-D479-43B0-BF6D-5D2043261317}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{9A445E76-2F94-4AD5-AC3F-B5BF282A63D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A445E76-2F94-4AD5-AC3F-B5BF282A63D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A445E76-2F94-4AD5-AC3F-B5BF282A63D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D07733E-D479-43B0-BF6D-5D2043261317}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D07733E-D479-43B0-BF6D-5D2043261317}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D07733E-D479-43B0-BF6D-5D2043261317}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D07733E-D479-43B0-BF6D-5D2043261317}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
