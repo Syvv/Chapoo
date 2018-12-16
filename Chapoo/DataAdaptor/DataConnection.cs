@@ -7,18 +7,13 @@ using System.Threading.Tasks;
 
 namespace DataAdaptor
 {
-    public class DataConnection
+    public static class DataConnection
     {
 
-        protected string connectionString = "Data Source=den1.mssql7.gear.host;Initial Catalog=chapoo1819f01;User ID=chapoo1819f01;Password=Pu0Q_utpxc-k";
-        protected SqlConnection connection;
+        public static string connectionString = "Data Source=den1.mssql7.gear.host;Initial Catalog=chapoo1819f01;User ID=chapoo1819f01;Password=Pu0Q_utpxc-k";
+        public static SqlConnection connection = new SqlConnection(connectionString);
 
-        public DataConnection()
-        {
-            connection = new SqlConnection(connectionString);
-        }
-
-        public SqlDataReader Query(string query)
+        public static SqlDataReader Query(string query)
         {
             try
             {
