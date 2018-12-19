@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    public class GerechtenModel
+    public class Menu
     {
+        //Robbin
         public int menuId { get; set; }
         public string menuItem { get; set; }
         public double prijs { get; set; }
         public char categorie { get; set; }
         public int voorraad { get; set; }
 
-        public GerechtenModel(int menuId, string menuItem, double prijs, char categorie, int voorraad)
+        public Menu(int menuId, string menuItem, double prijs, char categorie, int voorraad)
         {
             this.menuId = menuId;
             this.menuItem = menuItem;

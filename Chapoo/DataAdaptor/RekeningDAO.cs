@@ -21,7 +21,7 @@ namespace DataAdaptor
         public static List<string>OphalenBestellingen(int bestellingId)
         {
             List<string> bestelling = new List<string>();
-            string query = "Select * from * where BestellingId = '@bestellingId' ";
+            string query = "Select * from * where BestellingId = '@bestellingId' ";  //sql nog maken
             query = query.Replace("@bestellingId", bestellingId.ToString());
 
             SqlDataReader data = DataConnection.Query(query);

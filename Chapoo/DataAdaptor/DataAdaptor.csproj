@@ -43,6 +43,7 @@
     <Compile Include="DataConnection.cs" />
     <Compile Include="KeukenBarDataConnection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RekeningDAO.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
