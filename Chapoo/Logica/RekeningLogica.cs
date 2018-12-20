@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Model;
+using DataAdaptor;
 
 namespace Logica
 {
@@ -24,10 +25,15 @@ namespace Logica
                 {
                     //berekening voor 6%
                 }
-                totaalRekening += item.prijs;
+                totaalRekening += item.Prijs;
             }
 
             return totaalRekening;
-        }            
+        }  
+        public List<Menu> Test()
+        {
+            var productManager = new RekeningDAO();
+            return productManager.GetTest();
+        }
     }
 }
