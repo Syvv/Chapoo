@@ -45,9 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bestelling_opnemen.cs" />
-    <Compile Include="Bestelling_opnemen.Designer.cs">
-      <DependentUpon>Bestelling_opnemen.cs</DependentUpon>
+    <Compile Include="Bestelling_opnemen_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bestelling_opnemen_form.Designer.cs">
+      <DependentUpon>Bestelling_opnemen_form.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -57,6 +59,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Bestelling_opnemen_form.resx">
+      <DependentUpon>Bestelling_opnemen_form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
