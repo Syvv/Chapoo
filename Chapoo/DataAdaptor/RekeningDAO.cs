@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using Model;
 
 namespace DataAdaptor
 {
@@ -54,6 +55,18 @@ namespace DataAdaptor
             return bestellingId;
         }
 
-        public 
+        public static List<string> MenuOphalen()
+        {
+            List<string> menu = new List<string>();
+            string query = "SELECT * FROM MENU";
+
+            SqlDataReader data = DataConnection.Query(query);
+
+            while(data.Read())
+            {
+                menu.Add(data.GetFieldValue<int>(0) + "-" + data.GetFieldValue<string>(1) + "-" + data.GetFieldValue<int>(2) + "-" + data.GetFieldValue<char>(3) + "-" + data.GetFieldValue<int>(4));
+            }
+            return menu;
+        }
     }
 }

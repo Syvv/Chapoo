@@ -11,7 +11,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAdaptor", "DataAdaptor\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI", "UI\UI.csproj", "{91A02A17-AC8A-4469-9EA9-1976705C49D6}"
 EndProject
+<<<<<<< Updated upstream
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StyleGuide", "Style_guide\StyleGuide.csproj", "{B0629F70-22BF-445A-BB43-379F1F778472}"
+=======
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console App Test Robbin", "Console App Test Robbin\Console App Test Robbin.csproj", "{8E6B4AA2-8F91-42FD-8BE4-05E55C1B85D9}"
+>>>>>>> Stashed changes
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +39,17 @@ Global
 		{91A02A17-AC8A-4469-9EA9-1976705C49D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91A02A17-AC8A-4469-9EA9-1976705C49D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91A02A17-AC8A-4469-9EA9-1976705C49D6}.Release|Any CPU.Build.0 = Release|Any CPU
+<<<<<<< Updated upstream
 		{B0629F70-22BF-445A-BB43-379F1F778472}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B0629F70-22BF-445A-BB43-379F1F778472}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0629F70-22BF-445A-BB43-379F1F778472}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0629F70-22BF-445A-BB43-379F1F778472}.Release|Any CPU.Build.0 = Release|Any CPU
+=======
+		{8E6B4AA2-8F91-42FD-8BE4-05E55C1B85D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E6B4AA2-8F91-42FD-8BE4-05E55C1B85D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E6B4AA2-8F91-42FD-8BE4-05E55C1B85D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E6B4AA2-8F91-42FD-8BE4-05E55C1B85D9}.Release|Any CPU.Build.0 = Release|Any CPU
+>>>>>>> Stashed changes
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
