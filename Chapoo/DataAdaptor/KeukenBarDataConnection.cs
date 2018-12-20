@@ -10,24 +10,28 @@ namespace DataAdaptor
     public static class KeukenBarDataConnection
     {
         
-        public static List<string> GetOpenOrders(bool isBar)
+        public static SqlDataReader GetOpenOrdersBar()
         {
-            List<string> result = new List<string>();
             SqlDataReader data;
-            if(isBar)
-            {
-                data = DataConnection.Query("SELECT * FROM BARQUEUE");//temp weet ff niet hoe de kolommen heten
-            }
-            else
-            {
-                data = DataConnection.Query("SELECT * FROM KEUKENQUEUE");//temp weet ff niet hoe de kolommen heten
-            }
 
-            while(data.Read())
-            {
-                result.Add(data.GetFieldValue<int>(0) +  " - " + data.GetFieldValue<string>(1));
-            }
-            return result;
+            data = DataConnection.Query(
+                "SELECT b.tafel_id, m.item, gb.hoeveelheid, gb.Commentaar  FROM GAAT_NAAR_BAR gb " +
+                "INNER JOIN BESTELLING b ON gb.bestelling_id = b.bestelling_id " +
+                "INNER JOIN MENU m ON m.menu_id = gb.menu_id; "
+            );
+            return data;
+        }
+
+        public static SqlDataReader GetOpenOrdersKeuken()
+        {
+            SqlDataReader data;
+
+            data = DataConnection.Query(
+                "SELECT b.tafel_id, m.item, gk.hoeveelheid, gk.Commentaar  FROM GAAT_NAAR_KEUKEN gk " +
+                "INNER JOIN BESTELLING b ON gk.bestelling_id = b.bestelling_id " +
+                "INNER JOIN MENU m ON m.menu_id = gk.menu_id; "
+            );
+            return data;
         }
     }
 }
