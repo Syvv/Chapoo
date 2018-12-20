@@ -34,12 +34,12 @@ namespace UI
             }else if(BarRAD.Checked)
             {
                 temp = new User(UsernameInput.Text, 'B');//Bar
-                //
+                new BarKeukenForm(temp).Show();
             }
             else
             {
                 temp = new User(UsernameInput.Text, 'K');//Keuken
-                //
+                new BarKeukenForm(temp).Show();
             }
             this.Hide();
 

@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BarKeukenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BarKeukenForm.Designer.cs">
+      <DependentUpon>BarKeukenForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Bestelling_opnemen_form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,6 +65,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BarKeukenForm.resx">
+      <DependentUpon>BarKeukenForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Bestelling_opnemen_form.resx">
       <DependentUpon>Bestelling_opnemen_form.cs</DependentUpon>
     </EmbeddedResource>
@@ -88,6 +97,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Logica\Logica.csproj">
+      <Project>{9f659a41-b5cd-40ef-99d4-dd73b7d5b288}</Project>
+      <Name>Logica</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Style_guide\StyleGuide.csproj">
       <Project>{b0629f70-22bf-445a-bb43-379f1f778472}</Project>
       <Name>StyleGuide</Name>
