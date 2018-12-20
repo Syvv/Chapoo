@@ -9,19 +9,19 @@ namespace Model
     public class Menu
     {
         //Robbin
-        public int menuId { get; set; }
-        public string menuItem { get; set; }
-        public double prijs { get; set; }
-        public char categorie { get; set; }
-        public int voorraad { get; set; }
+        public int MenuId { get; set; }
+        public string MenuItem { get; set; }
+        public double Prijs { get; set; }
+        public char Categorie { get; set; }
+        public int Voorraad { get; set; }
 
         public Menu(int menuId, string menuItem, double prijs, char categorie, int voorraad)
         {
-            this.menuId = menuId;
-            this.menuItem = menuItem;
-            this.prijs = prijs;
-            this.categorie = categorie;
-            this.voorraad = voorraad;
+            this.MenuId = menuId;
+            this.MenuItem = menuItem;
+            this.Prijs = prijs;
+            this.Categorie = categorie;
+            this.Voorraad = voorraad;
         }
     }
 }

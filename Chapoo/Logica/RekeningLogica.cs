@@ -16,7 +16,7 @@ namespace Logica
 
             foreach(Menu item in besteld)
             {
-                if(item.categorie == 'G')
+                if(item.Categorie == 'G')
                 {
                     //berekening voor 21%
                 }
