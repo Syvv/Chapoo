@@ -33,7 +33,8 @@ namespace Logica
         public List<Menu> Test()
         {
             var productManager = new RekeningDAO();
-            return productManager.GetTest();
+            //return productManager.GetTest();
+            return null;
         }
     }
 }
