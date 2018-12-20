@@ -16,7 +16,7 @@ namespace Style_guide
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BaseForm());
+            Application.Run(new BaseFormMobile());
         }
     }
 }
