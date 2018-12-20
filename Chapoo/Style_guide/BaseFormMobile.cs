@@ -10,14 +10,24 @@ using System.Windows.Forms;
 
 namespace Style_guide
 {
-    public partial class BaseForm : Form
+    public partial class BaseFormMobile : Form
     {
-        public BaseForm()
+        public BaseFormMobile()
         {
             InitializeComponent();
         }
 
         private void BaseForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void titel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void titel2_Click(object sender, EventArgs e)
         {
 
         }

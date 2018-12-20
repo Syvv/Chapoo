@@ -7,7 +7,7 @@ namespace Styleguide
     {
         public Titel()
         {
-            Font = new Font("Arial", 30, FontStyle.Regular);
+            Font = new Font("Arial", 20, FontStyle.Regular);
         }
     }
 }
