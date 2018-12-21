@@ -22,14 +22,20 @@ namespace DataAdaptor
         public List<Menu>OphalenBestellingen(int bestellingId)
         {
             List<Menu> bestelling = new List<Menu>();
+
             string query = "Select * from * where BestellingId = '@bestellingId' ";  //sql nog maken
             query = query.Replace("@bestellingId", bestellingId.ToString());
 
             SqlDataReader data = DataConnection.Query(query);
-
+            
             while (data.Read())
             {
-                //bestelling.Add(data.GetFieldValue<int>(0) + " - " + data.GetFieldValue<string>(1)); //data ophalen nog maken
+                bestelling.Add(new Menu(data.GetFieldValue<int>(0),
+                                        data.GetFieldValue<string>(1),
+                                        data.GetFieldValue<double>(2),
+                                        data.GetFieldValue<char>(3),
+                                        data.GetFieldValue<int>(4))
+                                        );
             }
             return bestelling;
         }

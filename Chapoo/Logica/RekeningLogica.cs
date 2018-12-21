@@ -9,7 +9,7 @@ using DataAdaptor;
 namespace Logica
 {
     public class RekeningLogica
-    {
+    {       
         public static double PrijsOptellerMakkelijk()
         {
             List<Menu> besteld = new List<Menu>();
@@ -42,6 +42,11 @@ namespace Logica
             }
             return totaalRekening;
         }  
+        public int FooiBerekenen(int rekening)
+        {
+            return 0;
+        }
+
         public List<Menu> OpvragenBesteldeItems(int tafelId)
         {
             var Dao = new RekeningDAO();
@@ -55,11 +60,11 @@ namespace Logica
             var dao = new RekeningDAO();
             return dao.BestellingIdOpvragen(tafelId);
         }
-        public static List<Menu> Weergeven()
+        public List<Menu> Weergeven()
         {
-            List<Menu> test = Menu_DAO.GetMenuItems();
-
-            return test;
+            var Dao = new RekeningDAO();
+            List<Menu> item = Dao.OphalenBestellingen(0);
+            return item;
         }
     }
 }

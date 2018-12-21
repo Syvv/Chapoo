@@ -13,7 +13,7 @@ namespace Console_App_Test_Robbin
         static void Main(string[] args)
         {
             var manager = new RekeningLogica();
-            List<Menu> menu = RekeningLogica.Weergeven();
+            List<Menu> menu = manager.Weergeven();
             
 
             foreach(Menu item in menu)

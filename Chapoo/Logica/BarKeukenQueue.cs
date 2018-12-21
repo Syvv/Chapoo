@@ -11,7 +11,6 @@ namespace Logica
 {
     public static class BarKeukenQueue
     {
-
         public static List<Bestellingsitem> getBestellingen(User user)
         {
             List<Bestellingsitem> result = new List<Bestellingsitem>();
@@ -32,7 +31,6 @@ namespace Logica
             }
             return BestelLijst.List;
         }
-
-
+        
     }
 }

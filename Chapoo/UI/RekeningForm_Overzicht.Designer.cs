@@ -36,7 +36,7 @@
             // DataGritVieuwOverzicht
             // 
             this.DataGritVieuwOverzicht.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGritVieuwOverzicht.Location = new System.Drawing.Point(71, 45);
+            this.DataGritVieuwOverzicht.Location = new System.Drawing.Point(44, 71);
             this.DataGritVieuwOverzicht.Name = "DataGritVieuwOverzicht";
             this.DataGritVieuwOverzicht.RowTemplate.Height = 24;
             this.DataGritVieuwOverzicht.Size = new System.Drawing.Size(320, 306);
@@ -45,7 +45,7 @@
             // 
             // buttonGritVieuw
             // 
-            this.buttonGritVieuw.Location = new System.Drawing.Point(508, 103);
+            this.buttonGritVieuw.Location = new System.Drawing.Point(126, 383);
             this.buttonGritVieuw.Name = "buttonGritVieuw";
             this.buttonGritVieuw.Size = new System.Drawing.Size(149, 41);
             this.buttonGritVieuw.TabIndex = 1;
@@ -57,13 +57,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(382, 753);
             this.Controls.Add(this.buttonGritVieuw);
             this.Controls.Add(this.DataGritVieuwOverzicht);
             this.Name = "RekeningForm_Overzicht";
             this.Text = "RekeningForm_Overzicht";
+            this.Load += new System.EventHandler(this.RekeningForm_Overzicht_Load);
+            this.Controls.SetChildIndex(this.DataGritVieuwOverzicht, 0);
+            this.Controls.SetChildIndex(this.buttonGritVieuw, 0);
             ((System.ComponentModel.ISupportInitialize)(this.DataGritVieuwOverzicht)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
