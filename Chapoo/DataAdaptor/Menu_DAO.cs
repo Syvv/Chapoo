@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataAdaptor
 {
-    class Menu_DAO
+    public class Menu_DAO
     {
         public static List<Model.Menu> GetMenuItems()
         {

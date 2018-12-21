@@ -19,9 +19,9 @@ namespace DataAdaptor
             update = DataConnection.Query(query);
         }
 
-        public static List<string>OphalenBestellingen(int bestellingId)
+        public List<Menu>OphalenBestellingen(int bestellingId)
         {
-            List<string> bestelling = new List<string>();
+            List<Menu> bestelling = new List<Menu>();
             string query = "Select * from * where BestellingId = '@bestellingId' ";  //sql nog maken
             query = query.Replace("@bestellingId", bestellingId.ToString());
 
@@ -29,20 +29,11 @@ namespace DataAdaptor
 
             while (data.Read())
             {
-                bestelling.Add(data.GetFieldValue<int>(0) + " - " + data.GetFieldValue<string>(1));
+                //bestelling.Add(data.GetFieldValue<int>(0) + " - " + data.GetFieldValue<string>(1)); //data ophalen nog maken
             }
             return bestelling;
         }
-        //public static List<string>2OphalenBestellingen(int bestellingId)
-        //{
-        //    List<string> bestelling = new List<string>();
 
-        //    string query = "Select * from * where BestellingId = '@bestellingId' ";
-        //    query = query.Replace("@bestellingId", bestellingId.ToString());
-
-
-        //    return bestelling;
-        //}
 
         public int BestellingIdOpvragen(int tafelNummer)
         {
@@ -52,21 +43,31 @@ namespace DataAdaptor
             SqlDataReader bestellingNummer = DataConnection.Query(query);
             int bestellingId = int.Parse(bestellingNummer.ToString());
 
+            //db sluiten
             return bestellingId;
         }
 
-        public static List<string> MenuOphalen()
+        /*public List<Menu> MenuOphalen()
         {
-            List<string> menu = new List<string>();
+            Menu menu = new Menu(0, null, 0, '0', 0);
             string query = "SELECT * FROM MENU";
 
             SqlDataReader data = DataConnection.Query(query);
 
-            while(data.Read())
+            while (data.Read())
             {
-                menu.Add(data.GetFieldValue<int>(0) + "-" + data.GetFieldValue<string>(1) + "-" + data.GetFieldValue<int>(2) + "-" + data.GetFieldValue<char>(3) + "-" + data.GetFieldValue<int>(4));
+                menu = new Menu((int)data["menu_id"], 
+                                (string)data["item"], 
+                                (double)data["prijs"], 
+                                (char)data["categorie"], 
+                                (int)data["voorraad"]);
             }
+            data.Close();
             return menu;
+        }*/
+        public void WegSchrijvenBestelling()//bestelling meegeven
+        {
+            string query = ("INSERT ### INTO BESTELLING");
         }
     }
 }
