@@ -19,7 +19,7 @@ namespace DataAdaptor
             int menuId;
             string menuItem;
             double prijs;
-            char categorie;
+            string categorie;
             int voorraad;
 
             while (data.Read())
@@ -27,7 +27,7 @@ namespace DataAdaptor
                 menuId = (int)data["menu_id"];
                 menuItem = (string)data["item"];
                 prijs = (double)data["prijs"];
-                categorie = (char)data["categorie"];
+                categorie = (string)data["categorie"];
                 voorraad = (int)data["voorraad"];
 
                 Model.Menu menu = new Model.Menu(menuId, menuItem, prijs, categorie, voorraad);

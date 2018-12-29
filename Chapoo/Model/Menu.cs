@@ -12,10 +12,10 @@ namespace Model
         public int MenuId { get; set; }
         public string MenuItem { get; set; }
         public double Prijs { get; set; }
-        public char Categorie { get; set; }
+        public string Categorie { get; set; }
         public int Voorraad { get; set; }
 
-        public Menu(int menuId, string menuItem, double prijs, char categorie, int voorraad)
+        public Menu(int menuId, string menuItem, double prijs, string categorie, int voorraad)
         {
             this.MenuId = menuId;
             this.MenuItem = menuItem;

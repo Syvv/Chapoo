@@ -33,7 +33,7 @@ namespace DataAdaptor
                 bestelling.Add(new Menu(data.GetFieldValue<int>(0),
                                         data.GetFieldValue<string>(1),
                                         data.GetFieldValue<double>(2),
-                                        data.GetFieldValue<char>(3),
+                                        data.GetFieldValue<string>(3),
                                         data.GetFieldValue<int>(4))
                                         );
             }

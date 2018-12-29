@@ -12,6 +12,7 @@ namespace Console_App_Test_Robbin
     {
         static void Main(string[] args)
         {
+            /*
             var manager = new RekeningLogica();
             List<Menu> menu = manager.Weergeven();
             
@@ -20,7 +21,17 @@ namespace Console_App_Test_Robbin
             {
                 Console.WriteLine(item.MenuItem);
             }
+            */
+            var instantie = new Categoriseren_gerechten_logica();
+            List<Menu> voorgerechten = instantie.GetVoorgerechtenLunch();
+
+            foreach (Menu item in voorgerechten)
+            {
+                Console.WriteLine(item.MenuItem);
+            }
             Console.ReadKey();
         }
+
+        
     }
 }

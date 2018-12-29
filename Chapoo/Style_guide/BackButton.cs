@@ -1,15 +1,14 @@
-﻿
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 using System.Drawing;
 
 namespace Style_guide
 {
-    public class HomeButton : Button
+    public class BackButton : Button
     {
-        public HomeButton()
+        public BackButton()
         {
             FlatStyle = FlatStyle.Flat;
-            BackgroundImage = Properties.Resources.home1;
+            BackgroundImage = Properties.Resources.arrow;
             Size = new Size(50, 50);
             ForeColor = Color.FromArgb(255, 255, 255);
             if (this.BackgroundImage == null)

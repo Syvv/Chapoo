@@ -20,7 +20,7 @@ namespace Logica
 
             foreach(Menu item in besteld)
             {
-                if(item.Categorie == 'G')
+                if(item.Categorie == "G")
                 {
                     //berekening voor 21%
                     Double zonder = (item.Prijs / 121 * 100);
