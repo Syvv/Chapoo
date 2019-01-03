@@ -23,7 +23,9 @@ namespace Console_App_Test_Robbin
             }
             */
             var instantie = new Categoriseren_gerechten_logica();
-            List<Menu> voorgerechten = instantie.GetVoorgerechtenLunch();
+            var LunchOfDiner = new Lunch_of_Diner_Logica();
+           // List<Menu> voorgerechten = instantie.GetVoorgerechtenLunch();
+            List<Menu> voorgerechten = LunchOfDiner.Voorgerecht();
 
             foreach (Menu item in voorgerechten)
             {

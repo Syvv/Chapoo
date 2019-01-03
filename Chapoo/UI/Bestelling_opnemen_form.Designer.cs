@@ -30,117 +30,145 @@
         {
             this.listView1 = new System.Windows.Forms.ListView();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
+            this.btnVoor = new Styleguide.BaseButton();
+            this.btnTussen = new Styleguide.BaseButton();
+            this.btnHoofd = new Styleguide.BaseButton();
+            this.btnNa = new Styleguide.BaseButton();
+            this.btnTap = new Styleguide.BaseButton();
+            this.btnDrank = new Styleguide.BaseButton();
+            this.btnWijn = new Styleguide.BaseButton();
+            this.btnFris = new Styleguide.BaseButton();
+            this.btnKoffie = new Styleguide.BaseButton();
+            this.btnVerstuur = new Styleguide.BaseButton();
             this.SuspendLayout();
             // 
             // listView1
             // 
-            this.listView1.Location = new System.Drawing.Point(2, 119);
+            this.listView1.Location = new System.Drawing.Point(2, 106);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(378, 198);
+            this.listView1.Size = new System.Drawing.Size(378, 290);
             this.listView1.TabIndex = 2;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
-            // button1
+            // btnVoor
             // 
-            this.button1.Location = new System.Drawing.Point(22, 358);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Voor";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnVoor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVoor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnVoor.Location = new System.Drawing.Point(33, 420);
+            this.btnVoor.Name = "btnVoor";
+            this.btnVoor.Size = new System.Drawing.Size(100, 30);
+            this.btnVoor.TabIndex = 12;
+            this.btnVoor.Text = "Voor";
+            this.btnVoor.UseVisualStyleBackColor = true;
+            this.btnVoor.Click += new System.EventHandler(this.btnVoor_Click);
             // 
-            // button2
+            // btnTussen
             // 
-            this.button2.Location = new System.Drawing.Point(104, 357);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Tussen";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnTussen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTussen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnTussen.Location = new System.Drawing.Point(139, 420);
+            this.btnTussen.Name = "btnTussen";
+            this.btnTussen.Size = new System.Drawing.Size(100, 30);
+            this.btnTussen.TabIndex = 13;
+            this.btnTussen.Text = "Tussen";
+            this.btnTussen.UseVisualStyleBackColor = true;
+            this.btnTussen.Click += new System.EventHandler(this.btnTussen_Click);
             // 
-            // button3
+            // btnHoofd
             // 
-            this.button3.Location = new System.Drawing.Point(185, 357);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Hoofd";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnHoofd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHoofd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnHoofd.Location = new System.Drawing.Point(245, 420);
+            this.btnHoofd.Name = "btnHoofd";
+            this.btnHoofd.Size = new System.Drawing.Size(100, 30);
+            this.btnHoofd.TabIndex = 14;
+            this.btnHoofd.Text = "Hoofd";
+            this.btnHoofd.UseVisualStyleBackColor = true;
+            this.btnHoofd.Click += new System.EventHandler(this.btnHoofd_Click);
             // 
-            // button4
+            // btnNa
             // 
-            this.button4.Location = new System.Drawing.Point(266, 357);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "Na";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnNa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnNa.Location = new System.Drawing.Point(33, 466);
+            this.btnNa.Name = "btnNa";
+            this.btnNa.Size = new System.Drawing.Size(100, 30);
+            this.btnNa.TabIndex = 15;
+            this.btnNa.Text = "Na";
+            this.btnNa.UseVisualStyleBackColor = true;
+            this.btnNa.Click += new System.EventHandler(this.btnNa_Click);
             // 
-            // button5
+            // btnTap
             // 
-            this.button5.Location = new System.Drawing.Point(104, 417);
-            this.button5.Name = "button5";
-            this.button5.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 7;
-            this.button5.Text = "Drank";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnTap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTap.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnTap.Location = new System.Drawing.Point(139, 466);
+            this.btnTap.Name = "btnTap";
+            this.btnTap.Size = new System.Drawing.Size(100, 30);
+            this.btnTap.TabIndex = 16;
+            this.btnTap.Text = "Tap";
+            this.btnTap.UseVisualStyleBackColor = true;
+            this.btnTap.Click += new System.EventHandler(this.btnTap_Click);
             // 
-            // button6
+            // btnDrank
             // 
-            this.button6.Location = new System.Drawing.Point(64, 387);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 8;
-            this.button6.Text = "Fris";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnDrank.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDrank.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnDrank.Location = new System.Drawing.Point(245, 466);
+            this.btnDrank.Name = "btnDrank";
+            this.btnDrank.Size = new System.Drawing.Size(100, 30);
+            this.btnDrank.TabIndex = 17;
+            this.btnDrank.Text = "Drank";
+            this.btnDrank.UseVisualStyleBackColor = true;
+            this.btnDrank.Click += new System.EventHandler(this.btnDrank_Click);
             // 
-            // button7
+            // btnWijn
             // 
-            this.button7.Location = new System.Drawing.Point(145, 386);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 9;
-            this.button7.Text = "Tap";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnWijn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWijn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnWijn.Location = new System.Drawing.Point(33, 514);
+            this.btnWijn.Name = "btnWijn";
+            this.btnWijn.Size = new System.Drawing.Size(100, 30);
+            this.btnWijn.TabIndex = 18;
+            this.btnWijn.Text = "Wijn";
+            this.btnWijn.UseVisualStyleBackColor = true;
+            this.btnWijn.Click += new System.EventHandler(this.btnWijn_Click);
             // 
-            // button8
+            // btnFris
             // 
-            this.button8.Location = new System.Drawing.Point(185, 417);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 23);
-            this.button8.TabIndex = 10;
-            this.button8.Text = "Koffie";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btnFris.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFris.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnFris.Location = new System.Drawing.Point(139, 514);
+            this.btnFris.Name = "btnFris";
+            this.btnFris.Size = new System.Drawing.Size(100, 30);
+            this.btnFris.TabIndex = 19;
+            this.btnFris.Text = "Fris";
+            this.btnFris.UseVisualStyleBackColor = true;
+            this.btnFris.Click += new System.EventHandler(this.btnFris_Click);
             // 
-            // button9
+            // btnKoffie
             // 
-            this.button9.Location = new System.Drawing.Point(226, 386);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 23);
-            this.button9.TabIndex = 11;
-            this.button9.Text = "Wijn";
-            this.button9.UseVisualStyleBackColor = true;
+            this.btnKoffie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKoffie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnKoffie.Location = new System.Drawing.Point(245, 514);
+            this.btnKoffie.Name = "btnKoffie";
+            this.btnKoffie.Size = new System.Drawing.Size(100, 30);
+            this.btnKoffie.TabIndex = 20;
+            this.btnKoffie.Text = "Koffie";
+            this.btnKoffie.UseVisualStyleBackColor = true;
+            this.btnKoffie.Click += new System.EventHandler(this.btnKoffie_Click);
             // 
-            // button10
+            // btnVerstuur
             // 
-            this.button10.Location = new System.Drawing.Point(145, 485);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(75, 23);
-            this.button10.TabIndex = 12;
-            this.button10.Text = "Verstuur >";
-            this.button10.UseVisualStyleBackColor = true;
+            this.btnVerstuur.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerstuur.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnVerstuur.Location = new System.Drawing.Point(139, 580);
+            this.btnVerstuur.Name = "btnVerstuur";
+            this.btnVerstuur.Size = new System.Drawing.Size(100, 30);
+            this.btnVerstuur.TabIndex = 21;
+            this.btnVerstuur.Text = "Verstuur";
+            this.btnVerstuur.UseVisualStyleBackColor = true;
+            this.btnVerstuur.Click += new System.EventHandler(this.btnVerstuur_Click);
             // 
             // Bestelling_opnemen_form
             // 
@@ -148,31 +176,31 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(382, 638);
-            this.Controls.Add(this.button10);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnVerstuur);
+            this.Controls.Add(this.btnKoffie);
+            this.Controls.Add(this.btnFris);
+            this.Controls.Add(this.btnWijn);
+            this.Controls.Add(this.btnDrank);
+            this.Controls.Add(this.btnTap);
+            this.Controls.Add(this.btnNa);
+            this.Controls.Add(this.btnHoofd);
+            this.Controls.Add(this.btnTussen);
+            this.Controls.Add(this.btnVoor);
             this.Controls.Add(this.listView1);
             this.Name = "Bestelling_opnemen_form";
             this.Text = "Bestelling_opnemen";
             this.Load += new System.EventHandler(this.Bestelling_opnemen_form_Load);
             this.Controls.SetChildIndex(this.listView1, 0);
-            this.Controls.SetChildIndex(this.button1, 0);
-            this.Controls.SetChildIndex(this.button2, 0);
-            this.Controls.SetChildIndex(this.button3, 0);
-            this.Controls.SetChildIndex(this.button4, 0);
-            this.Controls.SetChildIndex(this.button5, 0);
-            this.Controls.SetChildIndex(this.button6, 0);
-            this.Controls.SetChildIndex(this.button7, 0);
-            this.Controls.SetChildIndex(this.button8, 0);
-            this.Controls.SetChildIndex(this.button9, 0);
-            this.Controls.SetChildIndex(this.button10, 0);
+            this.Controls.SetChildIndex(this.btnVoor, 0);
+            this.Controls.SetChildIndex(this.btnTussen, 0);
+            this.Controls.SetChildIndex(this.btnHoofd, 0);
+            this.Controls.SetChildIndex(this.btnNa, 0);
+            this.Controls.SetChildIndex(this.btnTap, 0);
+            this.Controls.SetChildIndex(this.btnDrank, 0);
+            this.Controls.SetChildIndex(this.btnWijn, 0);
+            this.Controls.SetChildIndex(this.btnFris, 0);
+            this.Controls.SetChildIndex(this.btnKoffie, 0);
+            this.Controls.SetChildIndex(this.btnVerstuur, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -182,15 +210,15 @@
 
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.FontDialog fontDialog1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
+        private Styleguide.BaseButton btnVoor;
+        private Styleguide.BaseButton btnTussen;
+        private Styleguide.BaseButton btnHoofd;
+        private Styleguide.BaseButton btnNa;
+        private Styleguide.BaseButton btnTap;
+        private Styleguide.BaseButton btnDrank;
+        private Styleguide.BaseButton btnWijn;
+        private Styleguide.BaseButton btnFris;
+        private Styleguide.BaseButton btnKoffie;
+        private Styleguide.BaseButton btnVerstuur;
     }
 }

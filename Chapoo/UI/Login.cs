@@ -31,6 +31,7 @@ namespace UI
             {
                 temp = new User(UsernameInput.Text,'S');//Serveerder
                 //create a new form and show that
+                new Bestelling_opnemen_form().Show();
             }else if(BarRAD.Checked)
             {
                 temp = new User(UsernameInput.Text, 'B');//Bar

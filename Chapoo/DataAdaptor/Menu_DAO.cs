@@ -35,6 +35,7 @@ namespace DataAdaptor
                 menu_list.Add(menu);
 
             }
+            data.Close();
             return menu_list;
         }
     }
