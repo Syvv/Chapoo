@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listView1 = new System.Windows.Forms.ListView();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.btnVoor = new Styleguide.BaseButton();
             this.btnTussen = new Styleguide.BaseButton();
@@ -40,15 +39,10 @@
             this.btnFris = new Styleguide.BaseButton();
             this.btnKoffie = new Styleguide.BaseButton();
             this.btnVerstuur = new Styleguide.BaseButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // listView1
-            // 
-            this.listView1.Location = new System.Drawing.Point(2, 106);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(378, 290);
-            this.listView1.TabIndex = 2;
-            this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // btnVoor
             // 
@@ -170,12 +164,29 @@
             this.btnVerstuur.UseVisualStyleBackColor = true;
             this.btnVerstuur.Click += new System.EventHandler(this.btnVerstuur_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.listView1);
+            this.panel1.Location = new System.Drawing.Point(2, 106);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(378, 290);
+            this.panel1.TabIndex = 22;
+            // 
+            // listView1
+            // 
+            this.listView1.Location = new System.Drawing.Point(-3, 0);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(381, 290);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
             // Bestelling_opnemen_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(382, 638);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnVerstuur);
             this.Controls.Add(this.btnKoffie);
             this.Controls.Add(this.btnFris);
@@ -186,11 +197,9 @@
             this.Controls.Add(this.btnHoofd);
             this.Controls.Add(this.btnTussen);
             this.Controls.Add(this.btnVoor);
-            this.Controls.Add(this.listView1);
             this.Name = "Bestelling_opnemen_form";
             this.Text = "Bestelling_opnemen";
             this.Load += new System.EventHandler(this.Bestelling_opnemen_form_Load);
-            this.Controls.SetChildIndex(this.listView1, 0);
             this.Controls.SetChildIndex(this.btnVoor, 0);
             this.Controls.SetChildIndex(this.btnTussen, 0);
             this.Controls.SetChildIndex(this.btnHoofd, 0);
@@ -201,14 +210,14 @@
             this.Controls.SetChildIndex(this.btnFris, 0);
             this.Controls.SetChildIndex(this.btnKoffie, 0);
             this.Controls.SetChildIndex(this.btnVerstuur, 0);
+            this.Controls.SetChildIndex(this.panel1, 0);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.FontDialog fontDialog1;
         private Styleguide.BaseButton btnVoor;
         private Styleguide.BaseButton btnTussen;
@@ -220,5 +229,7 @@
         private Styleguide.BaseButton btnFris;
         private Styleguide.BaseButton btnKoffie;
         private Styleguide.BaseButton btnVerstuur;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ListView listView1;
     }
 }

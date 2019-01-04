@@ -40,47 +40,76 @@ namespace UI
 
         private void btnKoffie_Click(object sender, EventArgs e)
         {
-            this.listView1.Controls.Add(fillList.ShowGerechten(gerechten.GetKoffieEnThee()));
+            DeleteNotChecked();
+            this.panel1.Controls.Add(fillList.FillListView(listView1, gerechten.GetKoffieEnThee()));
         }
 
         private void btnFris_Click(object sender, EventArgs e)
         {
-            this.listView1.Controls.Add(fillList.ShowGerechten(gerechten.GetFrisdranken()));
+            DeleteNotChecked();
+            this.panel1.Controls.Add(fillList.FillListView(listView1, gerechten.GetFrisdranken()));
         }
 
         private void btnWijn_Click(object sender, EventArgs e)
         {
-            this.listView1.Controls.Add(fillList.ShowGerechten(gerechten.GetWijnen()));
+            DeleteNotChecked();
+            this.panel1.Controls.Add(fillList.FillListView(listView1, gerechten.GetWijnen()));
         }
 
         private void btnDrank_Click(object sender, EventArgs e)
         {
-            this.listView1.Controls.Add(fillList.ShowGerechten(gerechten.GetGedestileerdeDranken()));
+            DeleteNotChecked();
+            this.panel1.Controls.Add(fillList.FillListView(listView1, gerechten.GetGedestileerdeDranken()));
         }
 
         private void btnTap_Click(object sender, EventArgs e)
         {
-            this.listView1.Controls.Add(fillList.ShowGerechten(gerechten.GetBieren()));
+            DeleteNotChecked();
+            this.panel1.Controls.Add(fillList.FillListView(listView1, gerechten.GetBieren()));
         }
 
         private void btnNa_Click(object sender, EventArgs e)
         {
-            this.listView1.Controls.Add(fillList.ShowGerechten(lunchOfDiner.Nagerechten()));
+            DeleteNotChecked();
+            this.panel1.Controls.Add(fillList.FillListView(listView1, lunchOfDiner.Nagerechten()));
         }
 
         private void btnHoofd_Click(object sender, EventArgs e)
-        {
-            this.listView1.Controls.Add(fillList.ShowGerechten(lunchOfDiner.Hoofdgerechten()));
+        {            
+            DeleteNotChecked();
+            this.panel1.Controls.Add(fillList.FillListView(listView1, lunchOfDiner.Hoofdgerechten()));
         }
 
         private void btnTussen_Click(object sender, EventArgs e)
-        {
-            this.listView1.Controls.Add(fillList.ShowGerechten(gerechten.GetTussengerechtenDiner()));
+        {            
+            DeleteNotChecked();
+            this.panel1.Controls.Add(fillList.FillListView(listView1, gerechten.GetTussengerechtenDiner()));
         }
 
         private void btnVoor_Click(object sender, EventArgs e)
-        {
-            this.listView1.Controls.Add(fillList.ShowGerechten(lunchOfDiner.Voorgerecht()));
+        {            
+            DeleteNotChecked();
+            this.panel1.Controls.Add(fillList.FillListView(listView1, lunchOfDiner.Voorgerecht()));
+            listView1.ItemActivate += new EventHandler(ItemActivate);
         }
+        private void ItemActivate(object o, EventArgs e)
+        {
+            MessageBox.Show("ruft");
+        }
+        public void DeleteNotChecked()
+        {
+            foreach (ListViewItem item in listView1.Items)
+            {
+                if (item.Checked)
+                {
+
+                }
+                else
+                {
+                    listView1.Items.Remove(item);
+                }
+            }
+        }
+
     }
 }

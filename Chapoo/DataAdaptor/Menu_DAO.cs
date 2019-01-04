@@ -33,9 +33,10 @@ namespace DataAdaptor
                 Model.Menu menu = new Model.Menu(menuId, menuItem, prijs, categorie, voorraad);
 
                 menu_list.Add(menu);
-
+                
             }
-            data.Close();
+
+            DataConnection.connection.Close();
             return menu_list;
         }
     }

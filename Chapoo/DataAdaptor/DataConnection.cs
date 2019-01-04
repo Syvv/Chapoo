@@ -16,9 +16,8 @@ namespace DataAdaptor
         public static SqlDataReader Query(string query)
         {
                 connection.Open();
-                SqlCommand sql = new SqlCommand(query, connection);
-                return sql.ExecuteReader();
-            
+                SqlCommand sql = new SqlCommand(query, connection);               
+                return sql.ExecuteReader();           
         }
 
 
