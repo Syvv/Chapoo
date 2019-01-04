@@ -7,24 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Logica;
 using Styleguide;
+using Model;
+using Logica;
 
 namespace UI
 {
-    public partial class RekeningForm_Overzicht : Style_guide.BaseFormMobile
+    public partial class Rekening_OpmerkingForm : Style_guide.BaseFormMobile
     {
-        //doorgeven van aangeklikte tafelnummer
-        int tafelNummer = 0;
-
-        public RekeningForm_Overzicht() : base()
+        public Rekening_OpmerkingForm()
         {
             InitializeComponent();
-        }
-
-        private void RekeningForm_Overzicht_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
