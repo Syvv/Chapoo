@@ -9,7 +9,8 @@ using DataAdaptor;
 namespace Logica
 {
     public class RekeningLogica
-    {       
+    {
+
         public static double PrijsOptellerMakkelijk()
         {
             List<Menu> besteld = new List<Menu>();
