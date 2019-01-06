@@ -11,15 +11,15 @@ namespace Logica
     public class RekeningLogica
     {
 
-        public static double PrijsOptellerMakkelijk()
+        public static Rekening PrijsOptellerMakkelijk()
         {
-            List<Menu> besteld = new List<Menu>();
+            List<Menu> besteld = new List<Menu>(); //hier komt ophalen menu items(die besteld zijn)
             double totaalRekening = 0;
             double zonderBtw = 0;
             double btw21 = 0;
             double btw6 = 0;
 
-            foreach(Menu item in besteld)
+            foreach(Menu item in besteld) //elk item die besteld is
             {
                 if(item.Categorie == "G")
                 {
@@ -41,11 +41,15 @@ namespace Logica
                 }
                 totaalRekening += item.Prijs;
             }
-            return totaalRekening;
+
+            Rekening rekening = new Rekening(totaalRekening, zonderBtw, btw6, btw21, 0); //fooi moet hier nog bij, en totaalbedrag moet nog veranderd worden.
+            return rekening;
         }  
-        public int FooiBerekenen(int rekening)
+        public void FooiBerekenen(int ingevoerdbedrag, Rekening rekening) //ergens nog een controller plaatsen om te kijken of er geen lager bedrag is ingevoerd dan dr rekening zelf
         {
-            return 0;
+            double fooi = ingevoerdbedrag - rekening.Totaalbedrag;
+            rekening.Fooi = fooi;
+            rekening.Totaalbedrag = rekening.Totaalbedrag + fooi;
         }
 
         public List<Menu> OpvragenBesteldeItems(int tafelId)
@@ -60,12 +64,6 @@ namespace Logica
         {
             var dao = new RekeningDAO();
             return dao.BestellingIdOpvragen(tafelId);
-        }
-        public List<Menu> Weergeven()
-        {
-            var Dao = new RekeningDAO();
-            List<Menu> item = Dao.OphalenBestellingen(0);
-            return item;
         }
     }
 }
