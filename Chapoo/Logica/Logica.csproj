@@ -48,6 +48,7 @@
     <Compile Include="Categoriseren_gerechten_logica.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Fill_order_list_logica.cs" />
+    <Compile Include="Bestelling_logica.cs" />
     <Compile Include="Lunch_of_Diner_Logica.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RekeningLogica.cs" />
