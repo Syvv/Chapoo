@@ -13,14 +13,16 @@ namespace Model
         public double Btw6 { get; set; } //btw berekening toevoegen??
         public double Btw21 { get; set; } //btw berekening toevoegen??
         public double Fooi { get; set; }
+        public string Opmerking { get; set; }
 
-        public Rekening(double totaalbedrag,double bedragZonderBtw, double btw6, double btw21, double fooi)
+        public Rekening(double totaalbedrag,double bedragZonderBtw, double btw6, double btw21, double fooi, string opmerking)
         {
             this.Totaalbedrag = totaalbedrag;
             this.BedragZonderBtw = bedragZonderBtw;
             this.Fooi = fooi;
             this.Btw6 = btw6;
             this.Btw21 = btw21;
+            this.Opmerking = opmerking;
         }
 
     }

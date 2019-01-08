@@ -110,6 +110,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RekeningForm_Betaal.resx">
+      <DependentUpon>RekeningForm_Betaal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RekeningForm_Overzicht.resx">
       <DependentUpon>RekeningForm_Overzicht.cs</DependentUpon>
     </EmbeddedResource>

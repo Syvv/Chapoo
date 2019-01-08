@@ -18,62 +18,78 @@ namespace DataAdaptor
             SqlDataReader update;
             update = DataConnection.Query(query);
         }
-
-        public List<Menu>OphalenBestellingen(int bestellingId)
-        {
-            List<Menu> bestelling = new List<Menu>();
-
-            string query = "Select * from * where BestellingId = '@bestellingId' ";  //sql nog maken
-            query = query.Replace("@bestellingId", bestellingId.ToString());
-
-            SqlDataReader data = DataConnection.Query(query);
-            
-            while (data.Read())
-            {
-                bestelling.Add(new Menu(data.GetFieldValue<int>(0),
-                                        data.GetFieldValue<string>(1),
-                                        data.GetFieldValue<double>(2),
-                                        data.GetFieldValue<string>(3),
-                                        data.GetFieldValue<int>(4))
-                                        );
-            }
-            return bestelling;
-        }
-
-
         public int BestellingIdOpvragen(int tafelNummer)
         {
-            string query = "SELECT bestellingId FROM bestelling Where tafel_id = '@_tafelid'";
+            string query = "SELECT bestelling_id FROM BESTELLING Where tafel_id = '@_tafelid'";
             query = query.Replace("@_tafelid", tafelNummer.ToString());
 
             SqlDataReader bestellingNummer = DataConnection.Query(query);
-            int bestellingId = int.Parse(bestellingNummer.ToString());
+            int bestellingId = (int)bestellingNummer["bestelling_id"];
 
             //db sluiten
+            DataConnection.connection.Close();
             return bestellingId;
         }
-
-        /*public List<Menu> MenuOphalen()
+        public List<int>BestellingIdList(int tafelNummer)
         {
-            Menu menu = new Menu(0, null, 0, '0', 0);
-            string query = "SELECT * FROM MENU";
+            List<int> bestellingnmr = new List<int>();
+            string query = "SELECT bestelling_id FROM BESTELLING Where tafel_id = '@_tafelid'";
+            query = query.Replace("@_tafelid", tafelNummer.ToString());
+
+            SqlDataReader bestellingNummer = DataConnection.Query(query);
+            while (bestellingNummer.Read())
+            {
+                int bestellingsId = (int)bestellingNummer["bestelling_id"];
+                bestellingnmr.Add(bestellingsId);
+            }
+
+            //db sluiten
+            DataConnection.connection.Close();
+            return bestellingnmr;
+        }
+
+        public List<BesteldRekening>OphalenBestellingen(int bestellingId)
+        {
+            List<BesteldRekening> bestelling = new List<BesteldRekening>();
+
+            string query = "SELECT m.menu_id, m.item, m.prijs, m.categorie,  ht.amount " +
+                            "FROM HEEFT_ITEM as ht, MENU as m, BESTELLING as b " +
+                            "Where b.bestelling_id = ht.bestel_id and ht.menu_id = m.menu_id and b.bestelling_id = '@bestellingId'";
+            
+            query = query.Replace("@bestellingId", bestellingId.ToString());
 
             SqlDataReader data = DataConnection.Query(query);
 
             while (data.Read())
             {
-                menu = new Menu((int)data["menu_id"], 
-                                (string)data["item"], 
-                                (double)data["prijs"], 
-                                (char)data["categorie"], 
-                                (int)data["voorraad"]);
+                int menuId = (int)data["m.menu_id"];
+                string menuItem = (string)data["m.item"];
+                double prijs = (double)data["m.prijs"];
+                string categorie = (string)data["m.categorie"];
+                int voorraad = (int)data["m.voorraad"];
+                int hoeveelheid = (int)data["ht.hoeveelheid"];
+
+                BesteldRekening besteld = new BesteldRekening(menuId, menuItem, prijs, categorie, voorraad, hoeveelheid);
+                bestelling.Add(besteld);
             }
-            data.Close();
-            return menu;
-        }*/
-        public void WegSchrijvenBestelling()//bestelling meegeven
+
+            DataConnection.connection.Close();
+            return bestelling;
+        }
+        public void WegSchrijvenBestelling(Rekening rekening, int tafel, int bestelling)//bestelling meegeven
         {
-            string query = ("INSERT ### INTO BESTELLING");
+            SqlDataReader data;
+
+            string query = ("INSERT INTO REKENING (tafel_id, bestelling_id, totaalbedrag, tip, opmerking) value (@tafel_id, @bestelling_id, @totaalbedrag, @tip, @opmerking)");
+            query.Replace("@tafel_id", tafel.ToString());
+            query.Replace("@bestelling_id", bestelling.ToString());
+            query.Replace("@totaalbedrag", rekening.Totaalbedrag.ToString());
+            query.Replace("@tip", rekening.Fooi.ToString());
+            query.Replace("@opmerking", rekening.Opmerking);
+
+            //nu de datareader nog            
+            data = DataConnection.Query(query);
+            DataConnection.connection.Close();
         }
     }
 }

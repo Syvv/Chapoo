@@ -50,6 +50,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DataAdaptor\DataAdaptor.csproj">
+      <Project>{4c6087f0-054e-412c-a584-1646116e3de4}</Project>
+      <Name>DataAdaptor</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Logica\Logica.csproj">
       <Project>{9f659a41-b5cd-40ef-99d4-dd73b7d5b288}</Project>
       <Name>Logica</Name>

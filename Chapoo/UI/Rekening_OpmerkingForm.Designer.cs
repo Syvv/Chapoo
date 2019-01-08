@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Tbopmerking = new System.Windows.Forms.TextBox();
             this.BtnOpslaan = new System.Windows.Forms.Button();
             this.BtnAnuleren = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // Tbopmerking
             // 
-            this.textBox1.Location = new System.Drawing.Point(30, 106);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(322, 212);
-            this.textBox1.TabIndex = 4;
+            this.Tbopmerking.Location = new System.Drawing.Point(30, 106);
+            this.Tbopmerking.Multiline = true;
+            this.Tbopmerking.Name = "Tbopmerking";
+            this.Tbopmerking.Size = new System.Drawing.Size(322, 212);
+            this.Tbopmerking.TabIndex = 4;
             // 
             // BtnOpslaan
             // 
@@ -50,11 +50,12 @@
             this.BtnOpslaan.TabIndex = 5;
             this.BtnOpslaan.Text = "Opslaan";
             this.BtnOpslaan.UseVisualStyleBackColor = false;
+            this.BtnOpslaan.Click += new System.EventHandler(this.BtnOpslaan_Click);
             // 
             // BtnAnuleren
             // 
             this.BtnAnuleren.BackColor = System.Drawing.Color.Red;
-            this.BtnAnuleren.Cursor = System.Windows.Forms.Cursors.No;
+            this.BtnAnuleren.Cursor = System.Windows.Forms.Cursors.Default;
             this.BtnAnuleren.ForeColor = System.Drawing.Color.Black;
             this.BtnAnuleren.Location = new System.Drawing.Point(209, 344);
             this.BtnAnuleren.Name = "BtnAnuleren";
@@ -62,6 +63,7 @@
             this.BtnAnuleren.TabIndex = 6;
             this.BtnAnuleren.Text = "Anuleren";
             this.BtnAnuleren.UseVisualStyleBackColor = false;
+            this.BtnAnuleren.Click += new System.EventHandler(this.BtnAnuleren_Click);
             // 
             // Rekening_OpmerkingForm
             // 
@@ -70,10 +72,10 @@
             this.ClientSize = new System.Drawing.Size(382, 638);
             this.Controls.Add(this.BtnAnuleren);
             this.Controls.Add(this.BtnOpslaan);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.Tbopmerking);
             this.Name = "Rekening_OpmerkingForm";
             this.Text = "Rekening_OpmerkingForm";
-            this.Controls.SetChildIndex(this.textBox1, 0);
+            this.Controls.SetChildIndex(this.Tbopmerking, 0);
             this.Controls.SetChildIndex(this.BtnOpslaan, 0);
             this.Controls.SetChildIndex(this.BtnAnuleren, 0);
             this.ResumeLayout(false);
@@ -83,7 +85,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox Tbopmerking;
         private System.Windows.Forms.Button BtnOpslaan;
         private System.Windows.Forms.Button BtnAnuleren;
     }

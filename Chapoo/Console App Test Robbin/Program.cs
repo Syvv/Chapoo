@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Model;
 using Logica;
+using DataAdaptor;
 
 namespace Console_App_Test_Robbin
 {
@@ -12,28 +13,20 @@ namespace Console_App_Test_Robbin
     {
         static void Main(string[] args)
         {
-            /*
-            var manager = new RekeningLogica();
-            List<Menu> menu = manager.Weergeven();
-            
-
-            foreach(Menu item in menu)
+            try
             {
-                Console.WriteLine(item.MenuItem);
-            }
-            */
-            var instantie = new Categoriseren_gerechten_logica();
-            var LunchOfDiner = new Lunch_of_Diner_Logica();
-           // List<Menu> voorgerechten = instantie.GetVoorgerechtenLunch();
-            List<Menu> voorgerechten = LunchOfDiner.Voorgerecht();
+                //var data = new RekeningDAO();
+                //int test = data.BestellingIdOpvragen(1);
+                //Console.WriteLine(test);
 
-            foreach (Menu item in voorgerechten)
-            {
-                Console.WriteLine(item.MenuItem);
+                var logica = new RekeningLogica();
+                Console.WriteLine(logica.OpvragenBestellingId(1));
             }
-            Console.ReadKey();
+            catch
+            {
+                Console.WriteLine("niet gelukt");
+            }
+            finally { Console.ReadKey(); }
         }
-
-        
     }
 }

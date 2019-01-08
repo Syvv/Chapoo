@@ -69,6 +69,7 @@
             this.BtnOpmerking.TabIndex = 6;
             this.BtnOpmerking.Text = "Opmerking";
             this.BtnOpmerking.UseVisualStyleBackColor = true;
+            this.BtnOpmerking.Click += new System.EventHandler(this.BtnOpmerking_Click);
             // 
             // BtnDoor
             // 
@@ -78,6 +79,7 @@
             this.BtnDoor.TabIndex = 7;
             this.BtnDoor.Text = "doorgaan naar betalen";
             this.BtnDoor.UseVisualStyleBackColor = true;
+            this.BtnDoor.Click += new System.EventHandler(this.BtnDoor_Click);
             // 
             // LblexclBtw
             // 
