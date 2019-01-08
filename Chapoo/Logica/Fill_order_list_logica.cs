@@ -17,25 +17,28 @@ namespace Logica
             listView.GridLines = true;
             listView.FullRowSelect = true;
             listView.CheckBoxes = true;
+            listView.Scrollable = true;
 
-            listView.Columns.Add("ID");
+            listView.Columns.Add(" ");
             listView.Columns.Add("Naam");
-            listView.Columns.Add("Comment");
+            listView.Columns.Add("Aantal");
+            listView.Columns.Add("Commentaar");
 
             listView.Name = "listView";
 
             listView.Columns[0].Width = 20;
             listView.Columns[1].Width = 200;
             listView.Columns[2].Width = 78;
+            listView.Columns[3].Width = 100;
 
             listView.Height = 325;
-            listView.Width = 378;
+            //listView.Width = 450;
         }
         public void FillListView(ListView listView, List<Model.Menu> gerechten)
         {   
             for (int i = 0; i < gerechten.Count; i++)
             {
-                ListViewItem lv = new ListViewItem(new[] {gerechten[i].MenuId.ToString(), gerechten[i].MenuItem, ""});
+                ListViewItem lv = new ListViewItem(new[] {gerechten[i].MenuId.ToString(), gerechten[i].MenuItem, "", ""});
                 lv.Tag = gerechten[i].Categorie;
                 listView.Items.Add(lv);
             }

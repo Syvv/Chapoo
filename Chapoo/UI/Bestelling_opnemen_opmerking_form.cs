@@ -24,7 +24,13 @@ namespace UI
         private void btnSendComment_Click(object sender, EventArgs e)
         {
             bestelling_Opnemen_Form.ChangeComment(txtComment.Text);
+            bestelling_Opnemen_Form.ChangeAantal(txtAantal.Text);
             this.Close();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }

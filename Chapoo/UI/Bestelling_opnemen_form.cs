@@ -23,8 +23,9 @@ namespace UI
         {
             InitializeComponent();
             fillList.ListViewStyle(listView1);
+            listView1.ItemActivate += new EventHandler(ItemActivate);
         }
-
+        public event System.Windows.Forms.ItemCheckEventHandler ItemCheck;
         private void Bestelling_opnemen_form_Load(object sender, EventArgs e)
         {
 
@@ -92,8 +93,9 @@ namespace UI
         {            
             DeleteNotChecked();
             fillList.FillListView(listView1, lunchOfDiner.Voorgerecht());
-            listView1.ItemActivate += new EventHandler(ItemActivate);
+           
         }
+        
         private void ItemActivate(object o, EventArgs e)
         {
             using(var opmerking = new Bestelling_opnemen_opmerking_form(this))
@@ -101,9 +103,21 @@ namespace UI
                 opmerking.ShowDialog();
             }
         }
+        private void listView1_ItemCheck(Object sender, ItemCheckEventArgs e)
+        {
+
+            using (var opmerking = new Bestelling_opnemen_opmerking_form(this))
+            {
+                opmerking.ShowDialog();
+            }
+        }
         public void ChangeComment(string comment)
         {
-            listView1.SelectedItems[0].SubItems[2].Text = comment;
+            listView1.SelectedItems[0].SubItems[3].Text = comment;
+        }
+        public void ChangeAantal(string aantal)
+        {
+            listView1.SelectedItems[0].SubItems[2].Text = aantal;
         }
         public void DeleteNotChecked()
         {
@@ -133,13 +147,19 @@ namespace UI
   
                 int menuId = 0;
                 string menuIdString = this.listView1.Items[index].SubItems[0].Text;
-                string comment = listView1.Items[index].SubItems[2].ToString();
+                string aantalString = listView1.Items[index].SubItems[2].Text;
+                int aantal = 0;
+                string comment = listView1.Items[index].SubItems[3].Text;
                 string categorie = item.Tag.ToString();
 
                 //Converteer de id van string naar int
                 if (!Int32.TryParse(menuIdString, out menuId))
                 {
                     menuId = -1;
+                }
+                if (!Int32.TryParse(aantalString, out aantal))
+                {
+                    aantal = -1;
                 }
 
                 if (item.Checked == false)
@@ -148,12 +168,14 @@ namespace UI
                 }
                 else
                 {                  
-                    bestellingLogica.MakeQueueList(menuId, 1, comment, categorie);
+                    bestellingLogica.MakeQueueList(menuId, aantal, comment, categorie);
                 }
-            }
-            
+            }           
             bestellingLogica.InsertQueue();
-            listView1.Clear();
+            foreach (ListViewItem item in listView1.Items)
+            {
+                listView1.Items.Remove(item);
+             }
         }
 
     }
