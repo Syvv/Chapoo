@@ -28,9 +28,12 @@ namespace UI
         private void BuildForm()
         {
             Controls.Clear();
+            UIElements.Clear();
+            int y = 0;
             foreach (Bestellingsitem b in Model.BestelLijst.List)
             {
-                UIElements.Add(new Logica.BarKeukenUIElement(b, () => { BuildForm(); }));
+                UIElements.Add(new Logica.BarKeukenUIElement(b, () => { BuildForm(); }, 10, y) );
+                y += 25;
             }
 
             //add the controls that belong to all BarKeukenUIElements so that you can actually see them

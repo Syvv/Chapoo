@@ -15,7 +15,7 @@ namespace DataAdaptor
             SqlDataReader data;
 
             data = DataConnection.Query(
-                "SELECT b.tafel_id, m.item, gb.hoeveelheid, gb.Commentaar  FROM GAAT_NAAR_BAR gb " +
+                "SELECT b.tafel_id, m.item, gb.hoeveelheid, gb.Commentaar, gb.bar_id  FROM GAAT_NAAR_BAR gb " +
                 "INNER JOIN BESTELLING b ON gb.bestelling_id = b.bestelling_id " +
                 "INNER JOIN MENU m ON m.menu_id = gb.menu_id; "
             );
@@ -27,11 +27,27 @@ namespace DataAdaptor
             SqlDataReader data;
 
             data = DataConnection.Query(
-                "SELECT b.tafel_id, m.item, gk.hoeveelheid, gk.Commentaar  FROM GAAT_NAAR_KEUKEN gk " +
+                "SELECT b.tafel_id, m.item, gk.hoeveelheid, gk.Commentaar, gk.keuken_id  FROM GAAT_NAAR_KEUKEN gk " +
                 "INNER JOIN BESTELLING b ON gk.bestelling_id = b.bestelling_id " +
                 "INNER JOIN MENU m ON m.menu_id = gk.menu_id; "
             );
             return data;
+        }
+
+        public static void RemoveOpenItemKeuken(int id)
+        {
+            DataConnection.ClosedQuery(
+                "DELETE FROM GAAT_NAAR_KEUKEN " +
+                "WHERE keuken_id = " + id+ ";"
+                );
+        }
+
+        public static void RemoveOpenItemBar(int id)
+        {
+            DataConnection.ClosedQuery(
+                "DELETE FROM GAAT_NAAR_BAR " +
+                "WHERE bar_id = " + id + ";"
+                );
         }
     }
 }

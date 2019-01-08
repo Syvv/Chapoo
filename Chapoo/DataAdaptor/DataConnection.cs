@@ -20,6 +20,14 @@ namespace DataAdaptor
                 return sql.ExecuteReader();           
         }
 
+        public static void ClosedQuery(string query)
+        {
+            connection.Open();
+            SqlCommand sql = new SqlCommand(query, connection);
+            sql.ExecuteReader();
+            connection.Close();
+        }
+
 
     }
 }

@@ -20,26 +20,27 @@ namespace Logica
         public delegate void Refresh();
 
 
-        public BarKeukenUIElement(Bestellingsitem b, Refresh del)
+        public BarKeukenUIElement(Bestellingsitem b, Refresh del, int x, int y)
         {
             Item = b;
-            Controls.Add(new Label { Text = Item.Name });
-            Controls.Add(new Label { Text = Item.Amount.ToString() });
-            Controls.Add(new Label { Text = "Tafel " + Item.Tafel.ToString() });
-            Controls.Add(new Label { Text = Item.Comment });
-            Controls.Add(new Button { Text = "1 item gereedstellen"});
-            Controls.Add(new Button { Text = "alle items gereedstellen" });
+            Controls.Add(new Label { Text = Item.Name, Top = y, Left = x, Width = 175 });
+            Controls.Add(new Label { Text = Item.Amount.ToString() + "x", Top = y, Left = x + 180, Width = 20 });
+            Controls.Add(new Label { Text = "Tafel " + Item.Tafel.ToString(), Top = y, Left = x +200, Width = 50});
+            Controls.Add(new Label { Text = Item.Comment, Top = y, Left = x + 250, Width = 100});
+            Controls.Add(new Button { Text = "1 item gereedstellen", Top = y, Left = x + 350, Width = 100 });
+            Controls.Add(new Button { Text = "alle items gereedstellen", Top = y, Left = x + 450, Width = 100 });
 
             Controls[4].Click += (s,e) => 
             {
-                Item.Amount -= 1;
-                if (Item.Amount < 1)
+                if (Item.Amount <= 1)
                 {
                     BestelLijst.List.Remove(Item);
                     del();
+                    Logica.BarKeukenQueue.removeItemFromQueue(Item);
                 }
                 else
                 {
+                    BestelLijst.List[BestelLijst.List.IndexOf(Item)].Amount -= 1;
                     Controls[1].Text = Item.Amount.ToString();
                 }
                 

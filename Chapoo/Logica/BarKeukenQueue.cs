@@ -11,8 +11,11 @@ namespace Logica
 {
     public static class BarKeukenQueue
     {
+        private static User user;
+
         public static List<Bestellingsitem> getBestellingen(User user)
         {
+            BarKeukenQueue.user = user;
             List<Bestellingsitem> result = new List<Bestellingsitem>();
             SqlDataReader data;
             if (user.Type == 'B')//Check for user's occupation
@@ -27,9 +30,22 @@ namespace Logica
             //fill with fresh data
             while (data.Read())
             {
-                BestelLijst.List.Add(new Bestellingsitem(data.GetFieldValue<string>(1), data.GetFieldValue<string>(3), data.GetFieldValue<int>(2), data.GetFieldValue<int>(0)));
+                BestelLijst.List.Add(new Bestellingsitem(data.GetFieldValue<string>(1), data.GetFieldValue<string>(3), data.GetFieldValue<int>(2), data.GetFieldValue<int>(0), data.GetFieldValue<int>(4)));
             }
+            DataConnection.connection.Close();
             return BestelLijst.List;
+        }
+
+        public static void removeItemFromQueue(Bestellingsitem item)
+        {
+            if(user.Type == 'B')
+            {
+                KeukenBarDataConnection.RemoveOpenItemBar(item.Id);
+            }
+            else
+            {
+                KeukenBarDataConnection.RemoveOpenItemKeuken(item.Id);
+            }
         }
         
     }
