@@ -8,7 +8,6 @@ namespace Model
 {
     public class Menu
     {
-        //Robbin
         public int MenuId { get; set; }
         public string MenuItem { get; set; }
         public double Prijs { get; set; }

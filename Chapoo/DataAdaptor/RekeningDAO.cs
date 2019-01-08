@@ -52,9 +52,7 @@ namespace DataAdaptor
         {
             List<BesteldRekening> bestelling = new List<BesteldRekening>();
 
-            string query = "SELECT m.menu_id, m.item, m.prijs, m.categorie,  ht.amount " +
-                            "FROM HEEFT_ITEM as ht, MENU as m, BESTELLING as b " +
-                            "Where b.bestelling_id = ht.bestel_id and ht.menu_id = m.menu_id and b.bestelling_id = '@bestellingId'";
+            string query = "SELECT m.menu_id, m.item, m.prijs, m.categorie, ht.amount FROM HEEFT_ITEM as ht, MENU as m, BESTELLING as b Where b.bestelling_id = ht.bestel_id and ht.menu_id = m.menu_id and b.bestelling_id = '@bestellingId'";
             
             query = query.Replace("@bestellingId", bestellingId.ToString());
 
@@ -62,14 +60,14 @@ namespace DataAdaptor
 
             while (data.Read())
             {
-                int menuId = (int)data["m.menu_id"];
-                string menuItem = (string)data["m.item"];
-                double prijs = (double)data["m.prijs"];
-                string categorie = (string)data["m.categorie"];
-                int voorraad = (int)data["m.voorraad"];
-                int hoeveelheid = (int)data["ht.hoeveelheid"];
+                int menuId = (int)data["menu_id"];
+                string menuItem = (string)data["item"];
+                double prijs = (double)data["prijs"];
+                string categorie = (string)data["categorie"];
+                //int voorraad = (int)data["voorraad"];
+                int hoeveelheid = (int)data["amount"];
 
-                BesteldRekening besteld = new BesteldRekening(menuId, menuItem, prijs, categorie, voorraad, hoeveelheid);
+                BesteldRekening besteld = new BesteldRekening(menuId, menuItem, prijs, categorie, 0, hoeveelheid);
                 bestelling.Add(besteld);
             }
 
@@ -80,7 +78,7 @@ namespace DataAdaptor
         {
             SqlDataReader data;
 
-            string query = ("INSERT INTO REKENING (tafel_id, bestelling_id, totaalbedrag, tip, opmerking) value (@tafel_id, @bestelling_id, @totaalbedrag, @tip, @opmerking)");
+            string query = ("INSERT INTO REKENING (tafel_id, bestelling_id, totaalbedrag, tip, opmerking) values (@tafel_id, @bestelling_id, @totaalbedrag, @tip, @opmerking)");
             query.Replace("@tafel_id", tafel.ToString());
             query.Replace("@bestelling_id", bestelling.ToString());
             query.Replace("@totaalbedrag", rekening.Totaalbedrag.ToString());

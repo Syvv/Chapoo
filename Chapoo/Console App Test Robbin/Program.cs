@@ -13,14 +13,19 @@ namespace Console_App_Test_Robbin
     {
         static void Main(string[] args)
         {
+            var data = new RekeningDAO();
+            List<BesteldRekening> besteld = data.OphalenBestellingen(88);
+
+            foreach (BesteldRekening item in besteld)
+            {
+                Console.WriteLine(item.MenuItem);
+            }
             try
             {
-                //var data = new RekeningDAO();
-                //int test = data.BestellingIdOpvragen(1);
-                //Console.WriteLine(test);
+                
 
-                var logica = new RekeningLogica();
-                Console.WriteLine(logica.OpvragenBestellingId(1));
+                //var logica = new RekeningLogica();
+                //Console.WriteLine(logica.OpvragenBestellingId(1));
             }
             catch
             {

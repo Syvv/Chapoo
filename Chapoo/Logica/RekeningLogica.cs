@@ -14,14 +14,13 @@ namespace Logica
         public Rekening RekeningOpstellen() //weet nog niet of dit wel handig is
         {
             Rekening rekening = new Rekening(0, 0, 0, 0, 0, " ");
-            rekening = PrijsOptellerMakkelijk(ref rekening);
+            rekening = PrijsOptellerMakkelijk();
 
             return rekening;
         }
-        public Rekening PrijsOptellerMakkelijk(ref Rekening rekening) //tafelnummer toevoegen
+        public Rekening PrijsOptellerMakkelijk() //tafelnummer toevoegen
         {
-            List<BesteldRekening> besteld = new List<BesteldRekening>(); 
-            besteld = OpvragenBesteldeItems(1); //hier moet nog een tafelnummer
+            List<BesteldRekening> besteld = OpvragenBesteldeItems(1); //hier moet nog een tafelnummer
 
             double totaalRekening = 0;
             double zonderBtw = 0;
@@ -55,7 +54,7 @@ namespace Logica
                 }
             }
 
-            rekening = new Rekening(totaalRekening, zonderBtw, btw6, btw21, 0, null); //fooi moet hier nog bij, en totaalbedrag moet nog veranderd worden.
+            Rekening rekening = new Rekening(totaalRekening, zonderBtw, btw6, btw21, 0, null); //fooi moet hier nog bij, en totaalbedrag moet nog veranderd worden.
             return rekening;
         }  
 
