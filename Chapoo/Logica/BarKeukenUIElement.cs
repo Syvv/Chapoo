@@ -26,7 +26,7 @@ namespace Logica
             Controls.Add(new Label { Text = Item.Name });
             Controls.Add(new Label { Text = Item.Amount.ToString() });
             Controls.Add(new Label { Text = "Tafel " + Item.Tafel.ToString() });
-            Controls.Add(new Label { Text = Item.Comment.Substring(0,25) });
+            Controls.Add(new Label { Text = Item.Comment });
             Controls.Add(new Button { Text = "1 item gereedstellen"});
             Controls.Add(new Button { Text = "alle items gereedstellen" });
 
@@ -50,8 +50,7 @@ namespace Logica
                 BestelLijst.List.Remove(Item);
                 del();
             };
-
-            del();
+            
         }
     }
 }
