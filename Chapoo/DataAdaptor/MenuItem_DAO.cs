@@ -21,7 +21,7 @@ namespace DataAdaptor
 
             int bestellingId = 0;
 
-            sb.Append("INSERT INTO BESTELLING (tafel_id, werknemer_id) VALUES(@tafeld, @werknemerId); SELECT SCOPE_IDENTITY()");
+            sb.Append("INSERT INTO BESTELLING (tafel_id, werknemer_id) VALUES(@tafeld, @werknemerId); SELECT SCOPE_IDENTITY();");
 
             String sql = sb.ToString();
             using (SqlCommand cmd = new SqlCommand(sql, connection))
@@ -29,7 +29,7 @@ namespace DataAdaptor
                 cmd.Parameters.AddWithValue("@tafeld", tafelId);
                 cmd.Parameters.AddWithValue("@werknemerId", werknemerId);
                 bestellingId = Convert.ToInt32(cmd.ExecuteScalar());
-                cmd.ExecuteNonQuery();
+                //cmd.ExecuteNonQuery();
             }              
 
             connection.Close();
@@ -86,6 +86,32 @@ namespace DataAdaptor
                     cmd.Parameters.AddWithValue("@menuId", menuId);
                     cmd.Parameters.AddWithValue("@hoeveelheid", hoeveelheid);
                     cmd.Parameters.AddWithValue("@commentaar", commentaar);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            connection.Close();
+        }
+        public void InsertInHeeftItem(List<Heeft_item> list)
+        {
+            SqlConnection connection = DataConnection.connection;
+            StringBuilder sb = new StringBuilder();
+
+            connection.Open();
+
+            foreach (Heeft_item item in list)
+            {
+                int bestellingId = item.BestellingId;
+                int menuId = item.MenuId;
+                int hoeveelheid = item.Aantal;
+
+                sb.Append("INSERT INTO HEEFT_ITEM (bestel_id, menu_id, amount) VALUES(@bestellingId, @menuId, @hoeveelheid)");
+
+                String sql = sb.ToString();
+                using (SqlCommand cmd = new SqlCommand(sql, connection))
+                {
+                    cmd.Parameters.AddWithValue("@bestellingId", bestellingId);
+                    cmd.Parameters.AddWithValue("@menuId", menuId);
+                    cmd.Parameters.AddWithValue("@hoeveelheid", hoeveelheid);
                     cmd.ExecuteNonQuery();
                 }
             }

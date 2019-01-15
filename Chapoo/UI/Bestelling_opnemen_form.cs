@@ -169,14 +169,20 @@ namespace UI
                 else
                 {                  
                     bestellingLogica.MakeQueueList(menuId, aantal, comment, categorie);
-                }
+                    bestellingLogica.MakeItemList(menuId, aantal);
+                }                
             }           
             bestellingLogica.InsertQueue();
+            bestellingLogica.InsertItem();
             foreach (ListViewItem item in listView1.Items)
             {
                 listView1.Items.Remove(item);
              }
         }
 
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
