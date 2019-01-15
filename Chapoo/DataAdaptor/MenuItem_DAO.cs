@@ -28,8 +28,8 @@ namespace DataAdaptor
             {
                 cmd.Parameters.AddWithValue("@tafeld", tafelId);
                 cmd.Parameters.AddWithValue("@werknemerId", werknemerId);
-                //ExecuteScalar haalt de gegenereerde sleutel op, en voert de query uit
                 bestellingId = Convert.ToInt32(cmd.ExecuteScalar());
+                cmd.ExecuteNonQuery();
             }              
 
             connection.Close();
@@ -91,5 +91,6 @@ namespace DataAdaptor
             }
             connection.Close();
         }
+
     }
 }
