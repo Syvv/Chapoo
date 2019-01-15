@@ -25,7 +25,7 @@ namespace UI
             fillList.ListViewStyle(listView1);
             listView1.ItemActivate += new EventHandler(ItemActivate);
         }
-        public event System.Windows.Forms.ItemCheckEventHandler ItemCheck;
+        //public event System.Windows.Forms.ItemCheckEventHandler ItemCheck;
         private void Bestelling_opnemen_form_Load(object sender, EventArgs e)
         {
 
