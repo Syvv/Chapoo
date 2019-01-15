@@ -14,6 +14,7 @@ namespace Logica
         public List<Bestelling> BestellingList = new List<Bestelling>();
         public List<Queue_item> BarqueueList = new List<Queue_item>();
         public List<Queue_item> KeukenqueueList = new List<Queue_item>();
+        public List<Heeft_item> HeeftItemList = new List<Heeft_item>();
         public int BestellingId;
 
         public void InsertBestelling(int tafelId, int werknemerId)
@@ -44,6 +45,15 @@ namespace Logica
             {
                 MenuItem.InsertInBarqueue(BarqueueList);
             }
+        }
+        public void MakeItemList(int menuId, int aantal)
+        {
+            Heeft_item item = new Heeft_item(BestellingId, menuId, aantal);
+            HeeftItemList.Add(item);
+        }
+        public void InsertItem()
+        {
+            MenuItem.InsertInHeeftItem(HeeftItemList);
         }
     }
 }
