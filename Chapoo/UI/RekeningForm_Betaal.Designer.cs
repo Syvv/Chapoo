@@ -138,6 +138,7 @@
             this.BtnBetalingAfronden.TabIndex = 14;
             this.BtnBetalingAfronden.Text = "Pin";
             this.BtnBetalingAfronden.UseVisualStyleBackColor = true;
+            this.BtnBetalingAfronden.Click += new System.EventHandler(this.BtnBetalingAfronden_Click);
             // 
             // RekeningForm_Betaal
             // 

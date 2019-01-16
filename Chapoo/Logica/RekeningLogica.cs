@@ -29,8 +29,10 @@ namespace Logica
 
             foreach(BesteldRekening item in besteld) //elk item die besteld is
             {
-                while(item.Hoeveelheid != 0)
+                int i = item.Hoeveelheid;
+                while (item.Hoeveelheid > 0)
                 {
+                    i = item.Hoeveelheid;
                     if (item.Categorie == "G")
                     {
                         //berekening voor 21%
