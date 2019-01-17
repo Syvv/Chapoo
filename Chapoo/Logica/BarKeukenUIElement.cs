@@ -50,6 +50,7 @@ namespace Logica
             {
                 BestelLijst.List.Remove(Item);
                 del();
+                Logica.BarKeukenQueue.removeItemFromQueue(Item);
             };
             
         }
