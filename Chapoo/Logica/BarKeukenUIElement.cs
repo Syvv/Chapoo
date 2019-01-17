@@ -37,6 +37,17 @@ namespace Logica
                     BestelLijst.List.Remove(Item);
                     del();
                     Logica.BarKeukenQueue.removeItemFromQueue(Item);
+                    Model.BestellingsGeheugen.AddToReadyList(Item);
+                    //Check for open orders for the same table
+                    foreach(Bestellingsitem bi in Model.BestelLijst.List)
+                    {
+                        if(bi.Tafel==Item.Tafel)
+                        {
+                            //if there is one, then don't do anything
+                            return;
+                        }
+                    }
+                    BarKeukenQueue.SendNotification(Item.Tafel); //else send a notification
                 }
                 else
                 {
@@ -51,6 +62,17 @@ namespace Logica
                 BestelLijst.List.Remove(Item);
                 del();
                 Logica.BarKeukenQueue.removeItemFromQueue(Item);
+                Model.BestellingsGeheugen.AddToReadyList(Item);
+                //Check for open orders for the same table
+                foreach (Bestellingsitem bi in Model.BestelLijst.List)
+                {
+                    if (bi.Tafel == Item.Tafel)
+                    {
+                        //if there is one, then don't do anything
+                        return;
+                    }
+                }
+                BarKeukenQueue.SendNotification(Item.Tafel); //else send a notification
             };
             
         }
