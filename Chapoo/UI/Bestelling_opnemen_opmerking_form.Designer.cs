@@ -54,6 +54,7 @@
             this.txtComment.Size = new System.Drawing.Size(341, 140);
             this.txtComment.TabIndex = 1;
             this.txtComment.Text = "";
+            this.txtComment.TextChanged += new System.EventHandler(this.txtComment_TextChanged);
             // 
             // label1
             // 
@@ -95,6 +96,7 @@
             this.Controls.Add(this.btnSendComment);
             this.Name = "Bestelling_opnemen_opmerking_form";
             this.Text = "Bestelling_opnemen_opmerking_form";
+            this.Load += new System.EventHandler(this.Bestelling_opnemen_opmerking_form_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

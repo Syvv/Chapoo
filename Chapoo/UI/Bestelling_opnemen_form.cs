@@ -105,7 +105,6 @@ namespace UI
         }
         private void listView1_ItemCheck(Object sender, ItemCheckEventArgs e)
         {
-
             using (var opmerking = new Bestelling_opnemen_opmerking_form(this))
             {
                 opmerking.ShowDialog();
@@ -183,6 +182,17 @@ namespace UI
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void homeButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void backButton1_Click(object sender, EventArgs e)
+        {       
+            new Bediening_menu_form().Show();
+            this.Close();
         }
     }
 }

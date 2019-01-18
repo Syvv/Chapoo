@@ -51,6 +51,12 @@
     <Compile Include="BarKeukenForm.Designer.cs">
       <DependentUpon>BarKeukenForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Bediening_menu_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bediening_menu_form.Designer.cs">
+      <DependentUpon>Bediening_menu_form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Bestelling_opnemen_form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +98,9 @@
     <Compile Include="RekeningForm_Overzicht.Designer.cs">
       <DependentUpon>RekeningForm_Overzicht.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Bediening_menu_form.resx">
+      <DependentUpon>Bediening_menu_form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Bestelling_opnemen_form.resx">
       <DependentUpon>Bestelling_opnemen_form.cs</DependentUpon>
     </EmbeddedResource>

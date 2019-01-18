@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Bestelling_opnemen_form));
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.btnVoor = new Styleguide.BaseButton();
             this.btnTussen = new Styleguide.BaseButton();
@@ -41,6 +42,8 @@
             this.btnVerstuur = new Styleguide.BaseButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.listView1 = new System.Windows.Forms.ListView();
+            this.homeButton1 = new Style_guide.HomeButton();
+            this.backButton1 = new Style_guide.BackButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -182,12 +185,38 @@
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
+            // homeButton1
+            // 
+            this.homeButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("homeButton1.BackgroundImage")));
+            this.homeButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.homeButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.homeButton1.Location = new System.Drawing.Point(6, -2);
+            this.homeButton1.Name = "homeButton1";
+            this.homeButton1.Size = new System.Drawing.Size(50, 50);
+            this.homeButton1.TabIndex = 23;
+            this.homeButton1.UseVisualStyleBackColor = true;
+            this.homeButton1.Click += new System.EventHandler(this.homeButton1_Click);
+            // 
+            // backButton1
+            // 
+            this.backButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("backButton1.BackgroundImage")));
+            this.backButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.backButton1.Location = new System.Drawing.Point(5, 48);
+            this.backButton1.Name = "backButton1";
+            this.backButton1.Size = new System.Drawing.Size(50, 50);
+            this.backButton1.TabIndex = 24;
+            this.backButton1.UseVisualStyleBackColor = true;
+            this.backButton1.Click += new System.EventHandler(this.backButton1_Click);
+            // 
             // Bestelling_opnemen_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(382, 638);
+            this.Controls.Add(this.backButton1);
+            this.Controls.Add(this.homeButton1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnVerstuur);
             this.Controls.Add(this.btnKoffie);
@@ -213,6 +242,8 @@
             this.Controls.SetChildIndex(this.btnKoffie, 0);
             this.Controls.SetChildIndex(this.btnVerstuur, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
+            this.Controls.SetChildIndex(this.homeButton1, 0);
+            this.Controls.SetChildIndex(this.backButton1, 0);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -233,5 +264,7 @@
         private Styleguide.BaseButton btnVerstuur;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ListView listView1;
+        private Style_guide.HomeButton homeButton1;
+        private Style_guide.BackButton backButton1;
     }
 }

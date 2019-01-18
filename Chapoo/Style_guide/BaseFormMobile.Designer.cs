@@ -28,23 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BaseFormMobile));
-            this.homeButton1 = new Style_guide.HomeButton();
             this.titel2 = new Styleguide.Titel();
-            this.backButton1 = new Style_guide.BackButton();
+            this.txtTafel = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // homeButton1
-            // 
-            this.homeButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("homeButton1.BackgroundImage")));
-            this.homeButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.homeButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.homeButton1.Location = new System.Drawing.Point(10, 5);
-            this.homeButton1.Name = "homeButton1";
-            this.homeButton1.Size = new System.Drawing.Size(50, 50);
-            this.homeButton1.TabIndex = 2;
-            this.homeButton1.Text = " ";
-            this.homeButton1.UseVisualStyleBackColor = true;
             // 
             // titel2
             // 
@@ -57,16 +43,15 @@
             this.titel2.Text = "Chapoo";
             this.titel2.Click += new System.EventHandler(this.titel2_Click);
             // 
-            // backButton1
+            // txtTafel
             // 
-            this.backButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("backButton1.BackgroundImage")));
-            this.backButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.backButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.backButton1.Location = new System.Drawing.Point(10, 50);
-            this.backButton1.Name = "backButton1";
-            this.backButton1.Size = new System.Drawing.Size(50, 50);
-            this.backButton1.TabIndex = 3;
-            this.backButton1.UseVisualStyleBackColor = true;
+            this.txtTafel.AutoSize = true;
+            this.txtTafel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTafel.Location = new System.Drawing.Point(147, 67);
+            this.txtTafel.Name = "txtTafel";
+            this.txtTafel.Size = new System.Drawing.Size(56, 25);
+            this.txtTafel.TabIndex = 4;
+            this.txtTafel.Text = "Tafel";
             // 
             // BaseFormMobile
             // 
@@ -74,8 +59,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(382, 636);
-            this.Controls.Add(this.backButton1);
-            this.Controls.Add(this.homeButton1);
+            this.Controls.Add(this.txtTafel);
             this.Controls.Add(this.titel2);
             this.Name = "BaseFormMobile";
             this.Text = "Form1";
@@ -87,8 +71,7 @@
 
         #endregion
         private Styleguide.Titel titel2;
-        private HomeButton homeButton1;
-        private BackButton backButton1;
+        private System.Windows.Forms.Label txtTafel;
     }
 }
 

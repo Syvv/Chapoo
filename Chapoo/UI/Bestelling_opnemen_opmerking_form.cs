@@ -32,5 +32,15 @@ namespace UI
         {
            
         }
+
+        private void Bestelling_opnemen_opmerking_form_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtComment_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
