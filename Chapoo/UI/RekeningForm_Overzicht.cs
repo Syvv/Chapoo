@@ -29,13 +29,14 @@ namespace UI
         {
             //Rekening rekening = rekeningLogica.PrijsOptellerMakkelijk();
             Rekening rekening = rekeningLogica.RekeningOpstellen();
+            //rekening.BedragZonderBtw.ToString()
 
-            OutExclBtw.Text = rekening.BedragZonderBtw.ToString();
-            OutBtw6.Text = rekening.Btw6.ToString();
-            OutBtw21.Text = rekening.Btw21.ToString();
-            OutInclBtw.Text = rekening.Totaalbedrag.ToString();
+            OutExclBtw.Text = string.Format("€ {0:F2} ", rekening.BedragZonderBtw);
+            OutBtw6.Text = string.Format("€ {0:F2} ", rekening.Btw6);
+            OutBtw21.Text = string.Format("€ {0:F2} ", rekening.Btw21);
+            OutInclBtw.Text = string.Format("€ {0:F2} ", rekening.Totaalbedrag);
         }
-        private void GridViewVuller()
+        private void GridViewVuller() //try catch vervangen??
         {
             try
             {

@@ -25,13 +25,14 @@ namespace Logica
             double totaalRekening = 0;
             double zonderBtw = 0;
             double btw21 = 0;
-            double btw6 = 0;
+            double btw9 = 0;
 
             foreach(BesteldRekening item in besteld) //elk item die besteld is
             {
-                while(item.Hoeveelheid != 0)
+                int hoeveelheid = item.Hoeveelheid;
+                while (hoeveelheid >= 0)
                 {
-                    if (item.Categorie == "G")
+                    if (item.Categorie == "G" || item.Categorie == "W" || item.Categorie == "B")
                     {
                         //berekening voor 21%
                         Double zonder = (item.Prijs / 121 * 100);
@@ -42,19 +43,19 @@ namespace Logica
                     }
                     else
                     {
-                        //berekening voor 6%
-                        Double zonder = (item.Prijs / 106 * 100);
+                        //berekening voor 9%
+                        Double zonder = (item.Prijs / 109 * 100);
                         double btw = item.Prijs - zonder;
 
-                        btw6 += btw;
+                        btw9 += btw;
                         zonderBtw += zonder;
                     }
                     totaalRekening += item.Prijs;
-                    item.Hoeveelheid--;
+                    hoeveelheid--;
                 }
             }
 
-            Rekening rekening = new Rekening(totaalRekening, zonderBtw, btw6, btw21, 0, null); //fooi moet hier nog bij, en totaalbedrag moet nog veranderd worden.
+            Rekening rekening = new Rekening(totaalRekening, zonderBtw, btw9, btw21, 0, null); //fooi moet hier nog bij, en totaalbedrag moet nog veranderd worden.
             return rekening;
         }  
 

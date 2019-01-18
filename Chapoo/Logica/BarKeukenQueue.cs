@@ -30,7 +30,7 @@ namespace Logica
             //fill with fresh data
             while (data.Read())
             {
-                BestelLijst.List.Add(new Bestellingsitem(data.GetFieldValue<string>(1), data.GetFieldValue<string>(3), data.GetFieldValue<int>(2), data.GetFieldValue<int>(0), data.GetFieldValue<int>(4)));
+                BestelLijst.List.Add(new Bestellingsitem(data.GetFieldValue<string>(1), data.GetFieldValue<string>(3), data.GetFieldValue<int>(2), data.GetFieldValue<int>(0), data.GetFieldValue<int>(4), data.GetFieldValue<int>(5)));
             }
             DataConnection.connection.Close();
             return BestelLijst.List;
@@ -46,6 +46,12 @@ namespace Logica
             {
                 KeukenBarDataConnection.RemoveOpenItemKeuken(item.Id);
             }
+        }
+
+        public static void SendNotification(int tafelID)
+        {
+            Bestellingsitem[] list = Model.BestellingsGeheugen.OrderIsReady(tafelID);
+            KeukenBarDataConnection.CreateNotification(list);
         }
         
     }
