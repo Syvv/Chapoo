@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Logica.BarKeukenQueue">
+    <Position X="9.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAABAACAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>BarKeukenQueue.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Logica.BarKeukenUIElement">
+    <Position X="7.25" Y="3.75" Width="1.75" />
+    <NestedTypes>
+      <Delegate Name="Logica.BarKeukenUIElement.Refresh" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>BarKeukenUIElement.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAQAAAAEAAAAACAAAAAgAAAAAAA=</HashCode>
+      <FileName>BarKeukenUIElement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Logica.Bestelling_logica">
+    <Position X="15" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAIABABAAGIAIAAAAAAAAgAAEAAAAAAAAAAQ=</HashCode>
+      <FileName>Bestelling_logica.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Logica.Categoriseren_gerechten_logica">
+    <Position X="12" Y="2.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AABAACAAgAAAAIAAAAAAAAgAAACCABACAACAAAhAAAQ=</HashCode>
+      <FileName>Categoriseren_gerechten_logica.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Logica.Fill_order_list_logica">
+    <Position X="5.25" Y="3.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>Fill_order_list_logica.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Logica.Lunch_of_Diner_Logica">
+    <Position X="3" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAEAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Lunch_of_Diner_Logica.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Logica.RekeningLogica">
+    <Position X="19.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAEAAAAEABAAAAAAAAAAAAAIAAAAAAAAAAAAQAABE=</HashCode>
+      <FileName>RekeningLogica.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAdaptor.DataConnection">
+    <Position X="15" Y="9.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="DataAdaptor.Menu_DAO">
+    <Position X="12.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="DataAdaptor.MenuItem_DAO">
+    <Position X="15" Y="6.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="DataAdaptor.RekeningDAO">
+    <Position X="19.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="DataAdaptor.KeukenBarDataConnection">
+    <Position X="8.5" Y="6.75" Width="2.75" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
