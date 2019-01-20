@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bestel_overzicht_DAO.cs" />
     <Compile Include="MenuItem_DAO.cs" />
     <Compile Include="Menu_DAO.cs" />
     <Compile Include="DataConnection.cs" />

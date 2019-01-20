@@ -33,5 +33,10 @@ namespace UI
             new Bestelling_opnemen_form().Show();
             this.Close();        
         }
+
+        private void baseButton2_Click(object sender, EventArgs e)
+        {
+            new Bestelling_overzicht_form().ShowDialog();
+        }
     }
 }

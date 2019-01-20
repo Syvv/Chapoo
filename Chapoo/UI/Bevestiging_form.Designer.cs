@@ -1,6 +1,6 @@
 ﻿namespace UI
 {
-    partial class Bediening_menu_form
+    partial class Bevestiging_form
     {
         /// <summary>
         /// Required designer variable.
@@ -28,69 +28,65 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.titel1 = new Styleguide.Titel();
             this.baseButton1 = new Styleguide.BaseButton();
             this.baseButton2 = new Styleguide.BaseButton();
-            this.baseButton3 = new Styleguide.BaseButton();
             this.SuspendLayout();
+            // 
+            // titel1
+            // 
+            this.titel1.AutoSize = true;
+            this.titel1.Font = new System.Drawing.Font("Arial", 20F);
+            this.titel1.Location = new System.Drawing.Point(36, 46);
+            this.titel1.MaximumSize = new System.Drawing.Size(450, 0);
+            this.titel1.Name = "titel1";
+            this.titel1.Size = new System.Drawing.Size(405, 78);
+            this.titel1.TabIndex = 1;
+            this.titel1.Text = "Weet je zeker dat je de bestelling wilt verwijderen?";
+            this.titel1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // baseButton1
             // 
+            this.baseButton1.BackColor = System.Drawing.Color.White;
             this.baseButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.baseButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.baseButton1.Location = new System.Drawing.Point(27, 147);
+            this.baseButton1.Location = new System.Drawing.Point(58, 191);
             this.baseButton1.Name = "baseButton1";
-            this.baseButton1.Size = new System.Drawing.Size(328, 67);
-            this.baseButton1.TabIndex = 5;
-            this.baseButton1.Text = "Bestelling opnemen";
-            this.baseButton1.UseVisualStyleBackColor = true;
-            this.baseButton1.Click += new System.EventHandler(this.baseButton1_Click);
+            this.baseButton1.Size = new System.Drawing.Size(165, 53);
+            this.baseButton1.TabIndex = 2;
+            this.baseButton1.Text = "Delete";
+            this.baseButton1.UseVisualStyleBackColor = false;
             // 
             // baseButton2
             // 
             this.baseButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.baseButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.baseButton2.Location = new System.Drawing.Point(27, 246);
+            this.baseButton2.Location = new System.Drawing.Point(245, 191);
             this.baseButton2.Name = "baseButton2";
-            this.baseButton2.Size = new System.Drawing.Size(328, 67);
-            this.baseButton2.TabIndex = 6;
-            this.baseButton2.Text = "Bestellingen";
+            this.baseButton2.Size = new System.Drawing.Size(165, 53);
+            this.baseButton2.TabIndex = 3;
+            this.baseButton2.Text = "Cancel";
             this.baseButton2.UseVisualStyleBackColor = true;
-            this.baseButton2.Click += new System.EventHandler(this.baseButton2_Click);
             // 
-            // baseButton3
-            // 
-            this.baseButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.baseButton3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.baseButton3.Location = new System.Drawing.Point(27, 347);
-            this.baseButton3.Name = "baseButton3";
-            this.baseButton3.Size = new System.Drawing.Size(328, 67);
-            this.baseButton3.TabIndex = 7;
-            this.baseButton3.Text = "Afrekenen";
-            this.baseButton3.UseVisualStyleBackColor = true;
-            // 
-            // Bediening_menu_form
+            // Bevestiging_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(382, 638);
-            this.Controls.Add(this.baseButton3);
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ClientSize = new System.Drawing.Size(489, 329);
             this.Controls.Add(this.baseButton2);
             this.Controls.Add(this.baseButton1);
-            this.Name = "Bediening_menu_form";
-            this.Text = "Bediening_menu_form";
-            this.Load += new System.EventHandler(this.Bediening_menu_form_Load);
-            this.Controls.SetChildIndex(this.baseButton1, 0);
-            this.Controls.SetChildIndex(this.baseButton2, 0);
-            this.Controls.SetChildIndex(this.baseButton3, 0);
+            this.Controls.Add(this.titel1);
+            this.Name = "Bevestiging_form";
+            this.Text = "Confirmation_form";
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
+        private Styleguide.Titel titel1;
         private Styleguide.BaseButton baseButton1;
         private Styleguide.BaseButton baseButton2;
-        private Styleguide.BaseButton baseButton3;
     }
 }

@@ -154,11 +154,11 @@ namespace UI
                 //Converteer de id van string naar int
                 if (!Int32.TryParse(menuIdString, out menuId))
                 {
-                    menuId = -1;
+                    menuId = 1;
                 }
                 if (!Int32.TryParse(aantalString, out aantal))
                 {
-                    aantal = -1;
+                    aantal = 1;
                 }
 
                 if (item.Checked == false)
@@ -176,7 +176,9 @@ namespace UI
             foreach (ListViewItem item in listView1.Items)
             {
                 listView1.Items.Remove(item);
-             }
+            }
+
+            new Bestelling_overzicht_form().ShowDialog();
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)

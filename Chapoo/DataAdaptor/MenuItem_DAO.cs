@@ -29,7 +29,6 @@ namespace DataAdaptor
                 cmd.Parameters.AddWithValue("@tafeld", tafelId);
                 cmd.Parameters.AddWithValue("@werknemerId", werknemerId);
                 bestellingId = Convert.ToInt32(cmd.ExecuteScalar());
-                //cmd.ExecuteNonQuery();
             }              
 
             connection.Close();
@@ -104,7 +103,7 @@ namespace DataAdaptor
                 int menuId = item.MenuId;
                 int hoeveelheid = item.Aantal;
 
-                sb.Append("INSERT INTO HEEFT_ITEM (bestel_id, menu_id, amount) VALUES(@bestellingId, @menuId, @hoeveelheid)");
+                sb.Append("INSERT INTO HEEFT_ITEM (bestel_id, menu_id, amount, btw) VALUES(@bestellingId, @menuId, @hoeveelheid, @btw)");
 
                 String sql = sb.ToString();
                 using (SqlCommand cmd = new SqlCommand(sql, connection))
@@ -112,6 +111,7 @@ namespace DataAdaptor
                     cmd.Parameters.AddWithValue("@bestellingId", bestellingId);
                     cmd.Parameters.AddWithValue("@menuId", menuId);
                     cmd.Parameters.AddWithValue("@hoeveelheid", hoeveelheid);
+                    cmd.Parameters.AddWithValue("@btw", 9);
                     cmd.ExecuteNonQuery();
                 }
             }

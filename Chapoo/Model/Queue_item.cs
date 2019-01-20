@@ -15,20 +15,10 @@ namespace Model
 
         public Queue_item(int bestellingId, int menuId, int aantal, string comment)
         {
-            BestellingId = bestellingId;
-            MenuId = menuId;
-            Aantal = aantal;
-            Comment = comment;
-        }
-        public class KeukenqueueList
-        {
-            static List<Queue_item> list = new List<Queue_item>();
-            public static List<Queue_item> List { get => list; set => list = value; }
-        }
-        public class BarqueueList
-        {
-            static List<Queue_item> list = new List<Queue_item>();
-            public static List<Queue_item> List { get => list; set => list = value; }
+            this.BestellingId = bestellingId;
+            this.MenuId = menuId;
+            this.Aantal = aantal;
+            this.Comment = comment;
         }
     }
 }
