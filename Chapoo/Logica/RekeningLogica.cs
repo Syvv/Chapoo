@@ -11,10 +11,12 @@ namespace Logica
     public class RekeningLogica
     {
         //Rekening rekening;
+        string _opmerking = null;
         public Rekening RekeningOpstellen() //weet nog niet of dit wel handig is
         {
             Rekening rekening = new Rekening(0, 0, 0, 0, 0, " ");
             rekening = PrijsOptellerMakkelijk();
+            Test(ref rekening);
 
             return rekening;
         }
@@ -66,12 +68,20 @@ namespace Logica
             rekening.Totaalbedrag = rekening.Totaalbedrag + fooi;
         }
 
+        //public void OpmerkingToevoegen(string opmerking)
+        //{
+        //    Rekening rekening = RekeningOpstellen();
+        //    rekening.Opmerking = opmerking;
+
+        //    //nu nog opslaan
+        //}
         public void OpmerkingToevoegen(string opmerking)
         {
-            Rekening rekening = RekeningOpstellen();
-            rekening.Opmerking = opmerking;
-
-            //nu nog opslaan
+            _opmerking = opmerking;
+        }
+        public void Test(ref Rekening rekening)
+        {
+            rekening.Opmerking = _opmerking;
         }
         public string OpmerkingWeergeven()
         {

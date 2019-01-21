@@ -32,7 +32,7 @@ namespace UI
             //rekening.BedragZonderBtw.ToString()
 
             OutExclBtw.Text = string.Format("€ {0:F2} ", rekening.BedragZonderBtw);
-            OutBtw6.Text = string.Format("€ {0:F2} ", rekening.Btw6);
+            OutBtw6.Text = string.Format("€ {0:F2} ", rekening.Btw9);
             OutBtw21.Text = string.Format("€ {0:F2} ", rekening.Btw21);
             OutInclBtw.Text = string.Format("€ {0:F2} ", rekening.Totaalbedrag);
         }
