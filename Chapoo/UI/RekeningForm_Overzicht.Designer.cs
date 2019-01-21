@@ -40,6 +40,7 @@
             this.OutBtw21 = new System.Windows.Forms.Label();
             this.OutBtw6 = new System.Windows.Forms.Label();
             this.OutExclBtw = new System.Windows.Forms.Label();
+            this.listView = new System.Windows.Forms.ListView();
             ((System.ComponentModel.ISupportInitialize)(this.GridVwOverzicht)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,15 +56,15 @@
             // GridVwOverzicht
             // 
             this.GridVwOverzicht.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridVwOverzicht.Location = new System.Drawing.Point(36, 106);
+            this.GridVwOverzicht.Location = new System.Drawing.Point(39, 517);
             this.GridVwOverzicht.Name = "GridVwOverzicht";
             this.GridVwOverzicht.RowTemplate.Height = 24;
-            this.GridVwOverzicht.Size = new System.Drawing.Size(310, 240);
+            this.GridVwOverzicht.Size = new System.Drawing.Size(310, 35);
             this.GridVwOverzicht.TabIndex = 5;
             // 
             // BtnOpmerking
             // 
-            this.BtnOpmerking.Location = new System.Drawing.Point(239, 370);
+            this.BtnOpmerking.Location = new System.Drawing.Point(242, 386);
             this.BtnOpmerking.Name = "BtnOpmerking";
             this.BtnOpmerking.Size = new System.Drawing.Size(107, 34);
             this.BtnOpmerking.TabIndex = 6;
@@ -153,11 +154,20 @@
             this.OutExclBtw.TabIndex = 12;
             this.OutExclBtw.Text = "€";
             // 
+            // listView
+            // 
+            this.listView.Location = new System.Drawing.Point(39, 95);
+            this.listView.Name = "listView";
+            this.listView.Size = new System.Drawing.Size(307, 269);
+            this.listView.TabIndex = 16;
+            this.listView.UseCompatibleStateImageBehavior = false;
+            // 
             // RekeningForm_Overzicht
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(382, 638);
+            this.Controls.Add(this.listView);
             this.Controls.Add(this.OutInclBtw);
             this.Controls.Add(this.OutBtw21);
             this.Controls.Add(this.OutBtw6);
@@ -185,6 +195,7 @@
             this.Controls.SetChildIndex(this.OutBtw6, 0);
             this.Controls.SetChildIndex(this.OutBtw21, 0);
             this.Controls.SetChildIndex(this.OutInclBtw, 0);
+            this.Controls.SetChildIndex(this.listView, 0);
             ((System.ComponentModel.ISupportInitialize)(this.GridVwOverzicht)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -205,5 +216,6 @@
         private System.Windows.Forms.Label OutBtw21;
         private System.Windows.Forms.Label OutBtw6;
         private System.Windows.Forms.Label OutExclBtw;
+        private System.Windows.Forms.ListView listView;
     }
 }

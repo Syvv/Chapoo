@@ -68,13 +68,6 @@ namespace Logica
             rekening.Totaalbedrag = rekening.Totaalbedrag + fooi;
         }
 
-        //public void OpmerkingToevoegen(string opmerking)
-        //{
-        //    Rekening rekening = RekeningOpstellen();
-        //    rekening.Opmerking = opmerking;
-
-        //    //nu nog opslaan
-        //}
         public void OpmerkingToevoegen(string opmerking)
         {
             _opmerking = opmerking;
@@ -99,7 +92,7 @@ namespace Logica
             List<BesteldRekening> item = Dao.OphalenBestellingen(bestellinId);
             return item;
         }
-        public int OpvragenBestellingId(int tafelId)//protected
+        protected int OpvragenBestellingId(int tafelId)
         {
             var dao = new RekeningDAO();
             List<int> bestellingIdLijst = dao.BestellingIdList(tafelId);

@@ -38,5 +38,11 @@ namespace UI
         {
             new Bestelling_overzicht_form().ShowDialog();
         }
+
+        private void baseButton3_Click(object sender, EventArgs e)
+        {
+            new RekeningForm_Overzicht().Show();
+            this.Close();
+        }
     }
 }
