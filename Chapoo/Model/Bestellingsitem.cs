@@ -8,7 +8,7 @@ namespace Model
 {
     public class Bestellingsitem
     {
-        string name;string comment;int amount;int tafel;int id;int originalAmount;int menuId;
+        string name;string comment;int amount;int tafel;int id;int originalAmount;int menuId;DateTime timestamp;
 
         public string Name { get => name; set => name = value; }
         public string Comment { get => comment; set => comment = value; }
@@ -17,8 +17,9 @@ namespace Model
         public int Id { get => id; set => id = value; }
         public int OriginalAmount { get => originalAmount; set => originalAmount = value; }
         public int MenuId { get => menuId; set => menuId = value; }
+        public DateTime Timestamp { get => timestamp; set => timestamp = value; }
 
-        public Bestellingsitem(string name, string comment, int amount, int tafel, int id, int menuId)
+        public Bestellingsitem(string name, string comment, int amount, int tafel, int id, int menuId, DateTime timestamp)
         {
             Name = name;
             Comment = comment;
@@ -27,6 +28,7 @@ namespace Model
             Id = id;
             OriginalAmount = amount;
             MenuId = menuId;
+            Timestamp = timestamp;
         }
     }
 
