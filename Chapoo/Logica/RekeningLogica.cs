@@ -10,19 +10,28 @@ namespace Logica
 {
     public class RekeningLogica
     {
-        //Rekening rekening;
+        int tafelNummer;
         string _opmerking = null;
+        public void TafelNummer(int tafelnummer)
+        {
+            tafelNummer = tafelnummer;
+
+            //rekening nummer in de logica zetten
+        }
+
         public Rekening RekeningOpstellen() //weet nog niet of dit wel handig is
         {
-            Rekening rekening = new Rekening(0, 0, 0, 0, 0, " ");
-            rekening = PrijsOptellerMakkelijk();
+            Rekening rekening = new Rekening(0, 0, 0, 0, 0, " ", 0);
+            PrijsOptellerMakkelijk(ref rekening);
             Test(ref rekening);
 
             return rekening;
         }
-        public Rekening PrijsOptellerMakkelijk() //tafelnummer toevoegen
+
+        public void PrijsOptellerMakkelijk(ref Rekening rekening) //tafelnummer toevoegen
         {
-            List<BesteldRekening> besteld = OpvragenBesteldeItems(1); //hier moet nog een tafelnummer
+            rekening.Tafelnummer = tafelNummer;
+            List<BesteldRekening> besteld = OpvragenBesteldeItems(rekening.Tafelnummer); //hier moet nog een tafelnummer
 
             double totaalRekening = 0;
             double zonderBtw = 0;
@@ -57,8 +66,8 @@ namespace Logica
                 }
             }
 
-            Rekening rekening = new Rekening(totaalRekening, zonderBtw, btw9, btw21, 0, null); //fooi moet hier nog bij, en totaalbedrag moet nog veranderd worden.
-            return rekening;
+            rekening = new Rekening(totaalRekening, zonderBtw, btw9, btw21, 0, null, rekening.Tafelnummer); //fooi moet hier nog bij, en totaalbedrag moet nog veranderd worden.
+            //return rekening;
         }  
 
         public void FooiBerekenen(int ingevoerdbedrag, ref Rekening rekening) //ergens nog een controller plaatsen om te kijken of er geen lager bedrag is ingevoerd dan dr rekening zelf

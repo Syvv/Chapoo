@@ -41,6 +41,8 @@
             this.OutBtw6 = new System.Windows.Forms.Label();
             this.OutExclBtw = new System.Windows.Forms.Label();
             this.listView = new System.Windows.Forms.ListView();
+            this.LblOpmerking = new System.Windows.Forms.Label();
+            this.OutOpmerking = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.GridVwOverzicht)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,7 +58,7 @@
             // GridVwOverzicht
             // 
             this.GridVwOverzicht.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridVwOverzicht.Location = new System.Drawing.Point(39, 517);
+            this.GridVwOverzicht.Location = new System.Drawing.Point(269, 591);
             this.GridVwOverzicht.Name = "GridVwOverzicht";
             this.GridVwOverzicht.RowTemplate.Height = 24;
             this.GridVwOverzicht.Size = new System.Drawing.Size(310, 35);
@@ -162,11 +164,31 @@
             this.listView.TabIndex = 16;
             this.listView.UseCompatibleStateImageBehavior = false;
             // 
+            // LblOpmerking
+            // 
+            this.LblOpmerking.AutoSize = true;
+            this.LblOpmerking.Location = new System.Drawing.Point(39, 488);
+            this.LblOpmerking.Name = "LblOpmerking";
+            this.LblOpmerking.Size = new System.Drawing.Size(77, 17);
+            this.LblOpmerking.TabIndex = 17;
+            this.LblOpmerking.Text = "Opmerking";
+            // 
+            // OutOpmerking
+            // 
+            this.OutOpmerking.AutoSize = true;
+            this.OutOpmerking.Location = new System.Drawing.Point(152, 488);
+            this.OutOpmerking.Name = "OutOpmerking";
+            this.OutOpmerking.Size = new System.Drawing.Size(13, 17);
+            this.OutOpmerking.TabIndex = 18;
+            this.OutOpmerking.Text = "-";
+            // 
             // RekeningForm_Overzicht
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(382, 638);
+            this.Controls.Add(this.OutOpmerking);
+            this.Controls.Add(this.LblOpmerking);
             this.Controls.Add(this.listView);
             this.Controls.Add(this.OutInclBtw);
             this.Controls.Add(this.OutBtw21);
@@ -196,6 +218,8 @@
             this.Controls.SetChildIndex(this.OutBtw21, 0);
             this.Controls.SetChildIndex(this.OutInclBtw, 0);
             this.Controls.SetChildIndex(this.listView, 0);
+            this.Controls.SetChildIndex(this.LblOpmerking, 0);
+            this.Controls.SetChildIndex(this.OutOpmerking, 0);
             ((System.ComponentModel.ISupportInitialize)(this.GridVwOverzicht)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -217,5 +241,7 @@
         private System.Windows.Forms.Label OutBtw6;
         private System.Windows.Forms.Label OutExclBtw;
         private System.Windows.Forms.ListView listView;
+        private System.Windows.Forms.Label LblOpmerking;
+        private System.Windows.Forms.Label OutOpmerking;
     }
 }

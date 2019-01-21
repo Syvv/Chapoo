@@ -28,6 +28,8 @@ namespace UI
 
             rekeningLogica.OpmerkingToevoegen(opmerking);
 
+
+
             MessageBox.Show("opmerking opgeslagen");
             this.Close();
         }

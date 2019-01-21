@@ -22,19 +22,26 @@ namespace UI
         public RekeningForm_Overzicht() : base()
         {
             InitializeComponent();
+
+            TafelNummerToevoegen();
             PrijzenWeergeven();
 
             ListViewAanmaken();
             ListViewVuller();
 
+            LblOpmerking.Hide();
+            OutOpmerking.Hide();
+
             GridVwOverzicht.Hide();
             //GridViewVuller();
         }
+        private void TafelNummerToevoegen()
+        {
+            rekeningLogica.TafelNummer(tafelNummer);
+        }
         private void PrijzenWeergeven()
         {
-            //Rekening rekening = rekeningLogica.PrijsOptellerMakkelijk();
             Rekening rekening = rekeningLogica.RekeningOpstellen();
-            //rekening.BedragZonderBtw.ToString()
 
             OutExclBtw.Text = string.Format("€ {0:F2} ", rekening.BedragZonderBtw);
             OutBtw6.Text = string.Format("€ {0:F2} ", rekening.Btw9);
@@ -63,6 +70,8 @@ namespace UI
         {
             var Opmerking = new Rekening_OpmerkingForm();
             Opmerking.Show();
+
+            OpmerkingWeergeven();
         }
 
         private void BtnDoor_Click(object sender, EventArgs e)
@@ -107,6 +116,15 @@ namespace UI
                 //lvItem.Tag =
                 listView.Items.Add(lvItem);
             }
+        }
+        private void OpmerkingWeergeven()
+        {
+            LblOpmerking.Show();
+            OutOpmerking.Show();
+
+            Rekening rekening = rekeningLogica.RekeningOpstellen();
+
+            OutOpmerking.Text = rekening.Opmerking;
         }
     }
 }
