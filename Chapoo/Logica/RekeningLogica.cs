@@ -16,7 +16,7 @@ namespace Logica
         {
             Rekening rekening = new Rekening(0, 0, 0, 0, 0, " ");
             rekening = PrijsOptellerMakkelijk();
-            test(ref rekening);
+            Test(ref rekening);
 
             return rekening;
         }
@@ -77,11 +77,11 @@ namespace Logica
         //}
         public void OpmerkingToevoegen(string opmerking)
         {
-            OOpmerking = opmerking;
+            _opmerking = opmerking;
         }
         public void Test(ref Rekening rekening)
         {
-            rekening.Opmerking = OOpmerking;
+            rekening.Opmerking = _opmerking;
         }
         public string OpmerkingWeergeven()
         {
