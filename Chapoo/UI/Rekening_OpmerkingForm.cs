@@ -28,8 +28,6 @@ namespace UI
 
             rekeningLogica.OpmerkingToevoegen(opmerking);
 
-
-
             MessageBox.Show("opmerking opgeslagen");
             this.Close();
         }
@@ -46,8 +44,11 @@ namespace UI
         {
             var logica = new RekeningLogica();
 
-            string opmerking = logica.OpmerkingWeergeven();            
-            Tbopmerking.Text = opmerking;
+            Rekening rekening = logica.RekeningOpstellen();
+            Tbopmerking.Text = rekening.Opmerking;
+
+            string opmerking = logica.OpmerkingWeergeven();
+            MessageBox.Show(opmerking);
         }
     }
 }

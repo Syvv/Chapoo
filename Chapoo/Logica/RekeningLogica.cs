@@ -10,7 +10,7 @@ namespace Logica
 {
     public class RekeningLogica
     {
-        int tafelNummer;
+        int tafelNummer= 1;
         string _opmerking = null;
         public void TafelNummer(int tafelnummer)
         {
@@ -23,7 +23,7 @@ namespace Logica
         {
             Rekening rekening = new Rekening(0, 0, 0, 0, 0, " ", 0);
             PrijsOptellerMakkelijk(ref rekening);
-            Test(ref rekening);
+            //Test(ref rekening);
 
             return rekening;
         }
@@ -79,11 +79,14 @@ namespace Logica
 
         public void OpmerkingToevoegen(string opmerking)
         {
-            _opmerking = opmerking;
+            //_opmerking = opmerking;
+            Rekening rekening = RekeningOpstellen();
+
+            rekening.Opmerking = opmerking;
         }
-        public void Test(ref Rekening rekening)
+        public void Test(Rekening rekening)
         {
-            rekening.Opmerking = _opmerking;
+            
         }
         public string OpmerkingWeergeven()
         {
@@ -112,13 +115,13 @@ namespace Logica
             return bestellingId;
         }
 
-        public void RekeningWegschrijven(int tafelId)
+        public void RekeningWegschrijven()
         {
             Rekening rekening = RekeningOpstellen();
             var dao = new RekeningDAO();
-            int bestellingId = OpvragenBestellingId(tafelId);
+            int bestellingId = OpvragenBestellingId(rekening.Tafelnummer);
 
-            dao.WegSchrijvenBestelling(rekening, tafelId, bestellingId);
+            dao.WegSchrijvenBestelling(rekening, rekening.Tafelnummer, bestellingId);
         }
     }
 }

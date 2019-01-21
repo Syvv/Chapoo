@@ -65,6 +65,7 @@ namespace UI
             if (FooiIngevuldCheck())
             {
                 MessageBox.Show("betaling is gelukt, de rest volgt nog");
+                rekeningLogica.RekeningWegschrijven();
             }
             else
             {
