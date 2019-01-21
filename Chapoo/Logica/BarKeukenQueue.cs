@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 using Model;
 using DataAdaptor;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace Logica
 {
     public static class BarKeukenQueue
     {
         private static User user;
+        
 
         public static List<Bestellingsitem> getBestellingen(User user)
         {
