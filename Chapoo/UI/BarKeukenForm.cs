@@ -14,14 +14,14 @@ namespace UI
 {
     public partial class BarKeukenForm : Form
     {
-        List<Logica.BarKeukenUIElement> UIElements = new List<Logica.BarKeukenUIElement>();
+        List<BarKeukenUIElement> UIElements = new List<BarKeukenUIElement>();
         private User user;
 
         public BarKeukenForm(User user)
         {
             InitializeComponent();
             this.user = user;
-            Logica.BarKeukenQueue.getBestellingen(this.user);
+            BarKeukenQueue.getBestellingen(this.user);
             BuildForm();
         }
 
@@ -30,14 +30,14 @@ namespace UI
             Controls.Clear();
             UIElements.Clear();
             int y = 0;
-            foreach (Bestellingsitem b in Model.BestelLijst.List)
+            foreach (Bestellingsitem b in BestelLijst.List)
             {
-                UIElements.Add(new Logica.BarKeukenUIElement(b, () => { BuildForm(); }, 10, y) );
+                UIElements.Add(new BarKeukenUIElement(b, () => { BuildForm(); }, 10, y) );
                 y += 25;
             }
 
             //add the controls that belong to all BarKeukenUIElements so that you can actually see them
-            foreach(Logica.BarKeukenUIElement ui in UIElements)
+            foreach(BarKeukenUIElement ui in UIElements)
             {
                 foreach(Control c in ui.Controls)
                 {
