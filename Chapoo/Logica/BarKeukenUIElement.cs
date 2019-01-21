@@ -23,13 +23,21 @@ namespace Logica
         public BarKeukenUIElement(Bestellingsitem b, Refresh del, int x, int y)
         {
             Item = b;
+            if (Item.Comment == "" || Item.Comment == null)
+            {
+                Item.Comment = " ";
+            }
             Controls.Add(new Label { Text = Item.Name, Top = y, Left = x, Width = 175 });
             Controls.Add(new Label { Text = Item.Amount.ToString() + "x", Top = y, Left = x + 180, Width = 20 });
             Controls.Add(new Label { Text = "Tafel " + Item.Tafel.ToString(), Top = y, Left = x +200, Width = 50});
-            Controls.Add(new Label { Text = Item.Comment, Top = y, Left = x + 250, Width = 100});
+            Controls.Add(new Label { Text = Item.Comment.Substring(0,25), Top = y, Left = x + 250, Width = 100});
             Controls.Add(new Button { Text = "1 item gereedstellen", Top = y, Left = x + 350, Width = 100 });
             Controls.Add(new Button { Text = "alle items gereedstellen", Top = y, Left = x + 450, Width = 100 });
 
+            Controls[3].Click += (s, e) =>
+            {
+                
+            };
             Controls[4].Click += (s,e) => 
             {
                 if (Item.Amount <= 1)

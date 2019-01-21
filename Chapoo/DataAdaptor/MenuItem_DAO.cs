@@ -47,8 +47,9 @@ namespace DataAdaptor
                 int menuId = item.MenuId;
                 int hoeveelheid = item.Aantal;
                 string commentaar = item.Comment;
+                DateTime timestamp = item.Timestamp;
 
-                sb.Append("INSERT INTO GAAT_NAAR_KEUKEN (bestelling_id, menu_id, hoeveelheid, Commentaar ) VALUES(@bestellingId, @menuId, @hoeveelheid, @commentaar)");
+                sb.Append("INSERT INTO GAAT_NAAR_KEUKEN (bestelling_id, menu_id, hoeveelheid, Commentaar, timestamp ) VALUES(@bestellingId, @menuId, @hoeveelheid, @commentaar, @timestamp)");
 
                 String sql = sb.ToString();
                 using (SqlCommand cmd = new SqlCommand(sql, connection))
@@ -57,6 +58,7 @@ namespace DataAdaptor
                     cmd.Parameters.AddWithValue("@menuId", menuId);
                     cmd.Parameters.AddWithValue("@hoeveelheid", hoeveelheid);
                     cmd.Parameters.AddWithValue("@commentaar", commentaar);
+                    cmd.Parameters.AddWithValue("@timestamp", timestamp);
                     cmd.ExecuteNonQuery();
                 }
             }
@@ -75,8 +77,9 @@ namespace DataAdaptor
                 int menuId = item.MenuId;
                 int hoeveelheid = item.Aantal;
                 string commentaar = item.Comment;
+                DateTime timestamp = item.Timestamp;
 
-                sb.Append("INSERT INTO GAAT_NAAR_BAR (bestelling_id, menu_id, hoeveelheid, Commentaar ) VALUES(@bestellingId, @menuId, @hoeveelheid, @commentaar)");
+                sb.Append("INSERT INTO GAAT_NAAR_BAR (bestelling_id, menu_id, hoeveelheid, Commentaar, timestamp ) VALUES(@bestellingId, @menuId, @hoeveelheid, @commentaar, @timestamp)");
 
                 String sql = sb.ToString();
                 using (SqlCommand cmd = new SqlCommand(sql, connection))
@@ -85,6 +88,7 @@ namespace DataAdaptor
                     cmd.Parameters.AddWithValue("@menuId", menuId);
                     cmd.Parameters.AddWithValue("@hoeveelheid", hoeveelheid);
                     cmd.Parameters.AddWithValue("@commentaar", commentaar);
+                    cmd.Parameters.AddWithValue("@timestamp", timestamp);
                     cmd.ExecuteNonQuery();
                 }
             }

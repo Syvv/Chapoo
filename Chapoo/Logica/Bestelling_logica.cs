@@ -24,7 +24,7 @@ namespace Logica
         public void MakeQueueList(int menuId, int aantal, string comment, string categorie)
         {
             
-            Queue_item QueueItem = new Queue_item(BestellingId, menuId, aantal, comment);
+            Queue_item QueueItem = new Queue_item(BestellingId, menuId, aantal, comment, DateTime.Now);
             if((categorie == "F") || (categorie == "B") || (categorie == "W") || (categorie == "G") || (categorie == "K"))
             {
                 BarqueueList.Add(QueueItem);
