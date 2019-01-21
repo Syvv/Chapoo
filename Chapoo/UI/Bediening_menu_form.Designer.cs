@@ -67,6 +67,7 @@
             this.baseButton3.TabIndex = 7;
             this.baseButton3.Text = "Afrekenen";
             this.baseButton3.UseVisualStyleBackColor = true;
+            this.baseButton3.Click += new System.EventHandler(this.baseButton3_Click);
             // 
             // Bediening_menu_form
             // 

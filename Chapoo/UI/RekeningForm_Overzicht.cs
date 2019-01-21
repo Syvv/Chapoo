@@ -23,7 +23,12 @@ namespace UI
         {
             InitializeComponent();
             PrijzenWeergeven();
-            GridViewVuller();
+
+            ListViewAanmaken();
+            ListViewVuller();
+
+            GridVwOverzicht.Hide();
+            //GridViewVuller();
         }
         private void PrijzenWeergeven()
         {
@@ -65,6 +70,43 @@ namespace UI
             var Doorgaan = new RekeningForm_Betaal();
             Doorgaan.Show();
             this.Close();
+        }
+
+        private void ListViewAanmaken()
+        {
+            listView.Items.Clear();
+
+            listView = new ListView();
+            listView.GridLines = true;
+            listView.FullRowSelect = true;
+            listView.Scrollable = true;
+            listView.GridLines = true;
+
+            listView.Columns.Add("item", -2, HorizontalAlignment.Left);
+            listView.Columns.Add("aantal", -2, HorizontalAlignment.Left);
+            listView.Columns.Add("prijs p/s", -2, HorizontalAlignment.Left);
+            listView.Columns.Add("tot. prijs", -2, HorizontalAlignment.Left);
+
+            listView.Name = "listView";
+
+            listView.Columns[0].Width = 100;
+            listView.Columns[1].Width = 20;
+            listView.Columns[2].Width = 20;
+            listView.Columns[3].Width = 20;
+
+            listView.Height = 325;
+        }
+        private void ListViewVuller()
+        {
+            List<BesteldRekening> besteld = rekeningLogica.OpvragenBesteldeItems(tafelNummer);
+
+            for (int i = 0; i < besteld.Count; i++)
+            {
+                double totaalPrijs = besteld[i].Prijs * besteld[i].Hoeveelheid;
+                ListViewItem lvItem = new ListViewItem(new[] { besteld[i].MenuItem, besteld[i].Hoeveelheid.ToString(), besteld[i].Prijs.ToString(), totaalPrijs.ToString() });
+                //lvItem.Tag =
+                listView.Items.Add(lvItem);
+            }
         }
     }
 }
