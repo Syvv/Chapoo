@@ -55,6 +55,18 @@ namespace Logica
             Bestellingsitem[] list = Model.BestellingsGeheugen.OrderIsReady(tafelID);
             KeukenBarDataConnection.CreateNotification(list);
         }
+
+        public static void UpdateAmountInDataBase(Bestellingsitem item)
+        {
+            if(user.Type == 'B')
+            {
+                KeukenBarDataConnection.UpdateAmountBar(item);
+            }
+            else
+            {
+                KeukenBarDataConnection.UpdateAmountKeuken(item);
+            }
+        }
         
     }
 }
