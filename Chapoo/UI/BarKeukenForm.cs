@@ -16,9 +16,9 @@ namespace UI
     public partial class BarKeukenForm : Form
     {
         List<BarKeukenUIElement> UIElements = new List<BarKeukenUIElement>();
-        private User user;
+        private Model.User user;
 
-        public BarKeukenForm(User user)
+        public BarKeukenForm(Model.User user)
         {
             InitializeComponent();
             this.user = user;
