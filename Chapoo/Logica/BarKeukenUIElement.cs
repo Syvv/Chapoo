@@ -26,7 +26,7 @@ namespace Logica
             Controls.Add(new Label { Text = Item.Name, Top = y+5, Left = x, Width = 175 });
             Controls.Add(new Label { Text = Item.Amount.ToString() + "x", Top = y+5, Left = x + 180, Width = 20 });
             Controls.Add(new Label { Text = "Tafel " + Item.Tafel.ToString(), Top = y+5, Left = x +200, Width = 50});
-            //Cut off the commenttext if it is longer than 25 characters and replace the last 3 characters by '...' to indicate this
+            //Cut off the comment_text if it is longer than 25 characters and replace the last 3 characters by '...' to indicate this
             if(Item.Comment.Length>25)
             {
                 Controls.Add(new Label { Text = Item.Comment.Substring(0, 22) + "...", Top = y+5, Left = x + 250, Width = 125});
@@ -42,6 +42,7 @@ namespace Logica
 
             Controls[3].Click += (s, e) =>
             {
+                //popup for extra info on the comment
                 MessageBox.Show(Item.Comment,Item.Name + " " + Item.Amount + "x",MessageBoxButtons.OK,MessageBoxIcon.Information);
             };
             Controls[4].Click += (s,e) => 
@@ -53,20 +54,17 @@ namespace Logica
                     Logica.BarKeukenQueue.removeItemFromQueue(Item);
                     Model.BestellingsGeheugen.AddToReadyList(Item);
                     //Check for open orders for the same table
-                    foreach(Bestellingsitem bi in Model.BestelLijst.List)
+                    if (!HasOpenOrders(Item))
                     {
-                        if(bi.Tafel==Item.Tafel)
-                        {
-                            //if there is one, then don't do anything
-                            return;
-                        }
+                        BarKeukenQueue.SendNotification(Item.Tafel); //if there aren't, send a notification
                     }
-                    BarKeukenQueue.SendNotification(Item.Tafel); //else send a notification
                 }
                 else
                 {
-                    BestelLijst.List[BestelLijst.List.IndexOf(Item)].Amount -= 1;
-                    Controls[1].Text = Item.Amount.ToString();
+                    int index = BestelLijst.List.IndexOf(Item);
+                    BestelLijst.List[index].Amount -= 1;
+                    Controls[1].Text = Item.Amount.ToString() + "x";
+                    BarKeukenQueue.UpdateAmountInDataBase(BestelLijst.List[index]);
                 }
                 
             };
@@ -78,17 +76,26 @@ namespace Logica
                 Logica.BarKeukenQueue.removeItemFromQueue(Item);
                 Model.BestellingsGeheugen.AddToReadyList(Item);
                 //Check for open orders for the same table
-                foreach (Bestellingsitem bi in Model.BestelLijst.List)
+                if(!HasOpenOrders(Item))
                 {
-                    if (bi.Tafel == Item.Tafel)
-                    {
-                        //if there is one, then don't do anything
-                        return;
-                    }
+                    BarKeukenQueue.SendNotification(Item.Tafel); //if there aren't, send a notification
                 }
-                BarKeukenQueue.SendNotification(Item.Tafel); //else send a notification
+                
             };
             
+        }
+
+        private static bool HasOpenOrders(Bestellingsitem item)
+        {
+            foreach (Bestellingsitem bi in Model.BestelLijst.List)
+            {
+                if (bi.Tafel == item.Tafel)
+                {
+                    //There is an open order for the same table
+                    return true;
+                }
+            }
+            return false;//There are no open orders for that table
         }
     }
 }

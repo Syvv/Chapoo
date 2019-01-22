@@ -60,5 +60,23 @@ namespace DataAdaptor
             }
             DataConnection.ClosedQuery(sb.ToString());
         }
+        
+        public static void UpdateAmountKeuken(Model.Bestellingsitem item)
+        {
+            DataConnection.ClosedQuery(
+                "UPDATE GAAT_NAAR_KEUKEN " +
+                "SET hoeveelheid = "+item.Amount+" " +
+                "WHERE keuken_id = "+item.Id+";"
+                );
+        }
+
+        public static void UpdateAmountBar(Model.Bestellingsitem item)
+        {
+            DataConnection.ClosedQuery(
+                "UPDATE GAAT_NAAR_BAR " +
+                "SET hoeveelheid = " + item.Amount + " " +
+                "WHERE bar_id = " + item.Id + ";"
+                );
+        }
     }
 }

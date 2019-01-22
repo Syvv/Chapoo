@@ -12,15 +12,15 @@ namespace Logica
 {
     public static class BarKeukenQueue
     {
-        private static User user;
+        private static Model.User user;
         
 
-        public static List<Bestellingsitem> getBestellingen(User user)
+        public static List<Bestellingsitem> getBestellingen(Model.User user)
         {
             BarKeukenQueue.user = user;
             List<Bestellingsitem> result = new List<Bestellingsitem>();
             SqlDataReader data;
-            if (user.Type == 'B')//Check for user's occupation
+            if (user.Type == 'b')//Check for user's occupation
             {
                 data = KeukenBarDataConnection.GetOpenOrdersBar();
             }
@@ -40,7 +40,7 @@ namespace Logica
 
         public static void removeItemFromQueue(Bestellingsitem item)
         {
-            if(user.Type == 'B')
+            if(user.Type == 'b')
             {
                 KeukenBarDataConnection.RemoveOpenItemBar(item.Id);
             }
@@ -54,6 +54,28 @@ namespace Logica
         {
             Bestellingsitem[] list = Model.BestellingsGeheugen.OrderIsReady(tafelID);
             KeukenBarDataConnection.CreateNotification(list);
+        }
+
+        public static void UpdateAmountInDataBase(Bestellingsitem item)
+        {
+            if(user.Type == 'b')
+            {
+                KeukenBarDataConnection.UpdateAmountBar(item);
+            }
+            else
+            {
+                KeukenBarDataConnection.UpdateAmountKeuken(item);
+            }
+        }
+
+        public static void PreserveData()
+        {
+            Bestellingsitem[] list = Model.BestellingsGeheugen.GetAllOrders();
+            if(list.Length!=0)
+            {
+                KeukenBarDataConnection.CreateNotification(list);
+            }
+            
         }
         
     }

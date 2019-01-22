@@ -55,6 +55,21 @@ namespace Model
             ReadyOrders[tableID - 1].Clear();
             return res;
         }
+
+        public static Bestellingsitem[] GetAllOrders()
+        {
+            int amount = 0;
+            foreach(List<Bestellingsitem> list in ReadyOrders)
+            {
+                amount += list.Count;
+            }
+            Bestellingsitem[] res = new Bestellingsitem[amount];
+            foreach (List<Bestellingsitem> list in ReadyOrders)
+            {
+                list.CopyTo(res);
+            }
+            return res;
+        }
     }
 
 }

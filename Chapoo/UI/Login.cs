@@ -25,22 +25,29 @@ namespace UI
 
         private void Loginbtn_Click(object sender, EventArgs e)
         {
-            //Assumed login is correct
-            User temp;
-            if(BedieningRAD.Checked)
+            char type;
+            try
             {
-                temp = new User(UsernameInput.Text,'S');//Serveerder
+                type = Logica.User.TestLoginInfo(UsernameInput.Text, PasswordInput.Text);
+            }catch(Exception ex) when (ex is Model.NoSuchUserException || ex is DataMisalignedException)
+            {
+                MessageBox.Show(ex.Message, "Something was wrong",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            Model.User user = new User(UsernameInput.Text,type);
+            
+            if(user.Type=='s')//Check which screen it has to show
+            {
                 //create a new form and show that
                 new Bediening_menu_form().Show();
-            }else if(BarRAD.Checked)
+            }else if(user.Type=='b')
             {
-                temp = new User(UsernameInput.Text, 'B');//Bar
-                new BarKeukenForm(temp).Show();
+                new BarKeukenForm(user).Show();
             }
             else
             {
-                temp = new User(UsernameInput.Text, 'K');//Keuken
-                new BarKeukenForm(temp).Show();
+                new BarKeukenForm(user).Show();
             }
             this.Hide();
 
