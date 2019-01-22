@@ -17,6 +17,7 @@ namespace UI
     {
         List<BarKeukenUIElement> UIElements = new List<BarKeukenUIElement>();
         private Model.User user;
+        delegate void CreateTimerCallback();
 
         public BarKeukenForm(Model.User user)
         {
@@ -34,22 +35,14 @@ namespace UI
                 BuildForm();
             };
             timer.Start();
-            /*
-            TimeSpan start = TimeSpan.Zero;
-            TimeSpan interval = TimeSpan.FromMinutes(0.5);
-            var timer = new System.Threading.Timer((e) =>
-            {
-                BarKeukenQueue.getBestellingen(this.user);
-                BuildForm();
-            }, null, start, interval);
-            */
         }
 
-        delegate void CreateTimerCallback();
+        
         private void BuildForm()
         {
-            if(this.InvokeRequired)
+            if(this.InvokeRequired)//Check if were calling from a different thread
             {
+                //if so invoke the method from a delegate instead
                 CreateTimerCallback cb = new CreateTimerCallback(BuildForm);
                 this.Invoke(cb);
             }
