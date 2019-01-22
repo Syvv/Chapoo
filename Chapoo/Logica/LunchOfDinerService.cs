@@ -9,12 +9,12 @@ using DataAdaptor;
 
 namespace Logica
 {
-    public class Lunch_of_Diner_Logica
+    public class LunchOfDinerService
     {
-        protected List<Model.Menu> List = new List<Model.Menu>();
-        protected Categoriseren_gerechten_logica Gerechten = new Categoriseren_gerechten_logica();
+        private List<MenuModel> List = new List<MenuModel>();
+        private CategoriserenGerechtenService Gerechten = new CategoriserenGerechtenService();
 
-        public List<Model.Menu> Voorgerecht()
+        public List<MenuModel> Voorgerecht()
         {
             TimeSpan start = new TimeSpan(10, 0, 0);
             TimeSpan end = new TimeSpan(17, 0, 0);
@@ -31,7 +31,7 @@ namespace Logica
 
             return List;
         }
-        public List<Model.Menu> Hoofdgerechten()
+        public List<MenuModel> Hoofdgerechten()
         {
             TimeSpan start = new TimeSpan(10, 0, 0);
             TimeSpan end = new TimeSpan(17, 0, 0);
@@ -48,7 +48,7 @@ namespace Logica
 
             return List;
         }
-        public List<Model.Menu> Nagerechten()
+        public List<MenuModel> Nagerechten()
         {
             TimeSpan start = new TimeSpan(10, 0, 0);
             TimeSpan end = new TimeSpan(17, 0, 0);

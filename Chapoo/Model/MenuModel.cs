@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    public class Menu
+    public class MenuModel
     {
         public int MenuId { get; set; }
         public string MenuItem { get; set; }
@@ -14,7 +14,7 @@ namespace Model
         public string Categorie { get; set; }
         public int Voorraad { get; set; }
 
-        public Menu(int menuId, string menuItem, double prijs, string categorie, int voorraad)
+        public MenuModel(int menuId, string menuItem, double prijs, string categorie, int voorraad)
         {
             this.MenuId = menuId;
             this.MenuItem = menuItem;

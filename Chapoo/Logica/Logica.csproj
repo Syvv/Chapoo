@@ -45,13 +45,13 @@
   <ItemGroup>
     <Compile Include="BarKeukenQueue.cs" />
     <Compile Include="BarKeukenUIElement.cs" />
-    <Compile Include="Categoriseren_gerechten_logica.cs" />
+    <Compile Include="CategoriserenGerechtenService.cs" />
     <Compile Include="Class1.cs" />
-    <Compile Include="Fill_orderview_list_logica.cs" />
-    <Compile Include="Fill_order_list_logica.cs" />
-    <Compile Include="Bestelling_logica.cs" />
-    <Compile Include="Lunch_of_Diner_Logica.cs" />
-    <Compile Include="Orderview_logica.cs" />
+    <Compile Include="VulBestelOverzichtService.cs" />
+    <Compile Include="VulBestelOpnemenService.cs" />
+    <Compile Include="BestellingService.cs" />
+    <Compile Include="LunchOfDinerService.cs" />
+    <Compile Include="BestelOverzichtService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RekeningLogica.cs" />
   </ItemGroup>

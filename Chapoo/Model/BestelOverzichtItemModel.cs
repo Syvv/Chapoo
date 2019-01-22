@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    public class Notificatie
+    public class BestelOverzichtItemModel
     {
         public int Id { get; set; }
         public string Item { get; set; }
         public int Aantal { get; set; }
         public string Opmerking { get; set; }
 
-        public Notificatie(int id, string item, int aantal, string opmerking)
+        public BestelOverzichtItemModel(int id, string item, int aantal, string opmerking)
         {
             this.Id = id;
             this.Item = item;

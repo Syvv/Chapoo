@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    public class Queue_item
+    public class QueueItemModel
     {
         DateTime timestamp;
         public int BestellingId { get; set; }
@@ -15,7 +15,7 @@ namespace Model
         public string Comment { get; set; }
         public DateTime Timestamp { get => timestamp; set => timestamp = value; }
 
-        public Queue_item(int bestellingId, int menuId, int aantal, string comment, DateTime time)
+        public QueueItemModel(int bestellingId, int menuId, int aantal, string comment, DateTime time)
         {
             this.BestellingId = bestellingId;
             this.MenuId = menuId;

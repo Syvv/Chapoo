@@ -10,11 +10,11 @@ using Model;
 
 namespace DataAdaptor
 {
-    public class Bestel_overzicht_DAO
+    public class BestelOverzichtDAO
     {
-        public static List<Notificatie> GetNotificaties()
+        public static List<BestelOverzichtItemModel> GetNotificaties()
         {
-            List<Notificatie> notificaties = new List<Notificatie>();
+            List<BestelOverzichtItemModel> notificaties = new List<BestelOverzichtItemModel>();
             SqlDataReader data;
 
             data = DataConnection.Query("SELECT * FROM NOTIFICATIONS JOIN MENU ON menuId = menu_id ");
@@ -26,16 +26,16 @@ namespace DataAdaptor
                 int aantal = (int)data["amount"];
                 string opmerking = (string)data["opmerkingen"];
 
-                Notificatie notificatie = new Notificatie(id, item, aantal, opmerking);
+                BestelOverzichtItemModel notificatie = new BestelOverzichtItemModel(id, item, aantal, opmerking);
                 notificaties.Add(notificatie);
             }
 
             DataConnection.connection.Close();
             return notificaties;
         }
-        public static List<Notificatie> GetBarQueue()
+        public static List<BestelOverzichtItemModel> GetBarQueue()
         {
-            List<Notificatie> barQueue = new List<Notificatie>();
+            List<BestelOverzichtItemModel> barQueue = new List<BestelOverzichtItemModel>();
             SqlDataReader data;
 
             data = DataConnection.Query("SELECT * FROM GAAT_NAAR_BAR AS bar JOIN MENU AS menu ON bar.menu_id = menu.menu_id");
@@ -47,16 +47,16 @@ namespace DataAdaptor
                 int aantal = (int)data["hoeveelheid"];
                 string opmerking = (string)data["Commentaar"];
 
-                Notificatie notificatie = new Notificatie(id, item, aantal, opmerking);
+                BestelOverzichtItemModel notificatie = new BestelOverzichtItemModel(id, item, aantal, opmerking);
                 barQueue.Add(notificatie);
             }
 
             DataConnection.connection.Close();
             return barQueue;
         }
-        public static List<Notificatie> GetKeukenQueue()
+        public static List<BestelOverzichtItemModel> GetKeukenQueue()
         {
-            List<Notificatie> keukenQueue = new List<Notificatie>();
+            List<BestelOverzichtItemModel> keukenQueue = new List<BestelOverzichtItemModel>();
             SqlDataReader data;
 
             data = DataConnection.Query("SELECT * FROM GAAT_NAAR_KEUKEN AS keuken JOIN MENU AS menu ON keuken.menu_id = menu.menu_id");
@@ -68,7 +68,7 @@ namespace DataAdaptor
                 int aantal = (int)data["hoeveelheid"];
                 string opmerking = (string)data["Commentaar"];
 
-                Notificatie notificatie = new Notificatie(id, item, aantal, opmerking);
+                BestelOverzichtItemModel notificatie = new BestelOverzichtItemModel(id, item, aantal, opmerking);
                 keukenQueue.Add(notificatie);
             }
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    public class BesteldRekening : Menu
+    public class BesteldRekening : MenuModel
     {
         public int Hoeveelheid { get; set; }
 

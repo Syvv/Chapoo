@@ -38,7 +38,7 @@
             // 
             // txtAantal
             // 
-            this.txtAantal.Location = new System.Drawing.Point(62, 228);
+            this.txtAantal.Location = new System.Drawing.Point(12, 225);
             this.txtAantal.Name = "txtAantal";
             this.txtAantal.Size = new System.Drawing.Size(100, 22);
             this.txtAantal.TabIndex = 9;
@@ -47,7 +47,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(62, 198);
+            this.label2.Location = new System.Drawing.Point(12, 195);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 17);
             this.label2.TabIndex = 8;
@@ -56,7 +56,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(59, 19);
+            this.label1.Location = new System.Drawing.Point(9, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(160, 17);
             this.label1.TabIndex = 7;
@@ -64,7 +64,7 @@
             // 
             // txtComment
             // 
-            this.txtComment.Location = new System.Drawing.Point(62, 51);
+            this.txtComment.Location = new System.Drawing.Point(12, 48);
             this.txtComment.Name = "txtComment";
             this.txtComment.Size = new System.Drawing.Size(341, 140);
             this.txtComment.TabIndex = 6;
@@ -75,30 +75,32 @@
             // 
             this.btnVerander.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerander.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnVerander.Location = new System.Drawing.Point(62, 278);
+            this.btnVerander.Location = new System.Drawing.Point(12, 275);
             this.btnVerander.Name = "btnVerander";
             this.btnVerander.Size = new System.Drawing.Size(100, 30);
             this.btnVerander.TabIndex = 5;
             this.btnVerander.Text = "Verander";
             this.btnVerander.UseVisualStyleBackColor = true;
+            this.btnVerander.Click += new System.EventHandler(this.btnVerander_Click);
             // 
             // btnCancel
             // 
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnCancel.Location = new System.Drawing.Point(303, 278);
+            this.btnCancel.Location = new System.Drawing.Point(253, 275);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 30);
             this.btnCancel.TabIndex = 10;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // Bestelling_overzicht_aanpassen_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(489, 329);
+            this.ClientSize = new System.Drawing.Size(382, 329);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.txtAantal);
             this.Controls.Add(this.label2);

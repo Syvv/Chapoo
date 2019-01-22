@@ -37,7 +37,7 @@
             // 
             this.titel1.AutoSize = true;
             this.titel1.Font = new System.Drawing.Font("Arial", 20F);
-            this.titel1.Location = new System.Drawing.Point(65, 46);
+            this.titel1.Location = new System.Drawing.Point(13, 54);
             this.titel1.MaximumSize = new System.Drawing.Size(450, 0);
             this.titel1.Name = "titel1";
             this.titel1.Size = new System.Drawing.Size(361, 78);
@@ -51,7 +51,7 @@
             this.baseButton1.BackColor = System.Drawing.Color.White;
             this.baseButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.baseButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.baseButton1.Location = new System.Drawing.Point(58, 191);
+            this.baseButton1.Location = new System.Drawing.Point(6, 199);
             this.baseButton1.Name = "baseButton1";
             this.baseButton1.Size = new System.Drawing.Size(165, 53);
             this.baseButton1.TabIndex = 2;
@@ -63,23 +63,23 @@
             // 
             this.baseButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.baseButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.baseButton2.Location = new System.Drawing.Point(245, 191);
+            this.baseButton2.Location = new System.Drawing.Point(193, 199);
             this.baseButton2.Name = "baseButton2";
             this.baseButton2.Size = new System.Drawing.Size(165, 53);
             this.baseButton2.TabIndex = 3;
             this.baseButton2.Text = "Cancel";
             this.baseButton2.UseVisualStyleBackColor = true;
             // 
-            // Bevestiging_form
+            // Bestelling_bevestiging_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(489, 329);
+            this.ClientSize = new System.Drawing.Size(382, 329);
             this.Controls.Add(this.baseButton2);
             this.Controls.Add(this.baseButton1);
             this.Controls.Add(this.titel1);
-            this.Name = "Bevestiging_form";
+            this.Name = "Bestelling_bevestiging_form";
             this.Text = "Confirmation_form";
             this.ResumeLayout(false);
             this.PerformLayout();

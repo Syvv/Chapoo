@@ -44,12 +44,11 @@
   <ItemGroup>
     <Compile Include="BesteldRekening.cs" />
     <Compile Include="Bestellingsitem.cs" />
-    <Compile Include="Bestel_overzicht_item.cs" />
-    <Compile Include="Heeft_item.cs" />
-    <Compile Include="Menu.cs" />
-    <Compile Include="Notificatie.cs" />
+    <Compile Include="HeeftItemModel.cs" />
+    <Compile Include="MenuModel.cs" />
+    <Compile Include="BestelOverzichtItemModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Queue_item.cs" />
+    <Compile Include="QueueItemModel.cs" />
     <Compile Include="RekeningOverzicht.cs" />
     <Compile Include="Rekening.cs" />
     <Compile Include="Bestelling.cs" />

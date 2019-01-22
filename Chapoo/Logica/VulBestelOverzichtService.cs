@@ -9,11 +9,11 @@ using DataAdaptor;
 
 namespace Logica
 {
-    public class Fill_orderview_list_logica
+    public class VulBestelOverzichtService
     {
-        public List<Notificatie> notificaties = Bestel_overzicht_DAO.GetNotificaties();
-        public List<Notificatie> barQueue = Bestel_overzicht_DAO.GetBarQueue();
-        public List<Notificatie> keukenQueue = Bestel_overzicht_DAO.GetKeukenQueue();
+        private List<BestelOverzichtItemModel> notificaties;
+        private List<BestelOverzichtItemModel> barQueue;
+        private List<BestelOverzichtItemModel> keukenQueue;
 
         public void ListViewStyle(ListView listView)
         {
@@ -34,6 +34,8 @@ namespace Logica
         }
         public void FillKlaarList(ListView listView)
         {
+            notificaties = BestelOverzichtDAO.GetNotificaties();
+
             for (int i = 0; i < notificaties.Count; i++)
             {
                 ListViewItem lv = new ListViewItem(new[] { notificaties[i].Item, notificaties[i].Aantal.ToString(), notificaties[i].Opmerking});
@@ -43,6 +45,8 @@ namespace Logica
         }
         public void FillBarList(ListView listView)
         {
+            barQueue = BestelOverzichtDAO.GetBarQueue();
+
             for (int i = 0; i < barQueue.Count; i++)
             {
                 ListViewItem lv = new ListViewItem(new[] { barQueue[i].Item, barQueue[i].Aantal.ToString(), barQueue[i].Opmerking });
@@ -52,6 +56,8 @@ namespace Logica
         }
         public void FillKeukenList(ListView listView)
         {
+            keukenQueue = BestelOverzichtDAO.GetKeukenQueue();
+
             for (int i = 0; i < keukenQueue.Count; i++)
             {
                 ListViewItem lv = new ListViewItem(new[] { keukenQueue[i].Item, keukenQueue[i].Aantal.ToString(), keukenQueue[i].Opmerking });

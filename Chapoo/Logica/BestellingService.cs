@@ -8,13 +8,13 @@ using DataAdaptor;
 
 namespace Logica
 {
-    public class Bestelling_logica
+    public class BestellingService
     {
-        public MenuItem_DAO MenuItem = new MenuItem_DAO();
+        public BestellingOpnemenDAO MenuItem = new BestellingOpnemenDAO();
         public List<Bestelling> BestellingList = new List<Bestelling>();
-        public List<Queue_item> BarqueueList = new List<Queue_item>();
-        public List<Queue_item> KeukenqueueList = new List<Queue_item>();
-        public List<Heeft_item> HeeftItemList = new List<Heeft_item>();
+        public List<QueueItemModel> BarqueueList = new List<QueueItemModel>();
+        public List<QueueItemModel> KeukenqueueList = new List<QueueItemModel>();
+        public List<HeeftItemModel> HeeftItemList = new List<HeeftItemModel>();
         public int BestellingId;
 
         public void InsertBestelling(int tafelId, int werknemerId)
@@ -24,7 +24,7 @@ namespace Logica
         public void MakeQueueList(int menuId, int aantal, string comment, string categorie)
         {
             
-            Queue_item QueueItem = new Queue_item(BestellingId, menuId, aantal, comment, DateTime.Now);
+            QueueItemModel QueueItem = new QueueItemModel(BestellingId, menuId, aantal, comment, DateTime.Now);
             if((categorie == "F") || (categorie == "B") || (categorie == "W") || (categorie == "G") || (categorie == "K"))
             {
                 BarqueueList.Add(QueueItem);
@@ -48,7 +48,7 @@ namespace Logica
         }
         public void MakeItemList(int menuId, int aantal)
         {
-            Heeft_item item = new Heeft_item(BestellingId, menuId, aantal);
+            HeeftItemModel item = new HeeftItemModel(BestellingId, menuId, aantal);
             HeeftItemList.Add(item);
         }
         public void InsertItem()

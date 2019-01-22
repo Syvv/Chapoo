@@ -10,7 +10,7 @@ using Model;
 
 namespace DataAdaptor
 {
-   public class MenuItem_DAO
+   public class BestellingOpnemenDAO
    {
         public int InsertMenuItem(int tafelId, int werknemerId)
         {
@@ -34,14 +34,14 @@ namespace DataAdaptor
             connection.Close();
             return bestellingId;
         }
-        public void InsertInKeukenqueue(List<Queue_item> list)
+        public void InsertInKeukenqueue(List<QueueItemModel> list)
         {
             SqlConnection connection = DataConnection.connection;
             StringBuilder sb = new StringBuilder();
 
             connection.Open();
 
-            foreach (Queue_item item in list)
+            foreach (QueueItemModel item in list)
             {
                 int bestellingId = item.BestellingId;
                 int menuId = item.MenuId;
@@ -64,14 +64,14 @@ namespace DataAdaptor
             }
             connection.Close();
         }
-        public void InsertInBarqueue(List<Queue_item> list)
+        public void InsertInBarqueue(List<QueueItemModel> list)
         {
             SqlConnection connection = DataConnection.connection;
             StringBuilder sb = new StringBuilder();
 
             connection.Open();
 
-            foreach (Queue_item item in list)
+            foreach (QueueItemModel item in list)
             {
                 int bestellingId = item.BestellingId;
                 int menuId = item.MenuId;
@@ -94,14 +94,14 @@ namespace DataAdaptor
             }
             connection.Close();
         }
-        public void InsertInHeeftItem(List<Heeft_item> list)
+        public void InsertInHeeftItem(List<HeeftItemModel> list)
         {
             SqlConnection connection = DataConnection.connection;
             StringBuilder sb = new StringBuilder();
 
             connection.Open();
 
-            foreach (Heeft_item item in list)
+            foreach (HeeftItemModel item in list)
             {
                 int bestellingId = item.BestellingId;
                 int menuId = item.MenuId;

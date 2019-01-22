@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    public class Heeft_item
+    public class HeeftItemModel
     {
         public int BestellingId { get; set; }
         public int MenuId { get; set; }
         public int Aantal { get; set; }
 
-        public Heeft_item(int bestellingId, int menuId, int aantal)
+        public HeeftItemModel(int bestellingId, int menuId, int aantal)
         {
             BestellingId = bestellingId;
             MenuId = menuId;
@@ -20,8 +20,8 @@ namespace Model
         }
         public class HeeftItemList
         {
-            static List<Queue_item> list = new List<Queue_item>();
-            public static List<Queue_item> List { get => list; set => list = value; }
+            static List<QueueItemModel> list = new List<QueueItemModel>();
+            public static List<QueueItemModel> List { get => list; set => list = value; }
         }
     }
 }

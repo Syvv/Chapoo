@@ -15,9 +15,9 @@ namespace UI
 {
     public partial class Bestelling_opnemen_form : Style_guide.BaseFormMobile
     {
-        Categoriseren_gerechten_logica gerechten = new Categoriseren_gerechten_logica();
-        Fill_order_list_logica fillList = new Fill_order_list_logica();
-        Lunch_of_Diner_Logica lunchOfDiner = new Lunch_of_Diner_Logica();
+        CategoriserenGerechtenService gerechten = new CategoriserenGerechtenService();
+        VulBestelOpnemenService fillList = new VulBestelOpnemenService();
+        LunchOfDinerService lunchOfDiner = new LunchOfDinerService();
 
         public Bestelling_opnemen_form()
         {
@@ -136,7 +136,7 @@ namespace UI
         }
         public void SendOrder()
         {
-            Bestelling_logica bestellingLogica = new Bestelling_logica();
+            BestellingService bestellingLogica = new BestellingService();
 
             bestellingLogica.InsertBestelling(1, 1);
 

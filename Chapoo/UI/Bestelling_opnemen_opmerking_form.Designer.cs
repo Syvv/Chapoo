@@ -39,7 +39,7 @@
             // 
             this.btnSendComment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSendComment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnSendComment.Location = new System.Drawing.Point(72, 287);
+            this.btnSendComment.Location = new System.Drawing.Point(15, 285);
             this.btnSendComment.Name = "btnSendComment";
             this.btnSendComment.Size = new System.Drawing.Size(100, 30);
             this.btnSendComment.TabIndex = 0;
@@ -49,7 +49,7 @@
             // 
             // txtComment
             // 
-            this.txtComment.Location = new System.Drawing.Point(72, 53);
+            this.txtComment.Location = new System.Drawing.Point(15, 41);
             this.txtComment.Name = "txtComment";
             this.txtComment.Size = new System.Drawing.Size(341, 140);
             this.txtComment.TabIndex = 1;
@@ -59,7 +59,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(69, 21);
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(160, 17);
             this.label1.TabIndex = 2;
@@ -69,7 +69,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(72, 200);
+            this.label2.Location = new System.Drawing.Point(15, 198);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 17);
             this.label2.TabIndex = 3;
@@ -77,7 +77,7 @@
             // 
             // txtAantal
             // 
-            this.txtAantal.Location = new System.Drawing.Point(72, 230);
+            this.txtAantal.Location = new System.Drawing.Point(15, 228);
             this.txtAantal.Name = "txtAantal";
             this.txtAantal.Size = new System.Drawing.Size(100, 22);
             this.txtAantal.TabIndex = 4;
@@ -88,7 +88,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(489, 329);
+            this.ClientSize = new System.Drawing.Size(382, 329);
             this.Controls.Add(this.txtAantal);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

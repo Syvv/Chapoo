@@ -13,11 +13,12 @@ namespace UI
 {
     public partial class Bestelling_overzicht_form : Style_guide.BaseFormMobile
     {
-        public Orderview_logica orderview = new Orderview_logica();
-        public Bestelling_bevestiging_form bevestiging = new Bestelling_bevestiging_form();
-        private bool bar = false;
+        public BestelOverzichtService bestelOverzichtService = new BestelOverzichtService();
+        public Bestelling_bevestiging_form bevestiging;
+        public Bestelling_overzicht_aanpassen_form aanpassen;
+        public bool bar = false;
 
-        Fill_orderview_list_logica orderView = new Fill_orderview_list_logica();
+        VulBestelOverzichtService orderView = new VulBestelOverzichtService();
         public Bestelling_overzicht_form()
         {
             InitializeComponent();
@@ -71,7 +72,33 @@ namespace UI
         {
             string aantal = listView1.SelectedItems[0].SubItems[1].Text;
             string comment = listView1.SelectedItems[0].SubItems[2].Text;
-            new Bestelling_overzicht_aanpassen_form(comment, aantal).Show();
+            aanpassen = new Bestelling_overzicht_aanpassen_form(comment, aantal);
+            aanpassen.Show();
+            aanpassen.FormClosed += new FormClosedEventHandler(aanpassen_FormClosed);
+
+        }
+
+        private void aanpassen_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            int id = (int)listView1.SelectedItems[0].Tag;
+            if(aanpassen.confirmatie == true)
+            {
+                bestelOverzichtService.ChangeItem(bar, id, aanpassen.returnComment, int.Parse(aanpassen.returnAantal));
+
+                foreach (ListViewItem item in listView1.Items)
+                {
+                    listView1.Items.Remove(item);
+                }
+
+                if (bar == true)
+                {
+                    orderView.FillBarList(listView1);
+                }
+                else
+                {
+                    orderView.FillKeukenList(listView1);
+                }
+            }          
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -81,19 +108,37 @@ namespace UI
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            bevestiging = new Bestelling_bevestiging_form();
             bevestiging.Show();
             bevestiging.FormClosed += new FormClosedEventHandler(bevestiging_FormClosed);
         }
 
         private void bevestiging_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if (bevestiging.confirmatie == true)
+            int id = (int)listView1.SelectedItems[0].Tag;
+
+            if ((int)listView1.Items[0].Tag == id)
             {
-                MessageBox.Show("werkt");
-                int id = (int)listView1.SelectedItems[0].Tag;
-                orderview.DeleteItem(bevestiging.confirmatie, id, bar);
+                listView1.Items[0].Remove();
             }
-            this.Update();
+            if (aanpassen.confirmatie == true)
+            {
+                bestelOverzichtService.DeleteItem(id, bar);
+
+                foreach (ListViewItem item in listView1.Items)
+                {
+                    listView1.Items.Remove(item);
+                }
+
+                if (bar == true)
+                {
+                    orderView.FillBarList(listView1);
+                }
+                else
+                {
+                    orderView.FillKeukenList(listView1);
+                }
+            }
         }
     }
 }

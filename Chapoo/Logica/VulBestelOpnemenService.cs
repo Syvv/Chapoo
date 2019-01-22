@@ -9,7 +9,7 @@ using DataAdaptor;
 
 namespace Logica
 {
-    public class Fill_order_list_logica
+    public class VulBestelOpnemenService
     {
         public void ListViewStyle(ListView listView)
         {
@@ -32,9 +32,8 @@ namespace Logica
             listView.Columns[3].Width = 100;
 
             listView.Height = 325;
-            //listView.Width = 450;
         }
-        public void FillListView(ListView listView, List<Model.Menu> gerechten)
+        public void FillListView(ListView listView, List<MenuModel> gerechten)
         {   
             for (int i = 0; i < gerechten.Count; i++)
             {

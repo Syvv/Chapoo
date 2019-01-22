@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace DataAdaptor
 {
-    public class Menu_DAO
+    public class MenuDAO
     {
-        public static List<Model.Menu> GetMenuItems()
+        public static List<Model.MenuModel> GetMenuItems()
         {
-            List<Model.Menu> menu_list = new List<Model.Menu>();
+            List<Model.MenuModel> menu_list = new List<Model.MenuModel>();
             SqlDataReader data;
 
             data = DataConnection.Query("SELECT * FROM MENU");
@@ -30,7 +30,7 @@ namespace DataAdaptor
                 categorie = (string)data["categorie"];
                 voorraad = (int)data["voorraad"];
 
-                Model.Menu menu = new Model.Menu(menuId, menuItem, prijs, categorie, voorraad);
+                Model.MenuModel menu = new Model.MenuModel(menuId, menuItem, prijs, categorie, voorraad);
 
                 menu_list.Add(menu);
                 
