@@ -29,14 +29,10 @@ namespace UI
             try
             {
                 type = Logica.User.TestLoginInfo(UsernameInput.Text, PasswordInput.Text);
-            }catch(Exception ex)
+            }catch(Exception ex) when (ex is Model.NoSuchUserException || ex is DataMisalignedException)
             {
-                if(ex is Model.NoSuchUserException || ex is DataMisalignedException)
-                {
-                    MessageBox.Show(ex.Message, "Something was wrong",MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                throw ex;
+                MessageBox.Show(ex.Message, "Something was wrong",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
             Model.User user = new User(UsernameInput.Text,type);
