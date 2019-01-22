@@ -11,19 +11,23 @@ namespace Logica
     public class RekeningLogica
     {
         int tafelNummer= 1;
-        string _opmerking = null;
+        protected string _opmerking = "test";
+        RekeningOverzicht test = new RekeningOverzicht();
+
         public void TafelNummer(int tafelnummer)
         {
             tafelNummer = tafelnummer;
-
-            //rekening nummer in de logica zetten
         }
 
-        public Rekening RekeningOpstellen() //weet nog niet of dit wel handig is
+        public Rekening RekeningOpstellen()
         {
-            Rekening rekening = new Rekening(0, 0, 0, 0, 0, " ", 0);
+            Rekening rekening = new Rekening(0, 0, 0, 0, 0, _opmerking, tafelNummer);
             PrijsOptellerMakkelijk(ref rekening);
-            //Test(ref rekening);
+            
+            
+            //Rekening rekening = 
+            //RekeningRechtzetten(ref rekening);
+            //rekening.Opmerking = _opmerking;
 
             return rekening;
         }
@@ -66,28 +70,36 @@ namespace Logica
                 }
             }
 
-            rekening = new Rekening(totaalRekening, zonderBtw, btw9, btw21, 0, null, rekening.Tafelnummer); //fooi moet hier nog bij, en totaalbedrag moet nog veranderd worden.
+            rekening = new Rekening(totaalRekening, zonderBtw, btw9, btw21, 0, _opmerking, rekening.Tafelnummer); //fooi moet hier nog bij, en totaalbedrag moet nog veranderd worden.
             //return rekening;
         }  
-
-        public void FooiBerekenen(int ingevoerdbedrag, ref Rekening rekening) //ergens nog een controller plaatsen om te kijken of er geen lager bedrag is ingevoerd dan dr rekening zelf
+        public bool KloptFooi(Rekening rekening, double totaal)
         {
-            double fooi = ingevoerdbedrag - rekening.Totaalbedrag;
-            rekening.Fooi = fooi;
-            rekening.Totaalbedrag = rekening.Totaalbedrag + fooi;
+            if(rekening.Totaalbedrag > totaal)
+            {
+                return true;
+            }
+            return false;
+        }
+        public double FooiBerekenen(ref Rekening rekening, double totaal)
+        {
+            double fooi = totaal - rekening.Totaalbedrag;
+            rekening.Totaalbedrag += fooi;
+
+            return fooi;
         }
 
         public void OpmerkingToevoegen(string opmerking)
         {
-            //_opmerking = opmerking;
-            Rekening rekening = RekeningOpstellen();
+            //RekeningOverzicht king = new RekeningOverzicht(opmerking);
+        }
 
-            rekening.Opmerking = opmerking;
-        }
-        public void Test(Rekening rekening)
+        private void RekeningRechtzetten(ref Rekening rekening)
         {
-            
+            rekening = RekeningOpstellen();
+            rekening.Opmerking = "dit is een test";
         }
+
         public string OpmerkingWeergeven()
         {
             //voor als er opniew op weergeven opmerking wordt gedrukt
@@ -122,6 +134,27 @@ namespace Logica
             int bestellingId = OpvragenBestellingId(rekening.Tafelnummer);
 
             dao.WegSchrijvenBestelling(rekening, rekening.Tafelnummer, bestellingId);
+        }
+
+        public List<RekeningOverzicht>OverzichtBestellingen(int tafelId)
+        {
+            //voor de Gridview
+            var Dao = new RekeningDAO();
+            int bestellinId = OpvragenBestellingId(tafelId);
+
+            List<BesteldRekening> item = Dao.OphalenBestellingen(bestellinId);
+            List<RekeningOverzicht> rekening = new List<RekeningOverzicht>();
+
+            foreach(BesteldRekening x in item)
+            {
+                RekeningOverzicht rk = new RekeningOverzicht();
+                rk.Item = x.MenuItem;
+                rk.Hoeveelheid = x.Hoeveelheid;
+                rk.Prijs = x.Prijs;
+
+                rekening.Add(rk);
+            }
+            return rekening;
         }
     }
 }

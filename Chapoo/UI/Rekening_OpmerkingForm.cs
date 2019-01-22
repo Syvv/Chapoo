@@ -46,9 +46,6 @@ namespace UI
 
             Rekening rekening = logica.RekeningOpstellen();
             Tbopmerking.Text = rekening.Opmerking;
-
-            string opmerking = logica.OpmerkingWeergeven();
-            MessageBox.Show(opmerking);
         }
     }
 }
