@@ -1,6 +1,6 @@
 ﻿namespace UI
 {
-    partial class Bevestiging_form
+    partial class Bestelling_bevestiging_form
     {
         /// <summary>
         /// Required designer variable.
@@ -37,13 +37,14 @@
             // 
             this.titel1.AutoSize = true;
             this.titel1.Font = new System.Drawing.Font("Arial", 20F);
-            this.titel1.Location = new System.Drawing.Point(36, 46);
+            this.titel1.Location = new System.Drawing.Point(65, 46);
             this.titel1.MaximumSize = new System.Drawing.Size(450, 0);
             this.titel1.Name = "titel1";
-            this.titel1.Size = new System.Drawing.Size(405, 78);
+            this.titel1.Size = new System.Drawing.Size(361, 78);
             this.titel1.TabIndex = 1;
-            this.titel1.Text = "Weet je zeker dat je de bestelling wilt verwijderen?";
+            this.titel1.Text = "Weet je zeker dat je wilt verwijderen?";
             this.titel1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.titel1.Click += new System.EventHandler(this.titel1_Click);
             // 
             // baseButton1
             // 
@@ -56,6 +57,7 @@
             this.baseButton1.TabIndex = 2;
             this.baseButton1.Text = "Delete";
             this.baseButton1.UseVisualStyleBackColor = false;
+            this.baseButton1.Click += new System.EventHandler(this.baseButton1_Click);
             // 
             // baseButton2
             // 

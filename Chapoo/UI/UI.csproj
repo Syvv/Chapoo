@@ -69,17 +69,23 @@
     <Compile Include="Bestelling_opnemen_opmerking_form.Designer.cs">
       <DependentUpon>Bestelling_opnemen_opmerking_form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Bestelling_overzicht_aanpassen_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bestelling_overzicht_aanpassen_form.Designer.cs">
+      <DependentUpon>Bestelling_overzicht_aanpassen_form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Bestelling_overzicht_form.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Bestelling_overzicht_form.Designer.cs">
       <DependentUpon>Bestelling_overzicht_form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Bevestiging_form.cs">
+    <Compile Include="Bestelling_bevestiging_form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Bevestiging_form.Designer.cs">
-      <DependentUpon>Bevestiging_form.cs</DependentUpon>
+    <Compile Include="Bestelling_bevestiging_form.Designer.cs">
+      <DependentUpon>Bestelling_bevestiging_form.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -119,11 +125,14 @@
     <EmbeddedResource Include="Bestelling_opnemen_opmerking_form.resx">
       <DependentUpon>Bestelling_opnemen_opmerking_form.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Bestelling_overzicht_aanpassen_form.resx">
+      <DependentUpon>Bestelling_overzicht_aanpassen_form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Bestelling_overzicht_form.resx">
       <DependentUpon>Bestelling_overzicht_form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Bevestiging_form.resx">
-      <DependentUpon>Bevestiging_form.cs</DependentUpon>
+    <EmbeddedResource Include="Bestelling_bevestiging_form.resx">
+      <DependentUpon>Bestelling_bevestiging_form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

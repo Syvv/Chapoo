@@ -20,7 +20,6 @@ namespace Logica
             listView.View = View.Details;
             listView.GridLines = true;
             listView.FullRowSelect = true;
-            listView.CheckBoxes = true;
             listView.Scrollable = true;
 
             listView.Columns.Add("Naam");
