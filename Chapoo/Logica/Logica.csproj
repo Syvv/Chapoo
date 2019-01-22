@@ -57,6 +57,10 @@
     <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Class diagram Logica and DAO.cd" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\DataAdaptor\DataAdaptor.csproj">
       <Project>{4c6087f0-054e-412c-a584-1646116e3de4}</Project>
       <Name>DataAdaptor</Name>
@@ -64,11 +68,8 @@
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{0d07733e-d479-43b0-bf6d-5d2043261317}</Project>
       <Name>Model</Name>
+      <Private>True</Private>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
-    <None Include="Class diagram Logica and DAO.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

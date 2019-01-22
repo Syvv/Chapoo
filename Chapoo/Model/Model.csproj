@@ -47,6 +47,7 @@
     <Compile Include="HeeftItemModel.cs" />
     <Compile Include="MenuModel.cs" />
     <Compile Include="BestelOverzichtItemModel.cs" />
+    <Compile Include="NoSuchUserException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QueueItemModel.cs" />
     <Compile Include="RekeningOverzicht.cs" />
