@@ -10,19 +10,32 @@ namespace Logica
 {
     public class RekeningLogica
     {
-        //Rekening rekening;
-        string _opmerking = null;
-        public Rekening RekeningOpstellen() //weet nog niet of dit wel handig is
+        int tafelNummer= 1;
+        protected string _opmerking = "test";
+        RekeningOverzicht test = new RekeningOverzicht();
+
+        public void TafelNummer(int tafelnummer)
         {
-            Rekening rekening = new Rekening(0, 0, 0, 0, 0, " ");
-            rekening = PrijsOptellerMakkelijk();
-            Test(ref rekening);
+            tafelNummer = tafelnummer;
+        }
+
+        public Rekening RekeningOpstellen()
+        {
+            Rekening rekening = new Rekening(0, 0, 0, 0, 0, _opmerking, tafelNummer);
+            PrijsOptellerMakkelijk(ref rekening);
+            
+            
+            //Rekening rekening = 
+            //RekeningRechtzetten(ref rekening);
+            //rekening.Opmerking = _opmerking;
 
             return rekening;
         }
-        public Rekening PrijsOptellerMakkelijk() //tafelnummer toevoegen
+
+        public void PrijsOptellerMakkelijk(ref Rekening rekening) //tafelnummer toevoegen
         {
-            List<BesteldRekening> besteld = OpvragenBesteldeItems(1); //hier moet nog een tafelnummer
+            rekening.Tafelnummer = tafelNummer;
+            List<BesteldRekening> besteld = OpvragenBesteldeItems(rekening.Tafelnummer); //hier moet nog een tafelnummer
 
             double totaalRekening = 0;
             double zonderBtw = 0;
@@ -57,25 +70,36 @@ namespace Logica
                 }
             }
 
-            Rekening rekening = new Rekening(totaalRekening, zonderBtw, btw9, btw21, 0, null); //fooi moet hier nog bij, en totaalbedrag moet nog veranderd worden.
-            return rekening;
+            rekening = new Rekening(totaalRekening, zonderBtw, btw9, btw21, 0, _opmerking, rekening.Tafelnummer); //fooi moet hier nog bij, en totaalbedrag moet nog veranderd worden.
+            //return rekening;
         }  
-
-        public void FooiBerekenen(int ingevoerdbedrag, ref Rekening rekening) //ergens nog een controller plaatsen om te kijken of er geen lager bedrag is ingevoerd dan dr rekening zelf
+        public bool KloptFooi(Rekening rekening, double totaal)
         {
-            double fooi = ingevoerdbedrag - rekening.Totaalbedrag;
-            rekening.Fooi = fooi;
-            rekening.Totaalbedrag = rekening.Totaalbedrag + fooi;
+            if(rekening.Totaalbedrag > totaal)
+            {
+                return true;
+            }
+            return false;
+        }
+        public double FooiBerekenen(ref Rekening rekening, double totaal)
+        {
+            double fooi = totaal - rekening.Totaalbedrag;
+            rekening.Totaalbedrag += fooi;
+
+            return fooi;
         }
 
         public void OpmerkingToevoegen(string opmerking)
         {
-            _opmerking = opmerking;
+            //RekeningOverzicht king = new RekeningOverzicht(opmerking);
         }
-        public void Test(ref Rekening rekening)
+
+        private void RekeningRechtzetten(ref Rekening rekening)
         {
-            rekening.Opmerking = _opmerking;
+            rekening = RekeningOpstellen();
+            rekening.Opmerking = "dit is een test";
         }
+
         public string OpmerkingWeergeven()
         {
             //voor als er opniew op weergeven opmerking wordt gedrukt
@@ -103,13 +127,34 @@ namespace Logica
             return bestellingId;
         }
 
-        public void RekeningWegschrijven(int tafelId)
+        public void RekeningWegschrijven()
         {
             Rekening rekening = RekeningOpstellen();
             var dao = new RekeningDAO();
-            int bestellingId = OpvragenBestellingId(tafelId);
+            int bestellingId = OpvragenBestellingId(rekening.Tafelnummer);
 
-            dao.WegSchrijvenBestelling(rekening, tafelId, bestellingId);
+            dao.WegSchrijvenBestelling(rekening, rekening.Tafelnummer, bestellingId);
+        }
+
+        public List<RekeningOverzicht>OverzichtBestellingen(int tafelId)
+        {
+            //voor de Gridview
+            var Dao = new RekeningDAO();
+            int bestellinId = OpvragenBestellingId(tafelId);
+
+            List<BesteldRekening> item = Dao.OphalenBestellingen(bestellinId);
+            List<RekeningOverzicht> rekening = new List<RekeningOverzicht>();
+
+            foreach(BesteldRekening x in item)
+            {
+                RekeningOverzicht rk = new RekeningOverzicht();
+                rk.Item = x.MenuItem;
+                rk.Hoeveelheid = x.Hoeveelheid;
+                rk.Prijs = x.Prijs;
+
+                rekening.Add(rk);
+            }
+            return rekening;
         }
     }
 }

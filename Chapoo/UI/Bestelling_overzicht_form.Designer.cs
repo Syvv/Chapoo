@@ -37,6 +37,7 @@
             this.btnKlaar = new Styleguide.BaseButton();
             this.btnBar = new Styleguide.BaseButton();
             this.btnKeuken = new Styleguide.BaseButton();
+            this.btnDelete = new Styleguide.BaseButton();
             this.SuspendLayout();
             // 
             // homeButton1
@@ -70,14 +71,15 @@
             this.listView1.Size = new System.Drawing.Size(382, 412);
             this.listView1.TabIndex = 7;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // btnDeleteAll
             // 
             this.btnDeleteAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteAll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnDeleteAll.Location = new System.Drawing.Point(218, 576);
+            this.btnDeleteAll.Location = new System.Drawing.Point(270, 578);
             this.btnDeleteAll.Name = "btnDeleteAll";
-            this.btnDeleteAll.Size = new System.Drawing.Size(132, 50);
+            this.btnDeleteAll.Size = new System.Drawing.Size(112, 50);
             this.btnDeleteAll.TabIndex = 8;
             this.btnDeleteAll.Text = "Delete all";
             this.btnDeleteAll.UseVisualStyleBackColor = true;
@@ -87,9 +89,9 @@
             // 
             this.btnChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChange.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnChange.Location = new System.Drawing.Point(25, 576);
+            this.btnChange.Location = new System.Drawing.Point(0, 577);
             this.btnChange.Name = "btnChange";
-            this.btnChange.Size = new System.Drawing.Size(132, 50);
+            this.btnChange.Size = new System.Drawing.Size(112, 50);
             this.btnChange.TabIndex = 9;
             this.btnChange.Text = "Change";
             this.btnChange.UseVisualStyleBackColor = true;
@@ -131,11 +133,24 @@
             this.btnKeuken.UseVisualStyleBackColor = true;
             this.btnKeuken.Click += new System.EventHandler(this.btnKeuken_Click);
             // 
+            // btnDelete
+            // 
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnDelete.Location = new System.Drawing.Point(135, 577);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(112, 50);
+            this.btnDelete.TabIndex = 13;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // Bestelling_overzicht_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(382, 638);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnKeuken);
             this.Controls.Add(this.btnBar);
             this.Controls.Add(this.btnKlaar);
@@ -155,6 +170,7 @@
             this.Controls.SetChildIndex(this.btnKlaar, 0);
             this.Controls.SetChildIndex(this.btnBar, 0);
             this.Controls.SetChildIndex(this.btnKeuken, 0);
+            this.Controls.SetChildIndex(this.btnDelete, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -170,5 +186,6 @@
         private Styleguide.BaseButton btnKlaar;
         private Styleguide.BaseButton btnBar;
         private Styleguide.BaseButton btnKeuken;
+        private Styleguide.BaseButton btnDelete;
     }
 }

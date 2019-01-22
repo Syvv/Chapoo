@@ -22,19 +22,27 @@ namespace UI
         public RekeningForm_Overzicht() : base()
         {
             InitializeComponent();
+
+            TafelNummerToevoegen();
             PrijzenWeergeven();
 
-            ListViewAanmaken();
-            ListViewVuller();
+            //ListViewAanmaken(listView);
+            //ListViewVuller(listView);
 
-            GridVwOverzicht.Hide();
-            //GridViewVuller();
+            LblOpmerking.Hide();
+            OutOpmerking.Hide();
+
+            listView.Hide();
+            GridViewVuller();
+        }
+        private void TafelNummerToevoegen()
+        {
+            LblTafelnummer.Text = tafelNummer.ToString();
+            rekeningLogica.TafelNummer(tafelNummer);
         }
         private void PrijzenWeergeven()
         {
-            //Rekening rekening = rekeningLogica.PrijsOptellerMakkelijk();
             Rekening rekening = rekeningLogica.RekeningOpstellen();
-            //rekening.BedragZonderBtw.ToString()
 
             OutExclBtw.Text = string.Format("€ {0:F2} ", rekening.BedragZonderBtw);
             OutBtw6.Text = string.Format("€ {0:F2} ", rekening.Btw9);
@@ -45,8 +53,10 @@ namespace UI
         {
             try
             {
-                List<Model.BesteldRekening> besteld = rekeningLogica.OpvragenBesteldeItems(tafelNummer);
+                List<RekeningOverzicht> besteld = rekeningLogica.OverzichtBestellingen(tafelNummer);                             
+
                 GridVwOverzicht.DataSource = besteld;
+                GridVwOverzicht.ReadOnly = true;
             }
             catch
             {
@@ -63,6 +73,8 @@ namespace UI
         {
             var Opmerking = new Rekening_OpmerkingForm();
             Opmerking.Show();
+
+            OpmerkingWeergeven();
         }
 
         private void BtnDoor_Click(object sender, EventArgs e)
@@ -72,41 +84,58 @@ namespace UI
             this.Close();
         }
 
-        private void ListViewAanmaken()
+        private void ListViewAanmaken(ListView listView)
         {
-            listView.Items.Clear();
-
             listView = new ListView();
+
+            listView.View = View.Details;
             listView.GridLines = true;
             listView.FullRowSelect = true;
             listView.Scrollable = true;
             listView.GridLines = true;
 
-            listView.Columns.Add("item", -2, HorizontalAlignment.Left);
+            listView.Columns.Add("item");
             listView.Columns.Add("aantal", -2, HorizontalAlignment.Left);
             listView.Columns.Add("prijs p/s", -2, HorizontalAlignment.Left);
             listView.Columns.Add("tot. prijs", -2, HorizontalAlignment.Left);
 
             listView.Name = "listView";
 
-            listView.Columns[0].Width = 100;
+            listView.Columns[0].Width = 200;
             listView.Columns[1].Width = 20;
             listView.Columns[2].Width = 20;
             listView.Columns[3].Width = 20;
 
-            listView.Height = 325;
+            listView.Height = 100;            
         }
-        private void ListViewVuller()
+        private void ListViewVuller(ListView listView)
         {
             List<BesteldRekening> besteld = rekeningLogica.OpvragenBesteldeItems(tafelNummer);
-
-            for (int i = 0; i < besteld.Count; i++)
+                       
+            foreach( BesteldRekening b in besteld)
             {
-                double totaalPrijs = besteld[i].Prijs * besteld[i].Hoeveelheid;
-                ListViewItem lvItem = new ListViewItem(new[] { besteld[i].MenuItem, besteld[i].Hoeveelheid.ToString(), besteld[i].Prijs.ToString(), totaalPrijs.ToString() });
-                //lvItem.Tag =
-                listView.Items.Add(lvItem);
+                double totaalPrijs = b.Prijs * b.Hoeveelheid;
+                string[] items = new string[4];
+
+                ListViewItem item;
+
+                items[0] = b.MenuItem;
+                items[1] = b.Hoeveelheid.ToString();
+                items[2] = b.Prijs.ToString();
+                items[3] = totaalPrijs.ToString();
+
+                item = new ListViewItem(items[0], items[1]);
+                listView.Items.Add(item);
             }
+        }
+        private void OpmerkingWeergeven()
+        {
+            LblOpmerking.Show();
+            OutOpmerking.Show();
+
+            Rekening rekening = rekeningLogica.RekeningOpstellen();
+
+            OutOpmerking.Text = rekening.Opmerking;
         }
     }
 }

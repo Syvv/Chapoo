@@ -50,6 +50,7 @@
     <Compile Include="Notificatie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Queue_item.cs" />
+    <Compile Include="RekeningOverzicht.cs" />
     <Compile Include="Rekening.cs" />
     <Compile Include="Bestelling.cs" />
     <Compile Include="User.cs" />

@@ -74,18 +74,17 @@ namespace DataAdaptor
             DataConnection.connection.Close();
             return bestelling;
         }
-        public void WegSchrijvenBestelling(Rekening rekening, int tafel, int bestelling)//bestelling meegeven
+        public void WegSchrijvenBestelling(Rekening rekening, int tafelid, int bestelling)//bestelling meegeven
         {
             SqlDataReader data;
+            string query = "INSERT INTO REKENING (tafel_id, bestelling_id, totaalbedrag, tip, opmerking) VALUES(@tafel_id, @bestelling_id, @totaalbedrag, @tip, @opmerking)";
 
-            string query = ("INSERT INTO REKENING (tafel_id, bestelling_id, totaalbedrag, tip, opmerking) values (@tafel_id, @bestelling_id, @totaalbedrag, @tip, @opmerking)");
-            query.Replace("@tafel_id", tafel.ToString());
+            query.Replace("@tafel_id", tafelid.ToString());
             query.Replace("@bestelling_id", bestelling.ToString());
             query.Replace("@totaalbedrag", rekening.Totaalbedrag.ToString());
             query.Replace("@tip", rekening.Fooi.ToString());
             query.Replace("@opmerking", rekening.Opmerking);
 
-            //nu de datareader nog            
             data = DataConnection.Query(query);
             DataConnection.connection.Close();
         }

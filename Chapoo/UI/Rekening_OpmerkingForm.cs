@@ -44,8 +44,8 @@ namespace UI
         {
             var logica = new RekeningLogica();
 
-            string opmerking = logica.OpmerkingWeergeven();            
-            Tbopmerking.Text = opmerking;
+            Rekening rekening = logica.RekeningOpstellen();
+            Tbopmerking.Text = rekening.Opmerking;
         }
     }
 }

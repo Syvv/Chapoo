@@ -36,19 +36,30 @@ namespace UI
 
         private void btnBerekenFooi_Click(object sender, EventArgs e)
         {
+            FooiCheck();
+        }
+
+        private void BtnBetalingAfronden_Click(object sender, EventArgs e)
+        {
+            FooiCheck();
+            if (FooiIngevuldCheck())
+            {
+                rekeningLogica.RekeningWegschrijven();
+                MessageBox.Show("betaling is gelukt, de rest volgt nog");
+            }
+        }
+        private void FooiCheck()
+        {
             Rekening rekening = rekeningLogica.RekeningOpstellen();
             try
             {
-                double Totaal = Convert.ToDouble(TbBedragBetaald.Text);
-                if(rekening.Totaalbedrag > Totaal)
+                double totaal = Convert.ToDouble(TbBedragBetaald.Text);
+                if (rekeningLogica.KloptFooi(rekening, totaal))
                 {
                     MessageBox.Show("bedrag is te laag");
                     return;
                 }
-
-                //dit moet nog naar de LOGICA
-                double fooi = Totaal - rekening.Totaalbedrag;
-                rekening.Totaalbedrag += fooi;
+                double fooi = rekeningLogica.FooiBerekenen(ref rekening, totaal);
 
                 OutFooi.Text = string.Format("€ {0:F2} ", fooi);
                 OutTotaalEind.Text = string.Format("€ {0:F2} ", rekening.Totaalbedrag);
@@ -57,18 +68,6 @@ namespace UI
             catch
             {
                 MessageBox.Show("Verkeerde invoer");
-            }            
-        }
-
-        private void BtnBetalingAfronden_Click(object sender, EventArgs e)
-        {
-            if (FooiIngevuldCheck())
-            {
-                MessageBox.Show("betaling is gelukt, de rest volgt nog");
-            }
-            else
-            {
-                MessageBox.Show("Verifieer de ingevulde fooi, dmv de knop");
             }
         }
         private bool FooiIngevuldCheck()
