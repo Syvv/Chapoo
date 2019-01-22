@@ -80,5 +80,11 @@ namespace UI
         {
 
         }
+
+        private void BarKeukenForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            BarKeukenQueue.PreserveData();
+            Application.Exit();
+        }
     }
 }

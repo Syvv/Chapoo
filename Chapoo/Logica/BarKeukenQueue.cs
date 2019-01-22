@@ -67,6 +67,16 @@ namespace Logica
                 KeukenBarDataConnection.UpdateAmountKeuken(item);
             }
         }
+
+        public static void PreserveData()
+        {
+            Bestellingsitem[] list = Model.BestellingsGeheugen.GetAllOrders();
+            if(list.Length!=0)
+            {
+                KeukenBarDataConnection.CreateNotification(list);
+            }
+            
+        }
         
     }
 }
