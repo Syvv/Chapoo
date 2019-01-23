@@ -58,7 +58,7 @@ namespace UI
                 }
 
                 //add the controls that belong to all BarKeukenUIElements so that you can actually see them
-                Controls.Add(new Label() { Text = "Commentaar", Top = 0, Left = 640, Font = new System.Drawing.Font("Arial", 16), Height = 30, Width = 200 });
+                Controls.Add(new Label() { Text = "Commentaar", Top = 0, Left = 840, Font = new System.Drawing.Font("Arial", 16), Height = 30, Width = 200 });
                 foreach (BarKeukenUIElement ui in UIElements)
                 {
                     foreach(Control c in ui.Controls)
