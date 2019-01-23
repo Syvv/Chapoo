@@ -19,16 +19,11 @@ namespace Logica
 
         public Rekening RekeningOpstellen()
         {
-            //Rekening rekening = new Rekening(0, 0, 0, 0, 0, "Geen" , 0);
             int Tafelnummer = 1;
             Rekening rekening = PrijsOptellerMakkelijk(Tafelnummer);
             rekening.Opmerking = RekeningToevoegen.Opmerking();
             
             return rekening;
-        }
-        public void RekeningAanpassing(Rekening rekening)
-        {
-
         }
         public Rekening PrijsOptellerMakkelijk(int tafelnummer)
         {
@@ -42,7 +37,6 @@ namespace Logica
             foreach(BesteldRekening item in besteld) //elk item die besteld is
             {
                 int hoeveelheid = item.Hoeveelheid;
-                //while (hoeveelheid >= 0)
                 while(hoeveelheid != 0)
                 {
                     if (item.Categorie == "G" || item.Categorie == "W" || item.Categorie == "B")

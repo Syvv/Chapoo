@@ -29,10 +29,7 @@ namespace UI
         private void LadenBetaalScherm()
         {
             Rekening rekening = rekeningLogica.RekeningOpstellen();
-
-            //double test = (double)Math.Round(rekening.Totaalbedrag);
-            //double test2 = rekening.Totaalbedrag;
-
+            
             OutBedragZondFooi.Text = string.Format("€ {0:F2} ", rekening.Totaalbedrag);
             OutTotaalEind.Text = string.Format("€ {0:F2} ", rekening.Totaalbedrag);
             OutFooi.Text = "€ 0,00";
@@ -69,8 +66,6 @@ namespace UI
                 OutFooi.Text = string.Format("€ {0:F2} ", fooi);
                 OutTotaalEind.Text = string.Format("€ {0:F2} ", rekening.Totaalbedrag);
                 ingevuld = true;
-
-                rekeningLogica.RekeningAanpassing(rekening);
             }
             catch
             {

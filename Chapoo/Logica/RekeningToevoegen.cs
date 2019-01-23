@@ -10,7 +10,7 @@ namespace Logica
 {
     public class RekeningToevoegen 
     {
-        static string text = "doen";
+        static string text = " ";
         static decimal Fooi;
         static decimal TotaalBedrag;
         public static void zin(string zin)
