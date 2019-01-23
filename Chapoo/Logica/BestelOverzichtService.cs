@@ -10,7 +10,7 @@ namespace Logica
 {
     public class BestelOverzichtService
     {
-        private BestelOverzichtDAO OrderView = new BestelOverzichtDAO();
+        private BestellingOverzichtDAO OrderView = new BestellingOverzichtDAO();
         public void DeleteItem(int id, bool bar)
         {
             if (bar == true)
@@ -43,6 +43,10 @@ namespace Logica
             {
                 OrderView.DeleteAllInKeukenQueue(id);
             }
+        }
+        public void DeleteFromNotifications(int id)
+        {
+            OrderView.DeleteInNotificatie(id);
         }
     }
 }

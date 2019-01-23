@@ -31,5 +31,10 @@ namespace Style_guide
         {
 
         }
+
+        private void txtTafel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

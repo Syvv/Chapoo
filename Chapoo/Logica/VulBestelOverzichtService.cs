@@ -17,7 +17,7 @@ namespace Logica
 
         public void FillKlaarList(ListView listView)
         {
-            notificaties = BestelOverzichtDAO.GetNotificaties();
+            notificaties = BestellingOverzichtDAO.GetNotificaties();
 
             for (int i = 0; i < notificaties.Count; i++)
             {
@@ -28,7 +28,7 @@ namespace Logica
         }
         public void FillBarList(ListView listView)
         {
-            barQueue = BestelOverzichtDAO.GetBarQueue();
+            barQueue = BestellingOverzichtDAO.GetBarQueue();
 
             for (int i = 0; i < barQueue.Count; i++)
             {
@@ -39,7 +39,7 @@ namespace Logica
         }
         public void FillKeukenList(ListView listView)
         {
-            keukenQueue = BestelOverzichtDAO.GetKeukenQueue();
+            keukenQueue = BestellingOverzichtDAO.GetKeukenQueue();
 
             for (int i = 0; i < keukenQueue.Count; i++)
             {

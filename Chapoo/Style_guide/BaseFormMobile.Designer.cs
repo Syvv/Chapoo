@@ -49,9 +49,10 @@
             this.txtTafel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTafel.Location = new System.Drawing.Point(147, 67);
             this.txtTafel.Name = "txtTafel";
-            this.txtTafel.Size = new System.Drawing.Size(56, 25);
+            this.txtTafel.Size = new System.Drawing.Size(72, 25);
             this.txtTafel.TabIndex = 4;
-            this.txtTafel.Text = "Tafel";
+            this.txtTafel.Text = "Tafel 1";
+            this.txtTafel.Click += new System.EventHandler(this.txtTafel_Click);
             // 
             // BaseFormMobile
             // 
