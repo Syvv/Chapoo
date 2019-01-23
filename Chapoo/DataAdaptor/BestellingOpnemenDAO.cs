@@ -49,7 +49,7 @@ namespace DataAdaptor
                 string commentaar = item.Comment;
                 DateTime timestamp = item.Timestamp;
 
-                sb.Append("INSERT INTO GAAT_NAAR_KEUKEN (bestelling_id, menu_id, hoeveelheid, Commentaar, timestamp ) VALUES(@bestellingId, @menuId, @hoeveelheid, @commentaar, @timestamp)");
+                sb.Append("INSERT INTO GAAT_NAAR_KEUKEN (bestelling_id, menu_id, hoeveelheid, Commentaar, timestamp ) VALUES(@bestellingId, @menuId, @hoeveelheid, @commentaar, @timestamp);");
 
                 String sql = sb.ToString();
                 using (SqlCommand cmd = new SqlCommand(sql, connection))
@@ -79,7 +79,7 @@ namespace DataAdaptor
                 string commentaar = item.Comment;
                 DateTime timestamp = item.Timestamp;
 
-                sb.Append("INSERT INTO GAAT_NAAR_BAR (bestelling_id, menu_id, hoeveelheid, Commentaar, timestamp ) VALUES(@bestellingId, @menuId, @hoeveelheid, @commentaar, @timestamp)");
+                sb.Append("INSERT INTO GAAT_NAAR_BAR (bestelling_id, menu_id, hoeveelheid, Commentaar, timestamp ) VALUES(@bestellingId, @menuId, @hoeveelheid, @commentaar, @timestamp);");
 
                 String sql = sb.ToString();
                 using (SqlCommand cmd = new SqlCommand(sql, connection))

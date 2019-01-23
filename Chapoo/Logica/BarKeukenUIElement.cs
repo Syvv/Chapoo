@@ -23,22 +23,22 @@ namespace Logica
         public BarKeukenUIElement(Bestellingsitem b, Refresh del, int x, int y)
         {
             Item = b;
-            Controls.Add(new Label { Text = Item.Name, Top = y+5, Left = x, Width = 350, Font = new System.Drawing.Font("Arial",16), Height = 50 });
-            Controls.Add(new Label { Text = Item.Amount.ToString() + "x", Top = y+5, Left = x + 350, Width = 40, Font = new System.Drawing.Font("Arial", 16), Height = 50 });
-            Controls.Add(new Label { Text = "Tafel " + Item.Tafel.ToString(), Top = y+5, Left = x +390, Width = 100, Font = new System.Drawing.Font("Arial", 16), Height = 50 });
+            Controls.Add(new Label { Text = Item.Name, Top = y+15, Left = x, Width = 450, Font = new System.Drawing.Font("Arial",16), Height = 30 });
+            Controls.Add(new Label { Text = Item.Amount.ToString() + "x", Top = y+15, Left = x + 450, Width = 40, Font = new System.Drawing.Font("Arial", 16), Height = 30 });
+            Controls.Add(new Label { Text = "Tafel " + Item.Tafel.ToString(), Top = y+15, Left = x +490, Width = 100, Font = new System.Drawing.Font("Arial", 16), Height = 30 });
             //Cut off the comment_text if it is longer than 25 characters and replace the last 3 characters by '...' to indicate this
             if(Item.Comment.Length>25)
             {
-                Controls.Add(new Label { Text = Item.Comment.Substring(0, 22) + "...", Top = y+5, Left = x + 490, Width = 250, Font = new System.Drawing.Font("Arial", 16), Height = 50 });
+                Controls.Add(new Label { Text = Item.Comment.Substring(0, 22) + "...", Top = y+15, Left = x + 590, Width = 300, Font = new System.Drawing.Font("Arial", 16), Height = 30 });
             }
             else
             {
-                Controls.Add(new Label { Text = Item.Comment, Top = y+5, Left = x + 490, Width = 250, Font = new System.Drawing.Font("Arial", 16), Height = 50 });
+                Controls.Add(new Label { Text = Item.Comment, Top = y+15, Left = x + 590, Width = 300, Font = new System.Drawing.Font("Arial", 16), Height = 30 });
             }
             
-            Controls.Add(new Button { Text = "1 item gereedstellen", Top = y, Left = x + 740, Width = 200, Font = new System.Drawing.Font("Arial", 16), Height = 50 });
-            Controls.Add(new Button { Text = "alle items gereedstellen", Top = y, Left = x + 940, Width = 200, Font = new System.Drawing.Font("Arial", 16), Height = 50 });
-            Controls.Add(new Label { Text = Item.Timestamp.ToLongTimeString(), Top = y+5, Left = x + 1140, Width = 100, Font = new System.Drawing.Font("Arial", 16), Height = 50 });
+            Controls.Add(new Button { Text = "1 item gereedstellen", Top = y, Left = x + 890, Width = 200, Font = new System.Drawing.Font("Arial", 12), Height = 50, TextAlign=System.Drawing.ContentAlignment.MiddleCenter });
+            Controls.Add(new Button { Text = "alle items gereedstellen", Top = y, Left = x + 1090, Width = 200, Font = new System.Drawing.Font("Arial", 12), Height = 50, TextAlign = System.Drawing.ContentAlignment.MiddleCenter });
+            Controls.Add(new Label { Text = Item.Timestamp.ToLongTimeString(), Top = y+15, Left = x + 1290, Width = 100, Font = new System.Drawing.Font("Arial", 16), Height = 30 });
 
             Controls[3].Click += (s, e) =>
             {
