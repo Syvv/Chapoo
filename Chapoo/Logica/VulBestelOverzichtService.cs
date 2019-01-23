@@ -15,23 +15,6 @@ namespace Logica
         private List<BestelOverzichtItemModel> barQueue;
         private List<BestelOverzichtItemModel> keukenQueue;
 
-        public void ListViewStyle(ListView listView)
-        {
-            listView.View = View.Details;
-            listView.GridLines = true;
-            listView.FullRowSelect = true;
-            listView.Scrollable = true;
-
-            listView.Columns.Add("Naam");
-            listView.Columns.Add("Aantal");
-            listView.Columns.Add("Commentaar");
-
-            listView.Name = "listView";
-
-            listView.Columns[0].Width = 200;
-            listView.Columns[1].Width = 78;
-            listView.Columns[2].Width = 100;
-        }
         public void FillKlaarList(ListView listView)
         {
             notificaties = BestelOverzichtDAO.GetNotificaties();

@@ -10,7 +10,7 @@ namespace Logica
 {
     public class BestelOverzichtService
     {
-        private OrderViewDAO OrderView = new OrderViewDAO();
+        private BestelOverzichtDAO OrderView = new BestelOverzichtDAO();
         public void DeleteItem(int id, bool bar)
         {
             if (bar == true)
@@ -31,6 +31,17 @@ namespace Logica
             else
             {
                 OrderView.ChangeInKeukenQueue(id, aantal, comment);
+            }
+        }
+        public void DeleteAll(int id, bool bar)
+        {
+            if (bar == true)
+            {
+                OrderView.DeleteAllInBarQueue(id);
+            }
+            else
+            {
+                OrderView.DeleteAllInKeukenQueue(id);
             }
         }
     }

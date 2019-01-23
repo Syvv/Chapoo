@@ -46,7 +46,6 @@
     <Compile Include="BarKeukenQueue.cs" />
     <Compile Include="BarKeukenUIElement.cs" />
     <Compile Include="CategoriserenGerechtenService.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="VulBestelOverzichtService.cs" />
     <Compile Include="VulBestelOpnemenService.cs" />
     <Compile Include="BestellingService.cs" />
@@ -55,10 +54,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RekeningLogica.cs" />
     <Compile Include="User.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
-    <None Include="Class diagram Logica and DAO.cd" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataAdaptor\DataAdaptor.csproj">

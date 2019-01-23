@@ -87,6 +87,7 @@
     <Compile Include="Bestelling_bevestiging_form.Designer.cs">
       <DependentUpon>Bestelling_bevestiging_form.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListStyleUI.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,8 +156,6 @@
     <EmbeddedResource Include="Rekening_OpmerkingForm.resx">
       <DependentUpon>Rekening_OpmerkingForm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="ClassDiagram1.cd" />
-    <None Include="class diagram UI.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -77,7 +77,7 @@
             // 
             this.btnDeleteAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteAll.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnDeleteAll.Location = new System.Drawing.Point(270, 578);
+            this.btnDeleteAll.Location = new System.Drawing.Point(268, 578);
             this.btnDeleteAll.Name = "btnDeleteAll";
             this.btnDeleteAll.Size = new System.Drawing.Size(112, 50);
             this.btnDeleteAll.TabIndex = 8;
@@ -89,7 +89,7 @@
             // 
             this.btnChange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChange.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnChange.Location = new System.Drawing.Point(0, 577);
+            this.btnChange.Location = new System.Drawing.Point(2, 577);
             this.btnChange.Name = "btnChange";
             this.btnChange.Size = new System.Drawing.Size(112, 50);
             this.btnChange.TabIndex = 9;

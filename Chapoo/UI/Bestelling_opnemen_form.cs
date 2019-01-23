@@ -22,7 +22,8 @@ namespace UI
         public Bestelling_opnemen_form()
         {
             InitializeComponent();
-            fillList.ListViewStyle(listView1);
+            ListStyleUI ListViewStyle = new ListStyleUI();
+            ListViewStyle.StyleBestellingOpnemen(listView1);
             listView1.ItemActivate += new EventHandler(ItemActivate);
         }
         //public event System.Windows.Forms.ItemCheckEventHandler ItemCheck;

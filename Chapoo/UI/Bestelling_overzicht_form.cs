@@ -13,16 +13,17 @@ namespace UI
 {
     public partial class Bestelling_overzicht_form : Style_guide.BaseFormMobile
     {
-        public BestelOverzichtService bestelOverzichtService = new BestelOverzichtService();
-        public Bestelling_bevestiging_form bevestiging;
-        public Bestelling_overzicht_aanpassen_form aanpassen;
-        public bool bar = false;
-
-        VulBestelOverzichtService orderView = new VulBestelOverzichtService();
+        private BestelOverzichtService bestelOverzichtService = new BestelOverzichtService();
+        private Bestelling_bevestiging_form bevestiging;
+        private Bestelling_bevestiging_form bevestigingDeleteAll;
+        private Bestelling_overzicht_aanpassen_form aanpassen;
+        private bool bar = false;
+        private VulBestelOverzichtService orderView = new VulBestelOverzichtService();
+        private ListStyleUI listStyle = new ListStyleUI();
         public Bestelling_overzicht_form()
         {
             InitializeComponent();
-            orderView.ListViewStyle(listView1);
+            listStyle.StyleBestellingOverzicht(listView1);
             orderView.FillKlaarList(listView1);
             btnChange.Hide();
             btnDeleteAll.Hide();
@@ -36,7 +37,21 @@ namespace UI
 
         private void baseButton1_Click(object sender, EventArgs e)
         {
-            
+            bevestigingDeleteAll = new Bestelling_bevestiging_form();
+            bevestigingDeleteAll.Show();
+            bevestigingDeleteAll.FormClosed += new FormClosedEventHandler(deleteAll_FormClosed);
+        }
+
+        private void deleteAll_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if(bevestigingDeleteAll.confirmatie == true)
+            {
+                foreach(ListView item in listView1.Items)
+                {
+                    int id = (int)item.Tag;
+                    bestelOverzichtService.DeleteAll(id, bar);
+                }
+            }
         }
 
         private void btnKlaar_Click(object sender, EventArgs e)
