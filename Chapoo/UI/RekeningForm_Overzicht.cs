@@ -77,6 +77,7 @@ namespace UI
             Opmerking.Show();
 
             OpmerkingWeergeven();
+            OpmerkingWeergeven();
         }
 
         private void BtnDoor_Click(object sender, EventArgs e)

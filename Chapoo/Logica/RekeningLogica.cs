@@ -37,6 +37,11 @@ namespace Logica
             foreach(BesteldRekening item in besteld) //elk item die besteld is
             {
                 int hoeveelheid = item.Hoeveelheid;
+                if(hoeveelheid < 0) // kan weg
+                {
+                    hoeveelheid = 0;
+                }
+                
                 while(hoeveelheid != 0)
                 {
                     if (item.Categorie == "G" || item.Categorie == "W" || item.Categorie == "B")
@@ -144,15 +149,21 @@ namespace Logica
             List<BesteldRekening> item = Dao.OphalenBestellingen(bestellinId);
             List<RekeningOverzicht> rekening = new List<RekeningOverzicht>();
 
+            List<string> besteld = new List<string>(); //moet eruit voor consult
+
             foreach(BesteldRekening x in item)
             {
-                RekeningOverzicht rk = new RekeningOverzicht();
-                rk.Item = x.MenuItem;
-                rk.Hoeveelheid = x.Hoeveelheid;
-                rk.Prijs = x.Prijs;
-                rk.TotaalPrijs = x.Hoeveelheid * x.Prijs;
+                if (!besteld.Contains(x.MenuItem))
+                {
+                    RekeningOverzicht rk = new RekeningOverzicht();
+                    rk.Item = x.MenuItem;
+                    rk.Hoeveelheid = x.Hoeveelheid;
+                    rk.Prijs = x.Prijs;
+                    rk.TotaalPrijs = x.Hoeveelheid * x.Prijs;
 
-                rekening.Add(rk);
+                    rekening.Add(rk);
+                    besteld.Add(x.MenuItem); //eruit voor consult
+                }                
             }
             return rekening;
         }

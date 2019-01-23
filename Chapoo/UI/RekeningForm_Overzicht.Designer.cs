@@ -51,12 +51,13 @@
             // 
             // GridVwOverzicht
             // 
+            this.GridVwOverzicht.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GridVwOverzicht.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridVwOverzicht.Location = new System.Drawing.Point(15, 94);
+            this.GridVwOverzicht.Location = new System.Drawing.Point(0, 94);
             this.GridVwOverzicht.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.GridVwOverzicht.Name = "GridVwOverzicht";
             this.GridVwOverzicht.RowTemplate.Height = 24;
-            this.GridVwOverzicht.Size = new System.Drawing.Size(352, 272);
+            this.GridVwOverzicht.Size = new System.Drawing.Size(380, 272);
             this.GridVwOverzicht.TabIndex = 5;
             // 
             // BtnOpmerking
@@ -238,7 +239,7 @@
             this.Controls.Add(this.BtnDoor);
             this.Controls.Add(this.BtnOpmerking);
             this.Controls.Add(this.GridVwOverzicht);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RekeningForm_Overzicht";
             this.Text = "RekeningForm_Overzicht";
             this.Load += new System.EventHandler(this.RekeningForm_Overzicht_Load);

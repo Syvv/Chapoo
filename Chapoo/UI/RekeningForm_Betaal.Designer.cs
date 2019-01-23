@@ -49,27 +49,30 @@
             // lbltotzonFooi
             // 
             this.lbltotzonFooi.AutoSize = true;
-            this.lbltotzonFooi.Location = new System.Drawing.Point(29, 146);
+            this.lbltotzonFooi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltotzonFooi.Location = new System.Drawing.Point(46, 146);
             this.lbltotzonFooi.Name = "lbltotzonFooi";
-            this.lbltotzonFooi.Size = new System.Drawing.Size(152, 17);
+            this.lbltotzonFooi.Size = new System.Drawing.Size(157, 18);
             this.lbltotzonFooi.TabIndex = 5;
             this.lbltotzonFooi.Text = "Totaal bedrag incl. Btw";
             // 
             // OutBedragZondFooi
             // 
             this.OutBedragZondFooi.AutoSize = true;
+            this.OutBedragZondFooi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OutBedragZondFooi.Location = new System.Drawing.Point(225, 146);
             this.OutBedragZondFooi.Name = "OutBedragZondFooi";
-            this.OutBedragZondFooi.Size = new System.Drawing.Size(42, 17);
+            this.OutBedragZondFooi.Size = new System.Drawing.Size(45, 18);
             this.OutBedragZondFooi.TabIndex = 6;
             this.OutBedragZondFooi.Text = "€ x,xx";
             // 
             // lblIngevuldBedrag
             // 
             this.lblIngevuldBedrag.AutoSize = true;
-            this.lblIngevuldBedrag.Location = new System.Drawing.Point(33, 191);
+            this.lblIngevuldBedrag.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIngevuldBedrag.Location = new System.Drawing.Point(50, 191);
             this.lblIngevuldBedrag.Name = "lblIngevuldBedrag";
-            this.lblIngevuldBedrag.Size = new System.Drawing.Size(105, 17);
+            this.lblIngevuldBedrag.Size = new System.Drawing.Size(106, 18);
             this.lblIngevuldBedrag.TabIndex = 7;
             this.lblIngevuldBedrag.Text = "Bedrag betaald";
             // 
@@ -84,43 +87,48 @@
             // lblFooi
             // 
             this.lblFooi.AutoSize = true;
-            this.lblFooi.Location = new System.Drawing.Point(33, 249);
+            this.lblFooi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFooi.Location = new System.Drawing.Point(50, 249);
             this.lblFooi.Name = "lblFooi";
-            this.lblFooi.Size = new System.Drawing.Size(35, 17);
+            this.lblFooi.Size = new System.Drawing.Size(38, 18);
             this.lblFooi.TabIndex = 9;
             this.lblFooi.Text = "Fooi";
             // 
             // OutFooi
             // 
             this.OutFooi.AutoSize = true;
+            this.OutFooi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OutFooi.Location = new System.Drawing.Point(228, 249);
             this.OutFooi.Name = "OutFooi";
-            this.OutFooi.Size = new System.Drawing.Size(42, 17);
+            this.OutFooi.Size = new System.Drawing.Size(45, 18);
             this.OutFooi.TabIndex = 10;
             this.OutFooi.Text = "€ x,xx";
             // 
             // lblTotaalEind
             // 
             this.lblTotaalEind.AutoSize = true;
-            this.lblTotaalEind.Location = new System.Drawing.Point(33, 300);
+            this.lblTotaalEind.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotaalEind.Location = new System.Drawing.Point(50, 300);
             this.lblTotaalEind.Name = "lblTotaalEind";
-            this.lblTotaalEind.Size = new System.Drawing.Size(125, 17);
+            this.lblTotaalEind.Size = new System.Drawing.Size(127, 18);
             this.lblTotaalEind.TabIndex = 11;
             this.lblTotaalEind.Text = "Totaal Eindbedrag";
             // 
             // OutTotaalEind
             // 
             this.OutTotaalEind.AutoSize = true;
+            this.OutTotaalEind.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OutTotaalEind.Location = new System.Drawing.Point(231, 299);
             this.OutTotaalEind.Name = "OutTotaalEind";
-            this.OutTotaalEind.Size = new System.Drawing.Size(42, 17);
+            this.OutTotaalEind.Size = new System.Drawing.Size(45, 18);
             this.OutTotaalEind.TabIndex = 12;
             this.OutTotaalEind.Text = "€ x,xx";
             // 
             // btnBerekenFooi
             // 
-            this.btnBerekenFooi.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnBerekenFooi.Location = new System.Drawing.Point(37, 345);
+            this.btnBerekenFooi.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnBerekenFooi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBerekenFooi.Location = new System.Drawing.Point(54, 357);
             this.btnBerekenFooi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBerekenFooi.Name = "btnBerekenFooi";
             this.btnBerekenFooi.Size = new System.Drawing.Size(123, 31);
@@ -131,10 +139,10 @@
             // 
             // BtnBetalingAfronden
             // 
-            this.BtnBetalingAfronden.Location = new System.Drawing.Point(212, 541);
+            this.BtnBetalingAfronden.Location = new System.Drawing.Point(212, 525);
             this.BtnBetalingAfronden.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnBetalingAfronden.Name = "BtnBetalingAfronden";
-            this.BtnBetalingAfronden.Size = new System.Drawing.Size(133, 41);
+            this.BtnBetalingAfronden.Size = new System.Drawing.Size(133, 50);
             this.BtnBetalingAfronden.TabIndex = 14;
             this.BtnBetalingAfronden.Text = "Pin";
             this.BtnBetalingAfronden.UseVisualStyleBackColor = true;
@@ -142,10 +150,10 @@
             // 
             // BtnCreditcard
             // 
-            this.BtnCreditcard.Location = new System.Drawing.Point(12, 541);
+            this.BtnCreditcard.Location = new System.Drawing.Point(18, 525);
             this.BtnCreditcard.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnCreditcard.Name = "BtnCreditcard";
-            this.BtnCreditcard.Size = new System.Drawing.Size(133, 41);
+            this.BtnCreditcard.Size = new System.Drawing.Size(133, 50);
             this.BtnCreditcard.TabIndex = 15;
             this.BtnCreditcard.Text = "Creditcard";
             this.BtnCreditcard.UseVisualStyleBackColor = true;
@@ -153,10 +161,10 @@
             // 
             // btn_Cash
             // 
-            this.btn_Cash.Location = new System.Drawing.Point(12, 477);
+            this.btn_Cash.Location = new System.Drawing.Point(18, 443);
             this.btn_Cash.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Cash.Name = "btn_Cash";
-            this.btn_Cash.Size = new System.Drawing.Size(133, 41);
+            this.btn_Cash.Size = new System.Drawing.Size(133, 46);
             this.btn_Cash.TabIndex = 16;
             this.btn_Cash.Text = "Cash";
             this.btn_Cash.UseVisualStyleBackColor = true;
