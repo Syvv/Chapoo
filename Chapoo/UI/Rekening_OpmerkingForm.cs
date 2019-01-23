@@ -15,6 +15,8 @@ namespace UI
 {
     public partial class Rekening_OpmerkingForm : Style_guide.BaseFormMobile
     {
+        RekeningLogica rekeningLogica = new RekeningLogica();
+
         public Rekening_OpmerkingForm()
         {
             InitializeComponent();
@@ -24,8 +26,7 @@ namespace UI
         private void BtnOpslaan_Click(object sender, EventArgs e)
         {
             string opmerking = Tbopmerking.Text;
-            var rekeningLogica = new RekeningLogica();
-
+            
             rekeningLogica.OpmerkingToevoegen(opmerking);
 
             MessageBox.Show("opmerking opgeslagen");
@@ -42,10 +43,8 @@ namespace UI
         }
         private void OpmerkingWeergeven()
         {
-            var logica = new RekeningLogica();
-
-            Rekening rekening = logica.RekeningOpstellen();
-            Tbopmerking.Text = rekening.Opmerking;
+            string opmerking = rekeningLogica.OpmerkingWeergeven();
+            Tbopmerking.Text = opmerking;
         }
     }
 }

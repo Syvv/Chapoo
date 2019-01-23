@@ -38,7 +38,8 @@ namespace UI
         private void TafelNummerToevoegen()
         {
             LblTafelnummer.Text = tafelNummer.ToString();
-            rekeningLogica.TafelNummer(tafelNummer);
+            //rekeningLogica.TafelNummer(tafelNummer);
+            rekeningLogica.TafelNummer(1);
         }
         private void PrijzenWeergeven()
         {
@@ -79,7 +80,7 @@ namespace UI
 
         private void BtnDoor_Click(object sender, EventArgs e)
         {
-            var Doorgaan = new RekeningForm_Betaal();
+            var Doorgaan = new RekeningForm_Betaal(tafelNummer);
             Doorgaan.Show();
             this.Close();
         }

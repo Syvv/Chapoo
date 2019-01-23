@@ -10,34 +10,35 @@ namespace Logica
 {
     public class RekeningLogica
     {
-        int tafelNummer= 1;
-        protected string _opmerking = "test";
-        RekeningOverzicht test = new RekeningOverzicht();
+        private string Opmerking = null;
+        bool OpmerkingInGevoerd = false;
+        public int Tafelnummer;
 
-        public void TafelNummer(int tafelnummer)
+        public void TafelNummer(int tafelId)
         {
-            tafelNummer = tafelnummer;
+            Tafelnummer = tafelId;
         }
 
         public Rekening RekeningOpstellen()
         {
-            Rekening rekening = new Rekening(0, 0, 0, 0, 0, _opmerking, tafelNummer);
-            PrijsOptellerMakkelijk(ref rekening);
-            
-            
-            //Rekening rekening = 
-            //RekeningRechtzetten(ref rekening);
-            //rekening.Opmerking = _opmerking;
+            //Rekening rekening = new Rekening(0, 0, 0, 0, 0, "Geen" , 0);
+            int Tafelnummer = 1;
+            Rekening rekening = PrijsOptellerMakkelijk(Tafelnummer);
 
             return rekening;
         }
-
-        public void PrijsOptellerMakkelijk(ref Rekening rekening) //tafelnummer toevoegen
+        public Rekening RekeningMetOpmerking()
         {
-            rekening.Tafelnummer = tafelNummer;
-            List<BesteldRekening> besteld = OpvragenBesteldeItems(rekening.Tafelnummer); //hier moet nog een tafelnummer
+            Rekening rekening = RekeningOpstellen();
+            rekening.Opmerking = RekeningToevoegen.zinnen();
 
-            double totaalRekening = 0;
+            return rekening;
+        }
+        public Rekening PrijsOptellerMakkelijk(int tafelnummer)
+        {
+            List<BesteldRekening> besteld = OpvragenBesteldeItems(tafelnummer); 
+
+            double totRekening = 0;
             double zonderBtw = 0;
             double btw21 = 0;
             double btw9 = 0;
@@ -45,7 +46,8 @@ namespace Logica
             foreach(BesteldRekening item in besteld) //elk item die besteld is
             {
                 int hoeveelheid = item.Hoeveelheid;
-                while (hoeveelheid >= 0)
+                //while (hoeveelheid >= 0)
+                while(hoeveelheid != 0)
                 {
                     if (item.Categorie == "G" || item.Categorie == "W" || item.Categorie == "B")
                     {
@@ -65,15 +67,15 @@ namespace Logica
                         btw9 += btw;
                         zonderBtw += zonder;
                     }
-                    totaalRekening += item.Prijs;
+                    totRekening += item.Prijs;
                     hoeveelheid--;
                 }
             }
-
-            rekening = new Rekening(totaalRekening, zonderBtw, btw9, btw21, 0, _opmerking, rekening.Tafelnummer); //fooi moet hier nog bij, en totaalbedrag moet nog veranderd worden.
-            //return rekening;
+            Decimal totaalRekening = Convert.ToDecimal(totRekening);
+            Rekening rekening = new Rekening(totaalRekening, zonderBtw, btw9, btw21, 0, Opmerking, tafelnummer); //fooi moet hier nog bij, en totaalbedrag moet nog veranderd worden.
+            return rekening;
         }  
-        public bool KloptFooi(Rekening rekening, double totaal)
+        public bool KloptFooi(Rekening rekening, decimal totaal)
         {
             if(rekening.Totaalbedrag > totaal)
             {
@@ -81,30 +83,27 @@ namespace Logica
             }
             return false;
         }
-        public double FooiBerekenen(ref Rekening rekening, double totaal)
+        public decimal FooiBerekenen(ref Rekening rekening, decimal totaal)
         {
-            double fooi = totaal - rekening.Totaalbedrag;
+            decimal fooi = totaal - rekening.Totaalbedrag;
             rekening.Totaalbedrag += fooi;
 
             return fooi;
         }
-
+        
         public void OpmerkingToevoegen(string opmerking)
         {
-            //RekeningOverzicht king = new RekeningOverzicht(opmerking);
-        }
-
-        private void RekeningRechtzetten(ref Rekening rekening)
-        {
-            rekening = RekeningOpstellen();
-            rekening.Opmerking = "dit is een test";
+            //Opmerking = opmerking;
+            RekeningToevoegen.zin(opmerking);
+            OpmerkingInGevoerd = true;
         }
 
         public string OpmerkingWeergeven()
         {
             //voor als er opniew op weergeven opmerking wordt gedrukt
-            Rekening rekening = RekeningOpstellen();
+            Rekening rekening = RekeningMetOpmerking();
             string opmerking = rekening.Opmerking;
+
 
             return opmerking;
         }
@@ -151,6 +150,7 @@ namespace Logica
                 rk.Item = x.MenuItem;
                 rk.Hoeveelheid = x.Hoeveelheid;
                 rk.Prijs = x.Prijs;
+                rk.TotaalPrijs = x.Hoeveelheid * x.Prijs;
 
                 rekening.Add(rk);
             }

@@ -30,6 +30,7 @@ namespace DataAdaptor
             DataConnection.connection.Close();
             return bestellingId;
         }
+
         public List<int>BestellingIdList(int tafelNummer)
         {
             List<int> bestellingnmr = new List<int>();
@@ -46,7 +47,7 @@ namespace DataAdaptor
             //db sluiten
             DataConnection.connection.Close();
             return bestellingnmr;
-        }
+        }         
 
         public List<BesteldRekening>OphalenBestellingen(int bestellingId)
         {
@@ -77,13 +78,13 @@ namespace DataAdaptor
         public void WegSchrijvenBestelling(Rekening rekening, int tafelid, int bestelling)//bestelling meegeven
         {
             SqlDataReader data;
-            string query = "INSERT INTO REKENING (tafel_id, bestelling_id, totaalbedrag, tip, opmerking) VALUES(@tafel_id, @bestelling_id, @totaalbedrag, @tip, @opmerking)";
+            string query = "INSERT INTO REKENING (tafel_id, bestelling_id, totaalbedrag, tip, opmerking) VALUES('@tafel_id', '@bestelling_id', '@totaalbedrag', '@tip', '@opmerking')";
 
-            query.Replace("@tafel_id", tafelid.ToString());
-            query.Replace("@bestelling_id", bestelling.ToString());
-            query.Replace("@totaalbedrag", rekening.Totaalbedrag.ToString());
-            query.Replace("@tip", rekening.Fooi.ToString());
-            query.Replace("@opmerking", rekening.Opmerking);
+            query = query.Replace("'@tafel_id'", rekening.Tafelnummer.ToString());
+            query = query.Replace("'@bestelling_id'", bestelling.ToString());
+            query = query.Replace("'@totaalbedrag'", rekening.Totaalbedrag.ToString());
+            query = query.Replace("'@tip'", rekening.Fooi.ToString());
+            query = query.Replace("'@opmerking'", rekening.Opmerking);
 
             data = DataConnection.Query(query);
             DataConnection.connection.Close();

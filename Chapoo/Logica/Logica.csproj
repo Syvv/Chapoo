@@ -54,6 +54,7 @@
     <Compile Include="BestelOverzichtService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RekeningLogica.cs" />
+    <Compile Include="RekeningToevoegen.cs" />
     <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
