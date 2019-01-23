@@ -16,6 +16,7 @@ namespace Logica
             SqlDataReader res = DataAdaptor.UserConnection.CheckLogin(user, pass);
             if(!res.HasRows)
             {
+                DataAdaptor.DataConnection.connection.Close();
                 throw new Model.NoSuchUserException();
             }
             else
