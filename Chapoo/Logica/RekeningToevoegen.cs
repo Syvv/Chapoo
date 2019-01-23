@@ -28,7 +28,7 @@ namespace Logica
             Fooi = fooi;
             TotaalBedrag = eindbedrag;
         }
-        public static decimal retFooi()
+        public static decimal RetFooi()
         {
             return Fooi;
         }
