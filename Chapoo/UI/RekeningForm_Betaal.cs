@@ -17,18 +17,19 @@ namespace UI
     {
         RekeningLogica rekeningLogica = new RekeningLogica();
         bool ingevuld = false;
-        public RekeningForm_Betaal()
+        int tafelnummer;
+        public RekeningForm_Betaal(int tafelId)
         {
             InitializeComponent();
             LadenBetaalScherm();
-        }
+
+            lblTafelnummer.Text = tafelId.ToString();
+            tafelnummer = tafelId;
+        }        
         private void LadenBetaalScherm()
         {
             Rekening rekening = rekeningLogica.RekeningOpstellen();
-
-            //double test = (double)Math.Round(rekening.Totaalbedrag);
-            //double test2 = rekening.Totaalbedrag;
-
+            
             OutBedragZondFooi.Text = string.Format("€ {0:F2} ", rekening.Totaalbedrag);
             OutTotaalEind.Text = string.Format("€ {0:F2} ", rekening.Totaalbedrag);
             OutFooi.Text = "€ 0,00";
@@ -45,7 +46,8 @@ namespace UI
             if (FooiIngevuldCheck())
             {
                 rekeningLogica.RekeningWegschrijven();
-                MessageBox.Show("betaling is gelukt, de rest volgt nog");
+                new RekeninfForm_Bevestiging(tafelnummer).Show();
+                this.Close();
             }
         }
         private void FooiCheck()
@@ -53,13 +55,13 @@ namespace UI
             Rekening rekening = rekeningLogica.RekeningOpstellen();
             try
             {
-                double totaal = Convert.ToDouble(TbBedragBetaald.Text);
+                decimal totaal = Convert.ToDecimal(TbBedragBetaald.Text);
                 if (rekeningLogica.KloptFooi(rekening, totaal))
                 {
                     MessageBox.Show("bedrag is te laag");
                     return;
                 }
-                double fooi = rekeningLogica.FooiBerekenen(ref rekening, totaal);
+                decimal fooi = rekeningLogica.FooiBerekenen(ref rekening, totaal);
 
                 OutFooi.Text = string.Format("€ {0:F2} ", fooi);
                 OutTotaalEind.Text = string.Format("€ {0:F2} ", rekening.Totaalbedrag);

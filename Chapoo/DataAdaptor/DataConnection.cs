@@ -27,7 +27,5 @@ namespace DataAdaptor
             sql.ExecuteReader();
             connection.Close();
         }
-
-
     }
 }

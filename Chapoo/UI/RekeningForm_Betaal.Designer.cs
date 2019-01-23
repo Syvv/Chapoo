@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTafelnummer = new System.Windows.Forms.Label();
             this.lbltotzonFooi = new System.Windows.Forms.Label();
             this.OutBedragZondFooi = new System.Windows.Forms.Label();
             this.lblIngevuldBedrag = new System.Windows.Forms.Label();
@@ -41,15 +41,15 @@
             this.BtnBetalingAfronden = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // lblTafelnummer
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(103, 49);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Tafelnummer";
+            this.lblTafelnummer.AutoSize = true;
+            this.lblTafelnummer.Location = new System.Drawing.Point(158, 61);
+            this.lblTafelnummer.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTafelnummer.Name = "lblTafelnummer";
+            this.lblTafelnummer.Size = new System.Drawing.Size(68, 13);
+            this.lblTafelnummer.TabIndex = 4;
+            this.lblTafelnummer.Text = "Tafelnummer";
             // 
             // lbltotzonFooi
             // 
@@ -84,7 +84,7 @@
             // TbBedragBetaald
             // 
             this.TbBedragBetaald.Location = new System.Drawing.Point(171, 150);
-            this.TbBedragBetaald.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TbBedragBetaald.Margin = new System.Windows.Forms.Padding(2);
             this.TbBedragBetaald.Name = "TbBedragBetaald";
             this.TbBedragBetaald.Size = new System.Drawing.Size(76, 20);
             this.TbBedragBetaald.TabIndex = 8;
@@ -133,7 +133,7 @@
             // 
             this.btnBerekenFooi.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnBerekenFooi.Location = new System.Drawing.Point(28, 280);
-            this.btnBerekenFooi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBerekenFooi.Margin = new System.Windows.Forms.Padding(2);
             this.btnBerekenFooi.Name = "btnBerekenFooi";
             this.btnBerekenFooi.Size = new System.Drawing.Size(92, 25);
             this.btnBerekenFooi.TabIndex = 13;
@@ -144,7 +144,7 @@
             // BtnBetalingAfronden
             // 
             this.BtnBetalingAfronden.Location = new System.Drawing.Point(97, 390);
-            this.BtnBetalingAfronden.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtnBetalingAfronden.Margin = new System.Windows.Forms.Padding(2);
             this.BtnBetalingAfronden.Name = "BtnBetalingAfronden";
             this.BtnBetalingAfronden.Size = new System.Drawing.Size(100, 33);
             this.BtnBetalingAfronden.TabIndex = 14;
@@ -167,10 +167,10 @@
             this.Controls.Add(this.lblIngevuldBedrag);
             this.Controls.Add(this.OutBedragZondFooi);
             this.Controls.Add(this.lbltotzonFooi);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblTafelnummer);
             this.Name = "RekeningForm_Betaal";
             this.Text = "RekeningForm_Betaal";
-            this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.lblTafelnummer, 0);
             this.Controls.SetChildIndex(this.lbltotzonFooi, 0);
             this.Controls.SetChildIndex(this.OutBedragZondFooi, 0);
             this.Controls.SetChildIndex(this.lblIngevuldBedrag, 0);
@@ -188,7 +188,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTafelnummer;
         private System.Windows.Forms.Label lbltotzonFooi;
         private System.Windows.Forms.Label OutBedragZondFooi;
         private System.Windows.Forms.Label lblIngevuldBedrag;

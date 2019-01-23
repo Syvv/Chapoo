@@ -55,7 +55,7 @@ namespace UI
 
         private void btnBetalen_Click(object sender, EventArgs e)
         {
-            new RekeningForm_Overzicht().Show();
+            new RekeningForm_Betaal(1).Show();
             this.Hide();
         }
     }

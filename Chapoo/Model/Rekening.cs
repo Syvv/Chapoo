@@ -8,15 +8,15 @@ namespace Model
 {
     public class Rekening
     {
-        public double Totaalbedrag { get; set; }
+        public decimal Totaalbedrag { get; set; }
         public double BedragZonderBtw { get; set; }
         public double Btw9 { get; set; } //btw berekening toevoegen??
         public double Btw21 { get; set; } //btw berekening toevoegen??
-        public double Fooi { get; set; }
+        public decimal Fooi { get; set; }
         public string Opmerking { get; set; }
         public int Tafelnummer { get; set; }
 
-        public Rekening(double totaalbedrag,double bedragZonderBtw, double btw9, double btw21, double fooi, string opmerking, int tafelnummer)
+        public Rekening(decimal totaalbedrag,double bedragZonderBtw, double btw9, double btw21, decimal fooi, string opmerking, int tafelnummer)
         {
             this.Totaalbedrag = totaalbedrag;
             this.BedragZonderBtw = bedragZonderBtw;
