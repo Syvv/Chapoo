@@ -69,6 +69,8 @@ namespace UI
                 OutFooi.Text = string.Format("€ {0:F2} ", fooi);
                 OutTotaalEind.Text = string.Format("€ {0:F2} ", rekening.Totaalbedrag);
                 ingevuld = true;
+
+                rekeningLogica.RekeningAanpassing(rekening);
             }
             catch
             {

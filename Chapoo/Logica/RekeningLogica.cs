@@ -10,9 +10,7 @@ namespace Logica
 {
     public class RekeningLogica
     {
-        private string Opmerking = null;
-        bool OpmerkingInGevoerd = false;
-        public int Tafelnummer;
+        public static int Tafelnummer;
 
         public void TafelNummer(int tafelId)
         {
@@ -24,15 +22,13 @@ namespace Logica
             //Rekening rekening = new Rekening(0, 0, 0, 0, 0, "Geen" , 0);
             int Tafelnummer = 1;
             Rekening rekening = PrijsOptellerMakkelijk(Tafelnummer);
-
+            rekening.Opmerking = RekeningToevoegen.Opmerking();
+            
             return rekening;
         }
-        public Rekening RekeningMetOpmerking()
+        public void RekeningAanpassing(Rekening rekening)
         {
-            Rekening rekening = RekeningOpstellen();
-            rekening.Opmerking = RekeningToevoegen.zinnen();
 
-            return rekening;
         }
         public Rekening PrijsOptellerMakkelijk(int tafelnummer)
         {
@@ -72,7 +68,7 @@ namespace Logica
                 }
             }
             Decimal totaalRekening = Convert.ToDecimal(totRekening);
-            Rekening rekening = new Rekening(totaalRekening, zonderBtw, btw9, btw21, 0, Opmerking, tafelnummer); //fooi moet hier nog bij, en totaalbedrag moet nog veranderd worden.
+            Rekening rekening = new Rekening(totaalRekening, zonderBtw, btw9, btw21, 0, "x", tafelnummer); //fooi moet hier nog bij, en totaalbedrag moet nog veranderd worden.
             return rekening;
         }  
         public bool KloptFooi(Rekening rekening, decimal totaal)
@@ -88,22 +84,20 @@ namespace Logica
             decimal fooi = totaal - rekening.Totaalbedrag;
             rekening.Totaalbedrag += fooi;
 
+            RekeningToevoegen.Bedragen(fooi, rekening.Totaalbedrag);
+
             return fooi;
         }
         
         public void OpmerkingToevoegen(string opmerking)
         {
-            //Opmerking = opmerking;
             RekeningToevoegen.zin(opmerking);
-            OpmerkingInGevoerd = true;
         }
 
         public string OpmerkingWeergeven()
         {
             //voor als er opniew op weergeven opmerking wordt gedrukt
-            Rekening rekening = RekeningMetOpmerking();
-            string opmerking = rekening.Opmerking;
-
+            string opmerking = RekeningToevoegen.Opmerking();
 
             return opmerking;
         }
@@ -129,6 +123,10 @@ namespace Logica
         public void RekeningWegschrijven()
         {
             Rekening rekening = RekeningOpstellen();
+            rekening.Opmerking = RekeningToevoegen.Opmerking();
+            rekening.Fooi = RekeningToevoegen.retFooi();
+            rekening.Totaalbedrag = RekeningToevoegen.RetTotBedrag();
+
             var dao = new RekeningDAO();
             int bestellingId = OpvragenBestellingId(rekening.Tafelnummer);
 
