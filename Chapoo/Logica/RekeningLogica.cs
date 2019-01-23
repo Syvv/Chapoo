@@ -106,11 +106,19 @@ namespace Logica
         protected int OpvragenBestellingId(int tafelId)
         {
             var dao = new RekeningDAO();
+            //lijst met bestellings id
             List<int> bestellingIdLijst = dao.BestellingIdList(tafelId);
+
+            //lijst met bestellings id in rekening
+            List<int> BetaaldeID = dao.BestellingIdInRekening();
 
             int aantal = bestellingIdLijst.Count;
             int bestellingId = bestellingIdLijst[aantal -1];
 
+            if (BetaaldeID.Contains(bestellingId))
+            {
+                return 0;
+            }
             return bestellingId;
         }
 

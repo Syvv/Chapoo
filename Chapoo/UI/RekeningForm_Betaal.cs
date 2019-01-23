@@ -88,5 +88,26 @@ namespace UI
             }
             return false;
         }
+
+        private void btn_Cash_Click(object sender, EventArgs e)
+        {
+            Afronden();
+        }
+
+        private void BtnCreditcard_Click(object sender, EventArgs e)
+        {
+            Afronden();
+        }
+
+        private void Afronden()
+        {
+            FooiCheck();
+            if (FooiIngevuldCheck())
+            {
+                rekeningLogica.RekeningWegschrijven();
+                new RekeninfForm_Bevestiging(tafelnummer).Show();
+                this.Close();
+            }
+        }
     }
 }

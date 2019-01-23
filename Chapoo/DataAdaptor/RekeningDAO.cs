@@ -31,6 +31,22 @@ namespace DataAdaptor
             DataConnection.connection.Close();
             return bestellingId;
         }
+        public List<int> BestellingIdInRekening()
+        {
+            List<int> bestellingId = new List<int>();
+
+            string query = "SELECT bestelling_id from REKENING";
+            SqlDataReader id = DataConnection.Query(query);
+
+            while (id.Read())
+            {
+                int besId = (int)id["bestelling_id"];
+                bestellingId.Add(besId);
+            }
+
+            DataConnection.connection.Close();
+            return bestellingId;
+        }
 
         public List<int>BestellingIdList(int tafelNummer)
         {
