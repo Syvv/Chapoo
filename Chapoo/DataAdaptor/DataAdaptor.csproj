@@ -45,7 +45,6 @@
     <Compile Include="MenuDAO.cs" />
     <Compile Include="DataConnection.cs" />
     <Compile Include="KeukenBarDataConnection.cs" />
-    <Compile Include="OrderViewDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RekeningDAO.cs" />
     <Compile Include="UserConnection.cs" />
