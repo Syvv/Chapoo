@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblTafelnummer = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RekeningForm_Betaal));
             this.lbltotzonFooi = new System.Windows.Forms.Label();
             this.OutBedragZondFooi = new System.Windows.Forms.Label();
             this.lblIngevuldBedrag = new System.Windows.Forms.Label();
@@ -41,16 +41,10 @@
             this.BtnBetalingAfronden = new System.Windows.Forms.Button();
             this.BtnCreditcard = new System.Windows.Forms.Button();
             this.btn_Cash = new System.Windows.Forms.Button();
+            this.LblTafelnummer = new System.Windows.Forms.Label();
+            this.backButton1 = new Style_guide.BackButton();
+            this.homeButton2 = new Style_guide.HomeButton();
             this.SuspendLayout();
-            // 
-            // lblTafelnummer
-            // 
-            this.lblTafelnummer.AutoSize = true;
-            this.lblTafelnummer.Location = new System.Drawing.Point(209, 74);
-            this.lblTafelnummer.Name = "lblTafelnummer";
-            this.lblTafelnummer.Size = new System.Drawing.Size(91, 17);
-            this.lblTafelnummer.TabIndex = 4;
-            this.lblTafelnummer.Text = "Tafelnummer";
             // 
             // lbltotzonFooi
             // 
@@ -168,11 +162,50 @@
             this.btn_Cash.UseVisualStyleBackColor = true;
             this.btn_Cash.Click += new System.EventHandler(this.btn_Cash_Click);
             // 
+            // LblTafelnummer
+            // 
+            this.LblTafelnummer.AutoSize = true;
+            this.LblTafelnummer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblTafelnummer.Location = new System.Drawing.Point(207, 67);
+            this.LblTafelnummer.Name = "LblTafelnummer";
+            this.LblTafelnummer.Size = new System.Drawing.Size(22, 25);
+            this.LblTafelnummer.TabIndex = 31;
+            this.LblTafelnummer.Text = "x";
+            // 
+            // backButton1
+            // 
+            this.backButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("backButton1.BackgroundImage")));
+            this.backButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.backButton1.Location = new System.Drawing.Point(18, 57);
+            this.backButton1.Name = "backButton1";
+            this.backButton1.Size = new System.Drawing.Size(50, 50);
+            this.backButton1.TabIndex = 33;
+            this.backButton1.Text = " ";
+            this.backButton1.UseVisualStyleBackColor = true;
+            this.backButton1.Click += new System.EventHandler(this.backButton1_Click);
+            // 
+            // homeButton2
+            // 
+            this.homeButton2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("homeButton2.BackgroundImage")));
+            this.homeButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.homeButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.homeButton2.Location = new System.Drawing.Point(18, 11);
+            this.homeButton2.Name = "homeButton2";
+            this.homeButton2.Size = new System.Drawing.Size(50, 50);
+            this.homeButton2.TabIndex = 32;
+            this.homeButton2.Text = " ";
+            this.homeButton2.UseVisualStyleBackColor = true;
+            this.homeButton2.Click += new System.EventHandler(this.homeButton2_Click);
+            // 
             // RekeningForm_Betaal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(381, 638);
+            this.Controls.Add(this.backButton1);
+            this.Controls.Add(this.homeButton2);
+            this.Controls.Add(this.LblTafelnummer);
             this.Controls.Add(this.btn_Cash);
             this.Controls.Add(this.BtnCreditcard);
             this.Controls.Add(this.BtnBetalingAfronden);
@@ -185,11 +218,9 @@
             this.Controls.Add(this.lblIngevuldBedrag);
             this.Controls.Add(this.OutBedragZondFooi);
             this.Controls.Add(this.lbltotzonFooi);
-            this.Controls.Add(this.lblTafelnummer);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RekeningForm_Betaal";
             this.Text = "RekeningForm_Betaal";
-            this.Controls.SetChildIndex(this.lblTafelnummer, 0);
             this.Controls.SetChildIndex(this.lbltotzonFooi, 0);
             this.Controls.SetChildIndex(this.OutBedragZondFooi, 0);
             this.Controls.SetChildIndex(this.lblIngevuldBedrag, 0);
@@ -202,14 +233,15 @@
             this.Controls.SetChildIndex(this.BtnBetalingAfronden, 0);
             this.Controls.SetChildIndex(this.BtnCreditcard, 0);
             this.Controls.SetChildIndex(this.btn_Cash, 0);
+            this.Controls.SetChildIndex(this.LblTafelnummer, 0);
+            this.Controls.SetChildIndex(this.homeButton2, 0);
+            this.Controls.SetChildIndex(this.backButton1, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblTafelnummer;
         private System.Windows.Forms.Label lbltotzonFooi;
         private System.Windows.Forms.Label OutBedragZondFooi;
         private System.Windows.Forms.Label lblIngevuldBedrag;
@@ -222,5 +254,8 @@
         private System.Windows.Forms.Button BtnBetalingAfronden;
         private System.Windows.Forms.Button BtnCreditcard;
         private System.Windows.Forms.Button btn_Cash;
+        private System.Windows.Forms.Label LblTafelnummer;
+        private Style_guide.BackButton backButton1;
+        private Style_guide.HomeButton homeButton2;
     }
 }

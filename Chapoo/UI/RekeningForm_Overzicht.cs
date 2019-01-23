@@ -22,6 +22,7 @@ namespace UI
         public RekeningForm_Overzicht() : base()
         {
             InitializeComponent();
+            LblTafelnummer.Text = tafelNummer.ToString();
 
             TafelNummerToevoegen();
             PrijzenWeergeven();
@@ -72,7 +73,7 @@ namespace UI
 
         private void BtnOpmerking_Click(object sender, EventArgs e)
         {
-            var Opmerking = new Rekening_OpmerkingForm();
+            var Opmerking = new Rekening_OpmerkingForm(tafelNummer);
             Opmerking.Show();
 
             OpmerkingWeergeven();
@@ -137,6 +138,17 @@ namespace UI
             Rekening rekening = rekeningLogica.RekeningOpstellen();
 
             OutOpmerking.Text = rekening.Opmerking;
+        }
+        private void homeButton2_Click(object sender, EventArgs e)
+        {
+            new Bediening_menu_form().Show();
+            this.Close();
+        }
+
+        private void backButton1_Click_1(object sender, EventArgs e)
+        {
+            new Bediening_menu_form().Show();
+            this.Close();
         }
     }
 }

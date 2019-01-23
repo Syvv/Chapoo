@@ -17,10 +17,11 @@ namespace UI
     {
         RekeningLogica rekeningLogica = new RekeningLogica();
 
-        public Rekening_OpmerkingForm()
+        public Rekening_OpmerkingForm(int tafelnummer)
         {
             InitializeComponent();
             OpmerkingWeergeven();
+            LblTafelnummer.Text = tafelnummer.ToString();
         }
 
         private void BtnOpslaan_Click(object sender, EventArgs e)
@@ -45,6 +46,18 @@ namespace UI
         {
             string opmerking = rekeningLogica.OpmerkingWeergeven();
             Tbopmerking.Text = opmerking;
+        }
+
+        private void homeButton2_Click(object sender, EventArgs e)
+        {
+            new Bediening_menu_form().Show();
+            this.Close();
+        }
+
+        private void backButton1_Click(object sender, EventArgs e)
+        {
+            new Bediening_menu_form().Show();
+            this.Close();
         }
     }
 }

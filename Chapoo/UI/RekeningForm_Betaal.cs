@@ -23,7 +23,7 @@ namespace UI
             InitializeComponent();
             LadenBetaalScherm();
 
-            lblTafelnummer.Text = tafelId.ToString();
+            LblTafelnummer.Text = tafelId.ToString();
             tafelnummer = tafelId;
         }        
         private void LadenBetaalScherm()
@@ -108,6 +108,18 @@ namespace UI
                 new RekeninfForm_Bevestiging(tafelnummer).Show();
                 this.Close();
             }
+        }
+
+        private void homeButton2_Click(object sender, EventArgs e)
+        {
+            new Bediening_menu_form().Show();
+            this.Close();
+        }
+
+        private void backButton1_Click(object sender, EventArgs e)
+        {
+            new Bediening_menu_form().Show();
+            this.Close();
         }
     }
 }

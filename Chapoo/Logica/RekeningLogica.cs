@@ -126,7 +126,7 @@ namespace Logica
         {
             Rekening rekening = RekeningOpstellen();
             rekening.Opmerking = RekeningToevoegen.Opmerking();
-            rekening.Fooi = RekeningToevoegen.retFooi();
+            rekening.Fooi = RekeningToevoegen.RetFooi();
             rekening.Totaalbedrag = RekeningToevoegen.RetTotBedrag();
 
             var dao = new RekeningDAO();
