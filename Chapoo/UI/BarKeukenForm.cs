@@ -40,7 +40,7 @@ namespace UI
         
         private void BuildForm()
         {
-            if(this.InvokeRequired)//Check if were calling from a different thread
+            if(this.InvokeRequired)//Check if we're calling from a different thread
             {
                 //if so invoke the method from a delegate instead
                 CreateTimerCallback cb = new CreateTimerCallback(BuildForm);
@@ -58,7 +58,14 @@ namespace UI
                 }
 
                 //add the controls that belong to all BarKeukenUIElements so that you can actually see them
-                Controls.Add(new Label() { Text = "Commentaar", Top = 0, Left = 840, Font = new System.Drawing.Font("Arial", 16), Height = 30, Width = 200 });
+                Controls.Add(new Label { Text = "Commentaar", Top = 0, Left = 840, Font = new System.Drawing.Font("Arial", 16), Height = 30, Width = 200 });
+                Button logoutbtn = new Button { Text = "Log uit!", Top = 0, Left = 0, Font = new System.Drawing.Font("Arial", 10), Height = 25, Width = 100 };
+                logoutbtn.Click += (s, e) =>
+                {
+                    new Login().Show();
+                    this.Hide();
+                };
+                Controls.Add(logoutbtn);
                 foreach (BarKeukenUIElement ui in UIElements)
                 {
                     foreach(Control c in ui.Controls)
