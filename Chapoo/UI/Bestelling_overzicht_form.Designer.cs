@@ -38,6 +38,8 @@
             this.btnBar = new Styleguide.BaseButton();
             this.btnKeuken = new Styleguide.BaseButton();
             this.btnDelete = new Styleguide.BaseButton();
+            this.btnBezorgd = new Styleguide.BaseButton();
+            this.btnAllesBezorgd = new Styleguide.BaseButton();
             this.SuspendLayout();
             // 
             // homeButton1
@@ -81,7 +83,7 @@
             this.btnDeleteAll.Name = "btnDeleteAll";
             this.btnDeleteAll.Size = new System.Drawing.Size(112, 50);
             this.btnDeleteAll.TabIndex = 8;
-            this.btnDeleteAll.Text = "Delete all";
+            this.btnDeleteAll.Text = "Verwijder alles";
             this.btnDeleteAll.UseVisualStyleBackColor = true;
             this.btnDeleteAll.Click += new System.EventHandler(this.baseButton1_Click);
             // 
@@ -93,7 +95,7 @@
             this.btnChange.Name = "btnChange";
             this.btnChange.Size = new System.Drawing.Size(112, 50);
             this.btnChange.TabIndex = 9;
-            this.btnChange.Text = "Change";
+            this.btnChange.Text = "Verander";
             this.btnChange.UseVisualStyleBackColor = true;
             this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
             // 
@@ -141,15 +143,41 @@
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(112, 50);
             this.btnDelete.TabIndex = 13;
-            this.btnDelete.Text = "Delete";
+            this.btnDelete.Text = "Verwijder";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnBezorgd
+            // 
+            this.btnBezorgd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBezorgd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnBezorgd.Location = new System.Drawing.Point(42, 578);
+            this.btnBezorgd.Name = "btnBezorgd";
+            this.btnBezorgd.Size = new System.Drawing.Size(112, 50);
+            this.btnBezorgd.TabIndex = 14;
+            this.btnBezorgd.Text = "Bezorgd";
+            this.btnBezorgd.UseVisualStyleBackColor = true;
+            this.btnBezorgd.Click += new System.EventHandler(this.btnBezorgd_Click);
+            // 
+            // btnAllesBezorgd
+            // 
+            this.btnAllesBezorgd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAllesBezorgd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnAllesBezorgd.Location = new System.Drawing.Point(220, 578);
+            this.btnAllesBezorgd.Name = "btnAllesBezorgd";
+            this.btnAllesBezorgd.Size = new System.Drawing.Size(112, 50);
+            this.btnAllesBezorgd.TabIndex = 15;
+            this.btnAllesBezorgd.Text = "Alles Bezorgd";
+            this.btnAllesBezorgd.UseVisualStyleBackColor = true;
+            this.btnAllesBezorgd.Click += new System.EventHandler(this.btnAllesBezorgd_Click);
             // 
             // Bestelling_overzicht_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(382, 638);
+            this.Controls.Add(this.btnAllesBezorgd);
+            this.Controls.Add(this.btnBezorgd);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnKeuken);
             this.Controls.Add(this.btnBar);
@@ -171,6 +199,8 @@
             this.Controls.SetChildIndex(this.btnBar, 0);
             this.Controls.SetChildIndex(this.btnKeuken, 0);
             this.Controls.SetChildIndex(this.btnDelete, 0);
+            this.Controls.SetChildIndex(this.btnBezorgd, 0);
+            this.Controls.SetChildIndex(this.btnAllesBezorgd, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,5 +217,7 @@
         private Styleguide.BaseButton btnBar;
         private Styleguide.BaseButton btnKeuken;
         private Styleguide.BaseButton btnDelete;
+        private Styleguide.BaseButton btnBezorgd;
+        private Styleguide.BaseButton btnAllesBezorgd;
     }
 }

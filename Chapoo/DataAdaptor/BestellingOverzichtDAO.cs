@@ -10,7 +10,7 @@ using Model;
 
 namespace DataAdaptor
 {
-    public class BestelOverzichtDAO
+    public class BestellingOverzichtDAO
     {
         public static List<BestelOverzichtItemModel> GetNotificaties()
         {
@@ -182,6 +182,24 @@ namespace DataAdaptor
             using (SqlCommand cmd = new SqlCommand(sql, connection))
             {
                 cmd.Parameters.AddWithValue("@keuken_id", id);
+                cmd.ExecuteNonQuery();
+            }
+
+            connection.Close();
+        }
+        public void DeleteInNotificatie(int menuId)
+        {
+            SqlConnection connection = DataConnection.connection;
+            StringBuilder sb = new StringBuilder();
+
+            connection.Open();
+
+            sb.Append("DELETE FROM NOTIFICATIONS WHERE id = @id");
+
+            String sql = sb.ToString();
+            using (SqlCommand cmd = new SqlCommand(sql, connection))
+            {
+                cmd.Parameters.AddWithValue("@id", menuId);
                 cmd.ExecuteNonQuery();
             }
 

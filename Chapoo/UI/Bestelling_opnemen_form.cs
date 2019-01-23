@@ -18,6 +18,7 @@ namespace UI
         CategoriserenGerechtenService gerechten = new CategoriserenGerechtenService();
         VulBestelOpnemenService fillList = new VulBestelOpnemenService();
         LunchOfDinerService lunchOfDiner = new LunchOfDinerService();
+        public event System.Windows.Forms.ItemCheckEventHandler listView1_ItemCheck;
 
         public Bestelling_opnemen_form()
         {
@@ -25,6 +26,7 @@ namespace UI
             ListStyleUI ListViewStyle = new ListStyleUI();
             ListViewStyle.StyleBestellingOpnemen(listView1);
             listView1.ItemActivate += new EventHandler(ItemActivate);
+            //listView1.ItemCheck += new EventHandler(listView1_ItemCheck);
         }
         //public event System.Windows.Forms.ItemCheckEventHandler ItemCheck;
         private void Bestelling_opnemen_form_Load(object sender, EventArgs e)
@@ -104,11 +106,11 @@ namespace UI
                 opmerking.ShowDialog();
             }
         }
-        private void listView1_ItemCheck(Object sender, ItemCheckEventArgs e)
+        private void listView1_ItemChecked(Object sender, ItemCheckEventArgs e)
         {
-            using (var opmerking = new Bestelling_opnemen_opmerking_form(this))
+            if ((e.CurrentValue == CheckState.Checked))
             {
-                opmerking.ShowDialog();
+                this.listView1.Items[e.Index].SubItems[1].Text = 1.ToString();
             }
         }
         public void ChangeComment(string comment)
@@ -125,11 +127,7 @@ namespace UI
             {
                 int index = item.Index;
 
-                if (item.Checked)
-                {
-     
-                }
-                else
+                if (!item.Checked)
                 {
                     listView1.Items.Remove(item);
                 }
