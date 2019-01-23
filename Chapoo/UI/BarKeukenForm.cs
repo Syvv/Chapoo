@@ -50,11 +50,11 @@ namespace UI
             {
                 Controls.Clear();
                 UIElements.Clear();
-                int y = 0;
+                int y = 30;
                 foreach (Bestellingsitem b in BestelLijst.List)
                 {
                     UIElements.Add(new BarKeukenUIElement(b, () => { BuildForm(); }, 10, y));
-                    y += 25;
+                    y += 50;
                 }
 
                 //add the controls that belong to all BarKeukenUIElements so that you can actually see them
@@ -64,6 +64,7 @@ namespace UI
                     {
                         Controls.Add(c);
                     }
+                    Controls.Add(new Label() { Text = "Commentaar", Top = 0, Left = 540, Font = new System.Drawing.Font("Arial", 16), Height = 30, Width = 200 });
                 }
             }
             

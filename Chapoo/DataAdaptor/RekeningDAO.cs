@@ -82,16 +82,14 @@ namespace DataAdaptor
             string query = "INSERT INTO REKENING (tafel_id, bestelling_id, totaalbedrag, tip, opmerking) VALUES('@tafel_id', '@bestelling_id', '@totaalbedrag', '@tip', '@opmerking')";
 
             string totBedrag = rekening.Totaalbedrag.ToString();
-            string totBedragPunt = totBedrag.Replace(".", ",");
 
             string Fooi = rekening.Fooi.ToString();
-            string FooiPunt = totBedrag.Replace(".", ",");
 
             query = query.Replace("'@tafel_id'", rekening.Tafelnummer.ToString());
             query = query.Replace("'@bestelling_id'", bestelling.ToString());
-            query = query.Replace("'@totaalbedrag'", totBedragPunt);
-            query = query.Replace("'@tip'", FooiPunt);
-            query = query.Replace("'@opmerking'", rekening.Opmerking);
+            query = query.Replace("'@totaalbedrag'", totBedrag);
+            query = query.Replace("'@tip'", Fooi);
+            query = query.Replace("@opmerking", rekening.Opmerking);
 
             data = DataConnection.Query(query);
             DataConnection.connection.Close();
