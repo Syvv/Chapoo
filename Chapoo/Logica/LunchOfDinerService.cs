@@ -11,10 +11,10 @@ namespace Logica
 {
     public class LunchOfDinerService
     {
-        private List<MenuModel> List = new List<MenuModel>();
+        private List<Model.MenuItem> List = new List<Model.MenuItem>();
         private CategoriserenGerechtenService Gerechten = new CategoriserenGerechtenService();
 
-        public List<MenuModel> Voorgerecht()
+        public List<Model.MenuItem> Voorgerecht()
         {
             TimeSpan start = new TimeSpan(10, 0, 0);
             TimeSpan end = new TimeSpan(17, 0, 0);
@@ -31,7 +31,7 @@ namespace Logica
 
             return List;
         }
-        public List<MenuModel> Hoofdgerechten()
+        public List<Model.MenuItem> Hoofdgerechten()
         {
             TimeSpan start = new TimeSpan(10, 0, 0);
             TimeSpan end = new TimeSpan(17, 0, 0);
@@ -48,7 +48,7 @@ namespace Logica
 
             return List;
         }
-        public List<MenuModel> Nagerechten()
+        public List<Model.MenuItem> Nagerechten()
         {
             TimeSpan start = new TimeSpan(10, 0, 0);
             TimeSpan end = new TimeSpan(17, 0, 0);

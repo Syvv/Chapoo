@@ -14,11 +14,11 @@ namespace Logica
      */
     public class CategoriserenGerechtenService {
 
-        List<MenuModel> menu = MenuDAO.GetMenuItems();
+        List<MenuItem> menu = MenuDAO.GetMenuItems();
         
-        public List<MenuModel> GetVoorgerechtenLunch()
+        public List<MenuItem> GetVoorgerechtenLunch()
         {
-            List<MenuModel> voorgerechtenLunch = new List<MenuModel>();
+            List<MenuItem> voorgerechtenLunch = new List<MenuItem>();
 
             for(int i = 0; i < menu.Count; i++)
             {
@@ -30,9 +30,9 @@ namespace Logica
 
             return voorgerechtenLunch;
         }
-        public List<MenuModel> GetHoofdgerechtenLunch()
+        public List<MenuItem> GetHoofdgerechtenLunch()
         {
-            List<MenuModel> hoofdgerechtenLunch = new List<MenuModel>();
+            List<MenuItem> hoofdgerechtenLunch = new List<MenuItem>();
 
             for (int i = 0; i < menu.Count; i++)
             {
@@ -44,9 +44,9 @@ namespace Logica
 
             return hoofdgerechtenLunch;
         }
-        public List<MenuModel> GetNagerechtenLunch()
+        public List<MenuItem> GetNagerechtenLunch()
         {
-            List<MenuModel> nagerechtenLunch = new List<MenuModel>();
+            List<MenuItem> nagerechtenLunch = new List<MenuItem>();
 
             for (int i = 0; i < menu.Count; i++)
             {
@@ -58,9 +58,9 @@ namespace Logica
 
             return nagerechtenLunch;
         }
-        public List<MenuModel> GetVoorgerechtenDiner()
+        public List<MenuItem> GetVoorgerechtenDiner()
         {
-            List<MenuModel> voorgerechtenDiner = new List<MenuModel>();
+            List<MenuItem> voorgerechtenDiner = new List<MenuItem>();
 
             for (int i = 0; i < menu.Count; i++)
             {
@@ -72,9 +72,9 @@ namespace Logica
 
             return voorgerechtenDiner;
         }
-        public List<MenuModel> GetTussengerechtenDiner()
+        public List<MenuItem> GetTussengerechtenDiner()
         {
-            List<MenuModel> tussengerechtenDiner = new List<MenuModel>();
+            List<MenuItem> tussengerechtenDiner = new List<MenuItem>();
 
             for (int i = 0; i < menu.Count; i++)
             {
@@ -86,9 +86,9 @@ namespace Logica
 
             return tussengerechtenDiner;
         }
-        public List<MenuModel> GetHoofdgerechtenDiner()
+        public List<MenuItem> GetHoofdgerechtenDiner()
         {
-            List<MenuModel> hoofgerechtenDiner = new List<MenuModel>();
+            List<MenuItem> hoofgerechtenDiner = new List<MenuItem>();
 
             for (int i = 0; i < menu.Count; i++)
             {
@@ -100,9 +100,9 @@ namespace Logica
 
             return hoofgerechtenDiner;
         }
-        public List<MenuModel> GetNagerechtenDiner()
+        public List<MenuItem> GetNagerechtenDiner()
         {
-            List<MenuModel> nagerechtenDiner = new List<MenuModel>();
+            List<MenuItem> nagerechtenDiner = new List<MenuItem>();
 
             for (int i = 0; i < menu.Count; i++)
             {
@@ -114,9 +114,9 @@ namespace Logica
 
             return nagerechtenDiner;
         }
-        public List<MenuModel> GetFrisdranken()
+        public List<MenuItem> GetFrisdranken()
         {
-            List<MenuModel> frisdranken = new List<MenuModel>();
+            List<MenuItem> frisdranken = new List<MenuItem>();
 
             for (int i = 0; i < menu.Count; i++)
             {
@@ -128,9 +128,9 @@ namespace Logica
 
             return frisdranken;
         }
-        public List<MenuModel> GetBieren()
+        public List<MenuItem> GetBieren()
         {
-            List<MenuModel> bieren = new List<MenuModel>();
+            List<MenuItem> bieren = new List<MenuItem>();
 
             for (int i = 0; i < menu.Count; i++)
             {
@@ -142,9 +142,9 @@ namespace Logica
 
             return bieren;
         }
-        public List<MenuModel> GetWijnen()
+        public List<MenuItem> GetWijnen()
         {
-            List<MenuModel> wijnen = new List<MenuModel>();
+            List<MenuItem> wijnen = new List<MenuItem>();
 
             for (int i = 0; i < menu.Count; i++)
             {
@@ -156,9 +156,9 @@ namespace Logica
 
             return wijnen;
         }
-        public List<MenuModel> GetGedestileerdeDranken()
+        public List<MenuItem> GetGedestileerdeDranken()
         {
-            List<MenuModel> gedestileerdeDranken = new List<MenuModel>();
+            List<MenuItem> gedestileerdeDranken = new List<MenuItem>();
 
             for (int i = 0; i < menu.Count; i++)
             {
@@ -170,9 +170,9 @@ namespace Logica
 
             return gedestileerdeDranken;
         }
-        public List<MenuModel> GetKoffieEnThee()
+        public List<MenuItem> GetKoffieEnThee()
         {
-            List<MenuModel> koffieEnThee = new List<MenuModel>();
+            List<MenuItem> koffieEnThee = new List<MenuItem>();
 
             for (int i = 0; i < menu.Count; i++)
             {

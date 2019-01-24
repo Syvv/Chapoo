@@ -8,28 +8,15 @@ namespace Model
 {
     public class Bestelling
     {
-        int tafelId;int werknemerId;
+        public int Id { get; set; }
+        public Werknemer Werknemer { get; set; }
+        public List<Bestellingsitem> BestelItems { get; set; }
 
-        public int TafelId { get => tafelId; set => tafelId = value; }
-        public int WerknemerId { get => werknemerId; set => werknemerId = value; }
-
-        public Bestelling(int tafelId, int werknemerId)
+        public Bestelling(int id, Werknemer werknemer, List<Bestellingsitem> bestelItems)
         {
-            TafelId = tafelId;
-            WerknemerId = werknemerId;
-        }
-        public class BestellingList
-        {
-            List<Bestelling> bl = new List<Bestelling>();
-            public void addList(Bestelling b)
-            {
-                bl.Add(b);
-            }
-
-            public List<Bestelling> getList()
-            {
-                return bl;
-            }
+            this.Id = id;
+            this.Werknemer = werknemer;
+            this.BestelItems = bestelItems;
         }
     }
 }

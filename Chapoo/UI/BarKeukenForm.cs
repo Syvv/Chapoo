@@ -16,10 +16,10 @@ namespace UI
     public partial class BarKeukenForm : Form
     {
         List<BarKeukenUIElement> UIElements = new List<BarKeukenUIElement>();
-        private Model.User user;
+        private Model.Werknemer user;
         delegate void CreateTimerCallback();
 
-        public BarKeukenForm(Model.User user)
+        public BarKeukenForm(Model.Werknemer user)
         {
             InitializeComponent();
             this.user = user;

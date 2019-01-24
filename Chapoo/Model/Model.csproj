@@ -42,18 +42,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BesteldRekening.cs" />
     <Compile Include="Bestellingsitem.cs" />
-    <Compile Include="HeeftItemModel.cs" />
-    <Compile Include="MenuModel.cs" />
-    <Compile Include="BestelOverzichtItemModel.cs" />
+    <Compile Include="Item.cs" />
+    <Compile Include="MenuItem.cs" />
     <Compile Include="NoSuchUserException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QueueItemModel.cs" />
-    <Compile Include="RekeningOverzicht.cs" />
     <Compile Include="Rekening.cs" />
     <Compile Include="Bestelling.cs" />
-    <Compile Include="User.cs" />
+    <Compile Include="Tafel.cs" />
+    <Compile Include="Werknemer.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

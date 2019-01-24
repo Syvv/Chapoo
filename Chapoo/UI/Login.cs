@@ -35,7 +35,7 @@ namespace UI
                 return;
             }
 
-            Model.User user = new User(UsernameInput.Text,type);
+            Model.Werknemer user = new Werknemer(UsernameInput.Text,type);
             
             if(user.Type=='s')//Check which screen it has to show
             {

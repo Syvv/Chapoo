@@ -8,24 +8,28 @@ namespace Model
 {
     public class Rekening
     {
-        public decimal Totaalbedrag { get; set; }
-        public double BedragZonderBtw { get; set; }
-        public double Btw9 { get; set; } //btw berekening toevoegen??
-        public double Btw21 { get; set; } //btw berekening toevoegen??
-        public decimal Fooi { get; set; }
+        public double Totaalbedrag { get; set; }
+        public double Btw { get; set; }
+        public double Fooi { get; set; }
         public string Opmerking { get; set; }
-        public int Tafelnummer { get; set; }
+        public Tafel Tafel { get; set; }
+        public Bestelling Bestelling { get; set; }
+        public BetaalMethode Methode {get; set;}
 
-        public Rekening(decimal totaalbedrag,double bedragZonderBtw, double btw9, double btw21, decimal fooi, string opmerking, int tafelnummer)
+        public Rekening(double totaalbedrag, double btw, double fooi, string opmerking, Tafel tafel, Bestelling bestelling, BetaalMethode Methode)
         {
             this.Totaalbedrag = totaalbedrag;
-            this.BedragZonderBtw = bedragZonderBtw;
             this.Fooi = fooi;
-            this.Btw9 = btw9;
-            this.Btw21 = btw21;
+            this.Btw = btw;
             this.Opmerking = opmerking;
-            this.Tafelnummer = tafelnummer;
+            this.Tafel = tafel;
+            this.Bestelling = bestelling;
+            this.Methode = Methode;
         }
 
+        public enum BetaalMethode
+        {
+
+        }
     }
 }

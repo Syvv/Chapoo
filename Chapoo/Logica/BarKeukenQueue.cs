@@ -12,10 +12,10 @@ namespace Logica
 {
     public static class BarKeukenQueue
     {
-        private static Model.User user;
+        private static Model.Werknemer user;
         
 
-        public static List<Bestellingsitem> getBestellingen(Model.User user)
+        public static List<Bestellingsitem> getBestellingen(Model.Werknemer user)
         {
             BarKeukenQueue.user = user;
             List<Bestellingsitem> result = new List<Bestellingsitem>();

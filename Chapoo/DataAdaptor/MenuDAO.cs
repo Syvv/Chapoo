@@ -9,9 +9,9 @@ namespace DataAdaptor
 {
     public class MenuDAO
     {
-        public static List<Model.MenuModel> GetMenuItems()
+        public static List<Model.MenuItem> GetMenuItems()
         {
-            List<Model.MenuModel> menu_list = new List<Model.MenuModel>();
+            List<Model.MenuItem> menu_list = new List<Model.MenuItem>();
             SqlDataReader data;
 
             data = DataConnection.Query("SELECT * FROM MENU");
@@ -30,7 +30,7 @@ namespace DataAdaptor
                 categorie = (string)data["categorie"];
                 voorraad = (int)data["voorraad"];
 
-                Model.MenuModel menu = new Model.MenuModel(menuId, menuItem, prijs, categorie, voorraad);
+                Model.MenuItem menu = new Model.MenuItem(menuId, menuItem, prijs, categorie, voorraad);
 
                 menu_list.Add(menu);
                 

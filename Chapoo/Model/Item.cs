@@ -6,21 +6,19 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    public class MenuModel
+    public class Item
     {
         public int MenuId { get; set; }
-        public string MenuItem { get; set; }
+        public string Naam { get; set; }
         public double Prijs { get; set; }
         public string Categorie { get; set; }
-        public int Voorraad { get; set; }
 
-        public MenuModel(int menuId, string menuItem, double prijs, string categorie, int voorraad)
+        public Item(int menuId, string naam, double prijs, string categorie)
         {
             this.MenuId = menuId;
-            this.MenuItem = menuItem;
+            this.Naam = naam;
             this.Prijs = prijs;
             this.Categorie = categorie;
-            this.Voorraad = voorraad;
         }
     }
 }

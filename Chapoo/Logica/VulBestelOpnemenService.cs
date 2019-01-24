@@ -11,7 +11,7 @@ namespace Logica
 {
     public class VulBestelOpnemenService
     {
-        public void FillListView(ListView listView, List<MenuModel> gerechten)
+        public void FillListView(ListView listView, List<Model.MenuItem> gerechten)
         {   
             for (int i = 0; i < gerechten.Count; i++)
             {
