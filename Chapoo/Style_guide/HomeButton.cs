@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using System.Drawing;
 
-namespace Style_guide
+namespace StyleGuide
 {
     public class HomeButton : Button
     {

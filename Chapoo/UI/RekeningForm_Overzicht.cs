@@ -13,7 +13,7 @@ using Styleguide;
 
 namespace UI
 {
-    public partial class RekeningForm_Overzicht : Style_guide.BaseFormMobile
+    public partial class RekeningForm_Overzicht : StyleGuide.BaseFormMobile
     {
         //doorgeven van aangeklikte tafelnummer
         int tafelNummer = 1;

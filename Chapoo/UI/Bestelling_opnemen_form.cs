@@ -13,7 +13,7 @@ using Model;
 
 namespace UI
 {
-    public partial class Bestelling_opnemen_form : Style_guide.BaseFormMobile
+    public partial class Bestelling_opnemen_form : StyleGuide.BaseFormMobile
     {
         CategoriserenGerechtenService gerechten = new CategoriserenGerechtenService();
         VulBestelOpnemenService fillList = new VulBestelOpnemenService();

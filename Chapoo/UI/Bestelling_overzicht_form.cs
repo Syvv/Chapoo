@@ -11,7 +11,7 @@ using Logica;
 
 namespace UI
 {
-    public partial class Bestelling_overzicht_form : Style_guide.BaseFormMobile
+    public partial class Bestelling_overzicht_form : StyleGuide.BaseFormMobile
     {
         private BestelOverzichtService bestelOverzichtService = new BestelOverzichtService();
         private Bestelling_bevestiging_form verwijder;

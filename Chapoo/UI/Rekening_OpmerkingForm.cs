@@ -13,7 +13,7 @@ using Logica;
 
 namespace UI
 {
-    public partial class Rekening_OpmerkingForm : Style_guide.BaseFormMobile
+    public partial class Rekening_OpmerkingForm : StyleGuide.BaseFormMobile
     {
         RekeningLogica rekeningLogica = new RekeningLogica();
 

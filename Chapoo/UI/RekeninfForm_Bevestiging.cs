@@ -13,7 +13,7 @@ using Styleguide;
 
 namespace UI
 {
-    public partial class RekeninfForm_Bevestiging : Style_guide.BaseFormMobile
+    public partial class RekeninfForm_Bevestiging : StyleGuide.BaseFormMobile
     {
         public RekeninfForm_Bevestiging(int tafelnummer)
         {

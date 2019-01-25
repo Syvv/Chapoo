@@ -43,8 +43,8 @@
             this.listView = new System.Windows.Forms.ListView();
             this.LblOpmerking = new System.Windows.Forms.Label();
             this.OutOpmerking = new System.Windows.Forms.Label();
-            this.homeButton2 = new Style_guide.HomeButton();
-            this.backButton1 = new Style_guide.BackButton();
+            this.homeButton2 = new StyleGuide.HomeButton();
+            this.backButton1 = new StyleGuide.BackButton();
             this.LblTafelnummer = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.GridVwOverzicht)).BeginInit();
             this.SuspendLayout();
@@ -281,8 +281,8 @@
         private System.Windows.Forms.ListView listView;
         private System.Windows.Forms.Label LblOpmerking;
         private System.Windows.Forms.Label OutOpmerking;
-        private Style_guide.HomeButton homeButton2;
-        private Style_guide.BackButton backButton1;
+        private StyleGuide.HomeButton homeButton2;
+        private StyleGuide.BackButton backButton1;
         private System.Windows.Forms.Label LblTafelnummer;
     }
 }

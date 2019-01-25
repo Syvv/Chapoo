@@ -13,7 +13,7 @@ using Styleguide;
 
 namespace UI
 {
-    public partial class RekeningForm_Betaal : Style_guide.BaseFormMobile
+    public partial class RekeningForm_Betaal : StyleGuide.BaseFormMobile
     {
         RekeningLogica rekeningLogica = new RekeningLogica();
         bool ingevuld = false;

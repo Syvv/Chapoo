@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Style_guide
+namespace StyleGuide
 {
     public partial class BaseFormMobile : Form
     {
@@ -38,6 +38,21 @@ namespace Style_guide
         }
 
         private void opnemenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void uitlogButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void uitlogButton1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mainButton1_Click(object sender, EventArgs e)
         {
 
         }

@@ -42,8 +42,8 @@
             this.btnVerstuur = new Styleguide.BaseButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.homeButton1 = new Style_guide.HomeButton();
-            this.backButton1 = new Style_guide.BackButton();
+            this.homeButton1 = new StyleGuide.HomeButton();
+            this.backButton1 = new StyleGuide.BackButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -264,7 +264,7 @@
         private Styleguide.BaseButton btnVerstuur;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ListView listView1;
-        private Style_guide.HomeButton homeButton1;
-        private Style_guide.BackButton backButton1;
+        private StyleGuide.HomeButton homeButton1;
+        private StyleGuide.BackButton backButton1;
     }
 }

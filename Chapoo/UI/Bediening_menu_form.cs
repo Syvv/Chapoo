@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace UI
 {
-    public partial class Bediening_menu_form : Style_guide.BaseFormMobile
+    public partial class Bediening_menu_form : StyleGuide.BaseFormMobile
     {
         public Bestelling_opnemen_form Bestelling_Opnemen_Form;
         public Bediening_menu_form(Bestelling_opnemen_form bestelling_Opnemen_Form)

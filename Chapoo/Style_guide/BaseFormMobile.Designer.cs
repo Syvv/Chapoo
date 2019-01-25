@@ -1,4 +1,4 @@
-﻿namespace Style_guide
+﻿namespace StyleGuide
 {
     partial class BaseFormMobile
     {
@@ -30,43 +30,22 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BaseFormMobile));
-            this.homeButton1 = new Style_guide.HomeButton();
-            this.backButton1 = new Style_guide.BackButton();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.topPanel = new System.Windows.Forms.Panel();
-            this.bottomPanel = new System.Windows.Forms.Panel();
+            this.uitlogButton1 = new StyleGuide.UitlogButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.mainPanel = new System.Windows.Forms.Panel();
+            this.homeButton1 = new StyleGuide.HomeButton();
+            this.backButton1 = new StyleGuide.BackButton();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.opnemenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.overzichtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.afrekenenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bottomPanel = new System.Windows.Forms.Panel();
+            this.mainPanel = new System.Windows.Forms.Panel();
             this.topPanel.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // homeButton1
-            // 
-            this.homeButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("homeButton1.BackgroundImage")));
-            this.homeButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.homeButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.homeButton1.Location = new System.Drawing.Point(14, 48);
-            this.homeButton1.Name = "homeButton1";
-            this.homeButton1.Size = new System.Drawing.Size(50, 50);
-            this.homeButton1.TabIndex = 0;
-            this.homeButton1.UseVisualStyleBackColor = true;
-            // 
-            // backButton1
-            // 
-            this.backButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("backButton1.BackgroundImage")));
-            this.backButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.backButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.backButton1.Location = new System.Drawing.Point(14, 104);
-            this.backButton1.Name = "backButton1";
-            this.backButton1.Size = new System.Drawing.Size(50, 50);
-            this.backButton1.TabIndex = 1;
-            this.backButton1.UseVisualStyleBackColor = true;
             // 
             // contextMenuStrip1
             // 
@@ -82,6 +61,7 @@
             // 
             // topPanel
             // 
+            this.topPanel.Controls.Add(this.uitlogButton1);
             this.topPanel.Controls.Add(this.panel1);
             this.topPanel.Controls.Add(this.homeButton1);
             this.topPanel.Controls.Add(this.backButton1);
@@ -91,12 +71,17 @@
             this.topPanel.Size = new System.Drawing.Size(585, 164);
             this.topPanel.TabIndex = 4;
             // 
-            // bottomPanel
+            // uitlogButton1
             // 
-            this.bottomPanel.Location = new System.Drawing.Point(-2, 660);
-            this.bottomPanel.Name = "bottomPanel";
-            this.bottomPanel.Size = new System.Drawing.Size(585, 194);
-            this.bottomPanel.TabIndex = 5;
+            this.uitlogButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uitlogButton1.BackgroundImage")));
+            this.uitlogButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.uitlogButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.uitlogButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.uitlogButton1.Location = new System.Drawing.Point(512, 48);
+            this.uitlogButton1.Name = "uitlogButton1";
+            this.uitlogButton1.Size = new System.Drawing.Size(60, 50);
+            this.uitlogButton1.TabIndex = 8;
+            this.uitlogButton1.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -105,12 +90,29 @@
             this.panel1.Size = new System.Drawing.Size(480, 411);
             this.panel1.TabIndex = 6;
             // 
-            // mainPanel
+            // homeButton1
             // 
-            this.mainPanel.Location = new System.Drawing.Point(-2, 159);
-            this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(585, 503);
-            this.mainPanel.TabIndex = 6;
+            this.homeButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("homeButton1.BackgroundImage")));
+            this.homeButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.homeButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.homeButton1.Location = new System.Drawing.Point(14, 48);
+            this.homeButton1.Name = "homeButton1";
+            this.homeButton1.Size = new System.Drawing.Size(50, 50);
+            this.homeButton1.TabIndex = 0;
+            this.homeButton1.Text = " ";
+            this.homeButton1.UseVisualStyleBackColor = true;
+            // 
+            // backButton1
+            // 
+            this.backButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("backButton1.BackgroundImage")));
+            this.backButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.backButton1.Location = new System.Drawing.Point(14, 104);
+            this.backButton1.Name = "backButton1";
+            this.backButton1.Size = new System.Drawing.Size(50, 50);
+            this.backButton1.TabIndex = 1;
+            this.backButton1.Text = " ";
+            this.backButton1.UseVisualStyleBackColor = true;
             // 
             // menuStrip1
             // 
@@ -143,6 +145,20 @@
             this.afrekenenToolStripMenuItem.Name = "afrekenenToolStripMenuItem";
             this.afrekenenToolStripMenuItem.Size = new System.Drawing.Size(159, 36);
             this.afrekenenToolStripMenuItem.Text = "3. afrekenen";
+            // 
+            // bottomPanel
+            // 
+            this.bottomPanel.Location = new System.Drawing.Point(-2, 660);
+            this.bottomPanel.Name = "bottomPanel";
+            this.bottomPanel.Size = new System.Drawing.Size(585, 194);
+            this.bottomPanel.TabIndex = 5;
+            // 
+            // mainPanel
+            // 
+            this.mainPanel.Location = new System.Drawing.Point(-2, 159);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(585, 503);
+            this.mainPanel.TabIndex = 6;
             // 
             // BaseFormMobile
             // 
@@ -178,6 +194,7 @@
         private System.Windows.Forms.ToolStripMenuItem afrekenenToolStripMenuItem;
         private System.Windows.Forms.Panel bottomPanel;
         private System.Windows.Forms.Panel mainPanel;
+        private UitlogButton uitlogButton1;
     }
 }
 

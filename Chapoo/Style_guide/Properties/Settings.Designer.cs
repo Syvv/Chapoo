@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Style_guide.Properties
+namespace StyleGuide.Properties
 {
 
 

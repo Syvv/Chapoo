@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Style_guide
+namespace StyleGuide
 {
     static class Program
     {

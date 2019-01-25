@@ -32,8 +32,8 @@
             this.Tbopmerking = new System.Windows.Forms.TextBox();
             this.BtnOpslaan = new System.Windows.Forms.Button();
             this.BtnAnuleren = new System.Windows.Forms.Button();
-            this.backButton1 = new Style_guide.BackButton();
-            this.homeButton2 = new Style_guide.HomeButton();
+            this.backButton1 = new StyleGuide.BackButton();
+            this.homeButton2 = new StyleGuide.HomeButton();
             this.LblTafelnummer = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -134,8 +134,8 @@
         private System.Windows.Forms.TextBox Tbopmerking;
         private System.Windows.Forms.Button BtnOpslaan;
         private System.Windows.Forms.Button BtnAnuleren;
-        private Style_guide.BackButton backButton1;
-        private Style_guide.HomeButton homeButton2;
+        private StyleGuide.BackButton backButton1;
+        private StyleGuide.HomeButton homeButton2;
         private System.Windows.Forms.Label LblTafelnummer;
     }
 }

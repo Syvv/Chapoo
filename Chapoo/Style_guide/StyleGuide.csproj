@@ -57,28 +57,25 @@
     <Compile Include="BaseFormMobile.Designer.cs">
       <DependentUpon>BaseFormMobile.cs</DependentUpon>
     </Compile>
-    <Compile Include="button.cs">
+    <Compile Include="BaseButton.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="HomeButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="LogoutButton.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="LogoutButton.Designer.cs">
-      <DependentUpon>LogoutButton.cs</DependentUpon>
+    <Compile Include="MainButton.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="titel.cs">
+    <Compile Include="Titel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UitlogButton.cs">
       <SubType>Component</SubType>
     </Compile>
     <EmbeddedResource Include="BaseFormMobile.resx">
       <DependentUpon>BaseFormMobile.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LogoutButton.resx">
-      <DependentUpon>LogoutButton.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -102,9 +99,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\home.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\home.png" />
