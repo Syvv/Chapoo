@@ -26,7 +26,7 @@ namespace UI
             ListStyleUI ListViewStyle = new ListStyleUI();
             ListViewStyle.StyleBestellingOpnemen(listView1);
             listView1.ItemActivate += new EventHandler(ItemActivate);
-            //listView1.ItemCheck += new EventHandler(listView1_ItemCheck);
+            fillList.FillListView(listView1, lunchOfDiner.Voorgerecht());
         }
         //public event System.Windows.Forms.ItemCheckEventHandler ItemCheck;
         private void Bestelling_opnemen_form_Load(object sender, EventArgs e)
@@ -159,7 +159,14 @@ namespace UI
                 {
                     aantal = 1;
                 }
-
+                if(aantal < 0)
+                {
+                    aantal *= -1;
+                }
+                else if(aantal == 0)
+                {
+                    aantal = 1;
+                }
                 if (item.Checked == false)
                 {
                     listView1.Items.Remove(item);

@@ -50,16 +50,8 @@ namespace UI
                     int id = (int)item.Tag;
                     bestelOverzichtService.DeleteAll(id, bar);
                 }
-                if (bar)
-                {
-                    orderView.FillBarList(listView1);
-                }
-                else
-                {
-                    orderView.FillKeukenList(listView1);
-                }
             }
-             verwijder.confirmatie = false;
+            verwijder.confirmatie = false;
         }
 
         private void btnKlaar_Click(object sender, EventArgs e)
@@ -121,7 +113,7 @@ namespace UI
                 {
                     orderView.FillKeukenList(listView1);
                 }
-            }          
+            }
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -146,18 +138,9 @@ namespace UI
             }
             if (verwijder.confirmatie)
             {
-                bestelOverzichtService.DeleteItem(id, bar);
-
-                if (bar)
-                {
-                    orderView.FillBarList(listView1);
-                }
-                else
-                {
-                    orderView.FillKeukenList(listView1);
-                }
-                verwijder.confirmatie = false;
+                bestelOverzichtService.DeleteItem(id, bar);               
             }
+            verwijder.confirmatie = false;
         }
 
         private void btnBezorgd_Click(object sender, EventArgs e)

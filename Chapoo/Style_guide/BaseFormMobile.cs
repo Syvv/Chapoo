@@ -36,5 +36,10 @@ namespace Style_guide
         {
 
         }
+
+        private void opnemenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
