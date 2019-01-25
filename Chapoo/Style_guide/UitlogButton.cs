@@ -4,7 +4,7 @@ using System.Drawing;
 
 namespace StyleGuide
 {
-    class UitlogButton : Button
+    public class UitlogButton : Button
     {
         public UitlogButton()
         {

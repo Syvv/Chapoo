@@ -22,27 +22,7 @@ namespace StyleGuide
 
         }
 
-        private void titel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void titel2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtTafel_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void opnemenToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void uitlogButton1_Click(object sender, EventArgs e)
         {
 
         }
@@ -53,6 +33,16 @@ namespace StyleGuide
         }
 
         private void mainButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mainPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void topPanel_Paint(object sender, PaintEventArgs e)
         {
 
         }

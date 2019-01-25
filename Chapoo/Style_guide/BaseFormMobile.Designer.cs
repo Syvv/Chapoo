@@ -33,7 +33,6 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.topPanel = new System.Windows.Forms.Panel();
-            this.uitlogButton1 = new StyleGuide.UitlogButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.homeButton1 = new StyleGuide.HomeButton();
             this.backButton1 = new StyleGuide.BackButton();
@@ -43,6 +42,7 @@
             this.afrekenenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bottomPanel = new System.Windows.Forms.Panel();
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.uitlogButton1 = new StyleGuide.UitlogButton();
             this.topPanel.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -70,18 +70,7 @@
             this.topPanel.Name = "topPanel";
             this.topPanel.Size = new System.Drawing.Size(585, 164);
             this.topPanel.TabIndex = 4;
-            // 
-            // uitlogButton1
-            // 
-            this.uitlogButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uitlogButton1.BackgroundImage")));
-            this.uitlogButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.uitlogButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.uitlogButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.uitlogButton1.Location = new System.Drawing.Point(512, 48);
-            this.uitlogButton1.Name = "uitlogButton1";
-            this.uitlogButton1.Size = new System.Drawing.Size(60, 50);
-            this.uitlogButton1.TabIndex = 8;
-            this.uitlogButton1.UseVisualStyleBackColor = true;
+            this.topPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.topPanel_Paint);
             // 
             // panel1
             // 
@@ -159,6 +148,18 @@
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(585, 503);
             this.mainPanel.TabIndex = 6;
+            this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
+            // 
+            // uitlogButton1
+            // 
+            this.uitlogButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uitlogButton1.BackgroundImage")));
+            this.uitlogButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.uitlogButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.uitlogButton1.Location = new System.Drawing.Point(530, 54);
+            this.uitlogButton1.Name = "uitlogButton1";
+            this.uitlogButton1.Size = new System.Drawing.Size(42, 39);
+            this.uitlogButton1.TabIndex = 8;
+            this.uitlogButton1.UseVisualStyleBackColor = true;
             // 
             // BaseFormMobile
             // 
@@ -182,19 +183,19 @@
 
         #endregion
 
-        private HomeButton homeButton1;
-        private BackButton backButton1;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
-        private System.Windows.Forms.Panel topPanel;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem opnemenToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem overzichtToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem afrekenenToolStripMenuItem;
-        private System.Windows.Forms.Panel bottomPanel;
-        private System.Windows.Forms.Panel mainPanel;
-        private UitlogButton uitlogButton1;
+        protected HomeButton homeButton1;
+        protected BackButton backButton1;
+        protected System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        protected System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        protected System.Windows.Forms.Panel topPanel;
+        protected System.Windows.Forms.Panel panel1;
+        protected System.Windows.Forms.MenuStrip menuStrip1;
+        protected System.Windows.Forms.ToolStripMenuItem opnemenToolStripMenuItem;
+        protected System.Windows.Forms.ToolStripMenuItem overzichtToolStripMenuItem;
+        protected System.Windows.Forms.ToolStripMenuItem afrekenenToolStripMenuItem;
+        protected System.Windows.Forms.Panel bottomPanel;
+        protected System.Windows.Forms.Panel mainPanel;
+        protected UitlogButton uitlogButton1;
     }
 }
 

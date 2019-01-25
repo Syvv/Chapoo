@@ -60,6 +60,12 @@
     <Compile Include="BaseButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="BesteItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BesteItem.Designer.cs">
+      <DependentUpon>BesteItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="HomeButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -76,6 +82,9 @@
     </Compile>
     <EmbeddedResource Include="BaseFormMobile.resx">
       <DependentUpon>BaseFormMobile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BesteItem.resx">
+      <DependentUpon>BesteItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

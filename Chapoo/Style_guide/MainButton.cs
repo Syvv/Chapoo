@@ -1,7 +1,7 @@
 ﻿using System.Windows.Forms;
 using System.Drawing;
 
-namespace Styleguide
+namespace StyleGuide
 {
     public class MainButton : BaseButton
     {
