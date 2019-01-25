@@ -33,8 +33,8 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.topPanel = new System.Windows.Forms.Panel();
+            this.uitlogButton1 = new StyleGuide.UitlogButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.homeButton1 = new StyleGuide.HomeButton();
             this.backButton1 = new StyleGuide.BackButton();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.opnemenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,7 +42,6 @@
             this.afrekenenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bottomPanel = new System.Windows.Forms.Panel();
             this.mainPanel = new System.Windows.Forms.Panel();
-            this.uitlogButton1 = new StyleGuide.UitlogButton();
             this.topPanel.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -63,7 +62,6 @@
             // 
             this.topPanel.Controls.Add(this.uitlogButton1);
             this.topPanel.Controls.Add(this.panel1);
-            this.topPanel.Controls.Add(this.homeButton1);
             this.topPanel.Controls.Add(this.backButton1);
             this.topPanel.Controls.Add(this.menuStrip1);
             this.topPanel.Location = new System.Drawing.Point(-2, -1);
@@ -72,6 +70,17 @@
             this.topPanel.TabIndex = 4;
             this.topPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.topPanel_Paint);
             // 
+            // uitlogButton1
+            // 
+            this.uitlogButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uitlogButton1.BackgroundImage")));
+            this.uitlogButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.uitlogButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.uitlogButton1.Location = new System.Drawing.Point(530, 54);
+            this.uitlogButton1.Name = "uitlogButton1";
+            this.uitlogButton1.Size = new System.Drawing.Size(42, 39);
+            this.uitlogButton1.TabIndex = 8;
+            this.uitlogButton1.UseVisualStyleBackColor = true;
+            // 
             // panel1
             // 
             this.panel1.Location = new System.Drawing.Point(4, 160);
@@ -79,24 +88,12 @@
             this.panel1.Size = new System.Drawing.Size(480, 411);
             this.panel1.TabIndex = 6;
             // 
-            // homeButton1
-            // 
-            this.homeButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("homeButton1.BackgroundImage")));
-            this.homeButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.homeButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.homeButton1.Location = new System.Drawing.Point(14, 48);
-            this.homeButton1.Name = "homeButton1";
-            this.homeButton1.Size = new System.Drawing.Size(50, 50);
-            this.homeButton1.TabIndex = 0;
-            this.homeButton1.Text = " ";
-            this.homeButton1.UseVisualStyleBackColor = true;
-            // 
             // backButton1
             // 
             this.backButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("backButton1.BackgroundImage")));
             this.backButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.backButton1.Location = new System.Drawing.Point(14, 104);
+            this.backButton1.Location = new System.Drawing.Point(14, 48);
             this.backButton1.Name = "backButton1";
             this.backButton1.Size = new System.Drawing.Size(50, 50);
             this.backButton1.TabIndex = 1;
@@ -105,6 +102,7 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.Control;
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -150,17 +148,6 @@
             this.mainPanel.TabIndex = 6;
             this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
             // 
-            // uitlogButton1
-            // 
-            this.uitlogButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uitlogButton1.BackgroundImage")));
-            this.uitlogButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.uitlogButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.uitlogButton1.Location = new System.Drawing.Point(530, 54);
-            this.uitlogButton1.Name = "uitlogButton1";
-            this.uitlogButton1.Size = new System.Drawing.Size(42, 39);
-            this.uitlogButton1.TabIndex = 8;
-            this.uitlogButton1.UseVisualStyleBackColor = true;
-            // 
             // BaseFormMobile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -182,8 +169,6 @@
         }
 
         #endregion
-
-        protected HomeButton homeButton1;
         protected BackButton backButton1;
         protected System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         protected System.Windows.Forms.ContextMenuStrip contextMenuStrip2;

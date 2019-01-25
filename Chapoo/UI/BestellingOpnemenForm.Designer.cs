@@ -29,17 +29,27 @@
         private void InitializeComponent()
         {
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
+            this.topPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // Bestelling_opnemen_form
+            // topPanel
+            // 
+            this.topPanel.Size = new System.Drawing.Size(585, 163);
+            // 
+            // BestellingOpnemenForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(582, 853);
-            this.Name = "Bestelling_opnemen_form";
+            this.Name = "BestellingOpnemenForm";
             this.Text = "Bestelling_opnemen";
             this.Load += new System.EventHandler(this.Bestelling_opnemen_form_Load);
+            this.Controls.SetChildIndex(this.topPanel, 0);
+            this.Controls.SetChildIndex(this.bottomPanel, 0);
+            this.Controls.SetChildIndex(this.mainPanel, 0);
+            this.topPanel.ResumeLayout(false);
+            this.topPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
