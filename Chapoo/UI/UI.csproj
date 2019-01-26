@@ -65,33 +65,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RekeninfForm_Bevestiging.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RekeninfForm_Bevestiging.Designer.cs">
-      <DependentUpon>RekeninfForm_Bevestiging.cs</DependentUpon>
-    </Compile>
-    <Compile Include="RekeningForm_Betaal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RekeningForm_Betaal.Designer.cs">
-      <DependentUpon>RekeningForm_Betaal.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Rekening_OpmerkingForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Rekening_OpmerkingForm.Designer.cs">
-      <DependentUpon>Rekening_OpmerkingForm.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="BarKeukenForm.resx">
       <DependentUpon>BarKeukenForm.cs</DependentUpon>
     </EmbeddedResource>
-    <Compile Include="RekeningForm_Overzicht.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RekeningForm_Overzicht.Designer.cs">
-      <DependentUpon>RekeningForm_Overzicht.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="BestellingOpnemenForm.resx">
       <DependentUpon>BestellingOpnemenForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -107,18 +83,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="RekeninfForm_Bevestiging.resx">
-      <DependentUpon>RekeninfForm_Bevestiging.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RekeningForm_Betaal.resx">
-      <DependentUpon>RekeningForm_Betaal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RekeningForm_Overzicht.resx">
-      <DependentUpon>RekeningForm_Overzicht.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Rekening_OpmerkingForm.resx">
-      <DependentUpon>Rekening_OpmerkingForm.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
