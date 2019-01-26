@@ -29,7 +29,7 @@ namespace Model
 
         public enum BetaalMethode
         {
-
+            pin, cash, creditcard
         }
     }
 }
