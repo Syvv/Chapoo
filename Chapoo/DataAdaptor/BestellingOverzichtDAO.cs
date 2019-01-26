@@ -12,6 +12,7 @@ namespace DataAdaptor
 {
     public class BestellingOverzichtDAO
     {
+        /*
         public static List<BestelOverzichtItemModel> GetNotificaties()
         {
             List<BestelOverzichtItemModel> notificaties = new List<BestelOverzichtItemModel>();
@@ -205,5 +206,6 @@ namespace DataAdaptor
 
             connection.Close();
         }
+        */
     }
 }

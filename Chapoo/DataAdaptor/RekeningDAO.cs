@@ -10,6 +10,7 @@ namespace DataAdaptor
 {
     public class RekeningDAO
     {
+        /*
         public static void ZetTafelVrijmaken(int tafelId)
         {
             string query = "update TAFEL set Bezet = 0 where id = '@_tafelid'";
@@ -110,5 +111,6 @@ namespace DataAdaptor
             data = DataConnection.Query(query);
             DataConnection.connection.Close();
         }
+        */
     }
 }

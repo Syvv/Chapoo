@@ -10,7 +10,7 @@ namespace Model
     {
         public int Voorraad { get; set; }
 
-        public MenuItem(int menuId, string naam, double prijs, string categorie, int voorraad) : base(menuId, naam, prijs, categorie)
+        public MenuItem(int menuId, string naam, double prijs, CategorieEnum categorie, int voorraad) : base(menuId, naam, prijs, categorie)
         {
             this.Voorraad = voorraad;
         }

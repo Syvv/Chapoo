@@ -12,6 +12,7 @@ namespace DataAdaptor
 {
    public class BestellingOpnemenDAO
    {
+        /*
         public int InsertMenuItem(int tafelId, int werknemerId)
         {
             SqlConnection connection = DataConnection.connection;
@@ -121,5 +122,6 @@ namespace DataAdaptor
             }
             connection.Close();
         }
+        */
     }
 }

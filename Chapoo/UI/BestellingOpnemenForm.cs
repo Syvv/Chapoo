@@ -19,7 +19,8 @@ namespace UI
 
         public BestellingOpnemenForm()
         {
-           
+            BestelItem bestelItem = new BestelItem();
+            mainPanel.Controls.Add(bestelItem);
         }
         private void Bestelling_opnemen_form_Load(object sender, EventArgs e)
         {

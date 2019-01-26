@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{B0629F70-22BF-445A-BB43-379F1F778472}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Style_guide</RootNamespace>
-    <AssemblyName>Style_guide</AssemblyName>
+    <RootNamespace>StyleGuide</RootNamespace>
+    <AssemblyName>StyleGuide</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -60,16 +60,13 @@
     <Compile Include="BaseButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="BesteItem.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="BesteItem.Designer.cs">
-      <DependentUpon>BesteItem.cs</DependentUpon>
-    </Compile>
     <Compile Include="HomeButton.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="MainButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AddButton.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Program.cs" />
@@ -85,9 +82,6 @@
     </Compile>
     <EmbeddedResource Include="BaseFormMobile.resx">
       <DependentUpon>BaseFormMobile.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BesteItem.resx">
-      <DependentUpon>BesteItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

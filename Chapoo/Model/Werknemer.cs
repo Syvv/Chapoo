@@ -18,9 +18,6 @@ namespace Model
             this.Id = id;
             this.Functie = type;
         }
-        public enum FunctieType
-        {
-            bediening, keuken, bar
-        }
+        public enum FunctieType { bediening, keuken, bar }
     }
 }

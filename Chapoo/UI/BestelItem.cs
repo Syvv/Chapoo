@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace StyleGuide
+namespace UI
 {
-    public partial class BesteItem : UserControl
+    public partial class BestelItem : UserControl
     {
-        public BesteItem()
+        public BestelItem()
         {
             InitializeComponent();
-        }
-
-        private void BesteItem_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

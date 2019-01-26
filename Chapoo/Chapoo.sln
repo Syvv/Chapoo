@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAdaptor", "DataAdaptor\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI", "UI\UI.csproj", "{91A02A17-AC8A-4469-9EA9-1976705C49D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StyleGuide", "Style_guide\StyleGuide.csproj", "{B0629F70-22BF-445A-BB43-379F1F778472}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StyleGuide", "StyleGuide\StyleGuide.csproj", "{B0629F70-22BF-445A-BB43-379F1F778472}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
