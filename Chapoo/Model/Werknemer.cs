@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace Model
 {
+    public enum FunctieType { Bediening, Keuken, Bar }
+
     public class Werknemer
     {
         public string Naam { get; set; }
@@ -18,6 +20,6 @@ namespace Model
             this.Id = id;
             this.Functie = type;
         }
-        public enum FunctieType { bediening, keuken, bar }
+        
     }
 }
