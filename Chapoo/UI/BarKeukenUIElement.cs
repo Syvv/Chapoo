@@ -20,6 +20,7 @@ namespace UI
             Hoeveelheid.Text = item.Hoeveelheid + "x";
             MenuItem.Text = item.Naam;
             Commentaar.Text = item.Commentaar;
+            Timestamp.Text = item.Timestamp.ToShortTimeString();
         }
     }
 }
