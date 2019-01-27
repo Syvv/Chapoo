@@ -11,12 +11,18 @@ namespace Model
         public int Id { get; set; }
         public Werknemer Werknemer { get; set; }
         public List<Bestellingsitem> BestelItems { get; set; }
+        public Tafel Tafel { get; set; }
 
         public Bestelling(int id, Werknemer werknemer, List<Bestellingsitem> bestelItems)
         {
             this.Id = id;
             this.Werknemer = werknemer;
             this.BestelItems = bestelItems;
+        }
+        public Bestelling(Werknemer werknemer, Tafel tafel)
+        {
+            this.Werknemer = werknemer;
+            this.Tafel = tafel;
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace UI
 {
-    partial class ItemOpties
+    partial class ItemOptiesControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -38,7 +38,7 @@
             this.btnAcht = new StyleGuide.BaseButton();
             this.btnNegen = new StyleGuide.BaseButton();
             this.btnNul = new StyleGuide.BaseButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtAantal = new System.Windows.Forms.TextBox();
             this.txtComment = new System.Windows.Forms.RichTextBox();
             this.btnComment = new StyleGuide.BaseButton();
             this.SuspendLayout();
@@ -54,6 +54,7 @@
             this.bntEen.TabIndex = 0;
             this.bntEen.Text = "1";
             this.bntEen.UseVisualStyleBackColor = true;
+            this.bntEen.Click += new System.EventHandler(this.bntEen_Click);
             // 
             // btnTwee
             // 
@@ -66,6 +67,7 @@
             this.btnTwee.TabIndex = 1;
             this.btnTwee.Text = "2";
             this.btnTwee.UseVisualStyleBackColor = true;
+            this.btnTwee.Click += new System.EventHandler(this.btnTwee_Click);
             // 
             // btnDrie
             // 
@@ -78,6 +80,7 @@
             this.btnDrie.TabIndex = 2;
             this.btnDrie.Text = "3";
             this.btnDrie.UseVisualStyleBackColor = true;
+            this.btnDrie.Click += new System.EventHandler(this.btnDrie_Click);
             // 
             // btnVier
             // 
@@ -90,6 +93,7 @@
             this.btnVier.TabIndex = 3;
             this.btnVier.Text = "4";
             this.btnVier.UseVisualStyleBackColor = true;
+            this.btnVier.Click += new System.EventHandler(this.btnVier_Click);
             // 
             // vtnVijf
             // 
@@ -102,6 +106,7 @@
             this.vtnVijf.TabIndex = 4;
             this.vtnVijf.Text = "5";
             this.vtnVijf.UseVisualStyleBackColor = true;
+            this.vtnVijf.Click += new System.EventHandler(this.vtnVijf_Click);
             // 
             // vtnZes
             // 
@@ -114,6 +119,7 @@
             this.vtnZes.TabIndex = 5;
             this.vtnZes.Text = "6";
             this.vtnZes.UseVisualStyleBackColor = true;
+            this.vtnZes.Click += new System.EventHandler(this.vtnZes_Click);
             // 
             // vtnZeven
             // 
@@ -126,6 +132,7 @@
             this.vtnZeven.TabIndex = 6;
             this.vtnZeven.Text = "7";
             this.vtnZeven.UseVisualStyleBackColor = true;
+            this.vtnZeven.Click += new System.EventHandler(this.vtnZeven_Click);
             // 
             // btnAcht
             // 
@@ -138,6 +145,7 @@
             this.btnAcht.TabIndex = 7;
             this.btnAcht.Text = "8";
             this.btnAcht.UseVisualStyleBackColor = true;
+            this.btnAcht.Click += new System.EventHandler(this.btnAcht_Click);
             // 
             // btnNegen
             // 
@@ -150,6 +158,7 @@
             this.btnNegen.TabIndex = 8;
             this.btnNegen.Text = "9";
             this.btnNegen.UseVisualStyleBackColor = true;
+            this.btnNegen.Click += new System.EventHandler(this.btnNegen_Click);
             // 
             // btnNul
             // 
@@ -162,13 +171,14 @@
             this.btnNul.TabIndex = 9;
             this.btnNul.Text = "0";
             this.btnNul.UseVisualStyleBackColor = true;
+            this.btnNul.Click += new System.EventHandler(this.btnNul_Click);
             // 
-            // textBox1
+            // txtAantal
             // 
-            this.textBox1.Location = new System.Drawing.Point(35, 31);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(150, 22);
-            this.textBox1.TabIndex = 10;
+            this.txtAantal.Location = new System.Drawing.Point(35, 31);
+            this.txtAantal.Name = "txtAantal";
+            this.txtAantal.Size = new System.Drawing.Size(150, 22);
+            this.txtAantal.TabIndex = 10;
             // 
             // txtComment
             // 
@@ -189,6 +199,7 @@
             this.btnComment.TabIndex = 12;
             this.btnComment.Text = "Voeg toe";
             this.btnComment.UseVisualStyleBackColor = true;
+            this.btnComment.Click += new System.EventHandler(this.btnComment_Click);
             // 
             // ItemOpties
             // 
@@ -197,7 +208,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.Controls.Add(this.btnComment);
             this.Controls.Add(this.txtComment);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtAantal);
             this.Controls.Add(this.btnNul);
             this.Controls.Add(this.btnNegen);
             this.Controls.Add(this.btnAcht);
@@ -218,18 +229,18 @@
 
         #endregion
 
-        private StyleGuide.BaseButton bntEen;
-        private StyleGuide.BaseButton btnTwee;
-        private StyleGuide.BaseButton btnDrie;
-        private StyleGuide.BaseButton btnVier;
-        private StyleGuide.BaseButton vtnVijf;
-        private StyleGuide.BaseButton vtnZes;
-        private StyleGuide.BaseButton vtnZeven;
-        private StyleGuide.BaseButton btnAcht;
-        private StyleGuide.BaseButton btnNegen;
-        private StyleGuide.BaseButton btnNul;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.RichTextBox txtComment;
-        private StyleGuide.BaseButton btnComment;
+        protected StyleGuide.BaseButton bntEen;
+        protected StyleGuide.BaseButton btnTwee;
+        protected StyleGuide.BaseButton btnDrie;
+        protected StyleGuide.BaseButton btnVier;
+        protected StyleGuide.BaseButton vtnVijf;
+        protected StyleGuide.BaseButton vtnZes;
+        protected StyleGuide.BaseButton vtnZeven;
+        protected StyleGuide.BaseButton btnAcht;
+        protected StyleGuide.BaseButton btnNegen;
+        protected StyleGuide.BaseButton btnNul;
+        protected System.Windows.Forms.TextBox txtAantal;
+        protected System.Windows.Forms.RichTextBox txtComment;
+        protected StyleGuide.BaseButton btnComment;
     }
 }

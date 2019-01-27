@@ -49,17 +49,17 @@
     <Compile Include="BarKeukenForm.Designer.cs">
       <DependentUpon>BarKeukenForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="BestelItem.cs">
+    <Compile Include="BestelItemControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="BestelItem.Designer.cs">
-      <DependentUpon>BestelItem.cs</DependentUpon>
+    <Compile Include="BestelItemControl.Designer.cs">
+      <DependentUpon>BestelItemControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="BestelKnoppen.cs">
+    <Compile Include="BestelKnoppenControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="BestelKnoppen.Designer.cs">
-      <DependentUpon>BestelKnoppen.cs</DependentUpon>
+    <Compile Include="BestelKnoppenControl.Designer.cs">
+      <DependentUpon>BestelKnoppenControl.cs</DependentUpon>
     </Compile>
     <Compile Include="BestellingOpnemenForm.cs">
       <SubType>Form</SubType>
@@ -67,11 +67,11 @@
     <Compile Include="BestellingOpnemenForm.Designer.cs">
       <DependentUpon>BestellingOpnemenForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ItemOpties.cs">
+    <Compile Include="ItemOptiesControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ItemOpties.Designer.cs">
-      <DependentUpon>ItemOpties.cs</DependentUpon>
+    <Compile Include="ItemOptiesControl.Designer.cs">
+      <DependentUpon>ItemOptiesControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -90,17 +90,17 @@
     <EmbeddedResource Include="BarKeukenForm.resx">
       <DependentUpon>BarKeukenForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BestelItem.resx">
-      <DependentUpon>BestelItem.cs</DependentUpon>
+    <EmbeddedResource Include="BestelItemControl.resx">
+      <DependentUpon>BestelItemControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BestelKnoppen.resx">
-      <DependentUpon>BestelKnoppen.cs</DependentUpon>
+    <EmbeddedResource Include="BestelKnoppenControl.resx">
+      <DependentUpon>BestelKnoppenControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BestellingOpnemenForm.resx">
       <DependentUpon>BestellingOpnemenForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ItemOpties.resx">
-      <DependentUpon>ItemOpties.cs</DependentUpon>
+    <EmbeddedResource Include="ItemOptiesControl.resx">
+      <DependentUpon>ItemOptiesControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

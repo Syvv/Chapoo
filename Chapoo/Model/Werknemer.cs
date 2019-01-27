@@ -18,6 +18,10 @@ namespace Model
             this.Id = id;
             this.Functie = type;
         }
+        public Werknemer(int werknemerId)
+        {
+            this.Id = werknemerId;
+        }
         public enum FunctieType { bediening, keuken, bar }
     }
 }

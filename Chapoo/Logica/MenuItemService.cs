@@ -18,7 +18,7 @@ namespace Logica
             Items = new MenuItemDAO();
             return Items.GetMenuItems();
         }
-        public List<MenuItem> Categoriseren(List<MenuItem> menuItemList, Categorie categorie)
+        public List<MenuItem> Categoriseren(List<MenuItem> menuItemList, CategorieEnum categorie)
         {
             foreach(MenuItem menuItem in menuItemList)
             {

@@ -17,17 +17,26 @@ namespace UI
     public partial class BestellingOpnemenForm : BaseFormMobile
     {
         public MenuItemService MenuItemService = new MenuItemService();
+        BestelItemControl BestelItem { get; set; }
+        BestelKnoppenControl BestelKnoppen { get; set; }
+        private Bestelling Bestelling { get; set; }
+        private Werknemer Werknemer { get; set;}
+        private Tafel Tafel { get; set; }
 
         public BestellingOpnemenForm()
         {
+            this.Tafel = new Tafel(1);
+            this.Werknemer = new Werknemer(1);
+            this.Bestelling = new Bestelling(Werknemer, Tafel);
+            this.BestelKnoppen = new BestelKnoppenControl(Bestelling);
             foreach (Model.MenuItem menuItem in MenuItemService.GetItems())
             {
-                BestelItem bestelItem = new BestelItem(menuItem);                
-                pnlMain.Controls.Add(bestelItem);
-            }
-            BestelKnoppen bestelKnoppen = new BestelKnoppen();
-            pnlBottom.Controls.Add(bestelKnoppen);
+                BestelItem = new BestelItemControl(menuItem, this, BestelKnoppen);                
+                pnlMain.Controls.Add(BestelItem);
+            }            
+            pnlBottom.Controls.Add(BestelKnoppen);
         }
+
         private void Bestelling_opnemen_form_Load(object sender, EventArgs e)
         {
 
