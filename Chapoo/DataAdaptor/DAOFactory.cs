@@ -30,7 +30,7 @@ namespace DataAdaptor
         {
             if(BestellingsItemDAO==null)
             {
-                BestellingsItemDAO = new BestellingsItemDAO();
+                BestellingsItemDAO = new BestellingsItemDAO(Connection);
             }
             return BestellingsItemDAO;
         }
@@ -66,7 +66,7 @@ namespace DataAdaptor
         {
             if (WerknemerDAO == null)
             {
-                WerknemerDAO = new WerknemerDAO();
+                WerknemerDAO = new WerknemerDAO(Connection);
             }
             return WerknemerDAO;
         }

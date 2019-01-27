@@ -10,7 +10,12 @@ namespace DataAdaptor
 {
     public class WerknemerDAO
     {
-        private SqlConnection connection = DataConnection.connection;
+        private SqlConnection connection;
+
+        public WerknemerDAO(SqlConnection connection)
+        {
+            this.connection = connection ?? throw new ArgumentNullException(nameof(connection));
+        }
 
         public Werknemer CheckLogin(string gebruikersnaam, string wachtwoord)
         {
