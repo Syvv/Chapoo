@@ -43,7 +43,6 @@ namespace DataAdaptor
         }
         public Tafel TafelInfoVuller(int tafelId) //bestelling toevoegen
         {
-            Tafel tafel;
             StringBuilder sb = new StringBuilder();
             connection.Open();
 
@@ -55,9 +54,9 @@ namespace DataAdaptor
             SqlDataReader reader = command.ExecuteReader();
             
             int zitplaatsen = reader.GetInt16(0);
-            StatusEnum staat = (StatusEnum)reader.GetValue(1);
+            Tafel.Status staat = (Tafel.Status)reader.GetValue(1);
 
-            tafel = new Tafel(tafelId, staat, zitplaatsen,null);
+            Tafel tafel = new Tafel(tafelId, staat, zitplaatsen, null);
             
 
             connection.Close();

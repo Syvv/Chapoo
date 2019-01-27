@@ -9,20 +9,24 @@ namespace Model
     public class Tafel
     {
         public int Id { get; set; }
-        public StatusEnum Status { get; set; }
+        public Status Statuss { get; set; }
         public int Zitplaatsen { get; set; }
         public Bestelling Bestelling { get; set; }
 
-        public Tafel(int id, StatusEnum status, int zitplaatsen, Bestelling bestelling)
+        public Tafel(int id, Status status, int zitplaatsen, Bestelling bestelling)
         {
-            Id = id;
-            Status = status;
-            Zitplaatsen = zitplaatsen;
-            Bestelling = bestelling;
+            this.Id = id;
+            this.Statuss = status;
+            this.Zitplaatsen = zitplaatsen;
+            this.Bestelling = bestelling;
         }
         public Tafel(int tafelId)
         {
             this.Id = tafelId;
+        }
+        public enum Status
+        {
+            vrij, bezet
         }
     }
 }

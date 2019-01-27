@@ -45,18 +45,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BarKeukenForm.cs" />
+    <Compile Include="BarKeukenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="BarKeukenForm.Designer.cs">
       <DependentUpon>BarKeukenForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="BestelItemControl.cs">
     <Compile Include="BarKeukenUIElement.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="BarKeukenUIElement.Designer.cs">
       <DependentUpon>BarKeukenUIElement.cs</DependentUpon>
     </Compile>
-    <Compile Include="BestelItem.cs">
+    <Compile Include="BestelItem.cs" />
+    <Compile Include="BestelItemControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="BestelItemControl.Designer.cs">
@@ -109,9 +111,7 @@
     <EmbeddedResource Include="BarKeukenForm.resx">
       <DependentUpon>BarKeukenForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BestelItemControl.resx">
-      <DependentUpon>BestelItemControl.cs</DependentUpon>
-    </EmbeddedResource>
+    <EmbeddedResource Include="BestelItemControl.resx" />
     <EmbeddedResource Include="BestelKnoppenControl.resx">
       <DependentUpon>BestelKnoppenControl.cs</DependentUpon>
     </EmbeddedResource>
