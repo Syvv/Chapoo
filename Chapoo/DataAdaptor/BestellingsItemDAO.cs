@@ -65,6 +65,7 @@ namespace DataAdaptor
                 }
                 result.Add(new Bestellingsitem(naam,commentaar,hoeveelheid,tafelId,id,timestamp,prijs,categorie));
             }
+            connection.Close();
             return result;
         }
 
@@ -123,6 +124,7 @@ namespace DataAdaptor
                 }
                 result.Add(new Bestellingsitem(naam, commentaar, hoeveelheid, tafelId, id, timestamp, prijs, categorie));
             }
+            connection.Close();
             return result;
         }
 

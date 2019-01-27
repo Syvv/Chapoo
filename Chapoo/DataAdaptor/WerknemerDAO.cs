@@ -24,7 +24,7 @@ namespace DataAdaptor
 
             sb.Append(  "SELECT functie, werknemerId " +
                         "FROM WERKNEMER " +
-                        "WHERE inlogNaam = '@gebruikersnaam' AND wachtwoord = '@wachtwoord';");
+                        "WHERE inlogNaam = @gebruikersnaam AND wachtwoord = @wachtwoord;");
             SqlCommand command = new SqlCommand(sb.ToString(), connection);
             command.Parameters.AddWithValue("@gebruikersnaam", gebruikersnaam);
             command.Parameters.AddWithValue("@wachtwoord", wachtwoord);
