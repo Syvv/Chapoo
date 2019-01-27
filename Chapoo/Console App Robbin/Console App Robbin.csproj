@@ -4,15 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4C6087F0-054E-412C-A584-1646116E3DE4}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DataAdaptor</RootNamespace>
-    <AssemblyName>DataAdaptor</AssemblyName>
+    <ProjectGuid>{98095134-5E0F-400E-AE5E-2D0270C1E319}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Console_App_Robbin</RootNamespace>
+    <AssemblyName>Console App Robbin</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -40,20 +43,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataConnection.cs" />
-    <Compile Include="ItemDAO.cs" />
-    <Compile Include="MenuItemDAO.cs" />
-    <Compile Include="KeukenBarDataConnection.cs" />
-    <Compile Include="Nieuwe_RekeningDAO.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RekeningDAO.cs" />
-    <Compile Include="TafelDAO.cs" />
-    <Compile Include="UserConnection.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Model\Model.csproj">
-      <Project>{0d07733e-d479-43b0-bf6d-5d2043261317}</Project>
-      <Name>Model</Name>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataAdaptor\DataAdaptor.csproj">
+      <Project>{4c6087f0-054e-412c-a584-1646116e3de4}</Project>
+      <Name>DataAdaptor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logica\Logica.csproj">
+      <Project>{9f659a41-b5cd-40ef-99d4-dd73b7d5b288}</Project>
+      <Name>Logica</Name>
     </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{0d07733e-d479-43b0-bf6d-5d2043261317}</Project>

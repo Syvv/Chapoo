@@ -22,7 +22,7 @@ namespace Model
         }
         public enum StatusType
         {
-            //invullen
+            vrij, bezet
         }
     }
 }
