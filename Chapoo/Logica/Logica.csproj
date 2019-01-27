@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BestellingService.cs" />
     <Compile Include="BestellingsItemLogica.cs" />
     <Compile Include="ItemService.cs" />
     <Compile Include="MenuItemService.cs" />

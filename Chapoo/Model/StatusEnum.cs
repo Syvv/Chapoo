@@ -1,15 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Model;
 
-namespace DataAdaptor
+namespace Model
 {
-    public class ItemDAO
-    {
-    }
+    public enum StatusEnum{}
 }
-

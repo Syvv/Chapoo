@@ -1,6 +1,6 @@
 ﻿namespace UI
 {
-    partial class BestelKnoppen
+    partial class BestelKnoppenControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -159,8 +159,9 @@
             this.btnVerstuur.TabIndex = 9;
             this.btnVerstuur.Text = "Verstuur";
             this.btnVerstuur.UseVisualStyleBackColor = true;
+            this.btnVerstuur.Click += new System.EventHandler(this.btnVerstuur_Click);
             // 
-            // BestelKnoppen
+            // BestelKnoppenControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -176,7 +177,7 @@
             this.Controls.Add(this.btnBier);
             this.Controls.Add(this.btnFris);
             this.Margin = new System.Windows.Forms.Padding(0);
-            this.Name = "BestelKnoppen";
+            this.Name = "BestelKnoppenControl";
             this.Size = new System.Drawing.Size(584, 276);
             this.ResumeLayout(false);
 

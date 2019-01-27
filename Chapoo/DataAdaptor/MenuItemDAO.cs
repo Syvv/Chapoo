@@ -25,7 +25,7 @@ namespace DataAdaptor
                 string categorieString = (string)data["categorie"];
                 int voorraad = (int)data["voorraad"];
 
-                Enum.TryParse(categorieString, out Categorie categorie);
+                Enum.TryParse(categorieString, out CategorieEnum categorie);
 
                 MenuItem menu = new MenuItem(menuId, menuItem, prijs, categorie, voorraad);
 

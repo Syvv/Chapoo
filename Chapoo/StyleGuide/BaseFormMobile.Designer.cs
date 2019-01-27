@@ -185,19 +185,19 @@
         }
 
         #endregion
-        protected BackButton backButton1;
-        protected System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        protected System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
-        protected System.Windows.Forms.Panel pnlTop;
-        protected System.Windows.Forms.Panel panel1;
-        protected System.Windows.Forms.MenuStrip menuStrip1;
-        protected System.Windows.Forms.ToolStripMenuItem opnemenToolStripMenuItem;
-        protected System.Windows.Forms.ToolStripMenuItem overzichtToolStripMenuItem;
-        protected System.Windows.Forms.ToolStripMenuItem afrekenenToolStripMenuItem;
-        protected UitlogButton uitlogButton1;
-        protected Titel txtTafel;
-        protected System.Windows.Forms.FlowLayoutPanel pnlMain;
-        protected System.Windows.Forms.FlowLayoutPanel pnlBottom;
+        public BackButton backButton1;
+        public System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        public System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        public System.Windows.Forms.Panel pnlTop;
+        public System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.MenuStrip menuStrip1;
+        public System.Windows.Forms.ToolStripMenuItem opnemenToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem overzichtToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem afrekenenToolStripMenuItem;
+        public UitlogButton uitlogButton1;
+        public Titel txtTafel;
+        public System.Windows.Forms.FlowLayoutPanel pnlMain;
+        public System.Windows.Forms.FlowLayoutPanel pnlBottom;
     }
 }
 

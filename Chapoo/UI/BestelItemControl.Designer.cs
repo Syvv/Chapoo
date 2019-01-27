@@ -1,6 +1,6 @@
 ﻿namespace UI
 {
-    partial class BestelItem
+    partial class BestelItemControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -64,6 +64,7 @@
             this.Controls.Add(this.addButton1);
             this.Name = "BestelItem";
             this.Size = new System.Drawing.Size(582, 79);
+            this.Load += new System.EventHandler(this.BestelItem_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
