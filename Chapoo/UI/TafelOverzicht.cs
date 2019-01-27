@@ -15,7 +15,7 @@ namespace UI
 {
     public partial class TafelOverzicht : Form
     {
-        public Werknemer Werknemer { get; set; }
+        public Model.Werknemer HuidigeWerknemer { get; set; }
         public TafelLogica TafelLogica = new TafelLogica();
 
         private void uitlogButton1_Click(object sender, EventArgs e)
@@ -23,16 +23,16 @@ namespace UI
             new Login().Show();
             this.Close();
         }
-        public TafelOverzicht(Werknemer werknemer)
+        public TafelOverzicht(Model.Werknemer werknemer)
         {
             InitializeComponent();
-            this.Werknemer = werknemer;
+            this.HuidigeWerknemer = werknemer;
             titel.Text = "TafelOverzicht";
         }
         private void OpenenBestellingForm(int tafelNummer)
         {
             Tafel tafel = TafelLogica.TafelVuller(tafelNummer);
-            new BestellingOpnemenForm(Werknemer, tafel).Show();
+            new BestellingOpnemenForm(HuidigeWerknemer, tafel).Show();
             this.Close();
         }
         private void tafelButton1_Click(object sender, EventArgs e)
