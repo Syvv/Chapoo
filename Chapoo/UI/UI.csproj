@@ -81,6 +81,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RekeningFormOverzicht.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RekeningFormOverzicht.Designer.cs">
+      <DependentUpon>RekeningFormOverzicht.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="BarKeukenForm.resx">
       <DependentUpon>BarKeukenForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -108,6 +114,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RekeningFormOverzicht.resx">
+      <DependentUpon>RekeningFormOverzicht.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
