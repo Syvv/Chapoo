@@ -10,7 +10,12 @@ namespace DataAdaptor
 {
     public class BestellingsItemDAO
     {
-        private SqlConnection connection = DataConnection.connection;
+        private SqlConnection connection;
+
+        public BestellingsItemDAO(SqlConnection connection)
+        {
+            this.connection = connection ?? throw new ArgumentNullException(nameof(connection));
+        }
 
         public List<Bestellingsitem> HaalBarItemsOp()
         {
