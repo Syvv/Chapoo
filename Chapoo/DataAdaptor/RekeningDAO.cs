@@ -8,7 +8,7 @@ using Model;
 
 namespace DataAdaptor
 {
-    public class Nieuwe_RekeningDAO
+    public class RekeningDAO
     {
         private SqlConnection connection = DataConnection.connection;
         public List<Bestellingsitem> OphalenBestellingen(int bestellingId) // 'x'veranderen , Categorie aanmaken, ANDER MODEL????, veranderen volgorde van de reader.get
@@ -29,12 +29,12 @@ namespace DataAdaptor
                 string naam = reader.GetString(0);
                 int hoeveelheid = reader.GetInt32(3);
                 double prijs = reader.GetDouble(1);
-                Categorie categorie = (Categorie)reader.GetString(2);
+                Categorie categorie = (Categorie)reader.GetValue(2);
 
                 string commentaar = null;
                 int tafel = 0;
                 int id = bestellingId;
-                DateTime timestamp = null;                
+                DateTime timestamp = DateTime.MinValue;
 
                 Bestellingsitem x = new Bestellingsitem(naam, commentaar, hoeveelheid, tafel,id,timestamp , prijs, categorie);
 
@@ -45,13 +45,21 @@ namespace DataAdaptor
             return bestellingen;
         }
 
-        public void InsertRekening(Rekening rekening) //wordt nog uitgevoerd
+        public void InsertRekening(Rekening rekening)
         {
-            SqlConnection connection = DataConnection.connection;
             StringBuilder sb = new StringBuilder();
             connection.Open();
 
-
+            sb.Append("INSERT INTO REKENING(bestellingId, totaalbedrag, fooi, opmerking, betaalmanier) VALUES(@bestellingId, @totaalbedrag, @fooi, @opmerking , @betaalmanier)");
+            using(SqlCommand command = new SqlCommand(sb.ToString(), connection))
+            {
+                command.Parameters.AddWithValue("@bestellingId", rekening.Bestelling);
+                command.Parameters.AddWithValue("@totaalbedrag", rekening.Totaalbedrag);
+                command.Parameters.AddWithValue("@fooi", rekening.Fooi);
+                command.Parameters.AddWithValue("@opmerking", rekening.Opmerking);
+                command.Parameters.AddWithValue("@betaalmanier", rekening.Methode);
+                command.ExecuteNonQuery(); //deze testen
+            }
 
             connection.Close();
         }

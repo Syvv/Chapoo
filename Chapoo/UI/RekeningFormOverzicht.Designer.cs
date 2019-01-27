@@ -28,25 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.topPanel.SuspendLayout();
+            this.pnlTop.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // mainPanel
-            // 
-            this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
             // 
             // RekeningFormOverzicht
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(582, 853);
+            this.ClientSize = new System.Drawing.Size(436, 693);
             this.Name = "RekeningFormOverzicht";
             this.Text = "RekeningFormOverzicht";
-            this.Controls.SetChildIndex(this.topPanel, 0);
-            this.Controls.SetChildIndex(this.bottomPanel, 0);
-            this.Controls.SetChildIndex(this.mainPanel, 0);
-            this.topPanel.ResumeLayout(false);
-            this.topPanel.PerformLayout();
+            this.Controls.SetChildIndex(this.pnlTop, 0);
+            this.pnlTop.ResumeLayout(false);
+            this.pnlTop.PerformLayout();
             this.ResumeLayout(false);
 
         }

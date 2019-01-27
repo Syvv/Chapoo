@@ -23,7 +23,7 @@ namespace UI
         private Werknemer Werknemer { get; set;}
         private Tafel Tafel { get; set; }
 
-        public BestellingOpnemenForm()
+        public BestellingOpnemenForm(Model.Werknemer werknemer, Tafel tafel)
         {
             this.Tafel = new Tafel(1);
             this.Werknemer = new Werknemer(1);

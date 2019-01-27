@@ -8,56 +8,58 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Model;
+using Logica;
 using System.Timers;
 
 namespace UI
 {
-    /*
     public partial class BarKeukenForm : Form
     {
-        List<BarKeukenUIElement> UIElements = new List<BarKeukenUIElement>();
-        private Model.Werknemer user;
+        List<Bestellingsitem> Bestellingen = new List<Bestellingsitem>();
+        BestellingsItemLogica bestellingLogica;
+        private Model.Werknemer werknemer;
         delegate void CreateTimerCallback();
 
-        public BarKeukenForm(Model.Werknemer user)
+        public BarKeukenForm(Model.Werknemer werknemer)
         {
             InitializeComponent();
-            this.user = user;
-            BarKeukenQueue.getBestellingen(this.user);
-            BuildForm();
+            this.werknemer = werknemer;
+            bestellingLogica = new BestellingsItemLogica(werknemer);
+            Bestellingen = bestellingLogica.GetBestellingsitems();
+            BuildUI();
             
             System.Timers.Timer timer = new System.Timers.Timer
             {
                 Interval = 60000 //1 minute
             };
             timer.Elapsed += (s, e) => {
-                BarKeukenQueue.getBestellingen(this.user);
-                BuildForm();
+                //BarKeukenQueue.getBestellingen(this.user);
+                BuildUI();
             };
             timer.Start();
         }
 
         
-        private void BuildForm()
+        private void BuildUI()
         {
             if(this.InvokeRequired)//Check if we're calling from a different thread
             {
                 //if so invoke the method from a delegate instead
-                CreateTimerCallback cb = new CreateTimerCallback(BuildForm);
+                CreateTimerCallback cb = new CreateTimerCallback(BuildUI);
                 this.Invoke(cb);
             }
             else
             {
                 Controls.Clear();
-                UIElements.Clear();
                 int y = 30;
-                foreach (Bestellingsitem b in BestelLijst.List)
+                foreach (Bestellingsitem b in Bestellingen)
                 {
-                    UIElements.Add(new BarKeukenUIElement(b, () => { BuildForm(); }, 10, y));
+                    BarKeukenUIElement uiElement = new BarKeukenUIElement(b);
+                    uiElement.Top = y;
+                    Controls.Add(uiElement);
                     y += 50;
                 }
-
-                //add the controls that belong to all BarKeukenUIElements so that you can actually see them
+                //TODO: move this Control creation to another place
                 Controls.Add(new Label { Text = "Commentaar", Top = 0, Left = 840, Font = new System.Drawing.Font("Arial", 16), Height = 30, Width = 200 });
                 Button logoutbtn = new Button { Text = "Log uit!", Top = 0, Left = 0, Font = new System.Drawing.Font("Arial", 10), Height = 25, Width = 100 };
                 logoutbtn.Click += (s, e) =>
@@ -66,28 +68,13 @@ namespace UI
                     this.Hide();
                 };
                 Controls.Add(logoutbtn);
-                foreach (BarKeukenUIElement ui in UIElements)
-                {
-                    foreach(Control c in ui.Controls)
-                    {
-                        Controls.Add(c);
-                    }
-                    
-                }
             }
             
         }
 
-        private void BarKeukenForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void BarKeukenForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            BarKeukenQueue.PreserveData();
             Application.Exit();
         }
     }
-    */
 }

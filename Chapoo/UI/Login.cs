@@ -13,41 +13,28 @@ namespace UI
 {
     public partial class Login : Form
     {
+        Logica.Werknemer logicaWerknemer;
+
         public Login()
         {
             InitializeComponent();
-        }
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-
+            logicaWerknemer = new Logica.Werknemer();
         }
 
         private void Loginbtn_Click(object sender, EventArgs e)
         {
-            char type;
-            try
+            Model.Werknemer werknemer = logicaWerknemer.CheckInlogGegevens(UsernameInput.Text,PasswordInput.Text);
+            switch (werknemer.Functie)
             {
-                type = Logica.User.TestLoginInfo(UsernameInput.Text, PasswordInput.Text);
-            }catch(Exception ex) when (ex is Model.NoSuchUserException || ex is DataMisalignedException)
-            {
-                MessageBox.Show(ex.Message, "Something was wrong",MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            Model.Werknemer user = new Werknemer(UsernameInput.Text,type);
-            
-            if(user.Type=='s')//Check which screen it has to show
-            {
-                //create a new form and show that
-                new Bediening_menu_form().Show();
-            }else if(user.Type=='b')
-            {
-                new BarKeukenForm(user).Show();
-            }
-            else
-            {
-                new BarKeukenForm(user).Show();
+                case FunctieType.Bar:
+                    new BarKeukenForm(werknemer).Show();
+                    break;
+                case FunctieType.Keuken:
+                    new BarKeukenForm(werknemer).Show();
+                    break;
+                case FunctieType.Bediening:
+                    new TafelOverzicht(werknemer).Show();
+                    break;
             }
             this.Hide();
 

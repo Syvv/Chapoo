@@ -50,6 +50,13 @@
       <DependentUpon>BarKeukenForm.cs</DependentUpon>
     </Compile>
     <Compile Include="BestelItemControl.cs">
+    <Compile Include="BarKeukenUIElement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BarKeukenUIElement.Designer.cs">
+      <DependentUpon>BarKeukenUIElement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BestelItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="BestelItemControl.Designer.cs">
@@ -87,6 +94,18 @@
     <Compile Include="RekeningFormOverzicht.Designer.cs">
       <DependentUpon>RekeningFormOverzicht.cs</DependentUpon>
     </Compile>
+    <Compile Include="RekeningItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RekeningItem.Designer.cs">
+      <DependentUpon>RekeningItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TafelOverzicht.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TafelOverzicht.Designer.cs">
+      <DependentUpon>TafelOverzicht.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="BarKeukenForm.resx">
       <DependentUpon>BarKeukenForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -116,6 +135,12 @@
     </Compile>
     <EmbeddedResource Include="RekeningFormOverzicht.resx">
       <DependentUpon>RekeningFormOverzicht.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RekeningItem.resx">
+      <DependentUpon>RekeningItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TafelOverzicht.resx">
+      <DependentUpon>TafelOverzicht.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
