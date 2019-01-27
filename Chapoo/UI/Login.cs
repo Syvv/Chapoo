@@ -33,7 +33,7 @@ namespace UI
                     throw new NotImplementedException("Volgende formulier nog niet geïmplementeerd");
                     break;
                 case FunctieType.Bediening:
-                    new TafelOverzicht(user).Show();
+                    new TafelOverzicht(werknemer).Show();
                     break;
             }
             this.Hide();
