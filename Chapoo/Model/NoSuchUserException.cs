@@ -8,8 +8,8 @@ namespace Model
 {
     public class NoSuchUserException : Exception
     {
-        static string message = "There is no user with those credentials!";
-        public NoSuchUserException():base(message)
+        new const string Message = "There is no user with those credentials!";
+        public NoSuchUserException():base(Message)
         {
         }
 
