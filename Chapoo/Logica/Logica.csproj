@@ -43,18 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BarKeukenQueue.cs" />
-    <Compile Include="BarKeukenUIElement.cs" />
-    <Compile Include="CategoriserenGerechtenService.cs" />
-    <Compile Include="VulBestelOverzichtService.cs" />
-    <Compile Include="VulBestelOpnemenService.cs" />
-    <Compile Include="BestellingService.cs" />
-    <Compile Include="LunchOfDinerService.cs" />
-    <Compile Include="BestelOverzichtService.cs" />
+    <Compile Include="ItemService.cs" />
+    <Compile Include="MenuItemService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RekeningLogica.cs" />
-    <Compile Include="RekeningToevoegen.cs" />
-    <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataAdaptor\DataAdaptor.csproj">

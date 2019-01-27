@@ -9,7 +9,7 @@ namespace StyleGuide
         {
             FlatStyle = FlatStyle.Flat;
             Size = new Size(50, 50);
-            ForeColor = Color.FromArgb(0, 0, 0);
+            ForeColor = Color.FromArgb(15, 10, 10);
             this.Text = "+";
             Font = new Font("Microsoft Sans Serif", 12, FontStyle.Regular);
         }

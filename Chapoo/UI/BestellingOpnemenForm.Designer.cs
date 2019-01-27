@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
-            this.topPanel.SuspendLayout();
+            this.pnlTop.SuspendLayout();
             this.SuspendLayout();
             // 
-            // topPanel
+            // pnlTop
             // 
-            this.topPanel.Size = new System.Drawing.Size(585, 163);
+            this.pnlTop.Size = new System.Drawing.Size(585, 163);
             // 
             // BestellingOpnemenForm
             // 
@@ -45,11 +45,9 @@
             this.Name = "BestellingOpnemenForm";
             this.Text = "Bestelling_opnemen";
             this.Load += new System.EventHandler(this.Bestelling_opnemen_form_Load);
-            this.Controls.SetChildIndex(this.topPanel, 0);
-            this.Controls.SetChildIndex(this.bottomPanel, 0);
-            this.Controls.SetChildIndex(this.mainPanel, 0);
-            this.topPanel.ResumeLayout(false);
-            this.topPanel.PerformLayout();
+            this.Controls.SetChildIndex(this.pnlTop, 0);
+            this.pnlTop.ResumeLayout(false);
+            this.pnlTop.PerformLayout();
             this.ResumeLayout(false);
 
         }

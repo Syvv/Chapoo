@@ -15,6 +15,8 @@ namespace StyleGuide
         public BaseFormMobile()
         {
             InitializeComponent();
+            pnlMain.BackColor = Color.FromArgb(245, 239, 237);
+            menuStrip1.BackColor = Color.FromArgb(245, 239, 237);
         }
 
         private void BaseForm_Load(object sender, EventArgs e)
@@ -43,6 +45,11 @@ namespace StyleGuide
         }
 
         private void topPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txtTafel_Click(object sender, EventArgs e)
         {
 
         }

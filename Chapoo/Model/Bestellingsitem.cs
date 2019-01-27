@@ -14,7 +14,7 @@ namespace Model
         public DateTime Timestamp { get; set; }
 
         public Bestellingsitem(string naam, string commentaar, int hoeveelheid,int tafel,
-                                int id, DateTime timestamp, double prijs, CategorieEnum categorie) 
+                                int id, DateTime timestamp, double prijs, Categorie categorie) 
                                     : base(id, naam, prijs, categorie)
         {
             this.Commentaar = commentaar;

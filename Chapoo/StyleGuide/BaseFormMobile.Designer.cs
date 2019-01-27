@@ -32,17 +32,18 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BaseFormMobile));
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.topPanel = new System.Windows.Forms.Panel();
+            this.pnlTop = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.opnemenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.overzichtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.afrekenenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bottomPanel = new System.Windows.Forms.Panel();
-            this.mainPanel = new System.Windows.Forms.Panel();
+            this.pnlMain = new System.Windows.Forms.FlowLayoutPanel();
+            this.pnlBottom = new System.Windows.Forms.FlowLayoutPanel();
+            this.txtTafel = new StyleGuide.Titel();
             this.uitlogButton1 = new StyleGuide.UitlogButton();
             this.backButton1 = new StyleGuide.BackButton();
-            this.topPanel.SuspendLayout();
+            this.pnlTop.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,17 +59,21 @@
             this.contextMenuStrip2.Name = "contextMenuStrip2";
             this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
             // 
-            // topPanel
+            // pnlTop
             // 
-            this.topPanel.Controls.Add(this.uitlogButton1);
-            this.topPanel.Controls.Add(this.panel1);
-            this.topPanel.Controls.Add(this.backButton1);
-            this.topPanel.Controls.Add(this.menuStrip1);
-            this.topPanel.Location = new System.Drawing.Point(-2, -1);
-            this.topPanel.Name = "topPanel";
-            this.topPanel.Size = new System.Drawing.Size(585, 164);
-            this.topPanel.TabIndex = 4;
-            this.topPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.topPanel_Paint);
+            this.pnlTop.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pnlTop.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlTop.Controls.Add(this.txtTafel);
+            this.pnlTop.Controls.Add(this.uitlogButton1);
+            this.pnlTop.Controls.Add(this.panel1);
+            this.pnlTop.Controls.Add(this.backButton1);
+            this.pnlTop.Controls.Add(this.menuStrip1);
+            this.pnlTop.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.pnlTop.Location = new System.Drawing.Point(-2, -1);
+            this.pnlTop.Name = "pnlTop";
+            this.pnlTop.Size = new System.Drawing.Size(585, 121);
+            this.pnlTop.TabIndex = 4;
+            this.pnlTop.Paint += new System.Windows.Forms.PaintEventHandler(this.topPanel_Paint);
             // 
             // panel1
             // 
@@ -88,7 +93,7 @@
             this.afrekenenToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(585, 40);
+            this.menuStrip1.Size = new System.Drawing.Size(583, 40);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -110,20 +115,31 @@
             this.afrekenenToolStripMenuItem.Size = new System.Drawing.Size(159, 36);
             this.afrekenenToolStripMenuItem.Text = "3. afrekenen";
             // 
-            // bottomPanel
+            // pnlMain
             // 
-            this.bottomPanel.Location = new System.Drawing.Point(-2, 660);
-            this.bottomPanel.Name = "bottomPanel";
-            this.bottomPanel.Size = new System.Drawing.Size(585, 194);
-            this.bottomPanel.TabIndex = 5;
+            this.pnlMain.AutoScroll = true;
+            this.pnlMain.Location = new System.Drawing.Point(-2, 120);
+            this.pnlMain.Name = "pnlMain";
+            this.pnlMain.Size = new System.Drawing.Size(585, 458);
+            this.pnlMain.TabIndex = 6;
             // 
-            // mainPanel
+            // pnlBottom
             // 
-            this.mainPanel.Location = new System.Drawing.Point(-2, 159);
-            this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(585, 503);
-            this.mainPanel.TabIndex = 6;
-            this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
+            this.pnlBottom.Location = new System.Drawing.Point(-2, 577);
+            this.pnlBottom.Name = "pnlBottom";
+            this.pnlBottom.Size = new System.Drawing.Size(584, 276);
+            this.pnlBottom.TabIndex = 7;
+            // 
+            // txtTafel
+            // 
+            this.txtTafel.AutoSize = true;
+            this.txtTafel.Font = new System.Drawing.Font("Arial", 20F);
+            this.txtTafel.Location = new System.Drawing.Point(230, 54);
+            this.txtTafel.Name = "txtTafel";
+            this.txtTafel.Size = new System.Drawing.Size(87, 39);
+            this.txtTafel.TabIndex = 9;
+            this.txtTafel.Text = "Tafel";
+            this.txtTafel.Click += new System.EventHandler(this.txtTafel_Click);
             // 
             // uitlogButton1
             // 
@@ -154,14 +170,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(582, 853);
-            this.Controls.Add(this.mainPanel);
-            this.Controls.Add(this.bottomPanel);
-            this.Controls.Add(this.topPanel);
+            this.Controls.Add(this.pnlBottom);
+            this.Controls.Add(this.pnlMain);
+            this.Controls.Add(this.pnlTop);
             this.Name = "BaseFormMobile";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.BaseForm_Load);
-            this.topPanel.ResumeLayout(false);
-            this.topPanel.PerformLayout();
+            this.pnlTop.ResumeLayout(false);
+            this.pnlTop.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -172,15 +188,16 @@
         protected BackButton backButton1;
         protected System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         protected System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
-        protected System.Windows.Forms.Panel topPanel;
+        protected System.Windows.Forms.Panel pnlTop;
         protected System.Windows.Forms.Panel panel1;
         protected System.Windows.Forms.MenuStrip menuStrip1;
         protected System.Windows.Forms.ToolStripMenuItem opnemenToolStripMenuItem;
         protected System.Windows.Forms.ToolStripMenuItem overzichtToolStripMenuItem;
         protected System.Windows.Forms.ToolStripMenuItem afrekenenToolStripMenuItem;
-        protected System.Windows.Forms.Panel bottomPanel;
-        protected System.Windows.Forms.Panel mainPanel;
         protected UitlogButton uitlogButton1;
+        protected Titel txtTafel;
+        protected System.Windows.Forms.FlowLayoutPanel pnlMain;
+        protected System.Windows.Forms.FlowLayoutPanel pnlBottom;
     }
 }
 

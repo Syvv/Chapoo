@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Model;
-using Logica;
 using System.Timers;
 
 namespace UI
 {
+    /*
     public partial class BarKeukenForm : Form
     {
         List<BarKeukenUIElement> UIElements = new List<BarKeukenUIElement>();
@@ -89,4 +89,5 @@ namespace UI
             Application.Exit();
         }
     }
+    */
 }

@@ -40,13 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BestellingOverzichtDAO.cs" />
-    <Compile Include="BestellingOpnemenDAO.cs" />
-    <Compile Include="MenuDAO.cs" />
     <Compile Include="DataConnection.cs" />
-    <Compile Include="KeukenBarDataConnection.cs" />
+    <Compile Include="ItemDAO.cs" />
+    <Compile Include="MenuItemDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RekeningDAO.cs" />
     <Compile Include="UserConnection.cs" />
   </ItemGroup>
   <ItemGroup>

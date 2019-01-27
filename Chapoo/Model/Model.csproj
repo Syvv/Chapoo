@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bestellingsitem.cs" />
+    <Compile Include="Categorie.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="MenuItem.cs" />
     <Compile Include="NoSuchUserException.cs" />

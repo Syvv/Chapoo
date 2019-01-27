@@ -8,19 +8,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using StyleGuide;
-using Logica;
 using Model;
+using Logica;
 
 
 namespace UI
 {
-    public partial class BestellingOpnemenForm : StyleGuide.BaseFormMobile
+    public partial class BestellingOpnemenForm : BaseFormMobile
     {
+        public MenuItemService MenuItemService = new MenuItemService();
 
         public BestellingOpnemenForm()
         {
-            BestelItem bestelItem = new BestelItem();
-            mainPanel.Controls.Add(bestelItem);
+            foreach (Model.MenuItem menuItem in MenuItemService.GetItems())
+            {
+                BestelItem bestelItem = new BestelItem(menuItem);                
+                pnlMain.Controls.Add(bestelItem);
+            }
+            BestelKnoppen bestelKnoppen = new BestelKnoppen();
+            pnlBottom.Controls.Add(bestelKnoppen);
         }
         private void Bestelling_opnemen_form_Load(object sender, EventArgs e)
         {
