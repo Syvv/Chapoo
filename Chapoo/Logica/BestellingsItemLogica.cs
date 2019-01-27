@@ -10,6 +10,7 @@ namespace Logica
 {
     public class BestellingsItemLogica
     {
+        /*
         private BestellingsItemDAO DAO = new BestellingsItemDAO();
         private Model.Werknemer werknemer;
 
@@ -20,12 +21,12 @@ namespace Logica
 
         public List<Bestellingsitem> GetBestellingsitems()
         {
-            if(werknemer.Functie==FunctieType.Bar)
+            if(werknemer.Functie==Functie.Bar)
             {
                 return DAO.HaalBarItemsOp();
             }
             return DAO.HaalKeukenItemsOp();
         }
-
+        */
     }
 }

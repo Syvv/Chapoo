@@ -13,31 +13,32 @@ namespace UI
 {
     public partial class Login : Form
     {
-        Logica.Werknemer logicaWerknemer;
+        Logica.WerknemerService logicaWerknemer;
 
         public Login()
         {
             InitializeComponent();
-            logicaWerknemer = new Logica.Werknemer();
+            logicaWerknemer = new Logica.WerknemerService();
         }
 
         private void Loginbtn_Click(object sender, EventArgs e)
         {
+            /*
             Model.Werknemer werknemer = logicaWerknemer.CheckInlogGegevens(UsernameInput.Text,PasswordInput.Text);
             switch (werknemer.Functie)
             {
-                case FunctieType.Bar:
+                case Functie.Bar:
                     new BarKeukenForm(werknemer).Show();
                     break;
-                case FunctieType.Keuken:
+                case Functie.Keuken:
                     new BarKeukenForm(werknemer).Show();
                     break;
-                case FunctieType.Bediening:
+                case Functie.Bediening:
                     new TafelOverzicht(werknemer).Show();
                     break;
             }
             this.Hide();
-
+            */
         }
     }
 }

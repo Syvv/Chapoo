@@ -19,6 +19,7 @@ namespace DataAdaptor
         private TafelDAO TafelDAO = null;
         private WerknemerDAO WerknemerDAO = null;
         private MenuItemDAO MenuItemDAO = null;
+        private BestellingDAO BestellingDAO = null;
 
         public DAOFactory()
         {
@@ -52,7 +53,14 @@ namespace DataAdaptor
             }
             return RekeningDAO;
         }
-
+        public BestellingDAO CreateBestellingDAO()
+        {
+            if (BestellingDAO == null)
+            {
+                BestellingDAO = new BestellingDAO();
+            }
+            return BestellingDAO;
+        }
         public TafelDAO CreateTafelDAO()
         {
             if (TafelDAO == null)

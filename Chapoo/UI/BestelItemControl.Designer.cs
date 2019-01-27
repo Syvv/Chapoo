@@ -73,6 +73,6 @@
         #endregion
 
         protected StyleGuide.AddButton addButton1;
-        private System.Windows.Forms.Label lblItem;
+        protected System.Windows.Forms.Label lblItem;
     }
 }

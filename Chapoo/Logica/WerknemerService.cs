@@ -8,11 +8,12 @@ using DataAdaptor;
 
 namespace Logica
 {
-    public class Werknemer
+    public class WerknemerService
     {
+        /*
         private WerknemerDAO DAO;
 
-        public Werknemer()
+        public WerknemerService()
         {
             DAO = new WerknemerDAO();
         }
@@ -21,6 +22,6 @@ namespace Logica
         {
             return DAO.CheckLogin(gebruikersnaam, wachtwoord);
         }
-
+        */
     }
 }

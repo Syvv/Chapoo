@@ -57,7 +57,6 @@
     <Compile Include="BarKeukenUIElement.Designer.cs">
       <DependentUpon>BarKeukenUIElement.cs</DependentUpon>
     </Compile>
-    <Compile Include="BestelItem.cs" />
     <Compile Include="BestelItemControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

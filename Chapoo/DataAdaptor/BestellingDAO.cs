@@ -12,9 +12,9 @@ namespace DataAdaptor
 {
     public class BestellingDAO
     {
+        private SqlConnection connection = DataConnection.connection;
         public int InsertBestelling(Bestelling bestelling)
         {
-            SqlConnection connection = DataConnection.connection;
             StringBuilder sb = new StringBuilder();
 
             connection.Open();
