@@ -8,7 +8,7 @@ using Model;
 
 namespace DataAdaptor
 {
-    public class Nieuwe_RekeningDAO
+    public class RekeningDAO
     {
         private SqlConnection connection = DataConnection.connection;
         public List<Bestellingsitem> OphalenBestellingen(int bestellingId) // 'x'veranderen , Categorie aanmaken, ANDER MODEL????, veranderen volgorde van de reader.get

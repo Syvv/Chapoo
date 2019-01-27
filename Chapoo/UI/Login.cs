@@ -40,7 +40,7 @@ namespace UI
             if(user.Type=='s')//Check which screen it has to show
             {
                 //create a new form and show that
-                new Bediening_menu_form().Show();
+                new TafelOverzicht(user).Show();
             }else if(user.Type=='b')
             {
                 new BarKeukenForm(user).Show();
