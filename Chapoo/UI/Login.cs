@@ -8,37 +8,39 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Model;
+using DataAdaptor;
 
 namespace UI
 {
     public partial class Login : Form
     {
-        Logica.WerknemerService logicaWerknemer;
+        Logica.Werknemer logicaWerknemer;
+        DAOFactory Factory;
 
         public Login()
         {
             InitializeComponent();
-            logicaWerknemer = new Logica.WerknemerService();
+            Factory = new DAOFactory();
+            logicaWerknemer = new Logica.Werknemer(Factory);
         }
 
         private void Loginbtn_Click(object sender, EventArgs e)
         {
-            /*
             Model.Werknemer werknemer = logicaWerknemer.CheckInlogGegevens(UsernameInput.Text,PasswordInput.Text);
             switch (werknemer.Functie)
             {
                 case Functie.Bar:
-                    new BarKeukenForm(werknemer).Show();
+                    new BarKeukenForm(werknemer, Factory).Show();
                     break;
                 case Functie.Keuken:
-                    new BarKeukenForm(werknemer).Show();
+                    new BarKeukenForm(werknemer, Factory).Show();
                     break;
                 case Functie.Bediening:
-                    new TafelOverzicht(werknemer).Show();
+                    new TafelOverzicht(werknemer, Factory).Show();
                     break;
             }
             this.Hide();
-            */
+
         }
     }
 }

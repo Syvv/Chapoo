@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Model;
 using Logica;
 using System.Timers;
+using DataAdaptor;
 
 namespace UI
 {
@@ -17,14 +18,16 @@ namespace UI
     {
         List<Bestellingsitem> Bestellingen = new List<Bestellingsitem>();
         BestellingsItemLogica bestellingLogica;
+        DAOFactory factory;
         private Model.Werknemer werknemer;
         delegate void CreateTimerCallback();
 
-        public BarKeukenForm(Model.Werknemer werknemer)
+        public BarKeukenForm(Model.Werknemer werknemer, DAOFactory factory)
         {
             InitializeComponent();
             this.werknemer = werknemer;
-            bestellingLogica = new BestellingsItemLogica(werknemer);
+            this.factory = factory;
+            bestellingLogica = new BestellingsItemLogica(werknemer, factory);
             Bestellingen = bestellingLogica.GetBestellingsitems();
             BuildUI();
             
