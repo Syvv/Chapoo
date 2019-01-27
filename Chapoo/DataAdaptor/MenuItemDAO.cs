@@ -19,6 +19,7 @@ namespace DataAdaptor
 
             sb.Append("SELECT * FROM MENU");
 
+            connection.Open();
             SqlCommand command = new SqlCommand(sb.ToString(), connection);
             SqlDataReader data = command.ExecuteReader();
 
@@ -37,7 +38,7 @@ namespace DataAdaptor
                 menuList.Add(menu);
             }
 
-            DataConnection.connection.Close();
+            connection.Close();
             return menuList;
         }
     }

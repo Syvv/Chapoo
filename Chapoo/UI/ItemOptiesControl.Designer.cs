@@ -40,7 +40,9 @@
             this.btnNul = new StyleGuide.BaseButton();
             this.txtAantal = new System.Windows.Forms.TextBox();
             this.txtComment = new System.Windows.Forms.RichTextBox();
-            this.btnComment = new StyleGuide.BaseButton();
+            this.btnVoegToe = new StyleGuide.BaseButton();
+            this.btnDelete = new StyleGuide.BaseButton();
+            this.btnCancel = new StyleGuide.BaseButton();
             this.SuspendLayout();
             // 
             // bntEen
@@ -165,7 +167,7 @@
             this.btnNul.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNul.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnNul.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnNul.Location = new System.Drawing.Point(87, 206);
+            this.btnNul.Location = new System.Drawing.Point(139, 206);
             this.btnNul.Name = "btnNul";
             this.btnNul.Size = new System.Drawing.Size(46, 43);
             this.btnNul.TabIndex = 9;
@@ -182,31 +184,59 @@
             // 
             // txtComment
             // 
-            this.txtComment.Location = new System.Drawing.Point(234, 31);
+            this.txtComment.Location = new System.Drawing.Point(206, 31);
             this.txtComment.Name = "txtComment";
-            this.txtComment.Size = new System.Drawing.Size(319, 120);
+            this.txtComment.Size = new System.Drawing.Size(225, 218);
             this.txtComment.TabIndex = 11;
             this.txtComment.Text = "";
+            this.txtComment.TextChanged += new System.EventHandler(this.txtComment_TextChanged);
             // 
-            // btnComment
+            // btnVoegToe
             // 
-            this.btnComment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnComment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnComment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnComment.Location = new System.Drawing.Point(327, 157);
-            this.btnComment.Name = "btnComment";
-            this.btnComment.Size = new System.Drawing.Size(122, 49);
-            this.btnComment.TabIndex = 12;
-            this.btnComment.Text = "Voeg toe";
-            this.btnComment.UseVisualStyleBackColor = true;
-            this.btnComment.Click += new System.EventHandler(this.btnComment_Click);
+            this.btnVoegToe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVoegToe.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnVoegToe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnVoegToe.Location = new System.Drawing.Point(448, 31);
+            this.btnVoegToe.Name = "btnVoegToe";
+            this.btnVoegToe.Size = new System.Drawing.Size(122, 49);
+            this.btnVoegToe.TabIndex = 12;
+            this.btnVoegToe.Text = "Voeg toe";
+            this.btnVoegToe.UseVisualStyleBackColor = true;
+            this.btnVoegToe.Click += new System.EventHandler(this.btnComment_Click);
             // 
-            // ItemOpties
+            // btnDelete
+            // 
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnDelete.Location = new System.Drawing.Point(35, 206);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(46, 43);
+            this.btnDelete.TabIndex = 13;
+            this.btnDelete.Text = "C";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnCancel.Location = new System.Drawing.Point(448, 86);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(122, 49);
+            this.btnCancel.TabIndex = 14;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            // 
+            // ItemOptiesControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Controls.Add(this.btnComment);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnVoegToe);
             this.Controls.Add(this.txtComment);
             this.Controls.Add(this.txtAantal);
             this.Controls.Add(this.btnNul);
@@ -220,7 +250,7 @@
             this.Controls.Add(this.btnTwee);
             this.Controls.Add(this.bntEen);
             this.Margin = new System.Windows.Forms.Padding(0);
-            this.Name = "ItemOpties";
+            this.Name = "ItemOptiesControl";
             this.Size = new System.Drawing.Size(584, 276);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -241,6 +271,8 @@
         protected StyleGuide.BaseButton btnNul;
         protected System.Windows.Forms.TextBox txtAantal;
         protected System.Windows.Forms.RichTextBox txtComment;
-        protected StyleGuide.BaseButton btnComment;
+        protected StyleGuide.BaseButton btnVoegToe;
+        protected StyleGuide.BaseButton btnDelete;
+        private StyleGuide.BaseButton btnCancel;
     }
 }

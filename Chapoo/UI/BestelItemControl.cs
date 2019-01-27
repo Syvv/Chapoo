@@ -33,12 +33,12 @@ namespace UI
 
         private void addButton1_Click(object sender, EventArgs e)
         {
-            ItemOpties = new ItemOptiesControl();
+            ItemOpties = new ItemOptiesControl(this, BestellingOpnemenForm);
             BestellingOpnemenForm.pnlBottom.Controls.Clear();
 
             if (addButton1.Text == "+")
             {
-                addButton1.Text = "1";
+                addButton1.Text = "x";
 
             }
             else
@@ -56,6 +56,7 @@ namespace UI
                 Add = false;
                 BestellingOpnemenForm.pnlBottom.Controls.Add(BestelKnoppen);
                 addButton1.BackColor = Color.FromArgb(245, 239, 237);
+                ItemOpties.Aantal = 0;
             }           
         }
         private void BestelItem_Click(object sender, EventArgs e)

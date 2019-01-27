@@ -21,7 +21,10 @@ namespace UI
             InitializeComponent();
             this.Bestelling = bestelling;
         }
-
+        public BestelKnoppenControl()
+        {
+            InitializeComponent();
+        }
         private void btnVerstuur_Click(object sender, EventArgs e)
         {
             BestellingService = new BestellingService();

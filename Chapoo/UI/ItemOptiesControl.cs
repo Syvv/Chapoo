@@ -14,15 +14,21 @@ namespace UI
     {
         public int Aantal { get; set; }
         public string Comment { get; set; }
-        public ItemOptiesControl()
+        public BestelItemControl BestelItemControl { get; set; }
+        public BestellingOpnemenForm BestellingOpnemenForm { get; set; }
+        public ItemOptiesControl(BestelItemControl bestelItemControl, BestellingOpnemenForm bestellingOpnemenForm)
         {
             InitializeComponent();
-            Aantal = 0;
+            this.BestelItemControl = bestelItemControl;
+            this.Aantal = 0;
+            this.BestellingOpnemenForm = bestellingOpnemenForm;
         }
 
         private void btnComment_Click(object sender, EventArgs e)
         {
-            Comment = txtComment.Text;
+            this.Comment = txtComment.Text;
+            this.BestellingOpnemenForm.pnlBottom.Controls.Clear();
+            this.BestellingOpnemenForm.pnlBottom.Controls.Add(new BestelKnoppenControl());
         }
 
         private void bntEen_Click(object sender, EventArgs e)
@@ -36,6 +42,7 @@ namespace UI
                 Aantal = Aantal * 10 + 1;
             }
             txtAantal.Text = Aantal.ToString();
+            BestelItemControl.addButton1.Text = Aantal.ToString();
         }
 
         private void btnTwee_Click(object sender, EventArgs e)
@@ -49,6 +56,7 @@ namespace UI
                 Aantal = Aantal * 10 + 2;
             }
             txtAantal.Text = Aantal.ToString();
+            BestelItemControl.addButton1.Text = Aantal.ToString();
         }
 
         private void btnDrie_Click(object sender, EventArgs e)
@@ -62,6 +70,7 @@ namespace UI
                 Aantal = Aantal * 10 + 3;
             }
             txtAantal.Text = Aantal.ToString();
+            BestelItemControl.addButton1.Text = Aantal.ToString();
         }
 
         private void btnVier_Click(object sender, EventArgs e)
@@ -75,6 +84,7 @@ namespace UI
                 Aantal = Aantal * 10 + 4;
             }
             txtAantal.Text = Aantal.ToString();
+            BestelItemControl.addButton1.Text = Aantal.ToString();
         }
 
         private void vtnVijf_Click(object sender, EventArgs e)
@@ -88,6 +98,7 @@ namespace UI
                 Aantal = Aantal * 10 + 5;
             }
             txtAantal.Text = Aantal.ToString();
+            BestelItemControl.addButton1.Text = Aantal.ToString();
         }
 
         private void vtnZes_Click(object sender, EventArgs e)
@@ -101,6 +112,7 @@ namespace UI
                 Aantal = Aantal * 10 + 6;
             }
             txtAantal.Text = Aantal.ToString();
+            BestelItemControl.addButton1.Text = Aantal.ToString();
         }
 
         private void vtnZeven_Click(object sender, EventArgs e)
@@ -127,6 +139,7 @@ namespace UI
                 Aantal = Aantal * 10 + 8;
             }
             txtAantal.Text = Aantal.ToString();
+            BestelItemControl.addButton1.Text = Aantal.ToString();
         }
 
         private void btnNegen_Click(object sender, EventArgs e)
@@ -140,12 +153,26 @@ namespace UI
                 Aantal = Aantal * 10 + 9;
             }
             txtAantal.Text = Aantal.ToString();
+            BestelItemControl.addButton1.Text = Aantal.ToString();
         }
 
         private void btnNul_Click(object sender, EventArgs e)
         {
             Aantal = Aantal * 10;
             txtAantal.Text = Aantal.ToString();
+            BestelItemControl.addButton1.Text = Aantal.ToString();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            Aantal = 0;
+            BestelItemControl.addButton1.Text = "x";
+            txtAantal.Text = "";
+        }
+
+        private void txtComment_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
