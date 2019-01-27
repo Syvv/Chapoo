@@ -18,7 +18,7 @@ namespace UI
     {
         public MenuItemService MenuItemService = new MenuItemService();
 
-        public BestellingOpnemenForm()
+        public BestellingOpnemenForm(Werknemer werknemer, Tafel tafel)
         {
             foreach (Model.MenuItem menuItem in MenuItemService.GetItems())
             {

@@ -41,5 +41,27 @@ namespace DataAdaptor
 
             connection.Close();
         }
+        public Tafel TafelInfoVuller(int tafelId) //bestelling toevoegen
+        {
+            Tafel tafel;
+            StringBuilder sb = new StringBuilder();
+            connection.Open();
+
+            sb.Append("SELECT zitplaatsen, staat FROM TAFEL WHERE tafelId = @tafelId ");
+
+            SqlCommand command = new SqlCommand(sb.ToString(), connection);
+            command.Parameters.AddWithValue("@tafelId", tafelId);
+
+            SqlDataReader reader = command.ExecuteReader();
+            
+            int zitplaatsen = reader.GetInt16(0);
+            Tafel.StatusType staat = (Tafel.StatusType)reader.GetValue(1);
+
+            tafel = new Tafel(tafelId, staat, zitplaatsen,"BESTELLING bestelling");
+            
+
+            connection.Close();
+            return tafel;
+        }
     }
 }

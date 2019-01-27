@@ -12,15 +12,12 @@ namespace Console_App_Robbin
     {
         static void Main(string[] args)
         {
-            var rekeningDao = new Nieuwe_RekeningDAO();
+            var dao = new TafelDAO();
 
-            List<Bestellingsitem> lijst = rekeningDao.OphalenBestellingen(1);
+            dao.TafelVrijMelden(1);
+            dao.TafelVrijMelden(2);
 
-            foreach(Bestellingsitem i in lijst)
-            {
-                Console.WriteLine(i.Naam);
-            }
-            Console.ReadKey();
+            //Console.ReadKey();
         }
     }
 }
