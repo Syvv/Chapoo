@@ -20,13 +20,13 @@ namespace UI
         BestelItemControl BestelItem { get; set; }
         BestelKnoppenControl BestelKnoppen { get; set; }
         private Bestelling Bestelling { get; set; }
-        private Werknemer Werknemer { get; set;}
+        private Model.Werknemer Werknemer { get; set;}
         private Tafel Tafel { get; set; }
 
         public BestellingOpnemenForm(Model.Werknemer werknemer, Tafel tafel)
         {
             this.Tafel = new Tafel(1);
-            this.Werknemer = new Werknemer(1);
+            this.Werknemer = new Model.Werknemer(1);
             this.Bestelling = new Bestelling(Werknemer, Tafel);
             this.BestelKnoppen = new BestelKnoppenControl(Bestelling);
             foreach (Model.MenuItem menuItem in MenuItemService.GetItems())

@@ -11,10 +11,12 @@ namespace Logica
     public class Werknemer
     {
         private WerknemerDAO DAO;
+        private DAOFactory factory;
 
-        public Werknemer()
+        public Werknemer(DAOFactory factory)
         {
-            DAO = new WerknemerDAO();
+            this.factory = factory;
+            DAO = factory.CreateWerknemerDAO();
         }
 
         public Model.Werknemer CheckInlogGegevens(string gebruikersnaam, string wachtwoord)

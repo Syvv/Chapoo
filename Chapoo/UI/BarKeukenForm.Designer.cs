@@ -38,7 +38,6 @@
             this.Name = "BarKeukenForm";
             this.Text = "BarKeukenForm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.BarKeukenForm_FormClosed);
-            this.Load += new System.EventHandler(this.BarKeukenForm_Load);
             this.ResumeLayout(false);
 
         }

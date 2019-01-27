@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Model;
 using Logica;
 using StyleGuide;
+using DataAdaptor;
 
 namespace UI
 {
@@ -17,16 +18,18 @@ namespace UI
     {
         public Model.Werknemer HuidigeWerknemer { get; set; }
         public TafelLogica TafelLogica = new TafelLogica();
+        private DAOFactory factory;
 
         private void uitlogButton1_Click(object sender, EventArgs e)
         {
             new Login().Show();
             this.Close();
         }
-        public TafelOverzicht(Model.Werknemer werknemer)
+        public TafelOverzicht(Model.Werknemer werknemer, DAOFactory factory)
         {
             InitializeComponent();
             this.HuidigeWerknemer = werknemer;
+            this.factory = factory;
             titel.Text = "TafelOverzicht";
         }
         private void OpenenBestellingForm(int tafelNummer)

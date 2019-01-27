@@ -22,9 +22,9 @@ namespace DataAdaptor
             StringBuilder sb = new StringBuilder();
             connection.Open();
 
-            sb.Append(  "SELECT functie, id " +
+            sb.Append(  "SELECT functie, werknemerId " +
                         "FROM WERKNEMER " +
-                        "WHERE inlog_naam = '@gebruikersnaam' AND wachtwoord = '@wachtwoord';");
+                        "WHERE inlogNaam = '@gebruikersnaam' AND wachtwoord = '@wachtwoord';");
 
             SqlCommand command = new SqlCommand(sb.ToString(), connection);
             command.Parameters.AddWithValue("@gebruikersnaam", gebruikersnaam);
