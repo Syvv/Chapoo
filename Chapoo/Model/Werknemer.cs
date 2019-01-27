@@ -22,6 +22,7 @@ namespace Model
         {
             this.Id = werknemerId;
         }
-        public enum FunctieType { bediening, keuken, bar }
+        
     }
+    public enum FunctieType { Bediening, Keuken, Bar }
 }
