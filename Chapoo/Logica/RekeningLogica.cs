@@ -34,7 +34,7 @@ namespace Logica
             {
                 while(item.Hoeveelheid > 0) //Deze testen
                 {
-                    if(item.Categorie == Categorie.G|| item.Categorie == Categorie.W || item.Categorie == Categorie.B)
+                    if(item.Categorie == Categorie.SterkeDrank|| item.Categorie == Categorie.Wijn || item.Categorie == Categorie.Bier)
                     {
                         double btw = item.Prijs - (item.Prijs / 121 * 100);
                         btw21 += btw;
