@@ -12,7 +12,7 @@ namespace Logica
     {
         private RekeningDAO RekeningDataLaag = new RekeningDAO();
         public string Opmerking { get; set; }
-        public int BestellingsId { get; set; }
+        private int BestellingsId { get; set; }
 
         public List<Bestellingsitem> BesteldeItems(int bestellingsId)
         {
@@ -22,7 +22,7 @@ namespace Logica
         }
 
         //rekening opstellen Prijs
-        public void RekeningOpstellen()//Test de While Loop
+        public Rekening RekeningOpstellen()//Test de While Loop
         {
             List<Bestellingsitem> besteldeItems = BesteldeItems(BestellingsId);
 
@@ -48,6 +48,9 @@ namespace Logica
                 }
             }
             double db_btw = btw21 + btw09;
+            Rekening rekening = new Rekening(totaalBedrag, btw09, btw21);
+
+            return rekening;
         }
 
         //Opmerking toevoegen

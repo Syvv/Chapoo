@@ -16,6 +16,11 @@ namespace UI
 {
     public partial class TafelOverzicht : Form
     {
+        //namen op de tafels, nummers ipv. namen
+        //kleuren
+        //refresher voor de kleuren, vrij, bezet, bestelling klaar
+
+
         public Model.Werknemer HuidigeWerknemer { get; set; }
         public TafelLogica TafelLogica = new TafelLogica();
         private DAOFactory factory;

@@ -107,6 +107,12 @@
     <Compile Include="TafelOverzicht.Designer.cs">
       <DependentUpon>TafelOverzicht.cs</DependentUpon>
     </Compile>
+    <Compile Include="RekeningGeldOverzicht.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RekeningGeldOverzicht.Designer.cs">
+      <DependentUpon>RekeningGeldOverzicht.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="BarKeukenForm.resx">
       <DependentUpon>BarKeukenForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -140,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TafelOverzicht.resx">
       <DependentUpon>TafelOverzicht.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RekeningGeldOverzicht.resx">
+      <DependentUpon>RekeningGeldOverzicht.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
