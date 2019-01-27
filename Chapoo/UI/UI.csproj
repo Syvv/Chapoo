@@ -93,6 +93,12 @@
     <Compile Include="RekeningFormOverzicht.Designer.cs">
       <DependentUpon>RekeningFormOverzicht.cs</DependentUpon>
     </Compile>
+    <Compile Include="RekeningItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RekeningItem.Designer.cs">
+      <DependentUpon>RekeningItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="TafelOverzicht.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +137,9 @@
     </Compile>
     <EmbeddedResource Include="RekeningFormOverzicht.resx">
       <DependentUpon>RekeningFormOverzicht.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RekeningItem.resx">
+      <DependentUpon>RekeningItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TafelOverzicht.resx">
       <DependentUpon>TafelOverzicht.cs</DependentUpon>
