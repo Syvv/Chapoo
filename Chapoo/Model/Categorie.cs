@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    public enum Categorie { LV, LH, LN, DV, DT, DH, DN, F, B, W, G, K }
+    public enum Categorie { LunchVoorgerecht, LunchHoofdgerecht, LunchNagerecht, DinerVoorgerecht, DinerTussengerecht, DinerHoofdgerecht, DinerNagerecht, Frisdrank, Bier, Wijn, SterkeDrank, KoffieThee }
     /*
     * LV = Lunch Voorgerecht
     * LH = Lunch Hoofdgerecht
