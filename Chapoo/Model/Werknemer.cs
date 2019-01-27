@@ -10,9 +10,9 @@ namespace Model
     {
         public string Naam { get; set; }
         public int Id { get; set; }
-        public FunctieType Functie { get; set; }
+        public Functie Functie { get; set; }
 
-        public Werknemer(string name, int id, FunctieType type)
+        public Werknemer(string name, int id, Functie type)
         {
             this.Naam = name;
             this.Id = id;
@@ -22,6 +22,5 @@ namespace Model
         {
             this.Id = werknemerId;
         }
-        public enum FunctieType { bediening, keuken, bar }
     }
 }

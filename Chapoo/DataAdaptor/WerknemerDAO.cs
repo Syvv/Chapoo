@@ -34,17 +34,17 @@ namespace DataAdaptor
 
             //lees alle waardes uit
             //gebruikersnaam klopt al dus die kan je overnemen uit de parameters
-            FunctieType functie;
+            Functie functie;
             switch (data.GetFieldValue<string>(0))
             {
                 case "bediening":
-                    functie = FunctieType.Bediening;
+                    functie = Functie.Bediening;
                     break;
                 case "bar":
-                    functie = FunctieType.Bar;
+                    functie = Functie.Bar;
                     break;
                 case "keuken":
-                    functie = FunctieType.Keuken;
+                    functie = Functie.Keuken;
                     break;
                 default:
                     throw new DataMisalignedException("Deze gebruiker heeft een niet bestaande functie!");

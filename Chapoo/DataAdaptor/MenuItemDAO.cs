@@ -10,12 +10,17 @@ namespace DataAdaptor
 {
     public class MenuItemDAO
     {
+        private readonly SqlConnection connection = DataConnection.connection;
+
         public List<MenuItem> GetMenuItems()
         {
             List<MenuItem> menuList = new List<MenuItem>();
-            SqlDataReader data;
+            StringBuilder sb = new StringBuilder();
 
-            data = DataConnection.Query("SELECT * FROM MENU");
+            sb.Append("SELECT * FROM MENU");
+
+            SqlCommand command = new SqlCommand(sb.ToString(), connection);
+            SqlDataReader data = command.ExecuteReader();
 
             while (data.Read())
             {
@@ -25,7 +30,7 @@ namespace DataAdaptor
                 string categorieString = (string)data["categorie"];
                 int voorraad = (int)data["voorraad"];
 
-                Enum.TryParse(categorieString, out CategorieEnum categorie);
+                Enum.TryParse(categorieString, out Categorie categorie);
 
                 MenuItem menu = new MenuItem(menuId, menuItem, prijs, categorie, voorraad);
 

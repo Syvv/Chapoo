@@ -55,7 +55,7 @@ namespace DataAdaptor
             SqlDataReader reader = command.ExecuteReader();
             
             int zitplaatsen = reader.GetInt16(0);
-            Tafel.StatusType staat = (Tafel.StatusType)reader.GetValue(1);
+            Tafel.Status staat = (Tafel.Status)reader.GetValue(1);
 
             tafel = new Tafel(tafelId, staat, zitplaatsen,"BESTELLING bestelling");
             
