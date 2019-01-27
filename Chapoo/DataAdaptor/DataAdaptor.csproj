@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BestellingsItemDAO.cs" />
+    <Compile Include="DAOFactory.cs" />
     <Compile Include="BestellingDAO.cs" />
     <Compile Include="DataConnection.cs" />
     <Compile Include="ItemDAO.cs" />

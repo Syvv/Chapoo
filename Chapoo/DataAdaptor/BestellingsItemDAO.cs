@@ -10,7 +10,6 @@ namespace DataAdaptor
 {
     public class BestellingsItemDAO
     {
-
         private SqlConnection connection = DataConnection.connection;
 
         public List<Bestellingsitem> HaalBarItemsOp()
