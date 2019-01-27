@@ -29,7 +29,7 @@ namespace DataAdaptor
                 string naam = reader.GetString(0);
                 int hoeveelheid = reader.GetInt32(3);
                 double prijs = reader.GetDouble(1);
-                Item.Categorie categorie = (Item.Categorie)reader.GetValue(2);
+                Categorie categorie = (Categorie)reader.GetValue(2);
 
                 string commentaar = null;
                 int tafel = 0;
