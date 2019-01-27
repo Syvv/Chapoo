@@ -7,14 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Model;
 
 namespace UI
 {
     public partial class BarKeukenUIElement : UserControl
     {
-        public BarKeukenUIElement()
+        public BarKeukenUIElement(Bestellingsitem item)
         {
             InitializeComponent();
+            Tafelnummer.Text = "Tafel " + item.Tafel + ":";
+            Hoeveelheid.Text = item.Hoeveelheid + "x";
+            MenuItem.Text = item.Naam;
+            Commentaar.Text = item.Commentaar;
         }
     }
 }
