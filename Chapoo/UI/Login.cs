@@ -27,10 +27,10 @@ namespace UI
             switch (werknemer.Functie)
             {
                 case FunctieType.Bar:
-                    throw new NotImplementedException("Volgende formulier nog niet geïmplementeerd");
+                    new BarKeukenForm(werknemer).Show();
                     break;
                 case FunctieType.Keuken:
-                    throw new NotImplementedException("Volgende formulier nog niet geïmplementeerd");
+                    new BarKeukenForm(werknemer).Show();
                     break;
                 case FunctieType.Bediening:
                     new TafelOverzicht(werknemer).Show();
