@@ -59,7 +59,7 @@ namespace UI
                 {
                     BarKeukenUIElement uiElement = new BarKeukenUIElement(b, bestellingLogica, (item) => { Bestellingen.Remove(item); BuildUI(); }){ Top = y};
                     Controls.Add(uiElement);
-                    y += 50;
+                    y += uiElement.Height + 5;
                 }
                 //TODO: move this Control creation to another place
                 Controls.Add(new Label { Text = "Commentaar", Top = 0, Left = 840, Font = new System.Drawing.Font("Arial", 16), Height = 30, Width = 200 });

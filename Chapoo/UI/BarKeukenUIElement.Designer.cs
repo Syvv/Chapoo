@@ -85,6 +85,7 @@
             // 
             this.GereedstellenBtn.BackColor = System.Drawing.SystemColors.Info;
             this.GereedstellenBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.GereedstellenBtn.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.GereedstellenBtn.Location = new System.Drawing.Point(1900, 10);
             this.GereedstellenBtn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.GereedstellenBtn.MinimumSize = new System.Drawing.Size(500, 58);
@@ -110,6 +111,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.Controls.Add(this.Timestamp);
             this.Controls.Add(this.GereedstellenBtn);

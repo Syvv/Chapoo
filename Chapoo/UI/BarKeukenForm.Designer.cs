@@ -32,11 +32,13 @@
             // 
             // BarKeukenForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(736, 612);
+            this.ClientSize = new System.Drawing.Size(1472, 1177);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "BarKeukenForm";
             this.Text = "BarKeukenForm";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.BarKeukenForm_FormClosed);
             this.ResumeLayout(false);
 

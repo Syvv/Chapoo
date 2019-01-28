@@ -23,6 +23,8 @@ namespace UI
             MenuItem.Text = item.Naam;
             Commentaar.Text = item.Commentaar;
             Timestamp.Text = item.Timestamp.ToShortTimeString();
+            GereedstellenBtn.Height = Commentaar.Height+10;
+
 
             GereedstellenBtn.Click += (s, e) =>
             {
