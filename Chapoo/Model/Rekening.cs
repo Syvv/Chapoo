@@ -34,7 +34,6 @@ namespace Model
             this.Btw6 = btw6;
             this.Btw21 = btw21;
         }
-
         
     }
 }
