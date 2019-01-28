@@ -14,6 +14,7 @@ namespace StyleGuide
         {
             FlatStyle = FlatStyle.Flat;
             ForeColor = Color.FromArgb(192, 64, 0);
+            Font = new Font("Microsoft Sans Serif", 42, FontStyle.Regular);
             Size = new Size(75, 75);
             UseVisualStyleBackColor = true;
 
