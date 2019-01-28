@@ -12,9 +12,9 @@ namespace DataAdaptor
     {
         private readonly SqlConnection connection = DataConnection.connection;
 
-        public List<MenuItem> GetMenuItems()
+        public List<MenuItemModel> GetMenuItems()
         {
-            List<MenuItem> menuList = new List<MenuItem>();
+            List<MenuItemModel> menuList = new List<MenuItemModel>();
             StringBuilder sb = new StringBuilder();
 
             sb.Append("SELECT * FROM MENU");
@@ -33,7 +33,7 @@ namespace DataAdaptor
 
                 Enum.TryParse(categorieString, out Categorie categorie);
 
-                MenuItem menu = new MenuItem(menuId, menuItem, prijs, categorie, voorraad);
+                MenuItemModel menu = new MenuItemModel(menuId, menuItem, prijs, categorie, voorraad);
 
                 menuList.Add(menu);
             }

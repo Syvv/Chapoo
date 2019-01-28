@@ -16,19 +16,19 @@ namespace UI
 {
     public partial class BarKeukenForm : Form
     {
-        List<Bestellingsitem> Bestellingen = new List<Bestellingsitem>();
-        BestellingsItemLogica bestellingLogica;
+        List<BestellingsitemModel> Bestellingen = new List<BestellingsitemModel>();
+        BestellingsItemService bestellingLogica;
         DAOFactory factory;
-        private Model.Werknemer werknemer;
+        private Model.WerknemerModel werknemer;
         delegate void CreateTimerCallback();
         private int maxContainerHeight;
 
-        public BarKeukenForm(Model.Werknemer werknemer, DAOFactory factory)
+        public BarKeukenForm(Model.WerknemerModel werknemer, DAOFactory factory)
         {
             InitializeComponent();
             this.werknemer = werknemer;
             this.factory = factory;
-            bestellingLogica = new BestellingsItemLogica(werknemer, factory);
+            bestellingLogica = new BestellingsItemService(werknemer, factory);
             Bestellingen = bestellingLogica.GetBestellingsitems();
             maxContainerHeight = this.Height - 35; //The full height of the screen minus the height of the Controls at the top.
             BuildUI();

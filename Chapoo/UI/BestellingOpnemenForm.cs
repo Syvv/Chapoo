@@ -39,7 +39,7 @@ namespace UI
 
         public BestellingOpnemenForm(Model.Werknemer werknemer, Tafel tafel)
         {
-            this.Tafel = new Tafel(1);
+            this.Tafel = tafel;
             this.Werknemer = new Model.Werknemer(1);
             this.Bestelling = new Bestelling(Werknemer, Tafel);
             this.BestelKnoppen = new BestelKnoppenControl(Bestelling);

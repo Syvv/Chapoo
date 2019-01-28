@@ -11,7 +11,7 @@ namespace Logica
     public class BestellingService 
     {
         private BestellingDAO BestellingDAO { get; set; }
-        public int InsertBestelling(Bestelling bestelling)
+        public int InsertBestelling(BestellingModel bestelling)
         {
             BestellingDAO = new BestellingDAO();
             return BestellingDAO.InsertBestelling(bestelling);

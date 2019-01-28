@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    public class Bestellingsitem : Item
+    public class BestellingsitemModel : ItemModel
     {               
         public string Commentaar { get; set; }
         public int Hoeveelheid { get; set; }
@@ -14,7 +14,7 @@ namespace Model
         public DateTime Timestamp { get; set; }
         public int BestellingsId { get; set; }
 
-        public Bestellingsitem(string naam, string commentaar, int hoeveelheid,int tafelId,
+        public BestellingsitemModel(string naam, string commentaar, int hoeveelheid,int tafelId,
                                 int id, DateTime timestamp, double prijs, Categorie categorie, int bestellingsId) 
                                     : base(id, naam, prijs, categorie)
         {

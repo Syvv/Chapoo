@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    public class Rekening
+    public class RekeningModel
     {
         public double Totaalbedrag { get; set; }
         public double Btw6 { get; set; }
@@ -14,10 +14,10 @@ namespace Model
         public double Fooi { get; set; }
         public string Opmerking { get; set; }
         public Tafel Tafel { get; set; }
-        public Bestelling Bestelling { get; set; }
+        public BestellingModel Bestelling { get; set; }
         public BetaalMethode Methode {get; set;}
 
-        public Rekening(double totaalbedrag, double btw6, double btw21, double fooi, string opmerking, Tafel tafel, Bestelling bestelling, BetaalMethode Methode)
+        public RekeningModel(double totaalbedrag, double btw6, double btw21, double fooi, string opmerking, Tafel tafel, BestellingModel bestelling, BetaalMethode Methode)
         {
             this.Totaalbedrag = totaalbedrag;
             this.Fooi = fooi;
@@ -28,7 +28,7 @@ namespace Model
             this.Bestelling = bestelling;
             this.Methode = Methode;
         }
-        public Rekening(double Totaalbedrag, double btw6, double btw21)
+        public RekeningModel(double Totaalbedrag, double btw6, double btw21)
         {
             this.Totaalbedrag = Totaalbedrag;
             this.Btw6 = btw6;

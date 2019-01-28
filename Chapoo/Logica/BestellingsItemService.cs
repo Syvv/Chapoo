@@ -8,20 +8,20 @@ using DataAdaptor;
 
 namespace Logica
 {
-    public class BestellingsItemLogica
+    public class BestellingsItemService
     {
         private BestellingsItemDAO DAO;
-        private Model.Werknemer werknemer;
+        private Model.WerknemerModel werknemer;
         private DAOFactory factory;
 
-        public BestellingsItemLogica(Model.Werknemer werknemer, DAOFactory factory)
+        public BestellingsItemService(Model.WerknemerModel werknemer, DAOFactory factory)
         {
             this.werknemer = werknemer;
             this.factory = factory;
             DAO = factory.CreateBestellingsItemDAO();
         }
 
-        public List<Bestellingsitem> GetBestellingsitems()
+        public List<BestellingsitemModel> GetBestellingsitems()
         {
             if(werknemer.Functie==Functie.Bar)
             {
@@ -30,7 +30,7 @@ namespace Logica
             return DAO.HaalKeukenItemsOp();
         }
 
-        public void StelBestellingsItemGereed(Bestellingsitem item)
+        public void StelBestellingsItemGereed(BestellingsitemModel item)
         {
             DAO.StelBestellingsItemGereed(item);
         }

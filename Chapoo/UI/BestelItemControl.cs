@@ -13,15 +13,15 @@ namespace UI
 {
     public partial class BestelItemControl : UserControl
     {
-        public Model.MenuItem MenuItem { get; set; }
+        public Model.MenuItemModel MenuItem { get; set; }
         public bool Add = false;
         public BestellingOpnemenForm BestellingOpnemenForm { get; set; }
         public ItemOptiesControl ItemOpties { get; set; }
         public BestelKnoppenControl BestelKnoppen { get; set; }
-        public Bestellingsitem Bestellingsitem { get; set; }
+        public BestellingsitemModel Bestellingsitem { get; set; }
         public DateTime TimeStamp = DateTime.Today;
 
-        public BestelItemControl(Model.MenuItem item, BestellingOpnemenForm bestellingOpnemenForm, BestelKnoppenControl bestelKnoppen)
+        public BestelItemControl(Model.MenuItemModel item, BestellingOpnemenForm bestellingOpnemenForm, BestelKnoppenControl bestelKnoppen)
         {
             InitializeComponent();
             this.MenuItem = item;

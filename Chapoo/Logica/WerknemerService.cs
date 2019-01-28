@@ -19,7 +19,7 @@ namespace Logica
             DAO = factory.CreateWerknemerDAO();
         }
 
-        public Model.Werknemer CheckInlogGegevens(string gebruikersnaam, string wachtwoord)
+        public Model.WerknemerModel CheckInlogGegevens(string gebruikersnaam, string wachtwoord)
         {
             return DAO.CheckLogin(gebruikersnaam, wachtwoord);
         }

@@ -48,7 +48,7 @@
             this.tafelButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.tafelButton7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.tafelButton7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.tafelButton7.Location = new System.Drawing.Point(188, 518);
+            this.tafelButton7.Location = new System.Drawing.Point(113, 518);
             this.tafelButton7.Margin = new System.Windows.Forms.Padding(4);
             this.tafelButton7.Name = "tafelButton7";
             this.tafelButton7.Size = new System.Drawing.Size(133, 123);
@@ -62,7 +62,7 @@
             this.tafelButton8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.tafelButton8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.tafelButton8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.tafelButton8.Location = new System.Drawing.Point(409, 518);
+            this.tafelButton8.Location = new System.Drawing.Point(334, 518);
             this.tafelButton8.Margin = new System.Windows.Forms.Padding(4);
             this.tafelButton8.Name = "tafelButton8";
             this.tafelButton8.Size = new System.Drawing.Size(133, 123);
@@ -76,7 +76,7 @@
             this.tafelButton9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.tafelButton9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.tafelButton9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.tafelButton9.Location = new System.Drawing.Point(188, 649);
+            this.tafelButton9.Location = new System.Drawing.Point(113, 649);
             this.tafelButton9.Margin = new System.Windows.Forms.Padding(4);
             this.tafelButton9.Name = "tafelButton9";
             this.tafelButton9.Size = new System.Drawing.Size(133, 123);
@@ -90,7 +90,7 @@
             this.tafelButton10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.tafelButton10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.tafelButton10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.tafelButton10.Location = new System.Drawing.Point(409, 649);
+            this.tafelButton10.Location = new System.Drawing.Point(334, 649);
             this.tafelButton10.Margin = new System.Windows.Forms.Padding(4);
             this.tafelButton10.Name = "tafelButton10";
             this.tafelButton10.Size = new System.Drawing.Size(133, 123);
@@ -104,7 +104,7 @@
             this.tafelButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.tafelButton6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.tafelButton6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.tafelButton6.Location = new System.Drawing.Point(409, 388);
+            this.tafelButton6.Location = new System.Drawing.Point(334, 388);
             this.tafelButton6.Margin = new System.Windows.Forms.Padding(4);
             this.tafelButton6.Name = "tafelButton6";
             this.tafelButton6.Size = new System.Drawing.Size(133, 123);
@@ -118,7 +118,7 @@
             this.tafelButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.tafelButton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.tafelButton5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.tafelButton5.Location = new System.Drawing.Point(188, 388);
+            this.tafelButton5.Location = new System.Drawing.Point(113, 388);
             this.tafelButton5.Margin = new System.Windows.Forms.Padding(4);
             this.tafelButton5.Name = "tafelButton5";
             this.tafelButton5.Size = new System.Drawing.Size(133, 123);
@@ -132,7 +132,7 @@
             this.tafelButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.tafelButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.tafelButton4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.tafelButton4.Location = new System.Drawing.Point(409, 257);
+            this.tafelButton4.Location = new System.Drawing.Point(334, 257);
             this.tafelButton4.Margin = new System.Windows.Forms.Padding(4);
             this.tafelButton4.Name = "tafelButton4";
             this.tafelButton4.Size = new System.Drawing.Size(133, 123);
@@ -146,7 +146,7 @@
             this.tafelButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.tafelButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.tafelButton3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.tafelButton3.Location = new System.Drawing.Point(188, 257);
+            this.tafelButton3.Location = new System.Drawing.Point(113, 257);
             this.tafelButton3.Margin = new System.Windows.Forms.Padding(4);
             this.tafelButton3.Name = "tafelButton3";
             this.tafelButton3.Size = new System.Drawing.Size(133, 123);
@@ -160,7 +160,7 @@
             this.tafelButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.tafelButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.tafelButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.tafelButton2.Location = new System.Drawing.Point(409, 127);
+            this.tafelButton2.Location = new System.Drawing.Point(334, 127);
             this.tafelButton2.Margin = new System.Windows.Forms.Padding(4);
             this.tafelButton2.Name = "tafelButton2";
             this.tafelButton2.Size = new System.Drawing.Size(133, 123);
@@ -174,7 +174,7 @@
             this.tafelButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.tafelButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.tafelButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.tafelButton1.Location = new System.Drawing.Point(188, 127);
+            this.tafelButton1.Location = new System.Drawing.Point(113, 127);
             this.tafelButton1.Margin = new System.Windows.Forms.Padding(4);
             this.tafelButton1.Name = "tafelButton1";
             this.tafelButton1.Size = new System.Drawing.Size(133, 123);
@@ -187,7 +187,7 @@
             // 
             this.titel.AutoSize = true;
             this.titel.Font = new System.Drawing.Font("Arial", 20F);
-            this.titel.Location = new System.Drawing.Point(153, 25);
+            this.titel.Location = new System.Drawing.Point(78, 25);
             this.titel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.titel.Name = "titel";
             this.titel.Size = new System.Drawing.Size(86, 39);
@@ -199,7 +199,7 @@
             this.uitlogButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uitlogButton1.BackgroundImage")));
             this.uitlogButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.uitlogButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.uitlogButton1.Location = new System.Drawing.Point(500, 25);
+            this.uitlogButton1.Location = new System.Drawing.Point(425, 25);
             this.uitlogButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.uitlogButton1.Name = "uitlogButton1";
             this.uitlogButton1.Size = new System.Drawing.Size(43, 39);
@@ -225,7 +225,7 @@
             this.Controls.Add(this.tafelButton1);
             this.Controls.Add(this.titel);
             this.Controls.Add(this.uitlogButton1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "TafelOverzicht";
             this.Text = "TafelOverzicht";
             this.ResumeLayout(false);

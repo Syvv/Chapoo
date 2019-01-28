@@ -14,9 +14,9 @@ namespace UI
 {
     public partial class BestelKnoppenControl : UserControl
     {
-        public Bestelling Bestelling { get; set; }
+        public BestellingModel Bestelling { get; set; }
         public BestellingService BestellingService { get; set; }
-        public BestelKnoppenControl(Bestelling bestelling)
+        public BestelKnoppenControl(BestellingModel bestelling)
         {
             InitializeComponent();
             this.Bestelling = bestelling;

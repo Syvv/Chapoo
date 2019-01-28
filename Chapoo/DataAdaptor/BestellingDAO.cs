@@ -13,7 +13,7 @@ namespace DataAdaptor
     public class BestellingDAO
     {
         private SqlConnection connection = DataConnection.connection;
-        public int InsertBestelling(Bestelling bestelling)
+        public int InsertBestelling(BestellingModel bestelling)
         {
             StringBuilder sb = new StringBuilder();
 

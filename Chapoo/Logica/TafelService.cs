@@ -8,20 +8,20 @@ using DataAdaptor;
 
 namespace Logica
 {
-    public class TafelLogica
+    public class TafelService
     {
         private TafelDAO TafelDao;
         private DAOFactory Factory;
 
-        public TafelLogica(DAOFactory factory)
+        public TafelService(DAOFactory factory)
         {
             Factory = factory;
             TafelDao = factory.CreateTafelDAO();
         }
 
-        public Tafel TafelVuller(int tafelnummer)
+        public TafelModel TafelVuller(int tafelnummer)
         {
-            Tafel tafel = TafelDao.TafelInfoVuller(tafelnummer);
+            TafelModel tafel = TafelDao.TafelInfoVuller(tafelnummer);
             return tafel;
         }
     }
