@@ -24,9 +24,6 @@ namespace Model
         {
             this.Id = tafelId;
         }
-        public enum Status
-        {
-            vrij, bezet
-        }
+        
     }
 }

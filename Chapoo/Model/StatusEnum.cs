@@ -6,5 +6,5 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    public enum Status{ vrij, bezet}
+    public enum Status{ vrij, bezet, gereserveerd}
 }
