@@ -24,6 +24,13 @@ namespace UI
             logicaWerknemer = new Logica.Werknemer(Factory);
         }
 
+        public Login(DAOFactory factory)
+        {
+            InitializeComponent();
+            Factory = factory;
+            logicaWerknemer = new Logica.Werknemer(Factory);
+        }
+
         private void Loginbtn_Click(object sender, EventArgs e)
         {
             Model.Werknemer werknemer = logicaWerknemer.CheckInlogGegevens(UsernameInput.Text,PasswordInput.Text);

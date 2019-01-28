@@ -67,7 +67,7 @@ namespace UI
                 Button logoutbtn = new Button { Text = "Log uit!", Top = 0, Left = 0, Font = new System.Drawing.Font("Arial", 10), Height = 25, Width = 100 };
                 logoutbtn.Click += (s, e) =>
                 {
-                    new Login().Show();
+                    new Login(this.factory).Show();
                     this.Hide();
                 };
                 Controls.Add(logoutbtn);
