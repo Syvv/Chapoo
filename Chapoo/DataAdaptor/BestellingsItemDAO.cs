@@ -11,12 +11,39 @@ namespace DataAdaptor
     public class BestellingsItemDAO
     {
         private SqlConnection connection;
-
+        private SqlConnection conn = DataConnection.connection;
         public BestellingsItemDAO(SqlConnection connection)
         {
             this.connection = connection ?? throw new ArgumentNullException(nameof(connection));
         }
+        public BestellingsItemDAO()
+        {
+        }
+        public void InsertBestellingItems(List<BestellingsitemModel> bestellingsitems)
+        {
+            StringBuilder sb = new StringBuilder();
 
+            connection.Open();
+
+            sb.Append("INSERT INTO HEEFT_ITEM (menuId, bestellingId, hoeveelheid, commentaar, status) " +
+                "VALUES(@menuId, @bestellingId, @hoeveelheid, @commentaar, 'besteld');" +
+                "UPDATE MENU SET voorraad -= @hoeveelheid WHERE menu_id = @menuId;");
+
+            String sql = sb.ToString();
+
+            foreach (BestellingsitemModel bestellingsitem in bestellingsitems)
+            {
+                using (SqlCommand cmd = new SqlCommand(sql, connection))
+                {
+                    cmd.Parameters.AddWithValue("@menuId", bestellingsitem.MenuId);
+                    cmd.Parameters.AddWithValue("@bestellingId", bestellingsitem.BestellingsId);
+                    cmd.Parameters.AddWithValue("@hoeveelheid", bestellingsitem.Hoeveelheid);
+                    cmd.Parameters.AddWithValue("@commentaar", bestellingsitem.Commentaar);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            connection.Close();
+        }
         public List<BestellingsitemModel> HaalBarItemsOp()
         {
             List<BestellingsitemModel> result = new List<BestellingsitemModel>();

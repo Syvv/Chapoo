@@ -9,17 +9,17 @@ namespace Model
     public class BestellingModel
     {
         public int Id { get; set; }
-        public Werknemer Werknemer { get; set; }
-        public List<Bestellingsitem> BestelItems { get; set; }
-        public Tafel Tafel { get; set; }
+        public WerknemerModel Werknemer { get; set; }
+        public List<BestellingsitemModel> BestelItems { get; set; }
+        public TafelModel Tafel { get; set; }
 
-        public BestellingModel(int id, Werknemer werknemer, List<Bestellingsitem> bestelItems)
+        public BestellingModel(int id, WerknemerModel werknemer, List<BestellingsitemModel> bestelItems)
         {
             this.Id = id;
             this.Werknemer = werknemer;
             this.BestelItems = bestelItems;
         }
-        public BestellingModel(Werknemer werknemer, Tafel tafel)
+        public BestellingModel(WerknemerModel werknemer, TafelModel tafel)
         {
             this.Werknemer = werknemer;
             this.Tafel = tafel;

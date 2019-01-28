@@ -11,10 +11,10 @@ namespace Logica
     public class BestellingsItemService
     {
         private BestellingsItemDAO DAO;
-        private Model.WerknemerModel werknemer;
+        private WerknemerModel werknemer;
         private DAOFactory factory;
 
-        public BestellingsItemService(Model.WerknemerModel werknemer, DAOFactory factory)
+        public BestellingsItemService(WerknemerModel werknemer, DAOFactory factory)
         {
             this.werknemer = werknemer;
             this.factory = factory;
@@ -34,6 +34,18 @@ namespace Logica
         {
             DAO.StelBestellingsItemGereed(item);
         }
-
+        public bool InsertBestellingItems(List<BestellingsitemModel> bestellingsitems)
+        {
+            try
+            {
+                DAO = new BestellingsItemDAO();
+                DAO.InsertBestellingItems(bestellingsitems);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }

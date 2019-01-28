@@ -13,7 +13,7 @@ namespace UI
 {
     public partial class BestelItemControl : UserControl
     {
-        public Model.MenuItemModel MenuItem { get; set; }
+        public MenuItemModel MenuItem { get; set; }
         public bool Add = false;
         public BestellingOpnemenForm BestellingOpnemenForm { get; set; }
         public ItemOptiesControl ItemOpties { get; set; }
@@ -21,7 +21,7 @@ namespace UI
         public BestellingsitemModel Bestellingsitem { get; set; }
         public DateTime TimeStamp = DateTime.Today;
 
-        public BestelItemControl(Model.MenuItemModel item, BestellingOpnemenForm bestellingOpnemenForm, BestelKnoppenControl bestelKnoppen)
+        public BestelItemControl(MenuItemModel item, BestellingOpnemenForm bestellingOpnemenForm, BestelKnoppenControl bestelKnoppen)
         {
             InitializeComponent();
             this.MenuItem = item;
