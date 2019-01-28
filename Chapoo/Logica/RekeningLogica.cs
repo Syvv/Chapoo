@@ -105,6 +105,8 @@ namespace Logica
             Rekening rekening = RekeningOpstellen();
             rekening.Opmerking = Opmerking;
 
+            //fooi en niew eindbedragtoevoegen
+
             RekeningDataLaag.InsertRekening(rekening);
         }
     }
