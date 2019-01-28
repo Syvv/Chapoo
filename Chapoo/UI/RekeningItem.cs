@@ -12,7 +12,7 @@ namespace UI
 {
     public partial class RekeningItem : UserControl
     {
-        public RekeningItem()
+        public RekeningItem(string item, int aantal, double prijs, double totPrijs)
         {
             InitializeComponent();
         }

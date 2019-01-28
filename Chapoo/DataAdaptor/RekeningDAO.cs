@@ -10,8 +10,31 @@ namespace DataAdaptor
 {
     public class RekeningDAO
     {
-        private SqlConnection connection = DataConnection.connection;
-        public List<Bestellingsitem> OphalenBestellingen(int bestellingId) // 'x'veranderen , Categorie aanmaken, ANDER MODEL????, veranderen volgorde van de reader.get
+        private SqlConnection connection;
+        public RekeningDAO(SqlConnection connection)
+        {
+            this.connection = connection;
+        }
+        
+        public void InsertRekening(Rekening rekening)
+        {
+            StringBuilder sb = new StringBuilder();
+            connection.Open();
+
+            sb.Append("INSERT INTO REKENING(bestellingId, totaalbedrag, fooi, opmerking, betaalmanier) VALUES(@bestellingId, @totaalbedrag, @fooi, @opmerking , @betaalmanier)");
+            using(SqlCommand command = new SqlCommand(sb.ToString(), connection))
+            {
+                command.Parameters.AddWithValue("@bestellingId", rekening.Bestelling);
+                command.Parameters.AddWithValue("@totaalbedrag", rekening.Totaalbedrag);
+                command.Parameters.AddWithValue("@fooi", rekening.Fooi);
+                command.Parameters.AddWithValue("@opmerking", rekening.Opmerking);
+                command.Parameters.AddWithValue("@betaalmanier", rekening.Methode);
+                command.ExecuteNonQuery(); //deze testen
+            }
+
+            connection.Close();
+        }
+        public List<Bestellingsitem> OphalenBestellingen(int bestellingId)
         {
             List<Bestellingsitem> bestellingen = new List<Bestellingsitem>();
 
@@ -31,12 +54,12 @@ namespace DataAdaptor
                 double prijs = reader.GetDouble(1);
                 Categorie categorie = (Categorie)reader.GetValue(2);
 
-                string commentaar = null;
+                string commentaar = "";
                 int tafel = 0;
                 int id = bestellingId;
                 DateTime timestamp = DateTime.MinValue;
 
-                Bestellingsitem x = new Bestellingsitem(naam, commentaar, hoeveelheid, tafel,id,timestamp , prijs, categorie);
+                Bestellingsitem x = new Bestellingsitem(naam, commentaar, hoeveelheid, tafel, id, timestamp, prijs, categorie);
 
                 bestellingen.Add(x);
             }
@@ -45,23 +68,5 @@ namespace DataAdaptor
             return bestellingen;
         }
 
-        public void InsertRekening(Rekening rekening)
-        {
-            StringBuilder sb = new StringBuilder();
-            connection.Open();
-
-            sb.Append("INSERT INTO REKENING(bestellingId, totaalbedrag, fooi, opmerking, betaalmanier) VALUES(@bestellingId, @totaalbedrag, @fooi, @opmerking , @betaalmanier)");
-            using(SqlCommand command = new SqlCommand(sb.ToString(), connection))
-            {
-                command.Parameters.AddWithValue("@bestellingId", rekening.Bestelling);
-                command.Parameters.AddWithValue("@totaalbedrag", rekening.Totaalbedrag);
-                command.Parameters.AddWithValue("@fooi", rekening.Fooi);
-                command.Parameters.AddWithValue("@opmerking", rekening.Opmerking);
-                command.Parameters.AddWithValue("@betaalmanier", rekening.Methode);
-                command.ExecuteNonQuery(); //deze testen
-            }
-
-            connection.Close();
-        }
     }
 }
