@@ -59,7 +59,7 @@ namespace UI
                 
                 Panel ItemLijstContainer = new Panel() { Top = 30, Left = 175, AutoSize = true, AutoScroll = true, Width = 1600, };
                 int y = 0;
-                foreach (Bestellingsitem b in Bestellingen)
+                foreach (BestellingsitemModel b in Bestellingen)
                 {
                     BarKeukenUIElement uiElement = new BarKeukenUIElement(b, bestellingLogica, (item) => { Bestellingen.Remove(item); BuildUI(); }){ Top = y};
                     ItemLijstContainer.Controls.Add(uiElement);

@@ -19,17 +19,17 @@ namespace UI
         public MenuItemService MenuItemService = new MenuItemService();
         BestelItemControl BestelItem { get; set; }
         BestelKnoppenControl BestelKnoppen { get; set; }
-        private Bestelling Bestelling { get; set; }
-        private Model.Werknemer Werknemer { get; set;}
-        private Tafel Tafel { get; set; }
+        private BestellingModel Bestelling { get; set; }
+        private WerknemerModel Werknemer { get; set;}
+        private TafelModel Tafel { get; set; }
 
         public BestellingOpnemenForm()
         {
-            this.Tafel = new Tafel(1);
-            this.Werknemer = new Model.Werknemer(1);
-            this.Bestelling = new Bestelling(Werknemer, Tafel);
+            this.Tafel = new TafelModel(1);
+            this.Werknemer = new WerknemerModel(1);
+            this.Bestelling = new BestellingModel(Werknemer, Tafel);
             this.BestelKnoppen = new BestelKnoppenControl(Bestelling);
-            foreach (Model.MenuItem menuItem in MenuItemService.GetItems())
+            foreach (MenuItemModel menuItem in MenuItemService.GetItems())
             {
                 BestelItem = new BestelItemControl(menuItem, this, BestelKnoppen);                
                 pnlMain.Controls.Add(BestelItem);
@@ -37,13 +37,13 @@ namespace UI
             pnlBottom.Controls.Add(BestelKnoppen);
         }
 
-        public BestellingOpnemenForm(Model.Werknemer werknemer, Tafel tafel)
+        public BestellingOpnemenForm(WerknemerModel werknemer, TafelModel tafel)
         {
             this.Tafel = tafel;
-            this.Werknemer = new Model.Werknemer(1);
-            this.Bestelling = new Bestelling(Werknemer, Tafel);
+            this.Werknemer = new WerknemerModel(1);
+            this.Bestelling = new BestellingModel(Werknemer, Tafel);
             this.BestelKnoppen = new BestelKnoppenControl(Bestelling);
-            foreach (Model.MenuItem menuItem in MenuItemService.GetItems())
+            foreach (MenuItemModel menuItem in MenuItemService.GetItems())
             {
                 BestelItem = new BestelItemControl(menuItem, this, BestelKnoppen);
                 pnlMain.Controls.Add(BestelItem);
