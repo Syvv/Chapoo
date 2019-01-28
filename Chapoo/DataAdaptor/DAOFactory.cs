@@ -49,7 +49,7 @@ namespace DataAdaptor
         {
             if (RekeningDAO == null)
             {
-                RekeningDAO = new RekeningDAO();
+                RekeningDAO = new RekeningDAO(Connection);
             }
             return RekeningDAO;
         }
@@ -65,7 +65,7 @@ namespace DataAdaptor
         {
             if (TafelDAO == null)
             {
-                TafelDAO = new TafelDAO();
+                TafelDAO = new TafelDAO(Connection);
             }
             return TafelDAO;
         }

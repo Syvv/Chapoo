@@ -11,7 +11,12 @@ namespace DataAdaptor
     public class TafelDAO
     {
         //Als iemand anders het ook gemaakt heeft, dit is tot nu toe mijn versie
-        private SqlConnection connection = DataConnection.connection;
+        private SqlConnection connection;
+
+        public TafelDAO(SqlConnection connection)
+        {
+            this.connection = connection;
+        }
         public void TafelBezetMelden(int tafelId)
         {
             StringBuilder sb = new StringBuilder();
@@ -52,13 +57,29 @@ namespace DataAdaptor
             command.Parameters.AddWithValue("@tafelId", tafelId);
 
             SqlDataReader reader = command.ExecuteReader();
-            
-            int zitplaatsen = reader.GetInt16(0);
-            Status staat = (Status)reader.GetValue(1);
 
-            Tafel tafel = new Tafel(tafelId, staat, zitplaatsen, null);
-            
+            reader.Read();
+            int zitplaatsen = reader.GetInt32(0);
+            string stringstatus = reader.GetString(1); //switch case van maken
 
+            Status status;
+            switch (stringstatus)
+            {
+                case ("vrij"):
+                    status = Status.bezet;
+                    break;
+                case ("bezet"):
+                    status = Status.bezet;
+                    break;
+                case ("gereserveerd"):
+                    status = Status.gereserveerd;
+                    break;
+                default:
+                    throw new DataMisalignedException("Deze status bestaat niet");
+            }
+
+            Tafel tafel = new Tafel(tafelId, status, zitplaatsen, null);
+            
             connection.Close();
             return tafel;
         }

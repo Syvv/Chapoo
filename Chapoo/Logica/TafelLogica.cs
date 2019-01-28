@@ -10,7 +10,15 @@ namespace Logica
 {
     public class TafelLogica
     {
-        public TafelDAO TafelDao = new TafelDAO();
+        private TafelDAO TafelDao;
+        private DAOFactory Factory;
+
+        public TafelLogica(DAOFactory factory)
+        {
+            Factory = factory;
+            TafelDao = factory.CreateTafelDAO();
+        }
+
         public Tafel TafelVuller(int tafelnummer)
         {
             Tafel tafel = TafelDao.TafelInfoVuller(tafelnummer);

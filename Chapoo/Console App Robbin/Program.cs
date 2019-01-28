@@ -12,12 +12,7 @@ namespace Console_App_Robbin
     {
         static void Main(string[] args)
         {
-            var dao = new TafelDAO();
-
-            dao.TafelVrijMelden(1);
-            dao.TafelVrijMelden(2);
-
-            //Console.ReadKey();
+            Console.ReadKey();
         }
     }
 }

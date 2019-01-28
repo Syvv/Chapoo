@@ -10,13 +10,23 @@ namespace Logica
 {
     public class RekeningLogica
     {
-        private RekeningDAO RekeningDataLaag = new RekeningDAO();
-        public string Opmerking { get; set; }
+        private RekeningDAO RekeningDataLaag;
+        private BestellingsItemDAO BestellingDao;
+        private DAOFactory Factory;
+
+        public RekeningLogica(DAOFactory factory)
+        {
+            this.Factory = factory;
+            RekeningDataLaag = Factory.CreateRekeningDAO();
+            BestellingDao = Factory.CreateBestellingsItemDAO();
+        }
+
+        private string Opmerking { get; set; }
         private int BestellingsId { get; set; }
 
         public List<Bestellingsitem> BesteldeItems(int bestellingsId)
         {
-            List<Bestellingsitem> besteldeItems = RekeningDataLaag.OphalenBestellingen(bestellingsId);
+            List<Bestellingsitem> besteldeItems = BestellingDao.HaalAlleItemsOp(bestellingsId);
 
             return besteldeItems;
         }
@@ -64,22 +74,36 @@ namespace Logica
             return (string) Opmerking;
         }
 
-        //Fooi toevoegen
-        public void FooiToevoegen(double fooi)
+        //Fooi toevoegenbij Eindbedrag invullen
+        public void FooiToevoegen(Rekening rekening, double totaal)
         {
-
+            double fooi = totaal - rekening.Totaalbedrag;
+            rekening.Totaalbedrag += fooi;            
         }
 
-        //Fooi Controlleren
-        public bool FooiControlleren(double Fooi)
+        //Fooi Controlleren bij Eindbedrag invullen
+        public bool FooiControlleren(Rekening rekening, double totaal)
         {
+            if (rekening.Totaalbedrag > totaal)
+            {
+                return true;
+            }
             return false;
+        }
+        //fooi handmatig toevoegen als er los fooi gegeven wordt.
+        public double NieuwTotaalbedrag(double fooi, Rekening rekening)
+        {
+            rekening.Fooi = fooi;
+            rekening.Totaalbedrag += fooi;
+
+            return rekening.Totaalbedrag;
         }
 
         //rekening versturen
-        public void RekeningAfsluiten(Rekening rekening)
+        public void RekeningBetalen()//naam verbeteren, fooi en nieuw eindbedrag nog toevoegen
         {
-
+            Rekening rekening = RekeningOpstellen();
+            rekening.Opmerking = Opmerking;
         }
     }
 }
