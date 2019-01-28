@@ -75,6 +75,12 @@
     <Compile Include="BestellingOpnemenForm.Designer.cs">
       <DependentUpon>BestellingOpnemenForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FooiToevoegen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FooiToevoegen.Designer.cs">
+      <DependentUpon>FooiToevoegen.cs</DependentUpon>
+    </Compile>
     <Compile Include="ItemOptiesControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -101,6 +107,12 @@
     <Compile Include="RekeningItem.Designer.cs">
       <DependentUpon>RekeningItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="RekeningOpmerkingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RekeningOpmerkingForm.Designer.cs">
+      <DependentUpon>RekeningOpmerkingForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="TafelOverzicht.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +138,9 @@
     <EmbeddedResource Include="BestellingOpnemenForm.resx">
       <DependentUpon>BestellingOpnemenForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FooiToevoegen.resx">
+      <DependentUpon>FooiToevoegen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ItemOptiesControl.resx">
       <DependentUpon>ItemOptiesControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -146,6 +161,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RekeningItem.resx">
       <DependentUpon>RekeningItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RekeningOpmerkingForm.resx">
+      <DependentUpon>RekeningOpmerkingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TafelOverzicht.resx">
       <DependentUpon>TafelOverzicht.cs</DependentUpon>

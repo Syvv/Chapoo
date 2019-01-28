@@ -17,6 +17,7 @@ namespace UI
         Logica.Werknemer logicaWerknemer;
         DAOFactory Factory;
 
+        [Obsolete("Gebruik de constructor die een DAOFactory object meekrijgt")]
         public Login()
         {
             InitializeComponent();

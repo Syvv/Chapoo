@@ -120,6 +120,7 @@
             this.BtnOpmerking.TabIndex = 8;
             this.BtnOpmerking.Text = "Opmerking";
             this.BtnOpmerking.UseVisualStyleBackColor = true;
+            this.BtnOpmerking.Click += new System.EventHandler(this.BtnOpmerking_Click);
             // 
             // BtnFooi
             // 

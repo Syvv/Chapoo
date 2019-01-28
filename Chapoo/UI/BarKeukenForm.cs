@@ -21,7 +21,7 @@ namespace UI
         DAOFactory factory;
         private Model.WerknemerModel werknemer;
         delegate void CreateTimerCallback();
-        private int margins = 50;
+        private int maxContainerHeight;
 
         public BarKeukenForm(Model.WerknemerModel werknemer, DAOFactory factory)
         {
@@ -30,6 +30,7 @@ namespace UI
             this.factory = factory;
             bestellingLogica = new BestellingsItemService(werknemer, factory);
             Bestellingen = bestellingLogica.GetBestellingsitems();
+            maxContainerHeight = this.Height - 35; //The full height of the screen minus the height of the Controls at the top.
             BuildUI();
             
             System.Timers.Timer timer = new System.Timers.Timer
@@ -55,11 +56,13 @@ namespace UI
             else
             {
                 Controls.Clear();
-                int y = 30;
+                
+                Panel ItemLijstContainer = new Panel() { Top = 30, Left = 175, AutoSize = true, AutoScroll = true, Width = 1600, };
+                int y = 0;
                 foreach (BestellingsitemModel b in Bestellingen)
                 {
-                    BarKeukenUIElement uiElement = new BarKeukenUIElement(b, bestellingLogica, (item) => { Bestellingen.Remove(item); BuildUI(); }){ Top = y, Left = margins};
-                    Controls.Add(uiElement);
+                    BarKeukenUIElement uiElement = new BarKeukenUIElement(b, bestellingLogica, (item) => { Bestellingen.Remove(item); BuildUI(); }){ Top = y};
+                    ItemLijstContainer.Controls.Add(uiElement);
                     y += uiElement.Height + 5;
                 }
                 //TODO: move this Control creation to another place
@@ -71,6 +74,7 @@ namespace UI
                     this.Hide();
                 };
                 Controls.Add(logoutbtn);
+                Controls.Add(ItemLijstContainer);
             }
             
         }
