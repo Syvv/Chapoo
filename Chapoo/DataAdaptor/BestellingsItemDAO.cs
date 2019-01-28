@@ -135,7 +135,7 @@ namespace DataAdaptor
             StringBuilder sb = new StringBuilder();
             connection.Open();
 
-            sb.Append("UPDATE TABLE HEEFT_ITEMS " +
+            sb.Append("UPDATE HEEFT_ITEM " +
                 "SET status = 'gereed' " +
                 "WHERE bestellingId = @bestellingId AND menuId = @menuId AND timestamp = @timestamp");
 
