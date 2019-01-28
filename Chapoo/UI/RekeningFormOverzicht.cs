@@ -16,19 +16,19 @@ namespace UI
 {
     public partial class RekeningFormOverzicht : BaseFormMobile
     {
-        RekeningLogica RekeningLogica { get; set; }
+        RekeningService RekeningLogica { get; set; }
         private RekeningGeldOverzicht Geldoverzicht { get; set; }
         private RekeningItem Rekeningitem { get; set; }
-        private Rekening Rekening { get; set; }
-        private Tafel Tafel { get; set; }
+        private RekeningModel Rekening { get; set; }
+        private TafelModel Tafel { get; set; }
         private DAOFactory factory;
 
-        public RekeningFormOverzicht(DAOFactory factory, Tafel tafel)
+        public RekeningFormOverzicht(DAOFactory factory, TafelModel tafel)
         {
             InitializeComponent();
             this.factory = factory;
             
-            this.RekeningLogica = new RekeningLogica(factory);            
+            this.RekeningLogica = new RekeningService(factory);            
             this.Tafel = tafel;
 
             WeergevenRekeningItems();
@@ -38,11 +38,11 @@ namespace UI
         private void WeergevenRekeningItems()
         {
             int bestellingId = Tafel.Bestelling.Id;
-            List<Bestellingsitem> BestellingenLijst = RekeningLogica.BesteldeItems(bestellingId);
+            List<BestellingsitemModel> BestellingenLijst = RekeningLogica.BesteldeItems(bestellingId);
             int y = 50;
             int x = 50;
 
-            foreach(Bestellingsitem item in BestellingenLijst) //lokoatie aanpassen
+            foreach(BestellingsitemModel item in BestellingenLijst) //lokoatie aanpassen
             {
                 this.Rekeningitem = new RekeningItem(item.Naam, item.Hoeveelheid, item.Prijs, item.Hoeveelheid * item.Prijs);
                 Rekeningitem.Top = y; //nog aanpassen

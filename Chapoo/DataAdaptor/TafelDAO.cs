@@ -46,7 +46,7 @@ namespace DataAdaptor
 
             connection.Close();
         }
-        public Tafel TafelInfoVuller(int tafelId) //bestelling toevoegen
+        public TafelModel TafelInfoVuller(int tafelId) //bestelling toevoegen
         {
             StringBuilder sb = new StringBuilder();
             connection.Open();
@@ -78,7 +78,7 @@ namespace DataAdaptor
                     throw new DataMisalignedException("Deze status bestaat niet");
             }
 
-            Tafel tafel = new Tafel(tafelId, status, zitplaatsen, null);
+            TafelModel tafel = new TafelModel(tafelId, status, zitplaatsen, null);
             
             connection.Close();
             return tafel;

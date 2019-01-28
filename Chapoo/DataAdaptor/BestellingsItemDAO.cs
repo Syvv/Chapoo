@@ -17,9 +17,9 @@ namespace DataAdaptor
             this.connection = connection ?? throw new ArgumentNullException(nameof(connection));
         }
 
-        public List<Bestellingsitem> HaalBarItemsOp()
+        public List<BestellingsitemModel> HaalBarItemsOp()
         {
-            List<Bestellingsitem> result = new List<Bestellingsitem>();
+            List<BestellingsitemModel> result = new List<BestellingsitemModel>();
             StringBuilder sb = new StringBuilder();
             connection.Open();
 
@@ -64,15 +64,15 @@ namespace DataAdaptor
                         throw new DataMisalignedException("Niet bestaande categorie gebruikt!");
                 }
                 int bestellingId = data.GetFieldValue<int>(8);
-                result.Add(new Bestellingsitem(naam,commentaar,hoeveelheid,tafelId,id,timestamp,prijs,categorie,bestellingId));
+                result.Add(new BestellingsitemModel(naam,commentaar,hoeveelheid,tafelId,id,timestamp,prijs,categorie,bestellingId));
             }
             connection.Close();
             return result;
         }
 
-        public List<Bestellingsitem> HaalKeukenItemsOp()
+        public List<BestellingsitemModel> HaalKeukenItemsOp()
         {
-            List<Bestellingsitem> result = new List<Bestellingsitem>();
+            List<BestellingsitemModel> result = new List<BestellingsitemModel>();
             StringBuilder sb = new StringBuilder();
             connection.Open();
 
@@ -124,15 +124,15 @@ namespace DataAdaptor
                         throw new DataMisalignedException("Niet bestaande categorie gebruikt!");
                 }
                 int bestellingId = data.GetFieldValue<int>(8);
-                result.Add(new Bestellingsitem(naam, commentaar, hoeveelheid, tafelId, id, timestamp, prijs, categorie,bestellingId));
+                result.Add(new BestellingsitemModel(naam, commentaar, hoeveelheid, tafelId, id, timestamp, prijs, categorie,bestellingId));
             }
             connection.Close();
             return result;
         }
 
-        public List<Bestellingsitem> HaalAlleItemsOp(int bestellingsId)
+        public List<BestellingsitemModel> HaalAlleItemsOp(int bestellingsId)
         {
-            List<Bestellingsitem> result = new List<Bestellingsitem>();
+            List<BestellingsitemModel> result = new List<BestellingsitemModel>();
             StringBuilder sb = new StringBuilder();
             connection.Open();
 
@@ -199,13 +199,13 @@ namespace DataAdaptor
                         throw new DataMisalignedException("Niet bestaande categorie gebruikt!");
                 }
                 int bestellingId = data.GetFieldValue<int>(8);
-                result.Add(new Bestellingsitem(naam, commentaar, hoeveelheid, tafelId, id, timestamp, prijs, categorie,bestellingId));
+                result.Add(new BestellingsitemModel(naam, commentaar, hoeveelheid, tafelId, id, timestamp, prijs, categorie,bestellingId));
             }
             connection.Close();
             return result;
         }
 
-        public void StelBestellingsItemGereed(Bestellingsitem item)
+        public void StelBestellingsItemGereed(BestellingsitemModel item)
         {
             StringBuilder sb = new StringBuilder();
             connection.Open();

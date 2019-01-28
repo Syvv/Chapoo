@@ -16,19 +16,19 @@ namespace UI
 {
     public partial class BarKeukenForm : Form
     {
-        List<Bestellingsitem> Bestellingen = new List<Bestellingsitem>();
-        BestellingsItemLogica bestellingLogica;
+        List<BestellingsitemModel> Bestellingen = new List<BestellingsitemModel>();
+        BestellingsItemService bestellingLogica;
         DAOFactory factory;
-        private Model.Werknemer werknemer;
+        private Model.WerknemerModel werknemer;
         delegate void CreateTimerCallback();
         private int margins = 50;
 
-        public BarKeukenForm(Model.Werknemer werknemer, DAOFactory factory)
+        public BarKeukenForm(Model.WerknemerModel werknemer, DAOFactory factory)
         {
             InitializeComponent();
             this.werknemer = werknemer;
             this.factory = factory;
-            bestellingLogica = new BestellingsItemLogica(werknemer, factory);
+            bestellingLogica = new BestellingsItemService(werknemer, factory);
             Bestellingen = bestellingLogica.GetBestellingsitems();
             BuildUI();
             
@@ -56,7 +56,7 @@ namespace UI
             {
                 Controls.Clear();
                 int y = 30;
-                foreach (Bestellingsitem b in Bestellingen)
+                foreach (BestellingsitemModel b in Bestellingen)
                 {
                     BarKeukenUIElement uiElement = new BarKeukenUIElement(b, bestellingLogica, (item) => { Bestellingen.Remove(item); BuildUI(); }){ Top = y, Left = margins};
                     Controls.Add(uiElement);

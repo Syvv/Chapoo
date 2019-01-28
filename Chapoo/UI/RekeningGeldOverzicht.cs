@@ -14,8 +14,8 @@ namespace UI
 {
     public partial class RekeningGeldOverzicht : UserControl
     {
-        private Rekening rekening;
-        public RekeningGeldOverzicht(Rekening rekening)
+        private RekeningModel rekening;
+        public RekeningGeldOverzicht(RekeningModel rekening)
         {
             InitializeComponent();
             this.rekening = rekening;

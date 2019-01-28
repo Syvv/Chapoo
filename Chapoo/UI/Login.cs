@@ -33,7 +33,7 @@ namespace UI
 
         private void Loginbtn_Click(object sender, EventArgs e)
         {
-            Model.Werknemer werknemer = logicaWerknemer.CheckInlogGegevens(UsernameInput.Text,PasswordInput.Text);
+            Model.WerknemerModel werknemer = logicaWerknemer.CheckInlogGegevens(UsernameInput.Text,PasswordInput.Text);
             switch (werknemer.Functie)
             {
                 case Functie.Bar:

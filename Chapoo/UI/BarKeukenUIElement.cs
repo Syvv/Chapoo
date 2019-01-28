@@ -14,8 +14,8 @@ namespace UI
 {
     public partial class BarKeukenUIElement : UserControl
     {
-        public delegate void HerbouwUI(Bestellingsitem bestellingsitem);
-        public BarKeukenUIElement(Bestellingsitem item, BestellingsItemLogica logica, HerbouwUI herbouwUI)
+        public delegate void HerbouwUI(BestellingsitemModel bestellingsitem);
+        public BarKeukenUIElement(BestellingsitemModel item, BestellingsItemService logica, HerbouwUI herbouwUI)
         {
             InitializeComponent();
             Tafelnummer.Text = "Tafel " + item.Tafel + ":";

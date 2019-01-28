@@ -16,7 +16,7 @@ namespace DataAdaptor
             this.connection = connection;
         }
         
-        public void InsertRekening(Rekening rekening)
+        public void InsertRekening(RekeningModel rekening)
         {
             StringBuilder sb = new StringBuilder();
             connection.Open();
@@ -34,9 +34,9 @@ namespace DataAdaptor
 
             connection.Close();
         }
-        public List<Bestellingsitem> OphalenBestellingen(int bestellingId)
+        public List<BestellingsitemModel> OphalenBestellingen(int bestellingId)
         {
-            List<Bestellingsitem> bestellingen = new List<Bestellingsitem>();
+            List<BestellingsitemModel> bestellingen = new List<BestellingsitemModel>();
 
             StringBuilder sb = new StringBuilder();
             connection.Open();
@@ -59,7 +59,7 @@ namespace DataAdaptor
                 int id = bestellingId;
                 DateTime timestamp = DateTime.MinValue;
 
-                Bestellingsitem x = new Bestellingsitem(naam, commentaar, hoeveelheid, tafel,id,timestamp , prijs, categorie,0);
+                BestellingsitemModel x = new BestellingsitemModel(naam, commentaar, hoeveelheid, tafel,id,timestamp , prijs, categorie,0);
 
                 bestellingen.Add(x);
             }

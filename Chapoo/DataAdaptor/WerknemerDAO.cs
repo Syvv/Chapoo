@@ -17,7 +17,7 @@ namespace DataAdaptor
             this.connection = connection ?? throw new ArgumentNullException(nameof(connection));
         }
 
-        public Werknemer CheckLogin(string gebruikersnaam, string wachtwoord)
+        public WerknemerModel CheckLogin(string gebruikersnaam, string wachtwoord)
         {
             StringBuilder sb = new StringBuilder();
             connection.Open();
@@ -57,7 +57,7 @@ namespace DataAdaptor
             }
             int id = data.GetFieldValue<int>(1);
 
-            Werknemer werknemer = new Werknemer(gebruikersnaam, id, functie);
+            WerknemerModel werknemer = new WerknemerModel(gebruikersnaam, id, functie);
 
             connection.Close();
             return werknemer;

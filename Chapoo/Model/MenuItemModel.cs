@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    public class MenuItem : Item
+    public class MenuItemModel : ItemModel
     {
         public int Voorraad { get; set; }
 
-        public MenuItem(int menuId, string naam, double prijs, Categorie categorie, int voorraad) : base(menuId, naam, prijs, categorie)
+        public MenuItemModel(int menuId, string naam, double prijs, Categorie categorie, int voorraad) : base(menuId, naam, prijs, categorie)
         {
             this.Voorraad = voorraad;
         }

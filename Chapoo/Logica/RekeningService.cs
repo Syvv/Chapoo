@@ -8,13 +8,13 @@ using DataAdaptor;
 
 namespace Logica
 {
-    public class RekeningLogica
+    public class RekeningService
     {
         private RekeningDAO RekeningDataLaag;
         private BestellingsItemDAO BestellingDao;
         private DAOFactory Factory;
 
-        public RekeningLogica(DAOFactory factory)
+        public RekeningService(DAOFactory factory)
         {
             this.Factory = factory;
             RekeningDataLaag = Factory.CreateRekeningDAO();
@@ -24,23 +24,23 @@ namespace Logica
         private string Opmerking { get; set; }
         private int BestellingsId { get; set; }
 
-        public List<Bestellingsitem> BesteldeItems(int bestellingsId)
+        public List<BestellingsitemModel> BesteldeItems(int bestellingsId)
         {
-            List<Bestellingsitem> besteldeItems = BestellingDao.HaalAlleItemsOp(bestellingsId);
+            List<BestellingsitemModel> besteldeItems = BestellingDao.HaalAlleItemsOp(bestellingsId);
 
             return besteldeItems;
         }
 
         //rekening opstellen Prijs
-        public Rekening RekeningOpstellen()//Test de While Loop
+        public RekeningModel RekeningOpstellen()//Test de While Loop
         {
-            List<Bestellingsitem> besteldeItems = BesteldeItems(BestellingsId);
+            List<BestellingsitemModel> besteldeItems = BesteldeItems(BestellingsId);
 
             double btw21 = 0;
             double btw09 = 0;
             double totaalBedrag = 0;
 
-            foreach(Bestellingsitem item in besteldeItems)
+            foreach(BestellingsitemModel item in besteldeItems)
             {
                 while(item.Hoeveelheid > 0) //Deze testen
                 {
@@ -58,7 +58,7 @@ namespace Logica
                 }
             }
             double db_btw = btw21 + btw09;
-            Rekening rekening = new Rekening(totaalBedrag, btw09, btw21);
+            RekeningModel rekening = new RekeningModel(totaalBedrag, btw09, btw21);
 
             return rekening;
         }
@@ -75,14 +75,14 @@ namespace Logica
         }
 
         //Fooi toevoegenbij Eindbedrag invullen
-        public void FooiToevoegen(Rekening rekening, double totaal)
+        public void FooiToevoegen(RekeningModel rekening, double totaal)
         {
             double fooi = totaal - rekening.Totaalbedrag;
             rekening.Totaalbedrag += fooi;            
         }
 
         //Fooi Controlleren bij Eindbedrag invullen
-        public bool FooiControlleren(Rekening rekening, double totaal)
+        public bool FooiControlleren(RekeningModel rekening, double totaal)
         {
             if (rekening.Totaalbedrag > totaal)
             {
@@ -91,7 +91,7 @@ namespace Logica
             return false;
         }
         //fooi handmatig toevoegen als er los fooi gegeven wordt.
-        public double NieuwTotaalbedrag(double fooi, Rekening rekening)
+        public double NieuwTotaalbedrag(double fooi, RekeningModel rekening)
         {
             rekening.Fooi = fooi;
             rekening.Totaalbedrag += fooi;
@@ -102,7 +102,7 @@ namespace Logica
         //rekening versturen
         public void RekeningBetalen()//naam verbeteren, fooi en nieuw eindbedrag nog toevoegen
         {
-            Rekening rekening = RekeningOpstellen();
+            RekeningModel rekening = RekeningOpstellen();
             rekening.Opmerking = Opmerking;
 
             //fooi en niew eindbedragtoevoegen
