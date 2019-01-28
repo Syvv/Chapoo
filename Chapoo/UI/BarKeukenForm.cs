@@ -21,6 +21,7 @@ namespace UI
         DAOFactory factory;
         private Model.Werknemer werknemer;
         delegate void CreateTimerCallback();
+        private int margins = 50;
 
         public BarKeukenForm(Model.Werknemer werknemer, DAOFactory factory)
         {
@@ -57,7 +58,7 @@ namespace UI
                 int y = 30;
                 foreach (Bestellingsitem b in Bestellingen)
                 {
-                    BarKeukenUIElement uiElement = new BarKeukenUIElement(b, bestellingLogica, (item) => { Bestellingen.Remove(item); BuildUI(); }){ Top = y};
+                    BarKeukenUIElement uiElement = new BarKeukenUIElement(b, bestellingLogica, (item) => { Bestellingen.Remove(item); BuildUI(); }){ Top = y, Left = margins};
                     Controls.Add(uiElement);
                     y += uiElement.Height + 5;
                 }
