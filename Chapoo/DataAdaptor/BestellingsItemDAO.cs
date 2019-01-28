@@ -136,7 +136,7 @@ namespace DataAdaptor
             StringBuilder sb = new StringBuilder();
             connection.Open();
 
-            sb.Append("SELECT m.item, h.commentaar, h.hoeveelheid, b.tafelId, m.menu_id, h.timestamp, m.prijs, m.categorie " +
+            sb.Append("SELECT m.item, h.commentaar, h.hoeveelheid, b.tafelId, m.menu_id, h.timestamp, m.prijs, m.categorie, h.bestellingId " +
                         "FROM HEEFT_ITEM h " +
                         "INNER JOIN MENU m ON h.menuId = m.menu_id " +
                         "INNER JOIN BESTELLING b ON b.bestellingId = h.bestellingId " +
@@ -198,8 +198,8 @@ namespace DataAdaptor
                     default:
                         throw new DataMisalignedException("Niet bestaande categorie gebruikt!");
                 }
-
-                result.Add(new Bestellingsitem(naam, commentaar, hoeveelheid, tafelId, id, timestamp, prijs, categorie));
+                int bestellingId = data.GetFieldValue<int>(8);
+                result.Add(new Bestellingsitem(naam, commentaar, hoeveelheid, tafelId, id, timestamp, prijs, categorie,bestellingId));
             }
             connection.Close();
             return result;

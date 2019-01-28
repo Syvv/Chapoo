@@ -20,26 +20,31 @@ namespace UI
         private RekeningGeldOverzicht Geldoverzicht { get; set; }
         private RekeningItem Rekeningitem { get; set; }
         private Rekening Rekening { get; set; }
+        private Tafel Tafel { get; set; }
         private DAOFactory factory;
 
-        public RekeningFormOverzicht(DAOFactory factory)
+        public RekeningFormOverzicht(DAOFactory factory, Tafel tafel)
         {
             InitializeComponent();
             this.factory = factory;
             
             this.RekeningLogica = new RekeningLogica(factory);
             this.Geldoverzicht = new RekeningGeldOverzicht(Rekening);
-            this.Rekeningitem = new RekeningItem("dit komt later", 5, 5,5);
+            this.Tafel = tafel;
+
+            WeergevenRekeningItems();
         }
 
         private void WeergevenRekeningItems()
         {
-            int bestellingId = 5;
-            List<Bestellingsitem> x = RekeningLogica.BesteldeItems(bestellingId);
-            foreach(Bestellingsitem BestellingsItem in x)
+            int bestellingId = Tafel.Bestelling.Id;
+            List<Bestellingsitem> BestellingenLijst = RekeningLogica.BesteldeItems(bestellingId);
+            foreach(Bestellingsitem item in BestellingenLijst)
             {
-
+                this.Rekeningitem = new RekeningItem(item.Naam, item.Hoeveelheid, item.Prijs, item.Hoeveelheid * item.Prijs);
+                Controls.Add(this.Rekeningitem);
             }
+            
         }
 
     }
