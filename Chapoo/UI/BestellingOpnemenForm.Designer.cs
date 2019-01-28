@@ -32,6 +32,10 @@
             this.pnlTop.SuspendLayout();
             this.SuspendLayout();
             // 
+            // backButton1
+            // 
+            this.backButton1.Click += new System.EventHandler(this.backButton1_Click);
+            // 
             // pnlTop
             // 
             this.pnlTop.Size = new System.Drawing.Size(585, 163);
