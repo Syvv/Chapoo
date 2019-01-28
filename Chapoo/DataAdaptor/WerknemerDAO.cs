@@ -26,8 +26,10 @@ namespace DataAdaptor
                         "FROM WERKNEMER " +
                         "WHERE inlogNaam = @gebruikersnaam AND wachtwoord = @wachtwoord;");
             SqlCommand command = new SqlCommand(sb.ToString(), connection);
-            command.Parameters.AddWithValue("@gebruikersnaam", gebruikersnaam);
-            command.Parameters.AddWithValue("@wachtwoord", wachtwoord);
+            SqlParameter gebruikersnaamparam = new SqlParameter("@gebruikersnaam", System.Data.SqlDbType.VarChar, 32) { Value = gebruikersnaam};
+            SqlParameter wachtwoordparam = new SqlParameter("@wachtwoord", System.Data.SqlDbType.VarChar, 32) { Value = wachtwoord};
+            command.Parameters.Add(gebruikersnaamparam);
+            command.Parameters.Add(wachtwoordparam);
 
             SqlDataReader data = command.ExecuteReader();
             if(!data.HasRows)
