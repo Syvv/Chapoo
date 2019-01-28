@@ -35,9 +35,6 @@ namespace Model
             this.Btw21 = btw21;
         }
 
-        public enum BetaalMethode
-        {
-            nog_niet, pin, cash, creditcard
-        }
+        
     }
 }
