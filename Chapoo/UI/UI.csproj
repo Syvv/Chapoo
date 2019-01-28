@@ -116,6 +116,9 @@
     <EmbeddedResource Include="BarKeukenForm.resx">
       <DependentUpon>BarKeukenForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BarKeukenUIElement.resx">
+      <DependentUpon>BarKeukenUIElement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BestelItemControl.resx" />
     <EmbeddedResource Include="BestelKnoppenControl.resx">
       <DependentUpon>BestelKnoppenControl.cs</DependentUpon>

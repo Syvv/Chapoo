@@ -23,7 +23,7 @@ namespace DataAdaptor
             StringBuilder sb = new StringBuilder();
             connection.Open();
 
-            sb.Append("SELECT m.item, h.commentaar, h.hoeveelheid, b.tafelId, m.menu_id, h.timestamp, m.prijs, m.categorie " +
+            sb.Append("SELECT m.item, h.commentaar, h.hoeveelheid, b.tafelId, m.menu_id, h.timestamp, m.prijs, m.categorie, h.bestellingId " +
                         "FROM HEEFT_ITEM h " +
                         "INNER JOIN MENU m ON h.menuId = m.menu_id " +
                         "INNER JOIN BESTELLING b ON b.bestellingId = h.bestellingId " +
@@ -63,7 +63,8 @@ namespace DataAdaptor
                     default:
                         throw new DataMisalignedException("Niet bestaande categorie gebruikt!");
                 }
-                result.Add(new Bestellingsitem(naam,commentaar,hoeveelheid,tafelId,id,timestamp,prijs,categorie));
+                int bestellingId = data.GetFieldValue<int>(8);
+                result.Add(new Bestellingsitem(naam,commentaar,hoeveelheid,tafelId,id,timestamp,prijs,categorie,bestellingId));
             }
             connection.Close();
             return result;
@@ -75,7 +76,7 @@ namespace DataAdaptor
             StringBuilder sb = new StringBuilder();
             connection.Open();
 
-            sb.Append("SELECT m.item, h.commentaar, h.hoeveelheid, b.tafelId, m.menu_id, h.timestamp, m.prijs, m.categorie " +
+            sb.Append("SELECT m.item, h.commentaar, h.hoeveelheid, b.tafelId, m.menu_id, h.timestamp, m.prijs, m.categorie, h.bestellingId " +
                         "FROM HEEFT_ITEM h " +
                         "INNER JOIN MENU m ON h.menuId = m.menu_id " +
                         "INNER JOIN BESTELLING b ON b.bestellingId = h.bestellingId " +
@@ -122,10 +123,32 @@ namespace DataAdaptor
                     default:
                         throw new DataMisalignedException("Niet bestaande categorie gebruikt!");
                 }
-                result.Add(new Bestellingsitem(naam, commentaar, hoeveelheid, tafelId, id, timestamp, prijs, categorie));
+                int bestellingId = data.GetFieldValue<int>(8);
+                result.Add(new Bestellingsitem(naam, commentaar, hoeveelheid, tafelId, id, timestamp, prijs, categorie,bestellingId));
             }
             connection.Close();
             return result;
+        }
+
+        public void StelBestellingsItemGereed(Bestellingsitem item)
+        {
+            StringBuilder sb = new StringBuilder();
+            connection.Open();
+
+            sb.Append("UPDATE TABLE HEEFT_ITEMS " +
+                "SET status = 'gereed' " +
+                "WHERE bestellingId = @bestellingId AND menuId = @menuId AND timestamp = @timestamp");
+
+            SqlCommand command = new SqlCommand(sb.ToString(), connection);
+            SqlParameter bestellingId = new SqlParameter("@bestellingId", System.Data.SqlDbType.Int){ Value = item.BestellingsId};
+            SqlParameter menuId = new SqlParameter("@menuId", System.Data.SqlDbType.Int) { Value = item.MenuId };
+            SqlParameter timestamp = new SqlParameter("@timestamp", System.Data.SqlDbType.DateTime) { Value = item.Timestamp };
+            command.Parameters.Add(bestellingId);
+            command.Parameters.Add(menuId);
+            command.Parameters.Add(timestamp);
+
+            command.ExecuteNonQuery();
+            connection.Close();
         }
 
     }

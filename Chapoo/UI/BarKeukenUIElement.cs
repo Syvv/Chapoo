@@ -8,12 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Model;
+using Logica;
 
 namespace UI
 {
     public partial class BarKeukenUIElement : UserControl
     {
-        public BarKeukenUIElement(Bestellingsitem item)
+        public BarKeukenUIElement(Bestellingsitem item, BestellingsItemLogica logica)
         {
             InitializeComponent();
             Tafelnummer.Text = "Tafel " + item.Tafel + ":";
@@ -21,6 +22,11 @@ namespace UI
             MenuItem.Text = item.Naam;
             Commentaar.Text = item.Commentaar;
             Timestamp.Text = item.Timestamp.ToShortTimeString();
+
+            GereedstellenBtn.Click += (s, e) =>
+            {
+                logica.StelBestellingsItemGereed(item);
+            };
         }
     }
 }

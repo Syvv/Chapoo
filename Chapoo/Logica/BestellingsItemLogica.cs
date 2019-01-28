@@ -30,5 +30,10 @@ namespace Logica
             return DAO.HaalKeukenItemsOp();
         }
 
+        public void StelBestellingsItemGereed(Bestellingsitem item)
+        {
+            DAO.StelBestellingsItemGereed(item);
+        }
+
     }
 }

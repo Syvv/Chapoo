@@ -57,7 +57,7 @@ namespace UI
                 int y = 30;
                 foreach (Bestellingsitem b in Bestellingen)
                 {
-                    BarKeukenUIElement uiElement = new BarKeukenUIElement(b);
+                    BarKeukenUIElement uiElement = new BarKeukenUIElement(b,bestellingLogica);
                     uiElement.Top = y;
                     Controls.Add(uiElement);
                     y += 50;
