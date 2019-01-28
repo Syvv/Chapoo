@@ -22,7 +22,7 @@ namespace UI
             Hoeveelheid.Text = item.Hoeveelheid + "x";
             MenuItem.Text = item.Naam;
             Commentaar.Text = item.Commentaar;
-            Timestamp.Text = item.Timestamp.ToShortTimeString();
+            Timestamp.Text = item.Timestamp.ToLongTimeString();
             GereedstellenBtn.Height = Commentaar.Height+10;
 
 

@@ -40,45 +40,41 @@
             // 
             this.Tafelnummer.AutoSize = true;
             this.Tafelnummer.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Tafelnummer.Location = new System.Drawing.Point(6, 19);
-            this.Tafelnummer.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Tafelnummer.MinimumSize = new System.Drawing.Size(160, 48);
+            this.Tafelnummer.Location = new System.Drawing.Point(3, 10);
+            this.Tafelnummer.MinimumSize = new System.Drawing.Size(80, 25);
             this.Tafelnummer.Name = "Tafelnummer";
-            this.Tafelnummer.Size = new System.Drawing.Size(160, 48);
+            this.Tafelnummer.Size = new System.Drawing.Size(80, 25);
             this.Tafelnummer.TabIndex = 0;
             // 
             // Hoeveelheid
             // 
             this.Hoeveelheid.AutoSize = true;
             this.Hoeveelheid.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.Hoeveelheid.Location = new System.Drawing.Point(180, 19);
-            this.Hoeveelheid.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Hoeveelheid.MinimumSize = new System.Drawing.Size(80, 48);
+            this.Hoeveelheid.Location = new System.Drawing.Point(90, 10);
+            this.Hoeveelheid.MinimumSize = new System.Drawing.Size(40, 25);
             this.Hoeveelheid.Name = "Hoeveelheid";
-            this.Hoeveelheid.Size = new System.Drawing.Size(80, 48);
+            this.Hoeveelheid.Size = new System.Drawing.Size(40, 25);
             this.Hoeveelheid.TabIndex = 1;
             // 
             // MenuItem
             // 
             this.MenuItem.AutoSize = true;
             this.MenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.MenuItem.Location = new System.Drawing.Point(270, 19);
-            this.MenuItem.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.MenuItem.MinimumSize = new System.Drawing.Size(1100, 48);
+            this.MenuItem.Location = new System.Drawing.Point(135, 10);
+            this.MenuItem.MinimumSize = new System.Drawing.Size(650, 25);
             this.MenuItem.Name = "MenuItem";
-            this.MenuItem.Size = new System.Drawing.Size(1100, 48);
+            this.MenuItem.Size = new System.Drawing.Size(650, 25);
             this.MenuItem.TabIndex = 2;
             // 
             // Commentaar
             // 
             this.Commentaar.AutoSize = true;
             this.Commentaar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.Commentaar.Location = new System.Drawing.Point(1400, 19);
-            this.Commentaar.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Commentaar.MaximumSize = new System.Drawing.Size(500, 192);
-            this.Commentaar.MinimumSize = new System.Drawing.Size(500, 48);
+            this.Commentaar.Location = new System.Drawing.Point(800, 10);
+            this.Commentaar.MaximumSize = new System.Drawing.Size(350, 100);
+            this.Commentaar.MinimumSize = new System.Drawing.Size(350, 25);
             this.Commentaar.Name = "Commentaar";
-            this.Commentaar.Size = new System.Drawing.Size(500, 48);
+            this.Commentaar.Size = new System.Drawing.Size(350, 25);
             this.Commentaar.TabIndex = 3;
             // 
             // GereedstellenBtn
@@ -86,11 +82,10 @@
             this.GereedstellenBtn.BackColor = System.Drawing.SystemColors.Info;
             this.GereedstellenBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.GereedstellenBtn.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.GereedstellenBtn.Location = new System.Drawing.Point(1900, 10);
-            this.GereedstellenBtn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.GereedstellenBtn.MinimumSize = new System.Drawing.Size(500, 58);
+            this.GereedstellenBtn.Location = new System.Drawing.Point(1200, 5);
+            this.GereedstellenBtn.MinimumSize = new System.Drawing.Size(250, 30);
             this.GereedstellenBtn.Name = "GereedstellenBtn";
-            this.GereedstellenBtn.Size = new System.Drawing.Size(500, 63);
+            this.GereedstellenBtn.Size = new System.Drawing.Size(250, 33);
             this.GereedstellenBtn.TabIndex = 4;
             this.GereedstellenBtn.Text = "Deze rij gereedstellen";
             this.GereedstellenBtn.UseVisualStyleBackColor = false;
@@ -99,17 +94,16 @@
             // 
             this.Timestamp.AutoSize = true;
             this.Timestamp.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.Timestamp.Location = new System.Drawing.Point(2400, 19);
-            this.Timestamp.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Timestamp.MinimumSize = new System.Drawing.Size(200, 48);
+            this.Timestamp.Location = new System.Drawing.Point(1450, 10);
+            this.Timestamp.MinimumSize = new System.Drawing.Size(100, 25);
             this.Timestamp.Name = "Timestamp";
-            this.Timestamp.Size = new System.Drawing.Size(200, 48);
+            this.Timestamp.Size = new System.Drawing.Size(100, 25);
             this.Timestamp.TabIndex = 5;
             this.Timestamp.Text = "00:00";
             // 
             // BarKeukenUIElement
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -119,11 +113,10 @@
             this.Controls.Add(this.MenuItem);
             this.Controls.Add(this.Hoeveelheid);
             this.Controls.Add(this.Tafelnummer);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.MaximumSize = new System.Drawing.Size(2520, 231);
-            this.MinimumSize = new System.Drawing.Size(2520, 77);
+            this.MaximumSize = new System.Drawing.Size(1550, 120);
+            this.MinimumSize = new System.Drawing.Size(1550, 40);
             this.Name = "BarKeukenUIElement";
-            this.Size = new System.Drawing.Size(2520, 83);
+            this.Size = new System.Drawing.Size(1550, 41);
             this.ResumeLayout(false);
             this.PerformLayout();
 
