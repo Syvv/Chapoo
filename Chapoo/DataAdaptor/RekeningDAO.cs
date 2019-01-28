@@ -24,12 +24,12 @@ namespace DataAdaptor
             sb.Append("INSERT INTO REKENING(bestellingId, totaalbedrag, fooi, opmerking, betaalmanier) VALUES(@bestellingId, @totaalbedrag, @fooi, @opmerking , @betaalmanier)");
             using(SqlCommand command = new SqlCommand(sb.ToString(), connection))
             {
-                command.Parameters.AddWithValue("@bestellingId", rekening.Bestelling);
+                command.Parameters.AddWithValue("@bestellingId", rekening.Bestelling.Id);
                 command.Parameters.AddWithValue("@totaalbedrag", rekening.Totaalbedrag);
                 command.Parameters.AddWithValue("@fooi", rekening.Fooi);
                 command.Parameters.AddWithValue("@opmerking", rekening.Opmerking);
-                command.Parameters.AddWithValue("@betaalmanier", rekening.Methode);
-                command.ExecuteNonQuery(); //deze testen
+                command.Parameters.AddWithValue("@betaalmanier", rekening.Methode); //deze nog verandern
+                command.ExecuteNonQuery();
             }
 
             connection.Close();

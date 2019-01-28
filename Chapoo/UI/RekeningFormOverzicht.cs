@@ -47,7 +47,7 @@ namespace UI
                 this.Rekeningitem = new RekeningItem(item.Naam, item.Hoeveelheid, item.Prijs, item.Hoeveelheid * item.Prijs);
                 Rekeningitem.Top = y; //nog aanpassen
                 Rekeningitem.Left = x; // nog aanpassen
-                Controls.Add(this.Rekeningitem);
+                pnlMain.Controls.Add(this.Rekeningitem);
 
                 y += 50;//de hoogte van de RekeningItem
             }            
@@ -57,7 +57,7 @@ namespace UI
             this.Geldoverzicht = new RekeningGeldOverzicht(Rekening);
             Geldoverzicht.Top = 550; //nog aanpassen
             Geldoverzicht.Left = 20; // nog aanpassen
-            Controls.Add(this.Geldoverzicht);
+            pnlBottom.Controls.Add(this.Geldoverzicht);
         }
     }
 }
