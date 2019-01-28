@@ -28,24 +28,36 @@ namespace UI
             InitializeComponent();
             this.factory = factory;
             
-            this.RekeningLogica = new RekeningLogica(factory);
-            this.Geldoverzicht = new RekeningGeldOverzicht(Rekening);
+            this.RekeningLogica = new RekeningLogica(factory);            
             this.Tafel = tafel;
 
             WeergevenRekeningItems();
+            WeergevenRekeningPrijzen();//naam aanpassen
         }
 
         private void WeergevenRekeningItems()
         {
             int bestellingId = Tafel.Bestelling.Id;
             List<Bestellingsitem> BestellingenLijst = RekeningLogica.BesteldeItems(bestellingId);
-            foreach(Bestellingsitem item in BestellingenLijst)
+            int y = 50;
+            int x = 50;
+
+            foreach(Bestellingsitem item in BestellingenLijst) //lokoatie aanpassen
             {
                 this.Rekeningitem = new RekeningItem(item.Naam, item.Hoeveelheid, item.Prijs, item.Hoeveelheid * item.Prijs);
+                Rekeningitem.Top = y; //nog aanpassen
+                Rekeningitem.Left = x; // nog aanpassen
                 Controls.Add(this.Rekeningitem);
-            }
-            
-        }
 
+                y += 50;//de hoogte van de RekeningItem
+            }            
+        }
+        private void WeergevenRekeningPrijzen()  //lokatie aanpassen
+        {
+            this.Geldoverzicht = new RekeningGeldOverzicht(Rekening);
+            Geldoverzicht.Top = 550; //nog aanpassen
+            Geldoverzicht.Left = 20; // nog aanpassen
+            Controls.Add(this.Geldoverzicht);
+        }
     }
 }
