@@ -20,7 +20,7 @@ namespace UI
         bool isKeuken;
 
         bool isShowingOnlyCurrentOrders = true;
-        public BarKeukenHeader(LogOutDelegate logOut, RefreshUIWithNewOrdersList refresh, DAOFactory factory, bool isKeuken)
+        public BarKeukenHeader(LogOutDelegate logOut, RefreshUIWithNewOrdersList refresh, bool isKeuken)
         {
             InitializeComponent();
             this.logOut = logOut;

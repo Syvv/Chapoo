@@ -20,7 +20,10 @@ namespace DataAdaptor
         private WerknemerDAO WerknemerDAO = null;
         private MenuItemDAO MenuItemDAO = null;
         private BestellingDAO BestellingDAO = null;
+        //DAOFactory itsself
+        public static DAOFactory Instance { get; } = new DAOFactory() ;
 
+        [Obsolete("Haal dit weg")]
         public DAOFactory()
         {
             Connection = new SqlConnection(ConnectionString);

@@ -11,9 +11,9 @@ namespace Logica
     public class WerknemerService
     {
 
-        public Model.WerknemerModel CheckInlogGegevens(string gebruikersnaam, string wachtwoord, DAOFactory factory)
+        public Model.WerknemerModel CheckInlogGegevens(string gebruikersnaam, string wachtwoord)
         {
-            WerknemerDAO DAO = factory.CreateWerknemerDAO();
+            WerknemerDAO DAO = DAOFactory.Instance.CreateWerknemerDAO();
             return DAO.CheckLogin(gebruikersnaam, wachtwoord);
         }
 

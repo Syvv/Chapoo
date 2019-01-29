@@ -26,18 +26,16 @@ namespace UI
         TimeSpan start = new TimeSpan(10, 0, 0);
         TimeSpan end = new TimeSpan(17, 0, 0);
         TimeSpan now = DateTime.Now.TimeOfDay;
-
-        DAOFactory factory;
+        
 
         public List<BestelItemControl> BestelItemControls = new List<BestelItemControl>();
 
 
-        public BestelKnoppenControl(TafelModel tafel, DAOFactory factory, List<BestelItemControl> bestelItemControls, BestellingOpnemenForm bestellingOpnemenForm)
+        public BestelKnoppenControl(TafelModel tafel, List<BestelItemControl> bestelItemControls, BestellingOpnemenForm bestellingOpnemenForm)
         {
             InitializeComponent();
             this.Tafel = tafel;
             this.TafelId = tafel.Id;
-            this.factory = factory;
             this.BestelItemControls = bestelItemControls;
             this.BestellingOpnemenForm = bestellingOpnemenForm;
             MenuItemService = new MenuItemService();
@@ -51,8 +49,8 @@ namespace UI
             BestellingService = new BestellingService();
             bestellingsItemService = new BestellingsItemService();
 
-            int laatsteBestellingId = BestellingService.GetLaatseBestelling(TafelId, factory);
-            bool bestellingOpen = BestellingService.CheckVoorOpenstaandeBestelling(laatsteBestellingId, factory);
+            int laatsteBestellingId = BestellingService.GetLaatseBestelling(TafelId);
+            bool bestellingOpen = BestellingService.CheckVoorOpenstaandeBestelling(laatsteBestellingId);
 
             List<BestellingsitemModel> bestellingsItems = new List<BestellingsitemModel>();
 
@@ -75,7 +73,7 @@ namespace UI
                     else
                     {
                         //Creeër nieuw bestelling en geef de bestellingId mee van de nieuwe Bestelling
-                        int bestellingId = BestellingService.InsertBestelling(Bestelling,factory);
+                        int bestellingId = BestellingService.InsertBestelling(Bestelling);
                         bestellingsitem = new BestellingsitemModel(menuId, bestellingId, timestamp, hoeveelheid, commentaar);
                     }
                     bestellingsItems.Add(bestellingsitem);
@@ -84,7 +82,7 @@ namespace UI
 
             if (bestellingsItems.Any())
             {
-               bool exeception = bestellingsItemService.InsertBestellingItems(bestellingsItems, factory);
+               bool exeception = bestellingsItemService.InsertBestellingItems(bestellingsItems);
                MessageBox.Show(exeception.ToString());
             }
              

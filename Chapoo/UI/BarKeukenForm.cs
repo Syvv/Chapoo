@@ -18,34 +18,32 @@ namespace UI
     {
         List<BestellingsitemModel> Bestellingen = new List<BestellingsitemModel>();
         BestellingsItemService bestellingLogica;
-        DAOFactory factory;
         private Model.WerknemerModel werknemer;
         delegate void CreateTimerCallback();
         private int maxContainerHeight;
         System.Timers.Timer timer;
         BarKeukenHeader header;
 
-        public BarKeukenForm(Model.WerknemerModel werknemer, DAOFactory factory)
+        public BarKeukenForm(Model.WerknemerModel werknemer)
         {
             InitializeComponent();
             this.werknemer = werknemer;
-            this.factory = factory;
             maxContainerHeight = this.Height - 35; //The full height of the screen minus the height of the Controls at the top.
 
             if(werknemer.Functie==Functie.Bar)
             {
-                header = new BarKeukenHeader(LogOut, ShowOrders, factory, false); //initialize the header
+                header = new BarKeukenHeader(LogOut, ShowOrders, false); //initialize the header
             }
             else
             {
-                header = new BarKeukenHeader(LogOut, ShowOrders, factory, true); //initialize the header
+                header = new BarKeukenHeader(LogOut, ShowOrders,  true); //initialize the header
             }
             
             bestellingLogica = new BestellingsItemService();
             //Get all currently open orders
             try
             {
-                Bestellingen = bestellingLogica.GetBestellingsitems(werknemer, factory);
+                Bestellingen = bestellingLogica.GetBestellingsitems(werknemer);
             }catch(System.Data.SqlClient.SqlException)
             {
                 MessageBox.Show("Er is iets foutgegaan bij het verbinding maken met de database!", "Er is iets fout gegaan!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -72,7 +70,7 @@ namespace UI
                 int y = 0;
                 foreach (BestellingsitemModel b in Bestellingen)
                 {
-                    BarKeukenUIElement uiElement = new BarKeukenUIElement(b, bestellingLogica, (item) => { Bestellingen.Remove(item); BuildUI(); }, factory)
+                    BarKeukenUIElement uiElement = new BarKeukenUIElement(b, bestellingLogica, (item) => { Bestellingen.Remove(item); BuildUI(); })
                         { Top = y};
                     if(b.Status==BestellingsItemStatus.gereed|| b.Status == BestellingsItemStatus.afgeleverd)
                     {
@@ -89,7 +87,7 @@ namespace UI
 
         private void LogOut()
         {
-            new Login(factory).Show();
+            new Login().Show();
             this.Hide();
         }
 
@@ -100,7 +98,7 @@ namespace UI
                 timer.Start();
                 try
                 {
-                    Bestellingen = bestellingLogica.GetBestellingsitems(werknemer, factory);
+                    Bestellingen = bestellingLogica.GetBestellingsitems(werknemer);
                 }
                 catch (System.Data.SqlClient.SqlException)
                 {
@@ -114,7 +112,7 @@ namespace UI
                 timer.Stop();
                 try
                 {
-                    Bestellingen = bestellingLogica.GetAlleBestellingenVanVandaag(werknemer, factory);
+                    Bestellingen = bestellingLogica.GetAlleBestellingenVanVandaag(werknemer);
                 }
                 catch (System.Data.SqlClient.SqlException)
                 {
@@ -131,7 +129,7 @@ namespace UI
             timer.Elapsed += (s, e) => {
                 try
                 {
-                    Bestellingen = bestellingLogica.GetBestellingsitems(werknemer, factory);
+                    Bestellingen = bestellingLogica.GetBestellingsitems(werknemer);
                 }
                 catch (System.Data.SqlClient.SqlException)
                 {

@@ -24,23 +24,22 @@ namespace UI
         private DAOFactory factory;
         public TafelService TafelLogica;
 
-        public TafelOverzicht(WerknemerModel werknemer, DAOFactory factory)
+        public TafelOverzicht(WerknemerModel werknemer)
         {
             InitializeComponent();
             this.HuidigeWerknemer = werknemer;
-            this.factory = factory;
             titel.Text = "TafelOverzicht";
-            TafelLogica = new TafelService(factory);
+            TafelLogica = new TafelService();
         }
         private void uitlogButton1_Click(object sender, EventArgs e)
         {
-            new Login(factory).Show();
+            new Login().Show();
             this.Close();
         }
         private void OpenenBestellingForm(int tafelNummer)
         {
-            TafelModel tafel = TafelLogica.TafelVuller(tafelNummer, factory);
-            new BestellingOpnemenForm(HuidigeWerknemer, tafel, factory).Show();
+            TafelModel tafel = TafelLogica.TafelVuller(tafelNummer);
+            new BestellingOpnemenForm(HuidigeWerknemer, tafel).Show();
             this.Close();
         }
         private void tafelButton1_Click(object sender, EventArgs e)

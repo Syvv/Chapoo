@@ -15,17 +15,15 @@ namespace UI
 {
     public partial class FooiToevoegen : UserControl
     {
-        private DAOFactory factory;
         private RekeningModel Rekening;
         private RekeningService RekeningLogica;
         private bool IsGoedGekeurd = false; 
 
-        public FooiToevoegen(RekeningModel rekening, DAOFactory factory)
+        public FooiToevoegen(RekeningModel rekening)
         {
             InitializeComponent();
             this.Rekening = rekening;
-            this.factory = factory;
-            this.RekeningLogica = new RekeningService(factory);
+            this.RekeningLogica = new RekeningService();
 
             BeginPrijzenWeeergeven();
         }
@@ -129,7 +127,7 @@ namespace UI
 
             if (FooiIngevuldCheck())
             {
-                RekeningLogica.RekeningBetaling(Rekening, factory);
+                RekeningLogica.RekeningBetaling(Rekening);
             }
         }
     }

@@ -10,14 +10,10 @@ namespace Logica
 {
     public class TafelService
     {
-        [Obsolete("Don't use a non empty constructor")]
-        public TafelService(DAOFactory factory)
-        {
-        }
 
-        public TafelModel TafelVuller(int tafelnummer, DAOFactory factory)
+        public TafelModel TafelVuller(int tafelnummer)
         {
-            TafelModel tafel = factory.CreateTafelDAO().TafelInfoVuller(tafelnummer);
+            TafelModel tafel = DAOFactory.Instance.CreateTafelDAO().TafelInfoVuller(tafelnummer);
             return tafel;
         }
     }

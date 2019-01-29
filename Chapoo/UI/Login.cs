@@ -16,12 +16,10 @@ namespace UI
     public partial class Login : Form
     {
         WerknemerService logicaWerknemer;
-        DAOFactory Factory;
         
-        public Login(DAOFactory factory)
+        public Login()
         {
             InitializeComponent();
-            Factory = factory;
             logicaWerknemer = new WerknemerService();
         }
 
@@ -30,7 +28,7 @@ namespace UI
             WerknemerModel werknemer = null;
             try
             {
-                werknemer = logicaWerknemer.CheckInlogGegevens(UsernameInput.Text,PasswordInput.Text, Factory);
+                werknemer = logicaWerknemer.CheckInlogGegevens(UsernameInput.Text,PasswordInput.Text);
             }catch(Exception ex) when (ex is DataMisalignedException || ex is NoSuchUserException || ex is System.Data.SqlClient.SqlException)
             {
                 if(ex is System.Data.SqlClient.SqlException)
@@ -45,13 +43,13 @@ namespace UI
             switch (werknemer.Functie)
             {
                 case Functie.Bar:
-                    new BarKeukenForm(werknemer, Factory).Show();
+                    new BarKeukenForm(werknemer).Show();
                     break;
                 case Functie.Keuken:
-                    new BarKeukenForm(werknemer, Factory).Show();
+                    new BarKeukenForm(werknemer).Show();
                     break;
                 case Functie.Bediening:
-                    new TafelOverzicht(werknemer, Factory).Show();
+                    new TafelOverzicht(werknemer).Show();
                     break;
             }
             this.Hide();
