@@ -32,7 +32,7 @@ namespace UI
             try
             {
                 Bestellingen = bestellingLogica.GetBestellingsitems(werknemer, factory);
-            }catch(System.Data.SqlClient.SqlException ex)
+            }catch(System.Data.SqlClient.SqlException)
             {
                 MessageBox.Show("Er is iets foutgegaan bij het verbinding maken met de database!", "Er is iets fout gegaan!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -48,7 +48,7 @@ namespace UI
                 {
                     Bestellingen = bestellingLogica.GetBestellingsitems(werknemer, factory);
                 }
-                catch (System.Data.SqlClient.SqlException ex)
+                catch (System.Data.SqlClient.SqlException)
                 {
                     MessageBox.Show("Er is iets foutgegaan bij het verbinding maken met de database!", "Er is iets fout gegaan!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
