@@ -40,6 +40,10 @@
             // 
             this.pnlTop.Size = new System.Drawing.Size(585, 163);
             // 
+            // btnMenuAfrekenen
+            // 
+            this.btnMenuAfrekenen.Click += new System.EventHandler(this.btnMenuAfrekenen_Click);
+            // 
             // BestellingOpnemenForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);

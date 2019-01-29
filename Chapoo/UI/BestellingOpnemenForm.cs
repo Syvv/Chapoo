@@ -24,6 +24,7 @@ namespace UI
         private TafelModel Tafel { get; set; }
         private BestellingsitemModel BestellingItemModel { get; set; }
         private List<BestelItemControl> BestelItemControls = new List<BestelItemControl>();
+        DAOFactory factory;
         //Lijst aanmaken van bestellingitems
         //Voorraad toonen
 
@@ -31,6 +32,7 @@ namespace UI
         public BestellingOpnemenForm(WerknemerModel werknemer, TafelModel tafel, DAOFactory factory)
         {
             this.Tafel = tafel;
+            this.factory = factory;
             this.Werknemer = werknemer;
             this.BestelKnoppen = new BestelKnoppenControl(Tafel, factory, BestelItemControls);
             this.MenuItemService = new MenuItemService();
@@ -46,17 +48,17 @@ namespace UI
 
             pnlBottom.Controls.Add(BestelKnoppen);
         }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-            MessageBox.Show("message");
-        }
         private void Bestelling_opnemen_form_Load(object sender, EventArgs e)
         {
         }
 
         private void backButton1_Click(object sender, EventArgs e)
         {
+        }
+
+        private void btnMenuAfrekenen_Click(object sender, EventArgs e)
+        {
+            new RekeningFormOverzicht(factory, Tafel).Show();
         }
     }
 }

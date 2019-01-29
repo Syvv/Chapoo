@@ -16,16 +16,20 @@ namespace DataAdaptor
         {
             this.connection = connection ?? throw new ArgumentNullException(nameof(connection));
         }
+        public BestellingsItemDAO()
+        {
 
+        }
         public void InsertBestellingItems(List<BestellingsitemModel> bestellingsitems)
         {
             StringBuilder sb = new StringBuilder();
 
             connection.Open();
 
-            sb.Append("INSERT INTO HEEFT_ITEM (menuId, bestellingId, hoeveelheid, commentaar, status) " +
-                "VALUES(@menuId, @bestellingId, @hoeveelheid, @commentaar, 'besteld');" +
-                "UPDATE MENU SET voorraad -= @hoeveelheid WHERE menu_id = @menuId;");
+
+            sb.Append("INSERT INTO HEEFT_ITEM (menuId, bestellingId, timestamp, hoeveelheid, commentaar, status) " +
+            "VALUES(@menuId, @bestellingId, @timestamp, @hoeveelheid, @commentaar, 'besteld');" +
+            "UPDATE MENU SET voorraad -= @hoeveelheid WHERE menu_id = @menuId;");
 
             String sql = sb.ToString();
 
@@ -35,6 +39,7 @@ namespace DataAdaptor
                 {
                     cmd.Parameters.AddWithValue("@menuId", bestellingsitem.MenuId);
                     cmd.Parameters.AddWithValue("@bestellingId", bestellingsitem.BestellingsId);
+                    cmd.Parameters.AddWithValue("@timestamp", bestellingsitem.Timestamp);
                     cmd.Parameters.AddWithValue("@hoeveelheid", bestellingsitem.Hoeveelheid);
                     cmd.Parameters.AddWithValue("@commentaar", bestellingsitem.Commentaar);
                     cmd.ExecuteNonQuery();

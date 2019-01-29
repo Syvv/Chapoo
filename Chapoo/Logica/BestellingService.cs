@@ -30,17 +30,5 @@ namespace Logica
             //Geeft laatste bestelling terug
             return BestellingDAO.GetLaatsteBestelling(tafelId);
         }
-      /*  public int ReturnOrInsert(bool bestellingOpen, TafelModel tafel)
-        {
-            BestellingDAO = new BestellingDAO();
-            if (bestellingOpen)
-            {
-                this.BestellingId = 
-            }
-            else
-            {
-
-            }
-        }*/
     }
 }

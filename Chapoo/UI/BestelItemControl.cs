@@ -20,7 +20,7 @@ namespace UI
 
         public MenuItemModel MenuItem { get; set; }
         public DateTime TimeStamp = DateTime.Today;
-        public string Commentaar { get; set; }
+        public string Commentaar = " ";
         public int Aantal { get; set; }
 
         public BestelItemControl(MenuItemModel item, BestellingOpnemenForm bestellingOpnemenForm, BestelKnoppenControl bestelKnoppen)
@@ -35,7 +35,7 @@ namespace UI
 
         private void addButton1_Click(object sender, EventArgs e)
         {
-            ItemOpties = new ItemOptiesControl(this, BestellingOpnemenForm);
+            ItemOpties = new ItemOptiesControl(this, BestellingOpnemenForm, BestelKnoppen);
             BestellingOpnemenForm.pnlBottom.Controls.Clear();
 
             if (addButton1.Text == "+")

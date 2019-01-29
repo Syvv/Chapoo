@@ -11,23 +11,18 @@ namespace Logica
     public class MenuItemService
     {
         private MenuItemDAO Items { get; set; }
-        private List<MenuItemModel> MenuItemsCat { get; set; }
+        //private List<MenuItemModel> MenuItemsCat { get; set; }
 
         public List<MenuItemModel> GetItems()
         {
             Items = new MenuItemDAO();
             return Items.GetMenuItems();
         }
-        public List<MenuItemModel> Categoriseren(List<MenuItemModel> menuItemList, Categorie categorie)
+
+        public List<MenuItemModel> Categoriseren(Categorie categorie)
         {
-            foreach(MenuItemModel menuItem in menuItemList)
-            {
-                if(menuItem.Categorie == categorie)
-                {
-                    MenuItemsCat.Add(menuItem);
-                }
-            }
-            return MenuItemsCat;
+            Items = new MenuItemDAO();
+            return Items.GetCategoriseerdeMenuItems(categorie);
         }
     }
 }
