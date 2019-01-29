@@ -52,6 +52,7 @@
             this.btnSterk.TabIndex = 3;
             this.btnSterk.Text = "Sterk";
             this.btnSterk.UseVisualStyleBackColor = true;
+            this.btnSterk.Click += new System.EventHandler(this.btnSterk_Click);
             // 
             // btnWijn
             // 
@@ -64,6 +65,7 @@
             this.btnWijn.TabIndex = 2;
             this.btnWijn.Text = "Wijn";
             this.btnWijn.UseVisualStyleBackColor = true;
+            this.btnWijn.Click += new System.EventHandler(this.btnWijn_Click);
             // 
             // btnBier
             // 
@@ -76,6 +78,7 @@
             this.btnBier.TabIndex = 1;
             this.btnBier.Text = "Bier";
             this.btnBier.UseVisualStyleBackColor = true;
+            this.btnBier.Click += new System.EventHandler(this.btnBier_Click);
             // 
             // btnFris
             // 
@@ -101,6 +104,7 @@
             this.btnWarm.TabIndex = 4;
             this.btnWarm.Text = "Warm";
             this.btnWarm.UseVisualStyleBackColor = true;
+            this.btnWarm.Click += new System.EventHandler(this.btnWarm_Click);
             // 
             // btnVoor
             // 
@@ -113,6 +117,7 @@
             this.btnVoor.TabIndex = 5;
             this.btnVoor.Text = "Voor";
             this.btnVoor.UseVisualStyleBackColor = true;
+            this.btnVoor.Click += new System.EventHandler(this.btnVoor_Click);
             // 
             // btnTussen
             // 
@@ -125,6 +130,7 @@
             this.btnTussen.TabIndex = 6;
             this.btnTussen.Text = "Tussen";
             this.btnTussen.UseVisualStyleBackColor = true;
+            this.btnTussen.Click += new System.EventHandler(this.btnTussen_Click);
             // 
             // btnHoofd
             // 
@@ -137,6 +143,7 @@
             this.btnHoofd.TabIndex = 7;
             this.btnHoofd.Text = "Hoofd";
             this.btnHoofd.UseVisualStyleBackColor = true;
+            this.btnHoofd.Click += new System.EventHandler(this.btnHoofd_Click);
             // 
             // btnNa
             // 
@@ -149,6 +156,7 @@
             this.btnNa.TabIndex = 8;
             this.btnNa.Text = "Na";
             this.btnNa.UseVisualStyleBackColor = true;
+            this.btnNa.Click += new System.EventHandler(this.btnNa_Click);
             // 
             // btnVerstuur
             // 
@@ -195,7 +203,6 @@
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "BestelKnoppenControl";
             this.Size = new System.Drawing.Size(584, 276);
-            this.Load += new System.EventHandler(this.BestelKnoppenControl_Load);
             this.ResumeLayout(false);
 
         }

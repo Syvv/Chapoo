@@ -33,6 +33,25 @@ namespace UI
 
             WeergevenRekeningItems();
             WeergevenRekeningPrijzen();//naam aanpassen
+
+            this.btnMenuAfrekenen.Click += new EventHandler(btnMenuAfrekenen_Click);
+            this.btnMenuOverzicht.Click += new EventHandler(btnMenuOverzicht_Click);
+            this.btnMenuOpnemen.Click += new EventHandler(btnMenuOpnemen_Click);
+        }
+
+        private void btnMenuOpnemen_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void btnMenuOverzicht_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void btnMenuAfrekenen_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private void WeergevenRekeningItems()

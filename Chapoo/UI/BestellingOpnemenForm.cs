@@ -34,12 +34,13 @@ namespace UI
             this.Tafel = tafel;
             this.factory = factory;
             this.Werknemer = werknemer;
-            this.BestelKnoppen = new BestelKnoppenControl(Tafel, factory, BestelItemControls);
+            this.BestelKnoppen = new BestelKnoppenControl(Tafel, factory, BestelItemControls, this);
             this.MenuItemService = new MenuItemService();
+            this.btnMenuAfrekenen.Click += new EventHandler(btnMenuAfrekenen_Click);
 
             txtTafel.Text += " " + Tafel.Id.ToString();
 
-            foreach(MenuItemModel menuItem in MenuItemService.GetItems())
+            foreach(MenuItemModel menuItem in MenuItemService.Categoriseren(Categorie.Frisdrank))
             {
                 BestelItem = new BestelItemControl(menuItem, this, BestelKnoppen);
                 BestelItemControls.Add(BestelItem);
@@ -58,7 +59,7 @@ namespace UI
 
         private void btnMenuAfrekenen_Click(object sender, EventArgs e)
         {
-            new RekeningFormOverzicht(factory, Tafel).Show();
+            MessageBox.Show("Hello there");
         }
     }
 }
