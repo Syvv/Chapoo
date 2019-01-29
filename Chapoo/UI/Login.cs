@@ -9,12 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Model;
 using DataAdaptor;
+using Logica;
 
 namespace UI
 {
     public partial class Login : Form
     {
-        Logica.Werknemer logicaWerknemer;
+        WerknemerService logicaWerknemer;
         DAOFactory Factory;
 
         [Obsolete("Gebruik de constructor die een DAOFactory object meekrijgt")]
@@ -22,19 +23,33 @@ namespace UI
         {
             InitializeComponent();
             Factory = new DAOFactory();
-            logicaWerknemer = new Logica.Werknemer(Factory);
+            logicaWerknemer = new WerknemerService();
         }
 
         public Login(DAOFactory factory)
         {
             InitializeComponent();
             Factory = factory;
-            logicaWerknemer = new Logica.Werknemer(Factory);
+            logicaWerknemer = new WerknemerService();
         }
 
         private void Loginbtn_Click(object sender, EventArgs e)
         {
-            Model.WerknemerModel werknemer = logicaWerknemer.CheckInlogGegevens(UsernameInput.Text,PasswordInput.Text);
+            WerknemerModel werknemer = null;
+            try
+            {
+                werknemer = logicaWerknemer.CheckInlogGegevens(UsernameInput.Text,PasswordInput.Text, Factory);
+            }catch(Exception ex) when (ex is DataMisalignedException || ex is NoSuchUserException || ex is System.Data.SqlClient.SqlException)
+            {
+                if(ex is System.Data.SqlClient.SqlException)
+                {
+                    MessageBox.Show("Er is iets foutgegaan bij het verbinding maken met de database!", "Er is iets fout gegaan!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                MessageBox.Show(ex.Message, "Er is iets fout gegaan!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             switch (werknemer.Functie)
             {
                 case Functie.Bar:

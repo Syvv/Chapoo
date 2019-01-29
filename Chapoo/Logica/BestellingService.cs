@@ -10,23 +10,21 @@ namespace Logica
 {
     public class BestellingService 
     {
-        private BestellingDAO BestellingDAO { get; set; }
-        private int BestellingId { get; set; }
-        public int InsertBestelling(BestellingModel bestelling)
+        public int InsertBestelling(BestellingModel bestelling, DAOFactory factory)
         {
-            BestellingDAO = new BestellingDAO();
+            BestellingDAO BestellingDAO = factory.CreateBestellingDAO();
             //Geeft nieuwe bestellingId terug
             return BestellingDAO.InsertBestelling(bestelling);
         }
-        public bool CheckVoorOpenstaandeBestelling(int bestellingId)
+        public bool CheckVoorOpenstaandeBestelling(int bestellingId, DAOFactory factory)
         {
-            BestellingDAO = new BestellingDAO();
+            BestellingDAO BestellingDAO = factory.CreateBestellingDAO();
             //Geeft terug of de bestelling openstaat of niet
             return BestellingDAO.CheckVoorOpenstaandeBestelling(bestellingId);
         }
-        public int GetLaatseBestelling(int tafelId)
+        public int GetLaatseBestelling(int tafelId, DAOFactory factory)
         {
-            BestellingDAO = new BestellingDAO();
+            BestellingDAO BestellingDAO = factory.CreateBestellingDAO();
             //Geeft laatste bestelling terug
             return BestellingDAO.GetLaatsteBestelling(tafelId);
         }

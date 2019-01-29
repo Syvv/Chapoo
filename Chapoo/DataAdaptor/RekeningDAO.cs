@@ -59,7 +59,7 @@ namespace DataAdaptor
                 int id = bestellingId;
                 DateTime timestamp = DateTime.MinValue;
 
-                BestellingsitemModel x = new BestellingsitemModel(naam, commentaar, hoeveelheid, tafel,id,timestamp , prijs, categorie,0);
+                BestellingsitemModel x = new BestellingsitemModel(naam, commentaar, hoeveelheid, tafel,id,timestamp , prijs, categorie,0,0);
 
                 bestellingen.Add(x);
             }

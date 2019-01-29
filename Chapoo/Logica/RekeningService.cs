@@ -10,48 +10,43 @@ namespace Logica
 {
     public class RekeningService
     {
-        private RekeningDAO RekeningDataLaag;
-        private BestellingsItemDAO BestellingDao;
-        private DAOFactory Factory;
-
+        [Obsolete("Don't use a non empty constructor")]
         public RekeningService(DAOFactory factory)
         {
-            this.Factory = factory;
-            RekeningDataLaag = Factory.CreateRekeningDAO();
-            BestellingDao = Factory.CreateBestellingsItemDAO();
+
         }
 
-        private string Opmerking { get; set; }
-        private int BestellingsId { get; set; }
-
-        public List<BestellingsitemModel> BesteldeItems(int bestellingsId)
+        public List<BestellingsitemModel> BesteldeItems(int bestellingsId, DAOFactory factory)
         {
-            List<BestellingsitemModel> besteldeItems = BestellingDao.HaalAlleItemsOp(bestellingsId);
+            List<BestellingsitemModel> besteldeItems = factory.CreateBestellingsItemDAO().HaalAlleItemsOp(bestellingsId);
 
             return besteldeItems;
         }
 
         //rekening opstellen Prijs
-        public RekeningModel RekeningOpstellen()//Test de While Loop
+        public RekeningModel RekeningOpstellen(int BestellingsId, DAOFactory factory)//Test de While Loop en BTW
         {
-            List<BestellingsitemModel> besteldeItems = BesteldeItems(BestellingsId);
+            List<BestellingsitemModel> besteldeItems = BesteldeItems(BestellingsId, factory);
 
             double btw21 = 0;
             double btw09 = 0;
             double totaalBedrag = 0;
 
-            foreach(BestellingsitemModel item in besteldeItems)
+            foreach (BestellingsitemModel item in besteldeItems)
             {
-                while(item.Hoeveelheid > 0) //Deze testen
+                while (item.Hoeveelheid > 0) //Deze testen
                 {
-                    if(item.Categorie == Categorie.SterkeDrank|| item.Categorie == Categorie.Wijn || item.Categorie == Categorie.Bier)
+                    double btwPercentage = 100 + item.BtwPercentage;
+                    //if (item.Categorie == Categorie.SterkeDrank || item.Categorie == Categorie.Wijn || item.Categorie == Categorie.Bier)
+                    if (item.BtwPercentage == 21)
                     {
-                        double btw = item.Prijs - (item.Prijs / 121 * 100);
+                        
+                        double btw = item.Prijs - (item.Prijs / btwPercentage * 100); //berekening van 21%
                         btw21 += btw;
                     }
                     else
                     {
-                        double btw = item.Prijs - (item.Prijs / 109 * 100);
+                        double btw = item.Prijs - (item.Prijs / btwPercentage * 100); //berekening van 9 %
                         btw09 += btw;
                     }
                     totaalBedrag += item.Prijs;
@@ -61,17 +56,6 @@ namespace Logica
             RekeningModel rekening = new RekeningModel(totaalBedrag, btw09, btw21);
 
             return rekening;
-        }
-
-        //Opmerking toevoegen
-        public void OpmerkingToevoegen(string opmerking)
-        {
-            this.Opmerking = opmerking;
-        }
-        //Opmerking Weergeven
-        public string OpmerkingWeergeven()
-        {
-            return (string) Opmerking;
         }
 
         //Fooi toevoegenbij Eindbedrag invullen
@@ -90,28 +74,50 @@ namespace Logica
         //Fooi Controlleren bij Eindbedrag invullen
         public bool FooiControlleren(RekeningModel rekening, double totaal)
         {
+
             if (rekening.Totaalbedrag > totaal)
             {
                 return true;
             }
             return false;
         }
-        //fooi handmatig toevoegen als er los fooi gegeven wordt.
-        public double NieuwTotaalbedrag(double fooi, RekeningModel rekening) //als het goed is kan deze weg
-        {
-            rekening.Fooi = fooi;
-            rekening.Totaalbedrag += fooi;
 
-            return rekening.Totaalbedrag;
-        }
 
         //rekening versturen
-        public void RekeningBetaling(RekeningModel rekening)//naam verbeteren
+        public void RekeningBetaling(RekeningModel rekening, DAOFactory factory)//naam verbeteren
         {
-            //rekening.Opmerking = Opmerking;
             //fooi en niew eindbedragtoevoegen
 
+
+            RekeningDAO RekeningDataLaag = factory.CreateRekeningDAO();
             RekeningDataLaag.InsertRekening(rekening);
         }
+
+
+
+
+
+
+
+
+
+        //private string Opmerking { get; set; }
+        //public void OpmerkingToevoegen(string opmerking)
+        //{
+        //    this.Opmerking = opmerking;
+        //}
+        ////Opmerking Weergeven
+        //public string OpmerkingWeergeven()
+        //{
+        //    return (string)Opmerking;
+        //}
+        //fooi handmatig toevoegen als er los fooi gegeven wordt.
+        //public double NieuwTotaalbedrag(double fooi, RekeningModel rekening) //als het goed is kan deze weg
+        //{
+        //    rekening.Fooi = fooi;
+        //    rekening.Totaalbedrag += fooi;
+
+        //    return rekening.Totaalbedrag;
+        //}
     }
 }

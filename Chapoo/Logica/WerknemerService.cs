@@ -8,19 +8,12 @@ using DataAdaptor;
 
 namespace Logica
 {
-    public class Werknemer
+    public class WerknemerService
     {
-        private WerknemerDAO DAO;
-        private DAOFactory factory;
 
-        public Werknemer(DAOFactory factory)
+        public Model.WerknemerModel CheckInlogGegevens(string gebruikersnaam, string wachtwoord, DAOFactory factory)
         {
-            this.factory = factory;
-            DAO = factory.CreateWerknemerDAO();
-        }
-
-        public Model.WerknemerModel CheckInlogGegevens(string gebruikersnaam, string wachtwoord)
-        {
+            WerknemerDAO DAO = factory.CreateWerknemerDAO();
             return DAO.CheckLogin(gebruikersnaam, wachtwoord);
         }
 

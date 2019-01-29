@@ -34,12 +34,12 @@ namespace UI
         }
         private void uitlogButton1_Click(object sender, EventArgs e)
         {
-            new Login().Show();
+            new Login(factory).Show();
             this.Close();
         }
         private void OpenenBestellingForm(int tafelNummer)
         {
-            TafelModel tafel = TafelLogica.TafelVuller(tafelNummer);
+            TafelModel tafel = TafelLogica.TafelVuller(tafelNummer, factory);
             new BestellingOpnemenForm(HuidigeWerknemer, tafel, factory).Show();
             this.Close();
         }

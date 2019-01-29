@@ -38,7 +38,7 @@ namespace UI
         private void WeergevenRekeningItems()
         {
             int bestellingId = Tafel.Bestelling.Id;
-            List<BestellingsitemModel> BestellingenLijst = RekeningLogica.BesteldeItems(bestellingId);
+            List<BestellingsitemModel> BestellingenLijst = RekeningLogica.BesteldeItems(bestellingId, factory);
             int y = 50;
             int x = 50;
 

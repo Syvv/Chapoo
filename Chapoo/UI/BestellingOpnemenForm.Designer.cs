@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
+            this.btnTijdelijk = new System.Windows.Forms.Button();
             this.pnlTop.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -38,7 +39,23 @@
             // 
             // pnlTop
             // 
+            this.pnlTop.Controls.Add(this.btnTijdelijk);
             this.pnlTop.Size = new System.Drawing.Size(585, 163);
+            this.pnlTop.Controls.SetChildIndex(this.backButton1, 0);
+            this.pnlTop.Controls.SetChildIndex(this.panel1, 0);
+            this.pnlTop.Controls.SetChildIndex(this.uitlogButton1, 0);
+            this.pnlTop.Controls.SetChildIndex(this.txtTafel, 0);
+            this.pnlTop.Controls.SetChildIndex(this.btnTijdelijk, 0);
+            // 
+            // btnTijdelijk
+            // 
+            this.btnTijdelijk.Location = new System.Drawing.Point(463, -1);
+            this.btnTijdelijk.Name = "btnTijdelijk";
+            this.btnTijdelijk.Size = new System.Drawing.Size(121, 23);
+            this.btnTijdelijk.TabIndex = 10;
+            this.btnTijdelijk.Text = "Tijdelijk Afrekenen";
+            this.btnTijdelijk.UseVisualStyleBackColor = true;
+            this.btnTijdelijk.Click += new System.EventHandler(this.btnTijdelijk_Click);
             // 
             // btnMenuAfrekenen
             // 
@@ -62,5 +79,6 @@
 
         #endregion
         private System.Windows.Forms.FontDialog fontDialog1;
+        private System.Windows.Forms.Button btnTijdelijk;
     }
 }
