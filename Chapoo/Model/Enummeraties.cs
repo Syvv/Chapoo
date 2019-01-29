@@ -10,4 +10,5 @@ namespace Model
     public enum Functie { Bar, Bediening, Keuken }
     public enum Status { vrij, bezet, gereserveerd }
     public enum BetaalMethode{ nog_niet, pin, cash, creditcard}
+    public enum BestellingsItemStatus { besteld, gereed, afgeleverd}
 }

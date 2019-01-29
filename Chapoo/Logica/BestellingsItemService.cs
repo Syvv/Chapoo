@@ -14,7 +14,7 @@ namespace Logica
         public List<BestellingsitemModel> GetBestellingsitems(WerknemerModel werknemer, DAOFactory factory)
         {
             BestellingsItemDAO DAO = factory.CreateBestellingsItemDAO();
-            if(werknemer.Functie==Functie.Bar)
+            if (werknemer.Functie == Functie.Bar)
             {
                 return DAO.HaalBarItemsOp();
             }
@@ -39,5 +39,23 @@ namespace Logica
             }
             return true;
         }
+
+        public List<BestellingsitemModel> GetAlleBestellingenVanVandaag(WerknemerModel werknemer, DAOFactory factory)
+        {
+            BestellingsItemDAO DAO = factory.CreateBestellingsItemDAO();
+            //Maak huidige tijd aan
+            DateTime now = DateTime.Now;
+            DateTime vanochtend = new DateTime(now.Year,now.Month,now.Day);
+
+            if(werknemer.Functie==Functie.Bar)
+            {
+                return DAO.HaalBarBestellingsitemsVandaagOp(vanochtend);
+            }
+            else
+            {
+                return DAO.HaalKeukenBestellingsitemsVandaagOp(vanochtend);
+            }
+        }
+
     }
 }

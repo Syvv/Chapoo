@@ -13,6 +13,19 @@ namespace Model
         public int Tafel { get; set; }
         public DateTime Timestamp { get; set; }
         public int BestellingsId { get; set; }
+        public BestellingsItemStatus Status { get; set; }
+
+
+        public BestellingsitemModel(string naam, string commentaar, int hoeveelheid, int tafelId,
+                                int id, DateTime timestamp, double prijs, Categorie categorie, int bestellingsId, BestellingsItemStatus status):base(id,naam,prijs,categorie)
+        {
+            this.Commentaar = commentaar;
+            this.Hoeveelheid = hoeveelheid;
+            this.Tafel = tafelId;
+            this.Timestamp = timestamp;
+            this.BestellingsId = bestellingsId;
+            this.Status = status;
+        }
 
         public BestellingsitemModel(string naam, string commentaar, int hoeveelheid,int tafelId,
                                 int id, DateTime timestamp, double prijs, Categorie categorie, int bestellingsId) 
@@ -20,7 +33,7 @@ namespace Model
         {
             this.Commentaar = commentaar;
             this.Hoeveelheid = hoeveelheid;
-            this.Tafel = tafelId;            
+            this.Tafel = tafelId;
             this.Timestamp = timestamp;
             this.BestellingsId = bestellingsId;
         }
