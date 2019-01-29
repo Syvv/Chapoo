@@ -13,11 +13,12 @@ namespace UI
 {
     public partial class BestelItemControl : UserControl
     {
-        public MenuItemModel MenuItem { get; set; }
         public bool Add = false;
         public BestellingOpnemenForm BestellingOpnemenForm { get; set; }
         public ItemOptiesControl ItemOpties { get; set; }
         public BestelKnoppenControl BestelKnoppen { get; set; }
+
+        public MenuItemModel MenuItem { get; set; }
         public DateTime TimeStamp = DateTime.Today;
         public string Commentaar { get; set; }
         public int Aantal { get; set; }
@@ -57,7 +58,7 @@ namespace UI
                 Add = false;
                 BestellingOpnemenForm.pnlBottom.Controls.Add(BestelKnoppen);
                 addButton1.BackColor = Color.FromArgb(245, 239, 237);
-                ItemOpties.Aantal = 0;
+                
             }
         }
         private void BestelItem_Click(object sender, EventArgs e)

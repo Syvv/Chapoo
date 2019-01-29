@@ -54,7 +54,7 @@ namespace UI
         }
         private void WeergevenRekeningPrijzen()  //lokatie aanpassen
         {
-            this.Geldoverzicht = new RekeningGeldOverzicht(Rekening);
+            this.Geldoverzicht = new RekeningGeldOverzicht(Rekening, factory);
             Geldoverzicht.Top = 550; //nog aanpassen
             Geldoverzicht.Left = 20; // nog aanpassen
             pnlBottom.Controls.Add(this.Geldoverzicht);

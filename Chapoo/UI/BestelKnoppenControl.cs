@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Model;
 using Logica;
+using DataAdaptor;
 
 namespace UI
 {
@@ -18,17 +19,19 @@ namespace UI
         private BestellingService BestellingService { get; set; }
         public TafelModel Tafel { get; set; }
         int TafelId { get; set; }
-        private BestellingsitemModel Bestellingsitem { get; set; }
-        private List<BestelItemControl> BestelItemControls { get; set; }
-        private List<BestellingsitemModel> Bestellingsitems { get; set; }
         private BestellingsItemService BestellingsItemService { get; set; }
-        public BestelKnoppenControl(BestellingModel bestelling, TafelModel tafel, List<BestelItemControl> bestelItemControls)
+
+        DAOFactory factory;
+
+        private List<BestelItemControl> BestelItemControls = new List<BestelItemControl>();
+        private List<BestellingsitemModel> Bestellingsitems = new List<BestellingsitemModel>();
+
+        public BestelKnoppenControl(TafelModel tafel, DAOFactory factory, List<BestelItemControl> bestelItemControls)
         {
             InitializeComponent();
-            this.Bestelling = bestelling;
             this.Tafel = tafel;
             this.TafelId = tafel.Id;
-            MessageBox.Show(Tafel.Id.ToString());
+            this.factory = factory;
             this.BestelItemControls = bestelItemControls;
         }
         public BestelKnoppenControl()
@@ -38,6 +41,8 @@ namespace UI
         private void btnVerstuur_Click(object sender, EventArgs e)
         {
             BestellingService = new BestellingService();
+            BestellingsItemService = new BestellingsItemService();
+
             int laatsteBestellingId = BestellingService.GetLaatseBestelling(TafelId);
             bool bestellingOpen = BestellingService.CheckVoorOpenstaandeBestelling(laatsteBestellingId);
 
@@ -50,22 +55,24 @@ namespace UI
 
                 if (bestelItemControl.Aantal > 0)
                 {
+                    BestellingsitemModel bestellingsitem;
+
                     if (bestellingOpen)
                     {
-                       Bestellingsitem = new BestellingsitemModel(menuId, laatsteBestellingId, timestamp, hoeveelheid, commentaar);
+                       bestellingsitem = new BestellingsitemModel(menuId, laatsteBestellingId, timestamp, hoeveelheid, commentaar);
                     }
                     else
                     {
                         //Creeër nieuw bestelling en geef de bestellingId mee van de nieuwe Bestelling
                         int bestellingId = BestellingService.InsertBestelling(Bestelling);
-                        Bestellingsitem = new BestellingsitemModel(menuId, laatsteBestellingId, timestamp, hoeveelheid, commentaar);
+                        bestellingsitem = new BestellingsitemModel(menuId, laatsteBestellingId, timestamp, hoeveelheid, commentaar);
                     }
-                    Bestellingsitems.Add(Bestellingsitem);
+                    Bestellingsitems.Add(bestellingsitem);
                 }
             }
 
-            if(Bestellingsitems.Any())
-                BestellingsItemService.InsertBestellingItems(Bestellingsitems);
+            //if(Bestellingsitems.Any())
+                BestellingsItemService.InsertBestellingItems(Bestellingsitems, factory);
         }
 
         private void btnOverzicht_Click(object sender, EventArgs e)

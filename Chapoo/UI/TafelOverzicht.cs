@@ -40,7 +40,7 @@ namespace UI
         private void OpenenBestellingForm(int tafelNummer)
         {
             TafelModel tafel = TafelLogica.TafelVuller(tafelNummer);
-            new BestellingOpnemenForm(HuidigeWerknemer, tafel).Show();
+            new BestellingOpnemenForm(HuidigeWerknemer, tafel, factory).Show();
             this.Close();
         }
         private void tafelButton1_Click(object sender, EventArgs e)

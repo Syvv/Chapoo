@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using StyleGuide;
 using Model;
 using Logica;
-
+using DataAdaptor;
 
 namespace UI
 {
@@ -19,22 +19,20 @@ namespace UI
         private MenuItemService MenuItemService { get; }
         private BestelItemControl BestelItem { get; set; }
         private BestelKnoppenControl BestelKnoppen { get; set; }
-        //Hoort bestelling hier?
-        private BestellingModel Bestelling { get; set; }
+
         private WerknemerModel Werknemer { get; set;}
         private TafelModel Tafel { get; set; }
         private BestellingsitemModel BestellingItemModel { get; set; }
-        private List<BestelItemControl> BestelItemControls { get; set; }
+        private List<BestelItemControl> BestelItemControls = new List<BestelItemControl>();
         //Lijst aanmaken van bestellingitems
         //Voorraad toonen
 
 
-        public BestellingOpnemenForm(WerknemerModel werknemer, TafelModel tafel)
+        public BestellingOpnemenForm(WerknemerModel werknemer, TafelModel tafel, DAOFactory factory)
         {
             this.Tafel = tafel;
             this.Werknemer = werknemer;
-            this.Bestelling = new BestellingModel(Werknemer, Tafel);
-            this.BestelKnoppen = new BestelKnoppenControl(Bestelling, Tafel, BestelItemControls);
+            this.BestelKnoppen = new BestelKnoppenControl(Tafel, factory, BestelItemControls);
             this.MenuItemService = new MenuItemService();
 
             txtTafel.Text += " " + Tafel.Id.ToString();
@@ -42,6 +40,7 @@ namespace UI
             foreach(MenuItemModel menuItem in MenuItemService.GetItems())
             {
                 BestelItem = new BestelItemControl(menuItem, this, BestelKnoppen);
+                BestelItemControls.Add(BestelItem);
                 pnlMain.Controls.Add(BestelItem);
             }           
 

@@ -27,7 +27,7 @@ namespace UI
         {
             this.BestelItemControl.Commentaar = txtComment.Text;
             this.BestellingOpnemenForm.pnlBottom.Controls.Clear();
-            this.BestellingOpnemenForm.pnlBottom.Controls.Add(new BestelKnoppenControl());
+            this.BestellingOpnemenForm.pnlBottom.Controls.Add(new BestelKnoppenControl( ));
         }
 
         private void bntEen_Click(object sender, EventArgs e)
