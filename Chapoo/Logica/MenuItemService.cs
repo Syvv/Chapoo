@@ -10,16 +10,15 @@ namespace Logica
 {
     public class MenuItemService
     {
-        private MenuItemDAO Items { get; set; }
-        private List<MenuItemModel> MenuItemsCat { get; set; }
 
-        public List<MenuItemModel> GetItems()
+        public List<MenuItemModel> GetItems(DAOFactory factory)
         {
-            Items = new MenuItemDAO();
+            MenuItemDAO Items = factory.CreateMenuItemDAO();
             return Items.GetMenuItems();
         }
         public List<MenuItemModel> Categoriseren(List<MenuItemModel> menuItemList, Categorie categorie)
         {
+            List<MenuItemModel> MenuItemsCat = new List<MenuItemModel>();
             foreach(MenuItemModel menuItem in menuItemList)
             {
                 if(menuItem.Categorie == categorie)

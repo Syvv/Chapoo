@@ -129,7 +129,7 @@ namespace UI
 
             if (FooiIngevuldCheck())
             {
-                RekeningLogica.RekeningBetaling(Rekening);
+                RekeningLogica.RekeningBetaling(Rekening, factory);
             }
         }
     }

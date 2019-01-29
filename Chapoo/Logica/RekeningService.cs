@@ -10,41 +10,33 @@ namespace Logica
 {
     public class RekeningService
     {
-        private RekeningDAO RekeningDataLaag;
-        private BestellingsItemDAO BestellingDao;
-        private DAOFactory Factory;
-
+        [Obsolete("Don't use a non empty constructor")]
         public RekeningService(DAOFactory factory)
         {
-            this.Factory = factory;
-            RekeningDataLaag = Factory.CreateRekeningDAO();
-            BestellingDao = Factory.CreateBestellingsItemDAO();
+
         }
 
-        private string Opmerking { get; set; }
-        private int BestellingsId { get; set; }
-
-        public List<BestellingsitemModel> BesteldeItems(int bestellingsId)
+        public List<BestellingsitemModel> BesteldeItems(int bestellingsId, DAOFactory factory)
         {
-            List<BestellingsitemModel> besteldeItems = BestellingDao.HaalAlleItemsOp(bestellingsId);
+            List<BestellingsitemModel> besteldeItems = factory.CreateBestellingsItemDAO().HaalAlleItemsOp(bestellingsId);
 
             return besteldeItems;
         }
 
         //rekening opstellen Prijs
-        public RekeningModel RekeningOpstellen()//Test de While Loop
+        public RekeningModel RekeningOpstellen(int BestellingsId, DAOFactory factory)//Test de While Loop
         {
-            List<BestellingsitemModel> besteldeItems = BesteldeItems(BestellingsId);
+            List<BestellingsitemModel> besteldeItems = BesteldeItems(BestellingsId, factory);
 
             double btw21 = 0;
             double btw09 = 0;
             double totaalBedrag = 0;
 
-            foreach(BestellingsitemModel item in besteldeItems)
+            foreach (BestellingsitemModel item in besteldeItems)
             {
-                while(item.Hoeveelheid > 0) //Deze testen
+                while (item.Hoeveelheid > 0) //Deze testen
                 {
-                    if(item.Categorie == Categorie.SterkeDrank|| item.Categorie == Categorie.Wijn || item.Categorie == Categorie.Bier)
+                    if (item.Categorie == Categorie.SterkeDrank || item.Categorie == Categorie.Wijn || item.Categorie == Categorie.Bier)
                     {
                         double btw = item.Prijs - (item.Prijs / 121 * 100);
                         btw21 += btw;
@@ -64,14 +56,17 @@ namespace Logica
         }
 
         //Opmerking toevoegen
+        [Obsolete("Geen dingen opslaan in de Logica laag",true)]
         public void OpmerkingToevoegen(string opmerking)
         {
-            this.Opmerking = opmerking;
+            //this.Opmerking = opmerking;
         }
         //Opmerking Weergeven
+        [Obsolete("Geen dingen opslaan in de Logica laag", true)]
         public string OpmerkingWeergeven()
         {
-            return (string) Opmerking;
+            //return (string) Opmerking;
+            return "";
         }
 
         //Fooi toevoegenbij Eindbedrag invullen
@@ -106,11 +101,11 @@ namespace Logica
         }
 
         //rekening versturen
-        public void RekeningBetaling(RekeningModel rekening)//naam verbeteren
+        public void RekeningBetaling(RekeningModel rekening, DAOFactory factory)//naam verbeteren
         {
             //rekening.Opmerking = Opmerking;
             //fooi en niew eindbedragtoevoegen
-
+            RekeningDAO RekeningDataLaag = factory.CreateRekeningDAO();
             RekeningDataLaag.InsertRekening(rekening);
         }
     }

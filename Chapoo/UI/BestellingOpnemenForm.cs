@@ -37,7 +37,7 @@ namespace UI
 
             txtTafel.Text += " " + Tafel.Id.ToString();
 
-            foreach(MenuItemModel menuItem in MenuItemService.GetItems())
+            foreach(MenuItemModel menuItem in MenuItemService.GetItems(factory))
             {
                 BestelItem = new BestelItemControl(menuItem, this, BestelKnoppen);
                 BestelItemControls.Add(BestelItem);

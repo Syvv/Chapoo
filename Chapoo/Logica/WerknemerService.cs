@@ -10,17 +10,14 @@ namespace Logica
 {
     public class Werknemer
     {
-        private WerknemerDAO DAO;
-        private DAOFactory factory;
-
+        [Obsolete("Don't use a non empty constructor")]
         public Werknemer(DAOFactory factory)
         {
-            this.factory = factory;
-            DAO = factory.CreateWerknemerDAO();
         }
 
-        public Model.WerknemerModel CheckInlogGegevens(string gebruikersnaam, string wachtwoord)
+        public Model.WerknemerModel CheckInlogGegevens(string gebruikersnaam, string wachtwoord, DAOFactory factory)
         {
+            WerknemerDAO DAO = factory.CreateWerknemerDAO();
             return DAO.CheckLogin(gebruikersnaam, wachtwoord);
         }
 
