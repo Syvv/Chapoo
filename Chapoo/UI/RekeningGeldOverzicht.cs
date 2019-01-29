@@ -28,7 +28,7 @@ namespace UI
         }
         private void PrijzenWeergeven()
         {
-            this.Rekening = RekeningLogica.RekeningOpstellen(Rekening.Bestelling.Id);
+            this.Rekening = RekeningLogica.RekeningOpstellen(Rekening.Bestelling.Id, Factory);
             OutTotaalBedrag.Text = string.Format("€ {0:F2} ", Rekening.Totaalbedrag);
             OutBtw21.Text = string.Format("€ {0:F2} ", Rekening.Btw21);
             OutBtw6.Text = string.Format("€ {0:F2}", Rekening.Btw6);
