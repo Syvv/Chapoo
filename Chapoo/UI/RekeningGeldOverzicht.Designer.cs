@@ -130,6 +130,7 @@
             this.BtnFooi.TabIndex = 9;
             this.BtnFooi.Text = "Fooi";
             this.BtnFooi.UseVisualStyleBackColor = true;
+            this.BtnFooi.Click += new System.EventHandler(this.BtnFooi_Click);
             // 
             // RekeningGeldOverzicht
             // 

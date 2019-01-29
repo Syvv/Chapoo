@@ -75,10 +75,16 @@ namespace Logica
         }
 
         //Fooi toevoegenbij Eindbedrag invullen
-        public void FooiToevoegen(RekeningModel rekening, double totaal)
+        public void FooiToevoegenInBedrag(ref RekeningModel rekening, double totaal)
         {
             double fooi = totaal - rekening.Totaalbedrag;
-            rekening.Totaalbedrag += fooi;            
+            rekening.Totaalbedrag += fooi;
+            rekening.Fooi = fooi;
+        }
+        public void FooiLosToevoegen(ref RekeningModel rekening, double Fooi)
+        {
+            rekening.Totaalbedrag += Fooi;
+            rekening.Fooi = Fooi;
         }
 
         //Fooi Controlleren bij Eindbedrag invullen
@@ -91,7 +97,7 @@ namespace Logica
             return false;
         }
         //fooi handmatig toevoegen als er los fooi gegeven wordt.
-        public double NieuwTotaalbedrag(double fooi, RekeningModel rekening)
+        public double NieuwTotaalbedrag(double fooi, RekeningModel rekening) //als het goed is kan deze weg
         {
             rekening.Fooi = fooi;
             rekening.Totaalbedrag += fooi;
@@ -100,11 +106,9 @@ namespace Logica
         }
 
         //rekening versturen
-        public void RekeningBetalen()//naam verbeteren, fooi en nieuw eindbedrag nog toevoegen
+        public void RekeningBetaling(RekeningModel rekening)//naam verbeteren
         {
-            RekeningModel rekening = RekeningOpstellen();
-            rekening.Opmerking = Opmerking;
-
+            //rekening.Opmerking = Opmerking;
             //fooi en niew eindbedragtoevoegen
 
             RekeningDataLaag.InsertRekening(rekening);

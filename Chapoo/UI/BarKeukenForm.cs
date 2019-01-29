@@ -28,17 +28,14 @@ namespace UI
             InitializeComponent();
             this.werknemer = werknemer;
             this.factory = factory;
-            bestellingLogica = new BestellingsItemService(werknemer, factory);
-            Bestellingen = bestellingLogica.GetBestellingsitems();
+            bestellingLogica = new BestellingsItemService();
+            Bestellingen = bestellingLogica.GetBestellingsitems(werknemer, factory);
             maxContainerHeight = this.Height - 35; //The full height of the screen minus the height of the Controls at the top.
             BuildUI();
-            
-            System.Timers.Timer timer = new System.Timers.Timer
-            {
-                Interval = 60000 //1 minute
-            };
+
+            System.Timers.Timer timer = new System.Timers.Timer { Interval = 60000 }; //1 minute
             timer.Elapsed += (s, e) => {
-                //BarKeukenQueue.getBestellingen(this.user);
+                bestellingLogica.GetBestellingsitems(werknemer, factory);
                 BuildUI();
             };
             timer.Start();
@@ -56,27 +53,26 @@ namespace UI
             else
             {
                 Controls.Clear();
-                
-                Panel ItemLijstContainer = new Panel() { Top = 30, Left = 175, AutoSize = true, AutoScroll = true, Width = 1600, };
+                BarKeukenHeader header = new BarKeukenHeader(LogOut) { Left = 0 };
+                Panel ItemLijstContainer = new Panel() { Top = 60, Left = 0, AutoSize = true, AutoScroll = true, Width = 1600, };
                 int y = 0;
                 foreach (BestellingsitemModel b in Bestellingen)
                 {
-                    BarKeukenUIElement uiElement = new BarKeukenUIElement(b, bestellingLogica, (item) => { Bestellingen.Remove(item); BuildUI(); }){ Top = y};
+                    BarKeukenUIElement uiElement = new BarKeukenUIElement(b, bestellingLogica, (item) => { Bestellingen.Remove(item); BuildUI(); }, factory)
+                        { Top = y};
                     ItemLijstContainer.Controls.Add(uiElement);
                     y += uiElement.Height + 5;
                 }
-                //TODO: move this Control creation to another place
-                Controls.Add(new Label { Text = "Commentaar", Top = 0, Left = 840, Font = new System.Drawing.Font("Arial", 16), Height = 30, Width = 200 });
-                Button logoutbtn = new Button { Text = "Log uit!", Top = 0, Left = 0, Font = new System.Drawing.Font("Arial", 10), Height = 25, Width = 100 };
-                logoutbtn.Click += (s, e) =>
-                {
-                    new Login(this.factory).Show();
-                    this.Hide();
-                };
-                Controls.Add(logoutbtn);
+                Controls.Add(header);
                 Controls.Add(ItemLijstContainer);
             }
             
+        }
+
+        private void LogOut()
+        {
+            new Login(factory).Show();
+            this.Hide();
         }
 
         private void BarKeukenForm_FormClosed(object sender, FormClosedEventArgs e)

@@ -51,6 +51,12 @@
     <Compile Include="BarKeukenForm.Designer.cs">
       <DependentUpon>BarKeukenForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="BarKeukenHeader.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BarKeukenHeader.Designer.cs">
+      <DependentUpon>BarKeukenHeader.cs</DependentUpon>
+    </Compile>
     <Compile Include="BarKeukenUIElement.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -127,6 +133,9 @@
     </Compile>
     <EmbeddedResource Include="BarKeukenForm.resx">
       <DependentUpon>BarKeukenForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BarKeukenHeader.resx">
+      <DependentUpon>BarKeukenHeader.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BarKeukenUIElement.resx">
       <DependentUpon>BarKeukenUIElement.cs</DependentUpon>
