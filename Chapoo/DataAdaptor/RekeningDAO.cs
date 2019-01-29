@@ -25,6 +25,7 @@ namespace DataAdaptor
             using(SqlCommand command = new SqlCommand(sb.ToString(), connection))
             {
                 command.Parameters.AddWithValue("@bestellingId", rekening.Bestelling.Id);
+                //command.Parameters.AddWithValue("@bestellingId", 2);
                 command.Parameters.AddWithValue("@totaalbedrag", rekening.Totaalbedrag);
                 command.Parameters.AddWithValue("@fooi", rekening.Fooi);
                 command.Parameters.AddWithValue("@opmerking", rekening.Opmerking);
@@ -67,6 +68,5 @@ namespace DataAdaptor
             connection.Close();
             return bestellingen;
         }
-
     }
 }

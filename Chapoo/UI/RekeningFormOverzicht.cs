@@ -34,6 +34,10 @@ namespace UI
             WeergevenRekeningItems();
             WeergevenRekeningPrijzen();//naam aanpassen
 
+            this.Tafel.Bestelling.Id = 1;
+
+            this.Rekening.Bestelling.Id = Tafel.Bestelling.Id;
+
             this.btnMenuAfrekenen.Click += new EventHandler(btnMenuAfrekenen_Click);
             this.btnMenuOverzicht.Click += new EventHandler(btnMenuOverzicht_Click);
             this.btnMenuOpnemen.Click += new EventHandler(btnMenuOpnemen_Click);
@@ -56,8 +60,8 @@ namespace UI
 
         private void WeergevenRekeningItems()
         {
-            int bestellingId = 2;
-            List<BestellingsitemModel> BestellingenLijst = RekeningLogica.BesteldeItems(bestellingId);
+            //int bestellingId = 2;
+            List<BestellingsitemModel> BestellingenLijst = RekeningLogica.BesteldeItems(Rekening.Bestelling.Id);
             int y = 40;
 
             foreach(BestellingsitemModel item in BestellingenLijst) //lokoatie aanpassen
@@ -69,7 +73,7 @@ namespace UI
             }            
         }
         private void WeergevenRekeningPrijzen()  //lokatie aanpassen
-        {
+        {            
             this.Geldoverzicht = new RekeningGeldOverzicht(Rekening);
             Geldoverzicht.Top = 550; //nog aanpassen
             pnlBottom.Controls.Add(this.Geldoverzicht);

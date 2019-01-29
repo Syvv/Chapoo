@@ -82,9 +82,6 @@ namespace Logica
         //rekening versturen
         public void RekeningBetaling(RekeningModel rekening)//naam verbeteren
         {
-            //fooi en niew eindbedragtoevoegen
-
-
             RekeningDAO RekeningDataLaag = DAOFactory.Instance.CreateRekeningDAO();
             RekeningDataLaag.InsertRekening(rekening);
         }
