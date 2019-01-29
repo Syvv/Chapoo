@@ -23,15 +23,16 @@ namespace UI
         private TafelModel Tafel { get; set; }
         private WerknemerModel Werknemer { get; set; }
 
-        public RekeningFormOverzicht(TafelModel tafel)
+        public RekeningFormOverzicht(TafelModel tafel, WerknemerModel werknemer)
         {
             InitializeComponent();
             
             this.RekeningLogica = new RekeningService();            
             this.Tafel = tafel;
+            this.Werknemer = werknemer;
 
             WeergevenRekeningItems();
-            //WeergevenRekeningPrijzen();//naam aanpassen
+            WeergevenRekeningPrijzen();//naam aanpassen
 
             this.btnMenuAfrekenen.Click += new EventHandler(btnMenuAfrekenen_Click);
             this.btnMenuOverzicht.Click += new EventHandler(btnMenuOverzicht_Click);
@@ -55,26 +56,22 @@ namespace UI
 
         private void WeergevenRekeningItems()
         {
-            int bestellingId = Tafel.Bestelling.Id;
+            int bestellingId = 2;
             List<BestellingsitemModel> BestellingenLijst = RekeningLogica.BesteldeItems(bestellingId);
-            int y = 50;
-            int x = 50;
+            int y = 40;
 
             foreach(BestellingsitemModel item in BestellingenLijst) //lokoatie aanpassen
             {
                 this.Rekeningitem = new RekeningItem(item.Naam, item.Hoeveelheid, item.Prijs, item.Hoeveelheid * item.Prijs);
-                //Rekeningitem.Top = y; //nog aanpassen
-                //Rekeningitem.Left = x; // nog aanpassen
                 pnlMain.Controls.Add(this.Rekeningitem);
 
-                y += 20;//de hoogte van de RekeningItem
+                y += 10;//de hoogte van de RekeningItem
             }            
         }
         private void WeergevenRekeningPrijzen()  //lokatie aanpassen
         {
             this.Geldoverzicht = new RekeningGeldOverzicht(Rekening);
             Geldoverzicht.Top = 550; //nog aanpassen
-            Geldoverzicht.Left = 20; // nog aanpassen
             pnlBottom.Controls.Add(this.Geldoverzicht);
         }
     }

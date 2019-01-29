@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblBtw6 = new System.Windows.Forms.Label();
+            this.lblBtw9 = new System.Windows.Forms.Label();
             this.LblBtw21 = new System.Windows.Forms.Label();
             this.LblTotaalBedrag = new System.Windows.Forms.Label();
             this.OutBtw6 = new System.Windows.Forms.Label();
@@ -38,83 +38,94 @@
             this.OutFooi = new System.Windows.Forms.Label();
             this.BtnOpmerking = new System.Windows.Forms.Button();
             this.BtnFooi = new System.Windows.Forms.Button();
+            this.lblOpmerking = new System.Windows.Forms.Label();
+            this.OutOpmerking = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // lblBtw6
+            // lblBtw9
             // 
-            this.lblBtw6.AutoSize = true;
-            this.lblBtw6.Location = new System.Drawing.Point(22, 25);
-            this.lblBtw6.Name = "lblBtw6";
-            this.lblBtw6.Size = new System.Drawing.Size(58, 17);
-            this.lblBtw6.TabIndex = 0;
-            this.lblBtw6.Text = "Btw  6%";
+            this.lblBtw9.AutoSize = true;
+            this.lblBtw9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBtw9.Location = new System.Drawing.Point(22, 25);
+            this.lblBtw9.Name = "lblBtw9";
+            this.lblBtw9.Size = new System.Drawing.Size(72, 20);
+            this.lblBtw9.TabIndex = 0;
+            this.lblBtw9.Text = "Btw  9%";
             // 
             // LblBtw21
             // 
             this.LblBtw21.AutoSize = true;
+            this.LblBtw21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblBtw21.Location = new System.Drawing.Point(22, 52);
             this.LblBtw21.Name = "LblBtw21";
-            this.LblBtw21.Size = new System.Drawing.Size(62, 17);
+            this.LblBtw21.Size = new System.Drawing.Size(76, 20);
             this.LblBtw21.TabIndex = 1;
             this.LblBtw21.Text = "Btw 21%";
             // 
             // LblTotaalBedrag
             // 
             this.LblTotaalBedrag.AutoSize = true;
-            this.LblTotaalBedrag.Location = new System.Drawing.Point(22, 104);
+            this.LblTotaalBedrag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblTotaalBedrag.Location = new System.Drawing.Point(22, 117);
             this.LblTotaalBedrag.Name = "LblTotaalBedrag";
-            this.LblTotaalBedrag.Size = new System.Drawing.Size(93, 17);
+            this.LblTotaalBedrag.Size = new System.Drawing.Size(106, 20);
             this.LblTotaalBedrag.TabIndex = 2;
             this.LblTotaalBedrag.Text = "Totaalbedrag";
             // 
             // OutBtw6
             // 
             this.OutBtw6.AutoSize = true;
+            this.OutBtw6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OutBtw6.Location = new System.Drawing.Point(160, 25);
             this.OutBtw6.Name = "OutBtw6";
-            this.OutBtw6.Size = new System.Drawing.Size(48, 17);
+            this.OutBtw6.Size = new System.Drawing.Size(54, 20);
             this.OutBtw6.TabIndex = 3;
             this.OutBtw6.Text = "€ 0.00";
             // 
             // OutBtw21
             // 
             this.OutBtw21.AutoSize = true;
+            this.OutBtw21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OutBtw21.Location = new System.Drawing.Point(160, 52);
             this.OutBtw21.Name = "OutBtw21";
-            this.OutBtw21.Size = new System.Drawing.Size(48, 17);
+            this.OutBtw21.Size = new System.Drawing.Size(54, 20);
             this.OutBtw21.TabIndex = 4;
             this.OutBtw21.Text = "€ 0.00";
             // 
             // OutTotaalBedrag
             // 
             this.OutTotaalBedrag.AutoSize = true;
-            this.OutTotaalBedrag.Location = new System.Drawing.Point(160, 103);
+            this.OutTotaalBedrag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OutTotaalBedrag.Location = new System.Drawing.Point(160, 116);
             this.OutTotaalBedrag.Name = "OutTotaalBedrag";
-            this.OutTotaalBedrag.Size = new System.Drawing.Size(48, 17);
+            this.OutTotaalBedrag.Size = new System.Drawing.Size(54, 20);
             this.OutTotaalBedrag.TabIndex = 5;
             this.OutTotaalBedrag.Text = "€ 0.00";
             // 
             // LblFooi
             // 
             this.LblFooi.AutoSize = true;
+            this.LblFooi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblFooi.Location = new System.Drawing.Point(22, 78);
             this.LblFooi.Name = "LblFooi";
-            this.LblFooi.Size = new System.Drawing.Size(35, 17);
+            this.LblFooi.Size = new System.Drawing.Size(41, 20);
             this.LblFooi.TabIndex = 6;
             this.LblFooi.Text = "Fooi";
             // 
             // OutFooi
             // 
             this.OutFooi.AutoSize = true;
+            this.OutFooi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OutFooi.Location = new System.Drawing.Point(160, 78);
             this.OutFooi.Name = "OutFooi";
-            this.OutFooi.Size = new System.Drawing.Size(48, 17);
+            this.OutFooi.Size = new System.Drawing.Size(54, 20);
             this.OutFooi.TabIndex = 7;
             this.OutFooi.Text = "€ 0.00";
             // 
             // BtnOpmerking
             // 
-            this.BtnOpmerking.Location = new System.Drawing.Point(376, 25);
+            this.BtnOpmerking.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnOpmerking.Location = new System.Drawing.Point(407, 25);
             this.BtnOpmerking.Name = "BtnOpmerking";
             this.BtnOpmerking.Size = new System.Drawing.Size(132, 44);
             this.BtnOpmerking.TabIndex = 8;
@@ -124,7 +135,8 @@
             // 
             // BtnFooi
             // 
-            this.BtnFooi.Location = new System.Drawing.Point(376, 89);
+            this.BtnFooi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnFooi.Location = new System.Drawing.Point(407, 89);
             this.BtnFooi.Name = "BtnFooi";
             this.BtnFooi.Size = new System.Drawing.Size(132, 44);
             this.BtnFooi.TabIndex = 9;
@@ -132,10 +144,32 @@
             this.BtnFooi.UseVisualStyleBackColor = true;
             this.BtnFooi.Click += new System.EventHandler(this.BtnFooi_Click);
             // 
+            // lblOpmerking
+            // 
+            this.lblOpmerking.AutoSize = true;
+            this.lblOpmerking.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOpmerking.Location = new System.Drawing.Point(22, 165);
+            this.lblOpmerking.Name = "lblOpmerking";
+            this.lblOpmerking.Size = new System.Drawing.Size(90, 20);
+            this.lblOpmerking.TabIndex = 10;
+            this.lblOpmerking.Text = "Opmerking";
+            // 
+            // OutOpmerking
+            // 
+            this.OutOpmerking.AutoSize = true;
+            this.OutOpmerking.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OutOpmerking.Location = new System.Drawing.Point(160, 165);
+            this.OutOpmerking.Name = "OutOpmerking";
+            this.OutOpmerking.Size = new System.Drawing.Size(17, 20);
+            this.OutOpmerking.TabIndex = 11;
+            this.OutOpmerking.Text = "x";
+            // 
             // RekeningGeldOverzicht
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.OutOpmerking);
+            this.Controls.Add(this.lblOpmerking);
             this.Controls.Add(this.BtnFooi);
             this.Controls.Add(this.BtnOpmerking);
             this.Controls.Add(this.OutFooi);
@@ -145,9 +179,9 @@
             this.Controls.Add(this.OutBtw6);
             this.Controls.Add(this.LblTotaalBedrag);
             this.Controls.Add(this.LblBtw21);
-            this.Controls.Add(this.lblBtw6);
+            this.Controls.Add(this.lblBtw9);
             this.Name = "RekeningGeldOverzicht";
-            this.Size = new System.Drawing.Size(544, 165);
+            this.Size = new System.Drawing.Size(585, 240);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -155,7 +189,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblBtw6;
+        private System.Windows.Forms.Label lblBtw9;
         private System.Windows.Forms.Label LblBtw21;
         private System.Windows.Forms.Label LblTotaalBedrag;
         private System.Windows.Forms.Label OutBtw6;
@@ -165,5 +199,7 @@
         private System.Windows.Forms.Label OutFooi;
         private System.Windows.Forms.Button BtnOpmerking;
         private System.Windows.Forms.Button BtnFooi;
+        private System.Windows.Forms.Label lblOpmerking;
+        private System.Windows.Forms.Label OutOpmerking;
     }
 }

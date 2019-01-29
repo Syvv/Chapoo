@@ -23,10 +23,13 @@ namespace UI
             this.Rekening = rekening;
             this.RekeningLogica = new RekeningService();
             PrijzenWeergeven();
+
+            lblOpmerking.Hide();
+            OutOpmerking.Hide();
         }
-        private void PrijzenWeergeven()
+        private void PrijzenWeergeven()//hardcoded 1
         {
-            this.Rekening = RekeningLogica.RekeningOpstellen(Rekening.Bestelling.Id);
+            this.Rekening = RekeningLogica.RekeningOpstellen(2);
             OutTotaalBedrag.Text = string.Format("€ {0:F2} ", Rekening.Totaalbedrag);
             OutBtw21.Text = string.Format("€ {0:F2} ", Rekening.Btw21);
             OutBtw6.Text = string.Format("€ {0:F2}", Rekening.Btw6);
@@ -40,11 +43,14 @@ namespace UI
             form.ShowDialog();
 
             this.Rekening.Opmerking = form.Opmerking;
+            lblOpmerking.Show();
+            OutOpmerking.Show();
+            OutOpmerking.Text = Rekening.Opmerking;
         }
 
         private void BtnFooi_Click(object sender, EventArgs e) //deze sluiten???
         {
-            new FooiToevoegen(this.Rekening).Show();
+            new RekeningFooiForm_en_betalen(this.Rekening).Show();
         }
     }
 }
