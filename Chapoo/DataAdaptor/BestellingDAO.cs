@@ -64,29 +64,19 @@ namespace DataAdaptor
             int bestellingId = 0;
 
             StringBuilder sb = new StringBuilder();
-            SqlDataReader data;
 
             connection.Open();
+            sb.Append("SELECT bestellingId FROM BESTELLING WHERE tafelId = @tafelId ORDER BY bestellingId DESC");
 
-            sb.Append("SELECT max(bestellingId) FROM BESTELLING WHERE tafelId = @tafelId");
+            SqlCommand command = new SqlCommand(sb.ToString(), connection);
+            command.Parameters.AddWithValue("@tafelId", tafelId);
 
-            String sql = sb.ToString();
-            using (SqlCommand cmd = new SqlCommand(sql, connection))
-            {
-                cmd.Parameters.AddWithValue("@tafelId", tafelId);
-                data = cmd.ExecuteReader();
-            }
+            SqlDataReader data = command.ExecuteReader();
+
 
             while (data.Read())
             {
-                try
-                {
-                    bestellingId = (int)data["bestellingId"];
-                }
-                catch (Exception)
-                {
-                    bestellingId = 0;
-                }
+                bestellingId =  (int)data["bestellingId"];
             }
 
             connection.Close();

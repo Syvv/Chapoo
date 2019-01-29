@@ -15,19 +15,22 @@ namespace UI
         public int Aantal { get; set; }
         public BestelItemControl BestelItemControl { get; set; }
         public BestellingOpnemenForm BestellingOpnemenForm { get; set; }
-        public ItemOptiesControl(BestelItemControl bestelItemControl, BestellingOpnemenForm bestellingOpnemenForm)
+        private BestelKnoppenControl BestelKnoppen { get; set; }
+
+        public ItemOptiesControl(BestelItemControl bestelItemControl, BestellingOpnemenForm bestellingOpnemenForm, BestelKnoppenControl bestelKnoppen)
         {
             InitializeComponent();
             this.BestelItemControl = bestelItemControl;
             this.Aantal = 0;
             this.BestellingOpnemenForm = bestellingOpnemenForm;
+            this.BestelKnoppen = bestelKnoppen;
         }
 
         private void btnComment_Click(object sender, EventArgs e)
         {
             this.BestelItemControl.Commentaar = txtComment.Text;
             this.BestellingOpnemenForm.pnlBottom.Controls.Clear();
-            this.BestellingOpnemenForm.pnlBottom.Controls.Add(new BestelKnoppenControl( ));
+            this.BestellingOpnemenForm.pnlBottom.Controls.Add(BestelKnoppen);
         }
 
         private void bntEen_Click(object sender, EventArgs e)

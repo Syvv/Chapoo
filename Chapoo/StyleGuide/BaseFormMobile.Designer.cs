@@ -37,14 +37,12 @@
             this.uitlogButton1 = new StyleGuide.UitlogButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.backButton1 = new StyleGuide.BackButton();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.opnemenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.overzichtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.afrekenenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlMain = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlBottom = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnMenuOpnemn = new StyleGuide.BaseButton();
+            this.btnMenuOverzicht = new StyleGuide.BaseButton();
+            this.btnMenuAfrekenen = new StyleGuide.BaseButton();
             this.pnlTop.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -63,11 +61,13 @@
             // 
             this.pnlTop.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.pnlTop.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlTop.Controls.Add(this.btnMenuAfrekenen);
+            this.pnlTop.Controls.Add(this.btnMenuOverzicht);
+            this.pnlTop.Controls.Add(this.btnMenuOpnemn);
             this.pnlTop.Controls.Add(this.txtTafel);
             this.pnlTop.Controls.Add(this.uitlogButton1);
             this.pnlTop.Controls.Add(this.panel1);
             this.pnlTop.Controls.Add(this.backButton1);
-            this.pnlTop.Controls.Add(this.menuStrip1);
             this.pnlTop.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pnlTop.Location = new System.Drawing.Point(-2, -1);
             this.pnlTop.Name = "pnlTop";
@@ -116,40 +116,6 @@
             this.backButton1.Text = " ";
             this.backButton1.UseVisualStyleBackColor = true;
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.BackColor = System.Drawing.SystemColors.Control;
-            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.opnemenToolStripMenuItem,
-            this.overzichtToolStripMenuItem,
-            this.afrekenenToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(583, 40);
-            this.menuStrip1.TabIndex = 7;
-            this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
-            // 
-            // opnemenToolStripMenuItem
-            // 
-            this.opnemenToolStripMenuItem.Name = "opnemenToolStripMenuItem";
-            this.opnemenToolStripMenuItem.Size = new System.Drawing.Size(155, 36);
-            this.opnemenToolStripMenuItem.Text = "1. opnemen";
-            // 
-            // overzichtToolStripMenuItem
-            // 
-            this.overzichtToolStripMenuItem.Name = "overzichtToolStripMenuItem";
-            this.overzichtToolStripMenuItem.Size = new System.Drawing.Size(149, 36);
-            this.overzichtToolStripMenuItem.Text = "2. overzicht";
-            // 
-            // afrekenenToolStripMenuItem
-            // 
-            this.afrekenenToolStripMenuItem.Name = "afrekenenToolStripMenuItem";
-            this.afrekenenToolStripMenuItem.Size = new System.Drawing.Size(159, 36);
-            this.afrekenenToolStripMenuItem.Text = "3. afrekenen";
-            // 
             // pnlMain
             // 
             this.pnlMain.AutoScroll = true;
@@ -165,6 +131,42 @@
             this.pnlBottom.Size = new System.Drawing.Size(584, 276);
             this.pnlBottom.TabIndex = 7;
             // 
+            // btnMenuOpnemn
+            // 
+            this.btnMenuOpnemn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenuOpnemn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnMenuOpnemn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnMenuOpnemn.Location = new System.Drawing.Point(-1, -1);
+            this.btnMenuOpnemn.Name = "btnMenuOpnemn";
+            this.btnMenuOpnemn.Size = new System.Drawing.Size(193, 43);
+            this.btnMenuOpnemn.TabIndex = 10;
+            this.btnMenuOpnemn.Text = "1. opnemen";
+            this.btnMenuOpnemn.UseVisualStyleBackColor = true;
+            // 
+            // btnMenuOverzicht
+            // 
+            this.btnMenuOverzicht.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenuOverzicht.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnMenuOverzicht.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnMenuOverzicht.Location = new System.Drawing.Point(191, -1);
+            this.btnMenuOverzicht.Name = "btnMenuOverzicht";
+            this.btnMenuOverzicht.Size = new System.Drawing.Size(196, 43);
+            this.btnMenuOverzicht.TabIndex = 11;
+            this.btnMenuOverzicht.Text = "2. overzicht";
+            this.btnMenuOverzicht.UseVisualStyleBackColor = true;
+            // 
+            // btnMenuAfrekenen
+            // 
+            this.btnMenuAfrekenen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenuAfrekenen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnMenuAfrekenen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnMenuAfrekenen.Location = new System.Drawing.Point(386, -1);
+            this.btnMenuAfrekenen.Name = "btnMenuAfrekenen";
+            this.btnMenuAfrekenen.Size = new System.Drawing.Size(198, 43);
+            this.btnMenuAfrekenen.TabIndex = 12;
+            this.btnMenuAfrekenen.Text = "3. afrekenen";
+            this.btnMenuAfrekenen.UseVisualStyleBackColor = true;
+            // 
             // BaseFormMobile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -179,8 +181,6 @@
             this.Load += new System.EventHandler(this.BaseForm_Load);
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -191,14 +191,13 @@
         public System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
         public System.Windows.Forms.Panel pnlTop;
         public System.Windows.Forms.Panel panel1;
-        public System.Windows.Forms.MenuStrip menuStrip1;
-        public System.Windows.Forms.ToolStripMenuItem opnemenToolStripMenuItem;
-        public System.Windows.Forms.ToolStripMenuItem overzichtToolStripMenuItem;
-        public System.Windows.Forms.ToolStripMenuItem afrekenenToolStripMenuItem;
         public UitlogButton uitlogButton1;
         public Titel txtTafel;
         public System.Windows.Forms.FlowLayoutPanel pnlMain;
         public System.Windows.Forms.FlowLayoutPanel pnlBottom;
+        public BaseButton btnMenuAfrekenen;
+        public BaseButton btnMenuOverzicht;
+        public BaseButton btnMenuOpnemn;
     }
 }
 

@@ -88,6 +88,7 @@
             this.btnFris.TabIndex = 0;
             this.btnFris.Text = "Fris";
             this.btnFris.UseVisualStyleBackColor = true;
+            this.btnFris.Click += new System.EventHandler(this.btnFris_Click);
             // 
             // btnWarm
             // 
@@ -194,6 +195,7 @@
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "BestelKnoppenControl";
             this.Size = new System.Drawing.Size(584, 276);
+            this.Load += new System.EventHandler(this.BestelKnoppenControl_Load);
             this.ResumeLayout(false);
 
         }

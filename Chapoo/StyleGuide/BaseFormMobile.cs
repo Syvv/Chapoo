@@ -16,7 +16,6 @@ namespace StyleGuide
         {
             InitializeComponent();
             pnlMain.BackColor = Color.FromArgb(245, 239, 237);
-            menuStrip1.BackColor = Color.FromArgb(245, 239, 237);
         }
 
         private void BaseForm_Load(object sender, EventArgs e)

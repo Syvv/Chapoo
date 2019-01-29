@@ -29,14 +29,9 @@ namespace Logica
         public bool InsertBestellingItems(List<BestellingsitemModel> bestellingsitems, DAOFactory factory)
         {
             BestellingsItemDAO DAO = factory.CreateBestellingsItemDAO();
-            try
-            {
+
                 DAO.InsertBestellingItems(bestellingsitems);
-            }
-            catch (Exception)
-            {
-                return false;
-            }
+
             return true;
         }
 
