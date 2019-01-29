@@ -39,7 +39,7 @@
             this.backButton1 = new StyleGuide.BackButton();
             this.pnlMain = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlBottom = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnMenuOpnemn = new StyleGuide.BaseButton();
+            this.btnMenuOpnemen = new StyleGuide.BaseButton();
             this.btnMenuOverzicht = new StyleGuide.BaseButton();
             this.btnMenuAfrekenen = new StyleGuide.BaseButton();
             this.pnlTop.SuspendLayout();
@@ -63,7 +63,7 @@
             this.pnlTop.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlTop.Controls.Add(this.btnMenuAfrekenen);
             this.pnlTop.Controls.Add(this.btnMenuOverzicht);
-            this.pnlTop.Controls.Add(this.btnMenuOpnemn);
+            this.pnlTop.Controls.Add(this.btnMenuOpnemen);
             this.pnlTop.Controls.Add(this.txtTafel);
             this.pnlTop.Controls.Add(this.uitlogButton1);
             this.pnlTop.Controls.Add(this.panel1);
@@ -73,7 +73,6 @@
             this.pnlTop.Name = "pnlTop";
             this.pnlTop.Size = new System.Drawing.Size(585, 121);
             this.pnlTop.TabIndex = 4;
-            this.pnlTop.Paint += new System.Windows.Forms.PaintEventHandler(this.topPanel_Paint);
             // 
             // txtTafel
             // 
@@ -84,7 +83,6 @@
             this.txtTafel.Size = new System.Drawing.Size(87, 39);
             this.txtTafel.TabIndex = 9;
             this.txtTafel.Text = "Tafel";
-            this.txtTafel.Click += new System.EventHandler(this.txtTafel_Click);
             // 
             // uitlogButton1
             // 
@@ -131,28 +129,28 @@
             this.pnlBottom.Size = new System.Drawing.Size(584, 276);
             this.pnlBottom.TabIndex = 7;
             // 
-            // btnMenuOpnemn
+            // btnMenuOpnemen
             // 
-            this.btnMenuOpnemn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenuOpnemn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnMenuOpnemn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnMenuOpnemn.Location = new System.Drawing.Point(-1, -1);
-            this.btnMenuOpnemn.Name = "btnMenuOpnemn";
-            this.btnMenuOpnemn.Size = new System.Drawing.Size(193, 43);
-            this.btnMenuOpnemn.TabIndex = 10;
-            this.btnMenuOpnemn.Text = "1. opnemen";
-            this.btnMenuOpnemn.UseVisualStyleBackColor = true;
+            this.btnMenuOpnemen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenuOpnemen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnMenuOpnemen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnMenuOpnemen.Location = new System.Drawing.Point(88, 3);
+            this.btnMenuOpnemen.Name = "btnMenuOpnemen";
+            this.btnMenuOpnemen.Size = new System.Drawing.Size(122, 49);
+            this.btnMenuOpnemen.TabIndex = 10;
+            this.btnMenuOpnemen.Text = "Opnemen";
+            this.btnMenuOpnemen.UseVisualStyleBackColor = true;
             // 
             // btnMenuOverzicht
             // 
             this.btnMenuOverzicht.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMenuOverzicht.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnMenuOverzicht.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnMenuOverzicht.Location = new System.Drawing.Point(191, -1);
+            this.btnMenuOverzicht.Location = new System.Drawing.Point(216, 3);
             this.btnMenuOverzicht.Name = "btnMenuOverzicht";
-            this.btnMenuOverzicht.Size = new System.Drawing.Size(196, 43);
+            this.btnMenuOverzicht.Size = new System.Drawing.Size(122, 49);
             this.btnMenuOverzicht.TabIndex = 11;
-            this.btnMenuOverzicht.Text = "2. overzicht";
+            this.btnMenuOverzicht.Text = "Overzicht";
             this.btnMenuOverzicht.UseVisualStyleBackColor = true;
             // 
             // btnMenuAfrekenen
@@ -160,11 +158,11 @@
             this.btnMenuAfrekenen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMenuAfrekenen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnMenuAfrekenen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnMenuAfrekenen.Location = new System.Drawing.Point(386, -1);
+            this.btnMenuAfrekenen.Location = new System.Drawing.Point(344, 3);
             this.btnMenuAfrekenen.Name = "btnMenuAfrekenen";
-            this.btnMenuAfrekenen.Size = new System.Drawing.Size(198, 43);
+            this.btnMenuAfrekenen.Size = new System.Drawing.Size(122, 49);
             this.btnMenuAfrekenen.TabIndex = 12;
-            this.btnMenuAfrekenen.Text = "3. afrekenen";
+            this.btnMenuAfrekenen.Text = "Afrekenen";
             this.btnMenuAfrekenen.UseVisualStyleBackColor = true;
             // 
             // BaseFormMobile
@@ -197,7 +195,7 @@
         public System.Windows.Forms.FlowLayoutPanel pnlBottom;
         public BaseButton btnMenuAfrekenen;
         public BaseButton btnMenuOverzicht;
-        public BaseButton btnMenuOpnemn;
+        public BaseButton btnMenuOpnemen;
     }
 }
 

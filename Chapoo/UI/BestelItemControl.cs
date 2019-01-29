@@ -19,7 +19,7 @@ namespace UI
         public BestelKnoppenControl BestelKnoppen { get; set; }
 
         public MenuItemModel MenuItem { get; set; }
-        public DateTime TimeStamp = DateTime.Today;
+        public DateTime TimeStamp { get; set; }
         public string Commentaar = " ";
         public int Aantal { get; set; }
 
@@ -37,6 +37,7 @@ namespace UI
         {
             ItemOpties = new ItemOptiesControl(this, BestellingOpnemenForm, BestelKnoppen);
             BestellingOpnemenForm.pnlBottom.Controls.Clear();
+            this.TimeStamp = DateTime.Now;
 
             if (addButton1.Text == "+")
             {
@@ -52,13 +53,16 @@ namespace UI
                 Add = true;                
                 BestellingOpnemenForm.pnlBottom.Controls.Add(ItemOpties);
                 addButton1.BackColor = Color.FromArgb(106, 57, 55);
+                BestelKnoppen.BestelItemControls.Add(this);
+                this.Aantal = 1;
             }
             else
             {
                 Add = false;
                 BestellingOpnemenForm.pnlBottom.Controls.Add(BestelKnoppen);
                 addButton1.BackColor = Color.FromArgb(245, 239, 237);
-                
+                BestelKnoppen.BestelItemControls.Remove(this);
+                this.Aantal = 0;
             }
         }
         private void BestelItem_Click(object sender, EventArgs e)
