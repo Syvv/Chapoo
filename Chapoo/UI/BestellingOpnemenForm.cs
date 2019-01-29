@@ -60,8 +60,8 @@ namespace UI
 
         private void btnMenuAfrekenen_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Hello there");
-            new RekeningFormOverzicht(Tafel).Show();
+            MessageBox.Show("bestellings id moet nog in tafel id komen");
+            new RekeningFormOverzicht(Tafel, Werknemer).Show();
             this.Close();
         }
 
