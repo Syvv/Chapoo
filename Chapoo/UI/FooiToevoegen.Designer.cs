@@ -113,6 +113,7 @@
             this.BtnPin.TabIndex = 9;
             this.BtnPin.Text = "Pin";
             this.BtnPin.UseVisualStyleBackColor = true;
+            this.BtnPin.Click += new System.EventHandler(this.BtnPin_Click);
             // 
             // BtnContant
             // 
@@ -122,6 +123,7 @@
             this.BtnContant.TabIndex = 10;
             this.BtnContant.Text = "Cash / contant";
             this.BtnContant.UseVisualStyleBackColor = true;
+            this.BtnContant.Click += new System.EventHandler(this.BtnContant_Click);
             // 
             // BtnCreditcard
             // 
@@ -131,6 +133,7 @@
             this.BtnCreditcard.TabIndex = 11;
             this.BtnCreditcard.Text = "Creditcard";
             this.BtnCreditcard.UseVisualStyleBackColor = true;
+            this.BtnCreditcard.Click += new System.EventHandler(this.BtnCreditcard_Click);
             // 
             // LblFooi
             // 
@@ -196,7 +199,6 @@
             this.Controls.Add(this.lblTotaalbedrag);
             this.Name = "FooiToevoegen";
             this.Size = new System.Drawing.Size(598, 372);
-            this.Load += new System.EventHandler(this.FooiToevoegen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

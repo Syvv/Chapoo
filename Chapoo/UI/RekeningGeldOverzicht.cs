@@ -9,16 +9,19 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Model;
 using Logica;
+using DataAdaptor;
 
 namespace UI
 {
     public partial class RekeningGeldOverzicht : UserControl
     {
         private RekeningModel rekening { get; set; }
-        public RekeningGeldOverzicht(RekeningModel rekening)
+        private DAOFactory Factory;
+        public RekeningGeldOverzicht(RekeningModel rekening, DAOFactory factory)
         {
             InitializeComponent();
             this.rekening = rekening;
+            this.Factory = factory;
             PrijzenWeergeven();
         }
         private void PrijzenWeergeven()
@@ -34,6 +37,11 @@ namespace UI
             string opmerking = rekening.Opmerking;
             new RekeningOpmerkingForm(ref opmerking).ShowDialog();//kan niet kloppen
             this.rekening.Opmerking = opmerking;
+        }
+
+        private void BtnFooi_Click(object sender, EventArgs e)
+        {
+            new FooiToevoegen(this.rekening, Factory).Show();
         }
     }
 }
