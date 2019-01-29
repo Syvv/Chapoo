@@ -55,20 +55,6 @@ namespace Logica
             return rekening;
         }
 
-        //Opmerking toevoegen
-        [Obsolete("Geen dingen opslaan in de Logica laag",true)]
-        public void OpmerkingToevoegen(string opmerking)
-        {
-            //this.Opmerking = opmerking;
-        }
-        //Opmerking Weergeven
-        [Obsolete("Geen dingen opslaan in de Logica laag", true)]
-        public string OpmerkingWeergeven()
-        {
-            //return (string) Opmerking;
-            return "";
-        }
-
         //Fooi toevoegenbij Eindbedrag invullen
         public void FooiToevoegenInBedrag(ref RekeningModel rekening, double totaal)
         {
@@ -108,5 +94,24 @@ namespace Logica
             RekeningDAO RekeningDataLaag = factory.CreateRekeningDAO();
             RekeningDataLaag.InsertRekening(rekening);
         }
+
+
+
+
+
+
+
+
+
+        //private string Opmerking { get; set; }
+        //public void OpmerkingToevoegen(string opmerking)
+        //{
+        //    this.Opmerking = opmerking;
+        //}
+        ////Opmerking Weergeven
+        //public string OpmerkingWeergeven()
+        //{
+        //    return (string)Opmerking;
+        //}
     }
 }
