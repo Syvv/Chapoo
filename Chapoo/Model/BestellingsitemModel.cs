@@ -24,11 +24,13 @@ namespace Model
             this.Timestamp = timestamp;
             this.BestellingsId = bestellingsId;
         }
-        public BestellingsitemModel(int menuId, int bestellingId, DateTime timestamp, int hoeveelheid) : base(menuId)
+        public BestellingsitemModel(int menuId, int bestellingId, DateTime timestamp, 
+            int hoeveelheid, string commentaar) : base(menuId)
         {
             this.BestellingsId = bestellingId;
             this.Timestamp = timestamp;
             this.Hoeveelheid = hoeveelheid;
+            this.Commentaar = commentaar;
         }
     }
 }

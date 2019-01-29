@@ -24,6 +24,7 @@ namespace UI
         private WerknemerModel Werknemer { get; set;}
         private TafelModel Tafel { get; set; }
         private BestellingsitemModel BestellingItemModel { get; set; }
+        private List<BestelItemControl> BestelItemControls { get; set; }
         //Lijst aanmaken van bestellingitems
         //Voorraad toonen
 
@@ -33,7 +34,7 @@ namespace UI
             this.Tafel = tafel;
             this.Werknemer = werknemer;
             this.Bestelling = new BestellingModel(Werknemer, Tafel);
-            this.BestelKnoppen = new BestelKnoppenControl(Bestelling, Tafel);
+            this.BestelKnoppen = new BestelKnoppenControl(Bestelling, Tafel, BestelItemControls);
             this.MenuItemService = new MenuItemService();
 
             txtTafel.Text += " " + Tafel.Id.ToString();
@@ -47,6 +48,10 @@ namespace UI
             pnlBottom.Controls.Add(BestelKnoppen);
         }
 
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            MessageBox.Show("message");
+        }
         private void Bestelling_opnemen_form_Load(object sender, EventArgs e)
         {
         }

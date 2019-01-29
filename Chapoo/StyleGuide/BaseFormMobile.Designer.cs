@@ -33,16 +33,16 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.pnlTop = new System.Windows.Forms.Panel();
+            this.txtTafel = new StyleGuide.Titel();
+            this.uitlogButton1 = new StyleGuide.UitlogButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.backButton1 = new StyleGuide.BackButton();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.opnemenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.overzichtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.afrekenenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlMain = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlBottom = new System.Windows.Forms.FlowLayoutPanel();
-            this.txtTafel = new StyleGuide.Titel();
-            this.uitlogButton1 = new StyleGuide.UitlogButton();
-            this.backButton1 = new StyleGuide.BackButton();
             this.pnlTop.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -75,12 +75,46 @@
             this.pnlTop.TabIndex = 4;
             this.pnlTop.Paint += new System.Windows.Forms.PaintEventHandler(this.topPanel_Paint);
             // 
+            // txtTafel
+            // 
+            this.txtTafel.AutoSize = true;
+            this.txtTafel.Font = new System.Drawing.Font("Arial", 20F);
+            this.txtTafel.Location = new System.Drawing.Point(230, 54);
+            this.txtTafel.Name = "txtTafel";
+            this.txtTafel.Size = new System.Drawing.Size(87, 39);
+            this.txtTafel.TabIndex = 9;
+            this.txtTafel.Text = "Tafel";
+            this.txtTafel.Click += new System.EventHandler(this.txtTafel_Click);
+            // 
+            // uitlogButton1
+            // 
+            this.uitlogButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uitlogButton1.BackgroundImage")));
+            this.uitlogButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.uitlogButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.uitlogButton1.Location = new System.Drawing.Point(530, 54);
+            this.uitlogButton1.Name = "uitlogButton1";
+            this.uitlogButton1.Size = new System.Drawing.Size(42, 39);
+            this.uitlogButton1.TabIndex = 8;
+            this.uitlogButton1.UseVisualStyleBackColor = true;
+            // 
             // panel1
             // 
             this.panel1.Location = new System.Drawing.Point(4, 160);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(480, 411);
             this.panel1.TabIndex = 6;
+            // 
+            // backButton1
+            // 
+            this.backButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("backButton1.BackgroundImage")));
+            this.backButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.backButton1.Location = new System.Drawing.Point(14, 48);
+            this.backButton1.Name = "backButton1";
+            this.backButton1.Size = new System.Drawing.Size(50, 50);
+            this.backButton1.TabIndex = 1;
+            this.backButton1.Text = " ";
+            this.backButton1.UseVisualStyleBackColor = true;
             // 
             // menuStrip1
             // 
@@ -96,6 +130,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(583, 40);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // opnemenToolStripMenuItem
             // 
@@ -129,40 +164,6 @@
             this.pnlBottom.Name = "pnlBottom";
             this.pnlBottom.Size = new System.Drawing.Size(584, 276);
             this.pnlBottom.TabIndex = 7;
-            // 
-            // txtTafel
-            // 
-            this.txtTafel.AutoSize = true;
-            this.txtTafel.Font = new System.Drawing.Font("Arial", 20F);
-            this.txtTafel.Location = new System.Drawing.Point(230, 54);
-            this.txtTafel.Name = "txtTafel";
-            this.txtTafel.Size = new System.Drawing.Size(87, 39);
-            this.txtTafel.TabIndex = 9;
-            this.txtTafel.Text = "Tafel";
-            this.txtTafel.Click += new System.EventHandler(this.txtTafel_Click);
-            // 
-            // uitlogButton1
-            // 
-            this.uitlogButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uitlogButton1.BackgroundImage")));
-            this.uitlogButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.uitlogButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.uitlogButton1.Location = new System.Drawing.Point(530, 54);
-            this.uitlogButton1.Name = "uitlogButton1";
-            this.uitlogButton1.Size = new System.Drawing.Size(42, 39);
-            this.uitlogButton1.TabIndex = 8;
-            this.uitlogButton1.UseVisualStyleBackColor = true;
-            // 
-            // backButton1
-            // 
-            this.backButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("backButton1.BackgroundImage")));
-            this.backButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.backButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.backButton1.Location = new System.Drawing.Point(14, 48);
-            this.backButton1.Name = "backButton1";
-            this.backButton1.Size = new System.Drawing.Size(50, 50);
-            this.backButton1.TabIndex = 1;
-            this.backButton1.Text = " ";
-            this.backButton1.UseVisualStyleBackColor = true;
             // 
             // BaseFormMobile
             // 

@@ -38,6 +38,7 @@
             this.btnHoofd = new StyleGuide.BaseButton();
             this.btnNa = new StyleGuide.BaseButton();
             this.btnVerstuur = new StyleGuide.BaseButton();
+            this.btnOverzicht = new StyleGuide.BaseButton();
             this.SuspendLayout();
             // 
             // btnSterk
@@ -153,7 +154,7 @@
             this.btnVerstuur.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerstuur.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnVerstuur.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnVerstuur.Location = new System.Drawing.Point(226, 208);
+            this.btnVerstuur.Location = new System.Drawing.Point(168, 197);
             this.btnVerstuur.Name = "btnVerstuur";
             this.btnVerstuur.Size = new System.Drawing.Size(122, 49);
             this.btnVerstuur.TabIndex = 9;
@@ -161,11 +162,25 @@
             this.btnVerstuur.UseVisualStyleBackColor = true;
             this.btnVerstuur.Click += new System.EventHandler(this.btnVerstuur_Click);
             // 
+            // btnOverzicht
+            // 
+            this.btnOverzicht.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOverzicht.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnOverzicht.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnOverzicht.Location = new System.Drawing.Point(296, 197);
+            this.btnOverzicht.Name = "btnOverzicht";
+            this.btnOverzicht.Size = new System.Drawing.Size(122, 49);
+            this.btnOverzicht.TabIndex = 10;
+            this.btnOverzicht.Text = "Overzicht";
+            this.btnOverzicht.UseVisualStyleBackColor = true;
+            this.btnOverzicht.Click += new System.EventHandler(this.btnOverzicht_Click);
+            // 
             // BestelKnoppenControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Controls.Add(this.btnOverzicht);
             this.Controls.Add(this.btnVerstuur);
             this.Controls.Add(this.btnNa);
             this.Controls.Add(this.btnHoofd);
@@ -195,5 +210,6 @@
         private StyleGuide.BaseButton btnHoofd;
         private StyleGuide.BaseButton btnNa;
         private StyleGuide.BaseButton btnVerstuur;
+        private StyleGuide.BaseButton btnOverzicht;
     }
 }

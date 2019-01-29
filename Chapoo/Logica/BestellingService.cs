@@ -24,11 +24,11 @@ namespace Logica
             //Geeft terug of de bestelling openstaat of niet
             return BestellingDAO.CheckVoorOpenstaandeBestelling(bestellingId);
         }
-        public int GetLaatseBestelling(TafelModel tafel)
+        public int GetLaatseBestelling(int tafelId)
         {
             BestellingDAO = new BestellingDAO();
             //Geeft laatste bestelling terug
-            return BestellingDAO.GetLaatsteBestelling(tafel);
+            return BestellingDAO.GetLaatsteBestelling(tafelId);
         }
       /*  public int ReturnOrInsert(bool bestellingOpen, TafelModel tafel)
         {

@@ -15,13 +15,21 @@ namespace UI
     public partial class BestelKnoppenControl : UserControl
     {
         public BestellingModel Bestelling { get; set; }
-        public BestellingService BestellingService { get; set; }
+        private BestellingService BestellingService { get; set; }
         public TafelModel Tafel { get; set; }
+        int TafelId { get; set; }
         private BestellingsitemModel Bestellingsitem { get; set; }
-        public BestelKnoppenControl(BestellingModel bestelling, TafelModel tafel)
+        private List<BestelItemControl> BestelItemControls { get; set; }
+        private List<BestellingsitemModel> Bestellingsitems { get; set; }
+        private BestellingsItemService BestellingsItemService { get; set; }
+        public BestelKnoppenControl(BestellingModel bestelling, TafelModel tafel, List<BestelItemControl> bestelItemControls)
         {
             InitializeComponent();
             this.Bestelling = bestelling;
+            this.Tafel = tafel;
+            this.TafelId = tafel.Id;
+            MessageBox.Show(Tafel.Id.ToString());
+            this.BestelItemControls = bestelItemControls;
         }
         public BestelKnoppenControl()
         {
@@ -30,18 +38,39 @@ namespace UI
         private void btnVerstuur_Click(object sender, EventArgs e)
         {
             BestellingService = new BestellingService();
-            int laatsteBestellingId = BestellingService.GetLaatseBestelling(Tafel);
+            int laatsteBestellingId = BestellingService.GetLaatseBestelling(TafelId);
             bool bestellingOpen = BestellingService.CheckVoorOpenstaandeBestelling(laatsteBestellingId);
-            if (bestellingOpen)
+
+            foreach (BestelItemControl bestelItemControl in BestelItemControls)
             {
-                //Insert items met openstaande bestellingId (laatsteBestelling)
-               
+                int menuId = bestelItemControl.MenuItem.MenuId;
+                DateTime timestamp = bestelItemControl.TimeStamp;
+                int hoeveelheid = bestelItemControl.Aantal;
+                string commentaar = bestelItemControl.Commentaar;
+
+                if (bestelItemControl.Aantal > 0)
+                {
+                    if (bestellingOpen)
+                    {
+                       Bestellingsitem = new BestellingsitemModel(menuId, laatsteBestellingId, timestamp, hoeveelheid, commentaar);
+                    }
+                    else
+                    {
+                        //Creeër nieuw bestelling en geef de bestellingId mee van de nieuwe Bestelling
+                        int bestellingId = BestellingService.InsertBestelling(Bestelling);
+                        Bestellingsitem = new BestellingsitemModel(menuId, laatsteBestellingId, timestamp, hoeveelheid, commentaar);
+                    }
+                    Bestellingsitems.Add(Bestellingsitem);
+                }
             }
-            else
-            {
-                //BestellingService.InsertBestelling(Bestelling);
-                //Creeër nieuw bestelling en geef de bestellingId mee van de nieuwe Bestelling
-            }
+
+            if(Bestellingsitems.Any())
+                BestellingsItemService.InsertBestellingItems(Bestellingsitems);
+        }
+
+        private void btnOverzicht_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

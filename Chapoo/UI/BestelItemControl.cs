@@ -18,8 +18,9 @@ namespace UI
         public BestellingOpnemenForm BestellingOpnemenForm { get; set; }
         public ItemOptiesControl ItemOpties { get; set; }
         public BestelKnoppenControl BestelKnoppen { get; set; }
-        public BestellingsitemModel Bestellingsitem { get; set; }
         public DateTime TimeStamp = DateTime.Today;
+        public string Commentaar { get; set; }
+        public int Aantal { get; set; }
 
         public BestelItemControl(MenuItemModel item, BestellingOpnemenForm bestellingOpnemenForm, BestelKnoppenControl bestelKnoppen)
         {
@@ -57,7 +58,7 @@ namespace UI
                 BestellingOpnemenForm.pnlBottom.Controls.Add(BestelKnoppen);
                 addButton1.BackColor = Color.FromArgb(245, 239, 237);
                 ItemOpties.Aantal = 0;
-            }           
+            }
         }
         private void BestelItem_Click(object sender, EventArgs e)
         {

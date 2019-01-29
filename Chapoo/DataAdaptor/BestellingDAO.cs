@@ -59,7 +59,7 @@ namespace DataAdaptor
 
             return bestellingStaatOpen;
         }
-        public int GetLaatsteBestelling(TafelModel tafel)
+        public int GetLaatsteBestelling(int tafelId)
         {
             int bestellingId = 0;
 
@@ -73,13 +73,20 @@ namespace DataAdaptor
             String sql = sb.ToString();
             using (SqlCommand cmd = new SqlCommand(sql, connection))
             {
-                cmd.Parameters.AddWithValue("@tafelId", tafel);
+                cmd.Parameters.AddWithValue("@tafelId", tafelId);
                 data = cmd.ExecuteReader();
             }
 
             while (data.Read())
             {
-                bestellingId = (int)data["bestellingId"];
+                try
+                {
+                    bestellingId = (int)data["bestellingId"];
+                }
+                catch (Exception)
+                {
+                    bestellingId = 0;
+                }
             }
 
             connection.Close();
