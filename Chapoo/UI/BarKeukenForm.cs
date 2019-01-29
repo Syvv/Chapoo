@@ -74,6 +74,10 @@ namespace UI
                 {
                     BarKeukenUIElement uiElement = new BarKeukenUIElement(b, bestellingLogica, (item) => { Bestellingen.Remove(item); BuildUI(); }, factory)
                         { Top = y};
+                    if(b.Status==BestellingsItemStatus.gereed|| b.Status == BestellingsItemStatus.afgeleverd)
+                    {
+                        uiElement.StyleAsFinished();
+                    }
                     ItemLijstContainer.Controls.Add(uiElement);
                     y += uiElement.Height + 5;
                 }

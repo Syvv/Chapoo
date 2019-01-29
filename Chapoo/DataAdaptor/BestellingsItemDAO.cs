@@ -76,7 +76,7 @@ namespace DataAdaptor
             StringBuilder sb = new StringBuilder();
             connection.Open();
 
-            sb.Append("SELECT m.item, h.commentaar, h.hoeveelheid, b.tafelId, m.menu_id, h.timestamp, m.prijs, m.categorie, h.bestellingId, h.status " +
+            sb.Append("SELECT m.item, h.commentaar, h.hoeveelheid, b.tafelId, m.menu_id, h.timestamp, m.prijs, m.categorie, h.bestellingId, m.btw, h.status " +
                         "FROM HEEFT_ITEM h " +
                         "INNER JOIN MENU m ON h.menuId = m.menu_id " +
                         "INNER JOIN BESTELLING b ON b.bestellingId = h.bestellingId " +
@@ -231,7 +231,7 @@ namespace DataAdaptor
         {
             BestellingsitemModel item = LeesBestellingsItem(data);
 
-            switch (data.GetFieldValue<string>(9))
+            switch (data.GetFieldValue<string>(10))
             {
                 case "besteld":
                     item.Status = BestellingsItemStatus.besteld;

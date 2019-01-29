@@ -55,7 +55,7 @@
             this.btnTijdelijk.TabIndex = 10;
             this.btnTijdelijk.Text = "Tijdelijk Afrekenen";
             this.btnTijdelijk.UseVisualStyleBackColor = true;
-            this.btnTijdelijk.Click += new System.EventHandler(this.btnTijdelijk_Click);
+            //this.btnTijdelijk.Click += new System.EventHandler(this.btnTijdelijk_Click);
             // 
             // btnMenuAfrekenen
             // 

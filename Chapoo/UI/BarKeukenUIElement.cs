@@ -33,5 +33,11 @@ namespace UI
                 herbouwUI(item);
             };
         }
+
+        public void StyleAsFinished()
+        {
+            this.BackColor = Color.DarkGray;
+            GereedstellenBtn.Enabled = false;
+        }
     }
 }

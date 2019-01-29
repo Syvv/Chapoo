@@ -43,8 +43,8 @@ namespace UI
             BestellingService = new BestellingService();
             bestellingsItemService = new BestellingsItemService();
 
-            int laatsteBestellingId = BestellingService.GetLaatseBestelling(TafelId);
-            bool bestellingOpen = BestellingService.CheckVoorOpenstaandeBestelling(laatsteBestellingId);
+            int laatsteBestellingId = BestellingService.GetLaatseBestelling(TafelId, factory);
+            bool bestellingOpen = BestellingService.CheckVoorOpenstaandeBestelling(laatsteBestellingId, factory);
 
             List<BestellingsitemModel> bestellingsItems = new List<BestellingsitemModel>();
 
@@ -67,7 +67,7 @@ namespace UI
                     else
                     {
                         //Creeër nieuw bestelling en geef de bestellingId mee van de nieuwe Bestelling
-                        int bestellingId = BestellingService.InsertBestelling(Bestelling);
+                        int bestellingId = BestellingService.InsertBestelling(Bestelling,factory);
                         bestellingsitem = new BestellingsitemModel(menuId, bestellingId, timestamp, hoeveelheid, commentaar);
                     }
                     bestellingsItems.Add(bestellingsitem);
