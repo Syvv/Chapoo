@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataAdaptor
 {
-    [Obsolete("Gebruik DAOFactory ipv de DataConnection",true)]
+    //[Obsolete("Gebruik DAOFactory ipv de DataConnection",true)]
     public static class DataConnection
     {
         public static string connectionString = "Data Source=den1.mssql7.gear.host;Initial Catalog=chapoo1819f01;User ID=chapoo1819f01;Password=Pu0Q_utpxc-k";
