@@ -22,17 +22,12 @@ namespace UI
 
         private WerknemerModel Werknemer { get; set;}
         private TafelModel Tafel { get; set; }
-        private BestellingsitemModel BestellingItemModel { get; set; }
-        private List<BestelItemControl> BestelItemControls = new List<BestelItemControl>();
-        //Lijst aanmaken van bestellingitems
-        //Voorraad toonen
-
 
         public BestellingOpnemenForm(WerknemerModel werknemer, TafelModel tafel)
         {
             this.Tafel = tafel;
             this.Werknemer = werknemer;
-            this.BestelKnoppen = new BestelKnoppenControl(Tafel, BestelItemControls, this);
+            this.BestelKnoppen = new BestelKnoppenControl(Tafel,  this);
             this.MenuItemService = new MenuItemService();
 
             this.btnMenuAfrekenen.Click += new EventHandler(btnMenuAfrekenen_Click);
@@ -44,7 +39,12 @@ namespace UI
             foreach(MenuItemModel menuItem in MenuItemService.Categoriseren(Categorie.Frisdrank))
             {
                 BestelItem = new BestelItemControl(menuItem, this, BestelKnoppen);
-                BestelItemControls.Add(BestelItem);
+//Ook nog ff naar kijken
+                if (menuItem.Voorraad == 0)
+                {
+                    BestelItem.addButton1.Hide();
+                    BestelItem.lblItem.ForeColor = Color.FromArgb(255, 0, 0);
+                }
                 pnlMain.Controls.Add(BestelItem);
             }           
 
@@ -61,7 +61,7 @@ namespace UI
         private void btnMenuAfrekenen_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Hello there");
-            new RekeningFormOverzicht(factory, Tafel, Werknemer).Show();
+            new RekeningFormOverzicht(Tafel).Show();
             this.Close();
         }
 

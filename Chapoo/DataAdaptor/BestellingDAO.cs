@@ -12,7 +12,12 @@ namespace DataAdaptor
 {
     public class BestellingDAO
     {
-        private SqlConnection connection = DataConnection.connection;
+        private SqlConnection connection;
+
+        public BestellingDAO(SqlConnection connection)
+        {
+            this.connection = connection ?? throw new ArgumentNullException(nameof(connection));
+        }
         public int InsertBestelling(BestellingModel bestelling)
         {
             StringBuilder sb = new StringBuilder();

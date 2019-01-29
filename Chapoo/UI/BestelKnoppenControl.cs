@@ -16,7 +16,6 @@ namespace UI
     public partial class BestelKnoppenControl : UserControl
     {
         public BestellingModel Bestelling { get; set; }
-        private BestellingService BestellingService { get; set; }
         private MenuItemService MenuItemService { get; set; }
         public TafelModel Tafel { get; set; }
         private BestellingsItemService bestellingsItemService { get; set; }
@@ -27,16 +26,12 @@ namespace UI
         TimeSpan end = new TimeSpan(17, 0, 0);
         TimeSpan now = DateTime.Now.TimeOfDay;
 
-        DAOFactory factory;
 
-
-        public BestelKnoppenControl(TafelModel tafel, DAOFactory factory, List<BestelItemControl> bestelItemControls, BestellingOpnemenForm bestellingOpnemenForm)
+        public BestelKnoppenControl(TafelModel tafel,  BestellingOpnemenForm bestellingOpnemenForm)
         {
             InitializeComponent();
-            this.Tafel = tafel;
-            this.factory = factory;
-            this.BestelItemControls = bestelItemControls;
             this.BestellingOpnemenForm = bestellingOpnemenForm;
+            this.Tafel = tafel;
             MenuItemService = new MenuItemService();
         }
         public BestelKnoppenControl()
@@ -45,51 +40,31 @@ namespace UI
         }
         private void btnVerstuur_Click(object sender, EventArgs e)
         {
-            BestellingService = new BestellingService();
             bestellingsItemService = new BestellingsItemService();
 
-            int laatsteBestellingId = BestellingService.GetLaatseBestelling(Tafel.Id, factory);
-            bool bestellingOpen = BestellingService.CheckVoorOpenstaandeBestelling(laatsteBestellingId, factory);
-
-            List<BestellingsitemModel> bestellingsItems = new List<BestellingsitemModel>();
-
-            foreach (BestelItemControl bestelItemControl in BestelItemControls)
-            {
-                int menuId = bestelItemControl.MenuItem.MenuId;
-                DateTime timestamp = bestelItemControl.TimeStamp;
-                int hoeveelheid = bestelItemControl.Aantal;
-                string commentaar = bestelItemControl.Commentaar;
-
-                
-                if (hoeveelheid > 0)
-                {
-                    BestellingsitemModel bestellingsitem;
-
-                    if (bestellingOpen)
-                    {
-                       bestellingsitem = new BestellingsitemModel(menuId, laatsteBestellingId, timestamp, hoeveelheid, commentaar);
-                    }
-                    else
-                    {
-                        //Creeër nieuw bestelling en geef de bestellingId mee van de nieuwe Bestelling
-                        int bestellingId = BestellingService.InsertBestelling(Bestelling, factory);
-                        bestellingsitem = new BestellingsitemModel(menuId, bestellingId, timestamp, hoeveelheid, commentaar);
-                    }
-                    bestellingsItems.Add(bestellingsitem);
-                }
-            }
+            BestellingHelperClass bestellingHelper = new BestellingHelperClass();
+            List<BestellingsitemModel> bestellingsItems = bestellingHelper.CreateBestellingItemList(BestelItemControls, Bestelling, Tafel.Id);
 
             if (bestellingsItems.Any())
             {
-               bool exeception = bestellingsItemService.InsertBestellingItems(bestellingsItems, factory);
-               MessageBox.Show(exeception.ToString());
+               bool exeception = bestellingsItemService.InsertBestellingItems(bestellingsItems);
+                if (!exeception)
+                {
+                    MessageBox.Show("Task failed succesfully");
+                }
             }
-             
+
+            BestellingOpnemenForm.pnlMain.Controls.Clear();
+            btnFris.PerformClick();
         }
 
         private void btnOverzicht_Click(object sender, EventArgs e)
         {
-
+            BestellingOpnemenForm.pnlMain.Controls.Clear();
+            foreach (BestelItemControl bestelItemControl in BestelItemControls)
+            {
+                BestellingOpnemenForm.pnlMain.Controls.Add(bestelItemControl);
+            }
         }
 
         private void btnFris_Click(object sender, EventArgs e)
@@ -100,6 +75,11 @@ namespace UI
             foreach (MenuItemModel menuItem in menuItems)
             {
                 BestelItemControl bestelItem = new BestelItemControl(menuItem, BestellingOpnemenForm, this);
+                if (menuItem.Voorraad == 0)
+                {
+                    bestelItem.addButton1.Hide();
+                    bestelItem.lblItem.ForeColor = Color.FromArgb(255, 0, 0);
+                }
                 this.BestellingOpnemenForm.pnlMain.Controls.Add(bestelItem);
             }
         }
@@ -113,6 +93,11 @@ namespace UI
             foreach(MenuItemModel menuItem in menuItems)
             {
                 BestelItemControl bestelItem = new BestelItemControl(menuItem, BestellingOpnemenForm, this);
+                if (menuItem.Voorraad == 0)
+                {
+                    bestelItem.addButton1.Hide();
+                    bestelItem.lblItem.ForeColor = Color.FromArgb(255, 0, 0);
+                }
                 this.BestellingOpnemenForm.pnlMain.Controls.Add(bestelItem);
             }
         }
@@ -125,6 +110,11 @@ namespace UI
             foreach (MenuItemModel menuItem in menuItems)
             {
                 BestelItemControl bestelItem = new BestelItemControl(menuItem, BestellingOpnemenForm, this);
+                if (menuItem.Voorraad == 0)
+                {
+                    bestelItem.addButton1.Hide();
+                    bestelItem.lblItem.ForeColor = Color.FromArgb(255, 0, 0);
+                }
                 this.BestellingOpnemenForm.pnlMain.Controls.Add(bestelItem);
             }
         }
@@ -137,6 +127,11 @@ namespace UI
             foreach (MenuItemModel menuItem in menuItems)
             {
                 BestelItemControl bestelItem = new BestelItemControl(menuItem, BestellingOpnemenForm, this);
+                if (menuItem.Voorraad == 0)
+                {
+                    bestelItem.addButton1.Hide();
+                    bestelItem.lblItem.ForeColor = Color.FromArgb(255, 0, 0);
+                }
                 this.BestellingOpnemenForm.pnlMain.Controls.Add(bestelItem);
             }
         }
@@ -149,6 +144,11 @@ namespace UI
             foreach (MenuItemModel menuItem in menuItems)
             {
                 BestelItemControl bestelItem = new BestelItemControl(menuItem, BestellingOpnemenForm, this);
+                if (menuItem.Voorraad == 0)
+                {
+                    bestelItem.addButton1.Hide();
+                    bestelItem.lblItem.ForeColor = Color.FromArgb(255, 0, 0);
+                }
                 this.BestellingOpnemenForm.pnlMain.Controls.Add(bestelItem);
             }
         }
@@ -170,6 +170,11 @@ namespace UI
             foreach (MenuItemModel menuItem in menuItems)
             {
                 BestelItemControl bestelItem = new BestelItemControl(menuItem, BestellingOpnemenForm, this);
+                if (menuItem.Voorraad == 0)
+                {
+                    bestelItem.addButton1.Hide();
+                    bestelItem.lblItem.ForeColor = Color.FromArgb(255, 0, 0);
+                }
                 this.BestellingOpnemenForm.pnlMain.Controls.Add(bestelItem);
             }
         }
@@ -191,6 +196,11 @@ namespace UI
             foreach (MenuItemModel menuItem in menuItems)
             {
                 BestelItemControl bestelItem = new BestelItemControl(menuItem, BestellingOpnemenForm, this);
+                if (menuItem.Voorraad == 0)
+                {
+                    bestelItem.addButton1.Hide();
+                    bestelItem.lblItem.ForeColor = Color.FromArgb(255, 0, 0);
+                }
                 this.BestellingOpnemenForm.pnlMain.Controls.Add(bestelItem);
             }
         }
@@ -212,6 +222,11 @@ namespace UI
             foreach (MenuItemModel menuItem in menuItems)
             {
                 BestelItemControl bestelItem = new BestelItemControl(menuItem, BestellingOpnemenForm, this);
+                if (menuItem.Voorraad == 0)
+                {
+                    bestelItem.addButton1.Hide();
+                    bestelItem.lblItem.ForeColor = Color.FromArgb(255, 0, 0);
+                }
                 this.BestellingOpnemenForm.pnlMain.Controls.Add(bestelItem);
             }
         }
@@ -224,6 +239,11 @@ namespace UI
             foreach (MenuItemModel menuItem in menuItems)
             {
                 BestelItemControl bestelItem = new BestelItemControl(menuItem, BestellingOpnemenForm, this);
+                if (menuItem.Voorraad == 0)
+                {
+                    bestelItem.addButton1.Hide();
+                    bestelItem.lblItem.ForeColor = Color.FromArgb(255, 0, 0);
+                }
                 this.BestellingOpnemenForm.pnlMain.Controls.Add(bestelItem);
             }
         }

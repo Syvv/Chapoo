@@ -29,7 +29,6 @@ namespace UI
             
             this.RekeningLogica = new RekeningService();            
             this.Tafel = tafel;
-            this.Werknemer = werknemer;
 
             WeergevenRekeningItems();
             //WeergevenRekeningPrijzen();//naam aanpassen
@@ -57,7 +56,7 @@ namespace UI
         private void WeergevenRekeningItems()
         {
             int bestellingId = Tafel.Bestelling.Id;
-            List<BestellingsitemModel> BestellingenLijst = RekeningLogica.BesteldeItems(bestellingId, factory);
+            List<BestellingsitemModel> BestellingenLijst = RekeningLogica.BesteldeItems(bestellingId);
             int y = 50;
             int x = 50;
 
@@ -73,7 +72,7 @@ namespace UI
         }
         private void WeergevenRekeningPrijzen()  //lokatie aanpassen
         {
-            this.Geldoverzicht = new RekeningGeldOverzicht(Rekening, factory);
+            this.Geldoverzicht = new RekeningGeldOverzicht(Rekening);
             Geldoverzicht.Top = 550; //nog aanpassen
             Geldoverzicht.Left = 20; // nog aanpassen
             pnlBottom.Controls.Add(this.Geldoverzicht);

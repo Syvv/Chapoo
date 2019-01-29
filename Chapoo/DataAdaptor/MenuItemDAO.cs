@@ -10,7 +10,12 @@ namespace DataAdaptor
 {
     public class MenuItemDAO
     {
-        private readonly SqlConnection connection = DataConnection.connection;
+        private SqlConnection connection;
+
+        public MenuItemDAO(SqlConnection connection)
+        {
+            this.connection = connection ?? throw new ArgumentNullException(nameof(connection));
+        }
 
         public List<MenuItemModel> GetMenuItems()
         {

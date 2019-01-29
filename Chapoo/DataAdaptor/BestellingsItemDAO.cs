@@ -16,10 +16,6 @@ namespace DataAdaptor
         {
             this.connection = connection ?? throw new ArgumentNullException(nameof(connection));
         }
-        public BestellingsItemDAO()
-        {
-
-        }
         public void InsertBestellingItems(List<BestellingsitemModel> bestellingsitems)
         {
             StringBuilder sb = new StringBuilder();

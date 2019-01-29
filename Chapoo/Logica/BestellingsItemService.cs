@@ -51,6 +51,5 @@ namespace Logica
                 return DAO.HaalKeukenBestellingsitemsVandaagOp(vanochtend);
             }
         }
-
     }
 }

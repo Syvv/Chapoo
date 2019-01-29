@@ -60,7 +60,7 @@ namespace DataAdaptor
         {
             if (BestellingDAO == null)
             {
-                BestellingDAO = new BestellingDAO();
+                BestellingDAO = new BestellingDAO(Connection);
             }
             return BestellingDAO;
         }
@@ -86,7 +86,7 @@ namespace DataAdaptor
         {
             if (MenuItemDAO == null)
             {
-                MenuItemDAO = new MenuItemDAO();
+                MenuItemDAO = new MenuItemDAO(Connection);
             }
             return MenuItemDAO;
         }

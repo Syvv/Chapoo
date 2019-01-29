@@ -19,7 +19,7 @@ namespace UI
         public BestelKnoppenControl BestelKnoppen { get; set; }
 
         public MenuItemModel MenuItem { get; set; }
-        public DateTime TimeStamp { get; set; }
+        public DateTime TimeStamp { get; set; } 
         public string Commentaar = " ";
         public int Aantal { get; set; }
 

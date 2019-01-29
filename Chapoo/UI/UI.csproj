@@ -75,6 +75,7 @@
     <Compile Include="BestelKnoppenControl.Designer.cs">
       <DependentUpon>BestelKnoppenControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="BestellingHelperClass.cs" />
     <Compile Include="BestellingOpnemenForm.cs">
       <SubType>Form</SubType>
     </Compile>
