@@ -56,8 +56,8 @@ namespace UI
             else
             {
                 Controls.Clear();
-                
-                Panel ItemLijstContainer = new Panel() { Top = 30, Left = 175, AutoSize = true, AutoScroll = true, Width = 1600, };
+                BarKeukenHeader header = new BarKeukenHeader(LogOut) { Left = 75 };
+                Panel ItemLijstContainer = new Panel() { Top = 60, Left = 75, AutoSize = true, AutoScroll = true, Width = 1600, };
                 int y = 0;
                 foreach (BestellingsitemModel b in Bestellingen)
                 {
@@ -65,18 +65,16 @@ namespace UI
                     ItemLijstContainer.Controls.Add(uiElement);
                     y += uiElement.Height + 5;
                 }
-                //TODO: move this Control creation to another place
-                Controls.Add(new Label { Text = "Commentaar", Top = 0, Left = 840, Font = new System.Drawing.Font("Arial", 16), Height = 30, Width = 200 });
-                Button logoutbtn = new Button { Text = "Log uit!", Top = 0, Left = 0, Font = new System.Drawing.Font("Arial", 10), Height = 25, Width = 100 };
-                logoutbtn.Click += (s, e) =>
-                {
-                    new Login(this.factory).Show();
-                    this.Hide();
-                };
-                Controls.Add(logoutbtn);
+                Controls.Add(header);
                 Controls.Add(ItemLijstContainer);
             }
             
+        }
+
+        private void LogOut()
+        {
+            new Login(factory).Show();
+            this.Hide();
         }
 
         private void BarKeukenForm_FormClosed(object sender, FormClosedEventArgs e)
