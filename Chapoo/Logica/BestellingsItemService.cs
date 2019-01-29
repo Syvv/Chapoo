@@ -11,9 +11,9 @@ namespace Logica
     public class BestellingsItemService
     {
 
-        public List<BestellingsitemModel> GetBestellingsitems(WerknemerModel werknemer, DAOFactory factory)
+        public List<BestellingsitemModel> GetBestellingsitems(WerknemerModel werknemer)
         {
-            BestellingsItemDAO DAO = factory.CreateBestellingsItemDAO();
+            BestellingsItemDAO DAO = DAOFactory.Instance.CreateBestellingsItemDAO();
             if (werknemer.Functie == Functie.Bar)
             {
                 return DAO.HaalBarItemsOp();
@@ -21,23 +21,23 @@ namespace Logica
             return DAO.HaalKeukenItemsOp();
         }
 
-        public void StelBestellingsItemGereed(BestellingsitemModel item, DAOFactory factory)
+        public void StelBestellingsItemGereed(BestellingsitemModel item)
         {
-            BestellingsItemDAO DAO = factory.CreateBestellingsItemDAO();
+            BestellingsItemDAO DAO = DAOFactory.Instance.CreateBestellingsItemDAO();
             DAO.StelBestellingsItemGereed(item);
         }
-        public bool InsertBestellingItems(List<BestellingsitemModel> bestellingsitems, DAOFactory factory)
+        public bool InsertBestellingItems(List<BestellingsitemModel> bestellingsitems)
         {
-            BestellingsItemDAO DAO = factory.CreateBestellingsItemDAO();
+            BestellingsItemDAO DAO = DAOFactory.Instance.CreateBestellingsItemDAO();
 
                 DAO.InsertBestellingItems(bestellingsitems);
 
             return true;
         }
 
-        public List<BestellingsitemModel> GetAlleBestellingenVanVandaag(WerknemerModel werknemer, DAOFactory factory)
+        public List<BestellingsitemModel> GetAlleBestellingenVanVandaag(WerknemerModel werknemer)
         {
-            BestellingsItemDAO DAO = factory.CreateBestellingsItemDAO();
+            BestellingsItemDAO DAO = DAOFactory.Instance.CreateBestellingsItemDAO();
             //Maak huidige tijd aan
             DateTime now = DateTime.Now;
             DateTime vanochtend = new DateTime(now.Year,now.Month,now.Day);

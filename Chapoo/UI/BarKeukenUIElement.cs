@@ -16,7 +16,7 @@ namespace UI
     public partial class BarKeukenUIElement : UserControl
     {
         public delegate void HerbouwUI(BestellingsitemModel bestellingsitem);
-        public BarKeukenUIElement(BestellingsitemModel item, BestellingsItemService logica, HerbouwUI herbouwUI, DAOFactory factory)
+        public BarKeukenUIElement(BestellingsitemModel item, BestellingsItemService logica, HerbouwUI herbouwUI)
         {
             InitializeComponent();
             Tafelnummer.Text = "Tafel " + item.Tafel + ":";
@@ -29,9 +29,15 @@ namespace UI
 
             GereedstellenBtn.Click += (s, e) =>
             {
-                logica.StelBestellingsItemGereed(item, factory);
+                logica.StelBestellingsItemGereed(item);
                 herbouwUI(item);
             };
+        }
+
+        public void StyleAsFinished()
+        {
+            this.BackColor = Color.DarkGray;
+            GereedstellenBtn.Enabled = false;
         }
     }
 }

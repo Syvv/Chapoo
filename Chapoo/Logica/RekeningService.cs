@@ -10,23 +10,17 @@ namespace Logica
 {
     public class RekeningService
     {
-        [Obsolete("Don't use a non empty constructor")]
-        public RekeningService(DAOFactory factory)
+        public List<BestellingsitemModel> BesteldeItems(int bestellingsId)
         {
-
-        }
-
-        public List<BestellingsitemModel> BesteldeItems(int bestellingsId, DAOFactory factory)
-        {
-            List<BestellingsitemModel> besteldeItems = factory.CreateBestellingsItemDAO().HaalAlleItemsOp(bestellingsId);
+            List<BestellingsitemModel> besteldeItems = DAOFactory.Instance.CreateBestellingsItemDAO().HaalAlleItemsOp(bestellingsId);
 
             return besteldeItems;
         }
 
         //rekening opstellen Prijs
-        public RekeningModel RekeningOpstellen(int BestellingsId, DAOFactory factory)//Test de While Loop en BTW
+        public RekeningModel RekeningOpstellen(int BestellingsId)//Test de While Loop en BTW
         {
-            List<BestellingsitemModel> besteldeItems = BesteldeItems(BestellingsId, factory);
+            List<BestellingsitemModel> besteldeItems = BesteldeItems(BestellingsId);
 
             double btw21 = 0;
             double btw09 = 0;
@@ -84,12 +78,12 @@ namespace Logica
 
 
         //rekening versturen
-        public void RekeningBetaling(RekeningModel rekening, DAOFactory factory)//naam verbeteren
+        public void RekeningBetaling(RekeningModel rekening)//naam verbeteren
         {
             //fooi en niew eindbedragtoevoegen
 
 
-            RekeningDAO RekeningDataLaag = factory.CreateRekeningDAO();
+            RekeningDAO RekeningDataLaag = DAOFactory.Instance.CreateRekeningDAO();
             RekeningDataLaag.InsertRekening(rekening);
         }
 

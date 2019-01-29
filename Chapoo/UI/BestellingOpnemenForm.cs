@@ -24,17 +24,15 @@ namespace UI
         private TafelModel Tafel { get; set; }
         private BestellingsitemModel BestellingItemModel { get; set; }
         private List<BestelItemControl> BestelItemControls = new List<BestelItemControl>();
-        DAOFactory factory;
         //Lijst aanmaken van bestellingitems
         //Voorraad toonen
 
 
-        public BestellingOpnemenForm(WerknemerModel werknemer, TafelModel tafel, DAOFactory factory)
+        public BestellingOpnemenForm(WerknemerModel werknemer, TafelModel tafel)
         {
             this.Tafel = tafel;
-            this.factory = factory;
             this.Werknemer = werknemer;
-            this.BestelKnoppen = new BestelKnoppenControl(Tafel, factory, BestelItemControls, this);
+            this.BestelKnoppen = new BestelKnoppenControl(Tafel, BestelItemControls, this);
             this.MenuItemService = new MenuItemService();
 
             this.btnMenuAfrekenen.Click += new EventHandler(btnMenuAfrekenen_Click);
@@ -63,6 +61,13 @@ namespace UI
         private void btnMenuAfrekenen_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Hello there");
+            new RekeningFormOverzicht(factory, Tafel, Werknemer).Show();
+            this.Close();
+        }
+
+        private void btnMenuAfrekenen_Click_1(object sender, EventArgs e)
+        {
+
         }
 
         private void btnMenuOverzicht_Click(object sender, EventArgs e)

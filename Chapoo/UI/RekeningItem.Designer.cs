@@ -46,7 +46,7 @@
             // LblAantal
             // 
             this.LblAantal.AutoSize = true;
-            this.LblAantal.Location = new System.Drawing.Point(222, 12);
+            this.LblAantal.Location = new System.Drawing.Point(398, 12);
             this.LblAantal.Name = "LblAantal";
             this.LblAantal.Size = new System.Drawing.Size(47, 17);
             this.LblAantal.TabIndex = 1;
@@ -55,7 +55,7 @@
             // LblPrijs
             // 
             this.LblPrijs.AutoSize = true;
-            this.LblPrijs.Location = new System.Drawing.Point(343, 11);
+            this.LblPrijs.Location = new System.Drawing.Point(451, 12);
             this.LblPrijs.Name = "LblPrijs";
             this.LblPrijs.Size = new System.Drawing.Size(35, 17);
             this.LblPrijs.TabIndex = 2;
@@ -64,7 +64,7 @@
             // LblTotaalprijs
             // 
             this.LblTotaalprijs.AutoSize = true;
-            this.LblTotaalprijs.Location = new System.Drawing.Point(449, 11);
+            this.LblTotaalprijs.Location = new System.Drawing.Point(507, 12);
             this.LblTotaalprijs.Name = "LblTotaalprijs";
             this.LblTotaalprijs.Size = new System.Drawing.Size(75, 17);
             this.LblTotaalprijs.TabIndex = 3;
@@ -79,7 +79,7 @@
             this.Controls.Add(this.LblAantal);
             this.Controls.Add(this.lblItem);
             this.Name = "RekeningItem";
-            this.Size = new System.Drawing.Size(531, 39);
+            this.Size = new System.Drawing.Size(585, 40);
             this.ResumeLayout(false);
             this.PerformLayout();
 

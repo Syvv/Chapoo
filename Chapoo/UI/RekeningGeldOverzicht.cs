@@ -17,18 +17,16 @@ namespace UI
     {
         private RekeningModel Rekening { get; set; }
         private RekeningService RekeningLogica;
-        private DAOFactory Factory;
-        public RekeningGeldOverzicht(RekeningModel rekening, DAOFactory factory)
+        public RekeningGeldOverzicht(RekeningModel rekening)
         {
             InitializeComponent();
             this.Rekening = rekening;
-            this.Factory = factory;
-            this.RekeningLogica = new RekeningService(factory);
+            this.RekeningLogica = new RekeningService();
             PrijzenWeergeven();
         }
         private void PrijzenWeergeven()
         {
-            this.Rekening = RekeningLogica.RekeningOpstellen(Rekening.Bestelling.Id, Factory);
+            this.Rekening = RekeningLogica.RekeningOpstellen(Rekening.Bestelling.Id);
             OutTotaalBedrag.Text = string.Format("€ {0:F2} ", Rekening.Totaalbedrag);
             OutBtw21.Text = string.Format("€ {0:F2} ", Rekening.Btw21);
             OutBtw6.Text = string.Format("€ {0:F2}", Rekening.Btw6);
@@ -46,7 +44,7 @@ namespace UI
 
         private void BtnFooi_Click(object sender, EventArgs e) //deze sluiten???
         {
-            new FooiToevoegen(this.Rekening, Factory).Show();
+            new FooiToevoegen(this.Rekening).Show();
         }
     }
 }

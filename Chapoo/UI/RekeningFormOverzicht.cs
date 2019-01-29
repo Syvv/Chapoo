@@ -21,18 +21,18 @@ namespace UI
         private RekeningItem Rekeningitem { get; set; }
         private RekeningModel Rekening { get; set; }
         private TafelModel Tafel { get; set; }
-        private DAOFactory factory;
+        private WerknemerModel Werknemer { get; set; }
 
-        public RekeningFormOverzicht(DAOFactory factory, TafelModel tafel)
+        public RekeningFormOverzicht(TafelModel tafel)
         {
             InitializeComponent();
-            this.factory = factory;
             
-            this.RekeningLogica = new RekeningService(factory);            
+            this.RekeningLogica = new RekeningService();            
             this.Tafel = tafel;
+            this.Werknemer = werknemer;
 
             WeergevenRekeningItems();
-            WeergevenRekeningPrijzen();//naam aanpassen
+            //WeergevenRekeningPrijzen();//naam aanpassen
 
             this.btnMenuAfrekenen.Click += new EventHandler(btnMenuAfrekenen_Click);
             this.btnMenuOverzicht.Click += new EventHandler(btnMenuOverzicht_Click);
@@ -64,11 +64,11 @@ namespace UI
             foreach(BestellingsitemModel item in BestellingenLijst) //lokoatie aanpassen
             {
                 this.Rekeningitem = new RekeningItem(item.Naam, item.Hoeveelheid, item.Prijs, item.Hoeveelheid * item.Prijs);
-                Rekeningitem.Top = y; //nog aanpassen
-                Rekeningitem.Left = x; // nog aanpassen
+                //Rekeningitem.Top = y; //nog aanpassen
+                //Rekeningitem.Left = x; // nog aanpassen
                 pnlMain.Controls.Add(this.Rekeningitem);
 
-                y += 50;//de hoogte van de RekeningItem
+                y += 20;//de hoogte van de RekeningItem
             }            
         }
         private void WeergevenRekeningPrijzen()  //lokatie aanpassen

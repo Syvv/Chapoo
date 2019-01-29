@@ -20,27 +20,25 @@ namespace UI
         //kleuren
         //refresher voor de kleuren, vrij, bezet, bestelling klaar
 
-        public WerknemerModel HuidigeWerknemer { get; set; }        
-        private DAOFactory factory;
+        public WerknemerModel HuidigeWerknemer { get; set; }
         public TafelService TafelLogica;
 
-        public TafelOverzicht(WerknemerModel werknemer, DAOFactory factory)
+        public TafelOverzicht(WerknemerModel werknemer)
         {
             InitializeComponent();
             this.HuidigeWerknemer = werknemer;
-            this.factory = factory;
             titel.Text = "TafelOverzicht";
-            TafelLogica = new TafelService(factory);
+            TafelLogica = new TafelService();
         }
         private void uitlogButton1_Click(object sender, EventArgs e)
         {
-            new Login(factory).Show();
+            new Login().Show();
             this.Close();
         }
         private void OpenenBestellingForm(int tafelNummer)
         {
-            TafelModel tafel = TafelLogica.TafelVuller(tafelNummer, factory);
-            new BestellingOpnemenForm(HuidigeWerknemer, tafel, factory).Show();
+            TafelModel tafel = TafelLogica.TafelVuller(tafelNummer);
+            new BestellingOpnemenForm(HuidigeWerknemer, tafel).Show();
             this.Close();
         }
         private void tafelButton1_Click(object sender, EventArgs e)
@@ -102,6 +100,5 @@ namespace UI
             int tafelNummer = 10;
             OpenenBestellingForm(tafelNummer);
         }
-
     }
 }
