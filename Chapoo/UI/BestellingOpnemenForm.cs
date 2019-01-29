@@ -36,7 +36,10 @@ namespace UI
             this.Werknemer = werknemer;
             this.BestelKnoppen = new BestelKnoppenControl(Tafel, factory, BestelItemControls, this);
             this.MenuItemService = new MenuItemService();
+
             this.btnMenuAfrekenen.Click += new EventHandler(btnMenuAfrekenen_Click);
+            this.btnMenuOverzicht.Click += new EventHandler(btnMenuOverzicht_Click);
+            this.btnMenuOpnemen.Click += new EventHandler(btnMenuOpnemen_Click);
 
             txtTafel.Text += " " + Tafel.Id.ToString();
 
@@ -60,6 +63,16 @@ namespace UI
         private void btnMenuAfrekenen_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Hello there");
+        }
+
+        private void btnMenuOverzicht_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMenuOpnemen_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

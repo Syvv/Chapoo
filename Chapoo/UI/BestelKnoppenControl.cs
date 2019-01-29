@@ -19,9 +19,9 @@ namespace UI
         private BestellingService BestellingService { get; set; }
         private MenuItemService MenuItemService { get; set; }
         public TafelModel Tafel { get; set; }
-        int TafelId { get; set; }
         private BestellingsItemService bestellingsItemService { get; set; }
         private BestellingOpnemenForm BestellingOpnemenForm { get; set; }
+        public List<BestelItemControl> BestelItemControls = new List<BestelItemControl>();
 
         TimeSpan start = new TimeSpan(10, 0, 0);
         TimeSpan end = new TimeSpan(17, 0, 0);
@@ -29,14 +29,11 @@ namespace UI
 
         DAOFactory factory;
 
-        public List<BestelItemControl> BestelItemControls = new List<BestelItemControl>();
-
 
         public BestelKnoppenControl(TafelModel tafel, DAOFactory factory, List<BestelItemControl> bestelItemControls, BestellingOpnemenForm bestellingOpnemenForm)
         {
             InitializeComponent();
             this.Tafel = tafel;
-            this.TafelId = tafel.Id;
             this.factory = factory;
             this.BestelItemControls = bestelItemControls;
             this.BestellingOpnemenForm = bestellingOpnemenForm;
@@ -51,7 +48,7 @@ namespace UI
             BestellingService = new BestellingService();
             bestellingsItemService = new BestellingsItemService();
 
-            int laatsteBestellingId = BestellingService.GetLaatseBestelling(TafelId, factory);
+            int laatsteBestellingId = BestellingService.GetLaatseBestelling(Tafel.Id, factory);
             bool bestellingOpen = BestellingService.CheckVoorOpenstaandeBestelling(laatsteBestellingId, factory);
 
             List<BestellingsitemModel> bestellingsItems = new List<BestellingsitemModel>();
@@ -98,7 +95,13 @@ namespace UI
         private void btnFris_Click(object sender, EventArgs e)
         {
             this.BestellingOpnemenForm.pnlMain.Controls.Clear();
-            this.MenuItemService.Categoriseren(Categorie.Frisdrank);
+            List<MenuItemModel> menuItems = MenuItemService.Categoriseren(Categorie.Frisdrank);
+
+            foreach (MenuItemModel menuItem in menuItems)
+            {
+                BestelItemControl bestelItem = new BestelItemControl(menuItem, BestellingOpnemenForm, this);
+                this.BestellingOpnemenForm.pnlMain.Controls.Add(bestelItem);
+            }
         }
 
         private void btnBier_Click(object sender, EventArgs e)
@@ -129,61 +132,100 @@ namespace UI
         private void btnSterk_Click(object sender, EventArgs e)
         {
             this.BestellingOpnemenForm.pnlMain.Controls.Clear();
-            this.MenuItemService.Categoriseren(Categorie.SterkeDrank);
+            List<MenuItemModel> menuItems = MenuItemService.Categoriseren(Categorie.SterkeDrank);
+
+            foreach (MenuItemModel menuItem in menuItems)
+            {
+                BestelItemControl bestelItem = new BestelItemControl(menuItem, BestellingOpnemenForm, this);
+                this.BestellingOpnemenForm.pnlMain.Controls.Add(bestelItem);
+            }
         }
 
         private void btnWarm_Click(object sender, EventArgs e)
         {
             this.BestellingOpnemenForm.pnlMain.Controls.Clear();
-            this.MenuItemService.Categoriseren(Categorie.KoffieThee);
+            List<MenuItemModel> menuItems = MenuItemService.Categoriseren(Categorie.KoffieThee);
+
+            foreach (MenuItemModel menuItem in menuItems)
+            {
+                BestelItemControl bestelItem = new BestelItemControl(menuItem, BestellingOpnemenForm, this);
+                this.BestellingOpnemenForm.pnlMain.Controls.Add(bestelItem);
+            }
         }
 
         private void btnNa_Click(object sender, EventArgs e)
         {
             this.BestellingOpnemenForm.pnlMain.Controls.Clear();
+            List<MenuItemModel> menuItems;
 
             if ((now > start) && (now < end))
             {
-                this.MenuItemService.Categoriseren(Categorie.LunchNagerecht);
+                menuItems = MenuItemService.Categoriseren(Categorie.LunchNagerecht);
             }
             else
             {
-                this.MenuItemService.Categoriseren(Categorie.DinerNagerecht);
-            }            
+               menuItems = MenuItemService.Categoriseren(Categorie.DinerNagerecht);
+            }
+
+            foreach (MenuItemModel menuItem in menuItems)
+            {
+                BestelItemControl bestelItem = new BestelItemControl(menuItem, BestellingOpnemenForm, this);
+                this.BestellingOpnemenForm.pnlMain.Controls.Add(bestelItem);
+            }
         }
 
         private void btnVoor_Click(object sender, EventArgs e)
         {
             this.BestellingOpnemenForm.pnlMain.Controls.Clear();
+            List<MenuItemModel> menuItems;
 
             if ((now > start) && (now < end))
             {
-                this.MenuItemService.Categoriseren(Categorie.LunchVoorgerecht);
+                menuItems = MenuItemService.Categoriseren(Categorie.LunchVoorgerecht);
             }
             else
             {
-                this.MenuItemService.Categoriseren(Categorie.DinerVoorgerecht);
+                menuItems = MenuItemService.Categoriseren(Categorie.DinerVoorgerecht);
+            }
+
+            foreach (MenuItemModel menuItem in menuItems)
+            {
+                BestelItemControl bestelItem = new BestelItemControl(menuItem, BestellingOpnemenForm, this);
+                this.BestellingOpnemenForm.pnlMain.Controls.Add(bestelItem);
             }
         }
 
         private void btnHoofd_Click(object sender, EventArgs e)
         {
             this.BestellingOpnemenForm.pnlMain.Controls.Clear();
+            List<MenuItemModel> menuItems;
 
             if ((now > start) && (now < end))
             {
-                this.MenuItemService.Categoriseren(Categorie.LunchHoofdgerecht);
+                menuItems = MenuItemService.Categoriseren(Categorie.LunchHoofdgerecht);
             }
             else
             {
-                this.MenuItemService.Categoriseren(Categorie.DinerHoofdgerecht);
+                menuItems = MenuItemService.Categoriseren(Categorie.DinerHoofdgerecht);
+            }
+
+            foreach (MenuItemModel menuItem in menuItems)
+            {
+                BestelItemControl bestelItem = new BestelItemControl(menuItem, BestellingOpnemenForm, this);
+                this.BestellingOpnemenForm.pnlMain.Controls.Add(bestelItem);
             }
         }
 
         private void btnTussen_Click(object sender, EventArgs e)
         {
             this.BestellingOpnemenForm.pnlMain.Controls.Clear();
-            this.MenuItemService.Categoriseren(Categorie.DinerTussengerecht);
+            List<MenuItemModel> menuItems = MenuItemService.Categoriseren(Categorie.DinerTussengerecht);
+
+            foreach (MenuItemModel menuItem in menuItems)
+            {
+                BestelItemControl bestelItem = new BestelItemControl(menuItem, BestellingOpnemenForm, this);
+                this.BestellingOpnemenForm.pnlMain.Controls.Add(bestelItem);
+            }
         }
     }
 }

@@ -31,6 +31,14 @@
             this.pnlTop.SuspendLayout();
             this.SuspendLayout();
             // 
+            // btnMenuOverzicht
+            // 
+            this.btnMenuOverzicht.Click += new System.EventHandler(this.btnMenuOverzicht_Click);
+            // 
+            // btnMenuOpnemen
+            // 
+            this.btnMenuOpnemen.Click += new System.EventHandler(this.btnMenuOpnemen_Click);
+            // 
             // BestellingOpnemenForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -45,6 +53,5 @@
 
         #endregion
         private System.Windows.Forms.FontDialog fontDialog1;
-        private System.Windows.Forms.Button btnTijdelijk;
     }
 }
