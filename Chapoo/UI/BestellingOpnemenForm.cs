@@ -27,7 +27,8 @@ namespace UI
         //Lijst aanmaken van bestellingitems
         //Voorraad toonen
 
-
+        //ik(robbin) heb dit even neergezet net als de button onderin, niet schrikken
+        private DAOFactory factory;
         public BestellingOpnemenForm(WerknemerModel werknemer, TafelModel tafel, DAOFactory factory)
         {
             this.Tafel = tafel;
@@ -45,6 +46,9 @@ namespace UI
             }           
 
             pnlBottom.Controls.Add(BestelKnoppen);
+
+            //Robbin heeft dit ook neergezet
+            this.factory = factory;
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -57,6 +61,13 @@ namespace UI
 
         private void backButton1_Click(object sender, EventArgs e)
         {
+        }
+
+        private void btnTijdelijk_Click(object sender, EventArgs e)
+        {
+            //tijdelijke connectie naar mijn deel
+            RekeningFormOverzicht form = new RekeningFormOverzicht(factory, Tafel);
+            form.Show();
         }
     }
 }

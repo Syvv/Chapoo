@@ -13,9 +13,10 @@ namespace Model
         public int Tafel { get; set; }
         public DateTime Timestamp { get; set; }
         public int BestellingsId { get; set; }
+        public int BtwPercentage { get; set; }
 
         public BestellingsitemModel(string naam, string commentaar, int hoeveelheid,int tafelId,
-                                int id, DateTime timestamp, double prijs, Categorie categorie, int bestellingsId) 
+                                int id, DateTime timestamp, double prijs, Categorie categorie, int bestellingsId, int btwPercentage) 
                                     : base(id, naam, prijs, categorie)
         {
             this.Commentaar = commentaar;
@@ -23,6 +24,7 @@ namespace Model
             this.Tafel = tafelId;            
             this.Timestamp = timestamp;
             this.BestellingsId = bestellingsId;
+            this.BtwPercentage = btwPercentage;
         }
         public BestellingsitemModel(int menuId, int bestellingId, DateTime timestamp, 
             int hoeveelheid, string commentaar) : base(menuId)

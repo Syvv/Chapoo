@@ -60,7 +60,7 @@ namespace DataAdaptor
             StringBuilder sb = new StringBuilder();
             connection.Open();
 
-            sb.Append("SELECT m.item, h.commentaar, h.hoeveelheid, b.tafelId, m.menu_id, h.timestamp, m.prijs, m.categorie, h.bestellingId " +
+            sb.Append("SELECT m.item, h.commentaar, h.hoeveelheid, b.tafelId, m.menu_id, h.timestamp, m.prijs, m.categorie, h.bestellingId, m.btw " +
                         "FROM HEEFT_ITEM h " +
                         "INNER JOIN MENU m ON h.menuId = m.menu_id " +
                         "INNER JOIN BESTELLING b ON b.bestellingId = h.bestellingId ");
@@ -84,7 +84,7 @@ namespace DataAdaptor
             StringBuilder sb = new StringBuilder();
             connection.Open();
 
-            sb.Append("SELECT m.item, h.commentaar, h.hoeveelheid, b.tafelId, m.menu_id, h.timestamp, m.prijs, m.categorie, h.bestellingId " +
+            sb.Append("SELECT m.item, h.commentaar, h.hoeveelheid, b.tafelId, m.menu_id, h.timestamp, m.prijs, m.categorie, h.bestellingId, m.btw " +
                         "FROM HEEFT_ITEM h " +
                         "INNER JOIN MENU m ON h.menuId = m.menu_id " +
                         "INNER JOIN BESTELLING b ON b.bestellingId = h.bestellingId " +
@@ -174,10 +174,12 @@ namespace DataAdaptor
                     break;
                 default:
                     throw new DataMisalignedException("Niet bestaande categorie gebruikt!");
+                
             }
             int bestellingId = data.GetFieldValue<int>(8);
+            int btwPercentage = data.GetFieldValue<int>(9);
 
-            return new BestellingsitemModel(naam, commentaar, hoeveelheid, tafelId, id, timestamp, prijs, categorie, bestellingId);
+            return new BestellingsitemModel(naam, commentaar, hoeveelheid, tafelId, id, timestamp, prijs, categorie, bestellingId, btwPercentage);
         }
 
     }
