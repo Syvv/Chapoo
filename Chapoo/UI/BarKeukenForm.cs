@@ -16,10 +16,10 @@ namespace UI
 {
     public partial class BarKeukenForm : Form
     {
-        List<BestellingsitemModel> Bestellingen = new List<BestellingsitemModel>();
+        List<BestellingsitemModel> Bestellingen = new List<BestellingsitemModel>(); //List with all orders that have to be shown
         BestellingsItemService bestellingLogica;
-        private Model.WerknemerModel werknemer;
-        delegate void CreateTimerCallback();
+        private WerknemerModel werknemer;
+        delegate void CreateTimerCallback(); //Callback for invoking from the timer thread
         private int maxContainerHeight;
         System.Timers.Timer timer;
         BarKeukenHeader header;
@@ -32,11 +32,11 @@ namespace UI
 
             if(werknemer.Functie==Functie.Bar)
             {
-                header = new BarKeukenHeader(LogOut, ShowOrders, false); //initialize the header
+                header = new BarKeukenHeader(LogOut, ShowOrders, false); //initialize the header with false (indicates this isn't a kitchen)
             }
             else
             {
-                header = new BarKeukenHeader(LogOut, ShowOrders,  true); //initialize the header
+                header = new BarKeukenHeader(LogOut, ShowOrders, true); //initialize the header with true (indicates this is a kitchen)
             }
             
             bestellingLogica = new BestellingsItemService();
