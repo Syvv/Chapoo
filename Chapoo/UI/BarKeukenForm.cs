@@ -56,8 +56,8 @@ namespace UI
             else
             {
                 Controls.Clear();
-                BarKeukenHeader header = new BarKeukenHeader(LogOut) { Left = 75 };
-                Panel ItemLijstContainer = new Panel() { Top = 60, Left = 75, AutoSize = true, AutoScroll = true, Width = 1600, };
+                BarKeukenHeader header = new BarKeukenHeader(LogOut) { Left = 0 };
+                Panel ItemLijstContainer = new Panel() { Top = 60, Left = 0, AutoSize = true, AutoScroll = true, Width = 1600, };
                 int y = 0;
                 foreach (BestellingsitemModel b in Bestellingen)
                 {

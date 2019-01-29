@@ -73,7 +73,7 @@ namespace DataAdaptor
             String sql = sb.ToString();
             using (SqlCommand cmd = new SqlCommand(sql, connection))
             {
-                cmd.Parameters.AddWithValue("@tafelId", tafel);
+                cmd.Parameters.AddWithValue("@tafelId", tafel.Id);
                 data = cmd.ExecuteReader();
             }
 

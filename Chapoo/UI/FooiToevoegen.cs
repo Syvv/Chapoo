@@ -7,24 +7,57 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Logica;
+using Model;
+using DataAdaptor;
 
 namespace UI
 {
     public partial class FooiToevoegen : UserControl
     {
-        public FooiToevoegen()
+        private DAOFactory factory;
+        private RekeningModel Rekening;
+        private RekeningService RekeningLogica;
+
+        public FooiToevoegen(RekeningModel rekening, DAOFactory factory)
         {
             InitializeComponent();
+            this.Rekening = rekening;
+            this.factory = factory;
+            this.RekeningLogica = new RekeningService(factory);
+
+            BeginPrijzenWeeergeven();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void RadioBtnFooiInTotaal_CheckedChanged(object sender, EventArgs e)
         {
-            lblOptieKeuze.Text = "Fooi los toevoegen";
+            if (RadioBtnFooiInTotaal.Checked)
+            {
+                lblOptieKeuze.Text = "Fooi zit in het totaalbedrag";
+                LblOption.Text = "Totaalbedrag";                
+            }
         }
 
-        private void btnTotaalBedrag_Click(object sender, EventArgs e)
+        private void RadioBtnFooiLos_CheckedChanged(object sender, EventArgs e)
         {
-            lblOptieKeuze.Text = "Fooi zit in het totaalbedrag";
+            if (RadioBtnFooiLos.Checked)
+            {
+                lblOptieKeuze.Text = "Fooi los toevoegen";
+                LblOption.Text = "Fooi:";
+
+                LblFooi.Hide();
+                OutFooi.Hide();
+            }
+        }
+        private void BeginPrijzenWeeergeven()
+        {
+            OutBedrag.Text = string.Format("€ {0:F2} ", Rekening.Totaalbedrag);
+            OutTotaalbedrag.Text = string.Format("€ {0:F2} ", Rekening.Totaalbedrag);
+        }
+
+        k private void FooiToevoegen_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
