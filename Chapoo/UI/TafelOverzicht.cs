@@ -100,6 +100,5 @@ namespace UI
             int tafelNummer = 10;
             OpenenBestellingForm(tafelNummer);
         }
-
     }
 }

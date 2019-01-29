@@ -21,6 +21,7 @@ namespace UI
         private RekeningItem Rekeningitem { get; set; }
         private RekeningModel Rekening { get; set; }
         private TafelModel Tafel { get; set; }
+        private WerknemerModel Werknemer { get; set; }
 
         public RekeningFormOverzicht(TafelModel tafel)
         {
@@ -28,9 +29,10 @@ namespace UI
             
             this.RekeningLogica = new RekeningService();            
             this.Tafel = tafel;
+            this.Werknemer = werknemer;
 
             WeergevenRekeningItems();
-            WeergevenRekeningPrijzen();//naam aanpassen
+            //WeergevenRekeningPrijzen();//naam aanpassen
 
             this.btnMenuAfrekenen.Click += new EventHandler(btnMenuAfrekenen_Click);
             this.btnMenuOverzicht.Click += new EventHandler(btnMenuOverzicht_Click);
@@ -55,23 +57,23 @@ namespace UI
         private void WeergevenRekeningItems()
         {
             int bestellingId = Tafel.Bestelling.Id;
-            List<BestellingsitemModel> BestellingenLijst = RekeningLogica.BesteldeItems(bestellingId);
+            List<BestellingsitemModel> BestellingenLijst = RekeningLogica.BesteldeItems(bestellingId, factory);
             int y = 50;
             int x = 50;
 
             foreach(BestellingsitemModel item in BestellingenLijst) //lokoatie aanpassen
             {
                 this.Rekeningitem = new RekeningItem(item.Naam, item.Hoeveelheid, item.Prijs, item.Hoeveelheid * item.Prijs);
-                Rekeningitem.Top = y; //nog aanpassen
-                Rekeningitem.Left = x; // nog aanpassen
+                //Rekeningitem.Top = y; //nog aanpassen
+                //Rekeningitem.Left = x; // nog aanpassen
                 pnlMain.Controls.Add(this.Rekeningitem);
 
-                y += 50;//de hoogte van de RekeningItem
+                y += 20;//de hoogte van de RekeningItem
             }            
         }
         private void WeergevenRekeningPrijzen()  //lokatie aanpassen
         {
-            this.Geldoverzicht = new RekeningGeldOverzicht(Rekening);
+            this.Geldoverzicht = new RekeningGeldOverzicht(Rekening, factory);
             Geldoverzicht.Top = 550; //nog aanpassen
             Geldoverzicht.Left = 20; // nog aanpassen
             pnlBottom.Controls.Add(this.Geldoverzicht);

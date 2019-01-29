@@ -15,6 +15,10 @@ namespace UI
         public RekeningItem(string item, int aantal, double prijs, double totPrijs)
         {
             InitializeComponent();
+            lblItem.Text = item;
+            LblAantal.Text = aantal.ToString();
+            LblPrijs.Text = string.Format("€ {0:F2} ", prijs);
+            LblTotaalprijs.Text = string.Format("€ {0:F2} ", totPrijs);
         }
     }
 }

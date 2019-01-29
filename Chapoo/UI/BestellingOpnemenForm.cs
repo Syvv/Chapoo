@@ -58,6 +58,13 @@ namespace UI
         private void btnMenuAfrekenen_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Hello there");
+            new RekeningFormOverzicht(factory, Tafel, Werknemer).Show();
+            this.Close();
+        }
+
+        private void btnMenuAfrekenen_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
