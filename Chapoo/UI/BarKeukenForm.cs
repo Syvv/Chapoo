@@ -22,40 +22,38 @@ namespace UI
         private Model.WerknemerModel werknemer;
         delegate void CreateTimerCallback();
         private int maxContainerHeight;
+        System.Timers.Timer timer;
+        BarKeukenHeader header;
 
         public BarKeukenForm(Model.WerknemerModel werknemer, DAOFactory factory)
         {
             InitializeComponent();
             this.werknemer = werknemer;
             this.factory = factory;
+            maxContainerHeight = this.Height - 35; //The full height of the screen minus the height of the Controls at the top.
+
+            if(werknemer.Functie==Functie.Bar)
+            {
+                header = new BarKeukenHeader(LogOut, ShowOrders, factory, false); //initialize the header
+            }
+            else
+            {
+                header = new BarKeukenHeader(LogOut, ShowOrders, factory, true); //initialize the header
+            }
+            
             bestellingLogica = new BestellingsItemService();
+            //Get all currently open orders
             try
             {
                 Bestellingen = bestellingLogica.GetBestellingsitems(werknemer, factory);
-            }catch(System.Data.SqlClient.SqlException ex)
+            }catch(System.Data.SqlClient.SqlException)
             {
                 MessageBox.Show("Er is iets foutgegaan bij het verbinding maken met de database!", "Er is iets fout gegaan!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            
 
-            maxContainerHeight = this.Height - 35; //The full height of the screen minus the height of the Controls at the top.
+            InitialiseTimer();
             BuildUI();
-
-            System.Timers.Timer timer = new System.Timers.Timer { Interval = 60000 }; //1 minute
-            timer.Elapsed += (s, e) => {
-                try
-                {
-                    Bestellingen = bestellingLogica.GetBestellingsitems(werknemer, factory);
-                }
-                catch (System.Data.SqlClient.SqlException ex)
-                {
-                    MessageBox.Show("Er is iets foutgegaan bij het verbinding maken met de database!", "Er is iets fout gegaan!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                BuildUI();
-            };
-            timer.Start();
         }
 
         
@@ -70,8 +68,7 @@ namespace UI
             else
             {
                 Controls.Clear();
-                BarKeukenHeader header = new BarKeukenHeader(LogOut) { Left = 0 };
-                Panel ItemLijstContainer = new Panel() { Top = 60, Left = 0, AutoSize = true, AutoScroll = true, Width = 1600, };
+                Panel ItemLijstContainer = new Panel() { Top = 60, AutoSize = true, AutoScroll = true, Width = 1600, };
                 int y = 0;
                 foreach (BestellingsitemModel b in Bestellingen)
                 {
@@ -90,6 +87,56 @@ namespace UI
         {
             new Login(factory).Show();
             this.Hide();
+        }
+
+        private void ShowOrders(bool showCurrentOrdersOnly)
+        {
+            if(showCurrentOrdersOnly)
+            {
+                timer.Start();
+                try
+                {
+                    Bestellingen = bestellingLogica.GetBestellingsitems(werknemer, factory);
+                }
+                catch (System.Data.SqlClient.SqlException)
+                {
+                    MessageBox.Show("Er is iets foutgegaan bij het verbinding maken met de database!", "Er is iets fout gegaan!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                BuildUI();
+            }
+            else
+            {
+                timer.Stop();
+                try
+                {
+                    Bestellingen = bestellingLogica.GetAlleBestellingenVanVandaag(werknemer, factory);
+                }
+                catch (System.Data.SqlClient.SqlException)
+                {
+                    MessageBox.Show("Er is iets foutgegaan bij het verbinding maken met de database!", "Er is iets fout gegaan!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                BuildUI();
+            }
+        }
+
+        private void InitialiseTimer()
+        {
+            timer = new System.Timers.Timer { Interval = 60000 }; //1 minute
+            timer.Elapsed += (s, e) => {
+                try
+                {
+                    Bestellingen = bestellingLogica.GetBestellingsitems(werknemer, factory);
+                }
+                catch (System.Data.SqlClient.SqlException)
+                {
+                    MessageBox.Show("Er is iets foutgegaan bij het verbinding maken met de database!", "Er is iets fout gegaan!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                BuildUI();
+            };
+            timer.Start();
         }
 
         private void BarKeukenForm_FormClosed(object sender, FormClosedEventArgs e)

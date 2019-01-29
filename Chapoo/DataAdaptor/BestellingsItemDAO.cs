@@ -50,16 +50,56 @@ namespace DataAdaptor
 
         public List<BestellingsitemModel> HaalBarItemsOp()
         {
-            return HaalTeBereidenItemsOp("WHERE (m.categorie = 'F' OR m.categorie = 'B' OR m.categorie = 'W' OR m.categorie = 'G' OR m.categorie = 'K') AND status = 'besteld'");
+            return HaalVoorwaardelijkItemsOp("WHERE (m.categorie = 'F' OR m.categorie = 'B' OR m.categorie = 'W' OR m.categorie = 'G' OR m.categorie = 'K') AND status = 'besteld'");
         }
 
         public List<BestellingsitemModel> HaalKeukenItemsOp()
         {
-            return HaalTeBereidenItemsOp("WHERE (m.categorie = 'LV' OR m.categorie = 'LH' OR m.categorie = 'LN' OR m.categorie = 'DV' OR m.categorie = 'DT' OR m.categorie = 'DH' " +
+            return HaalVoorwaardelijkItemsOp("WHERE (m.categorie = 'LV' OR m.categorie = 'LH' OR m.categorie = 'LN' OR m.categorie = 'DV' OR m.categorie = 'DT' OR m.categorie = 'DH' " +
                         "OR m.categorie = 'DN') AND status = 'besteld'");
         }
 
-        private List<BestellingsitemModel> HaalTeBereidenItemsOp(string selecteerQuery)
+        public List<BestellingsitemModel> HaalBarBestellingsitemsVandaagOp(DateTime ochtendTijd)
+        {
+            return HaalBestellingsitemsVandaagOp(ochtendTijd, " AND (m.categorie = 'F' OR m.categorie = 'B' OR m.categorie = 'W' OR m.categorie = 'G' OR m.categorie = 'K');");
+        }
+
+        public List<BestellingsitemModel> HaalKeukenBestellingsitemsVandaagOp(DateTime ochtendTijd)
+        {
+            return HaalBestellingsitemsVandaagOp(ochtendTijd, " AND (m.categorie = 'LV' OR m.categorie = 'LH' OR m.categorie = 'LN' OR m.categorie = 'DV' OR m.categorie = 'DT' OR m.categorie = 'DH' " +
+                        "OR m.categorie = 'DN');");
+        }
+
+        private List<BestellingsitemModel> HaalBestellingsitemsVandaagOp(DateTime ochtendTijd, string queryToAdd)
+        {
+            List<BestellingsitemModel> result = new List<BestellingsitemModel>();
+            StringBuilder sb = new StringBuilder();
+            connection.Open();
+
+            sb.Append("SELECT m.item, h.commentaar, h.hoeveelheid, b.tafelId, m.menu_id, h.timestamp, m.prijs, m.categorie, h.bestellingId, h.status " +
+                        "FROM HEEFT_ITEM h " +
+                        "INNER JOIN MENU m ON h.menuId = m.menu_id " +
+                        "INNER JOIN BESTELLING b ON b.bestellingId = h.bestellingId " +
+                        "WHERE (h.timestamp BETWEEN @ochtend AND @nacht)");
+            sb.Append(queryToAdd);
+
+            SqlCommand command = new SqlCommand(sb.ToString(), connection);
+            SqlParameter ochtend = new SqlParameter("@ochtend", System.Data.SqlDbType.DateTime) { Value = ochtendTijd};
+            SqlParameter nacht = new SqlParameter("@nacht", System.Data.SqlDbType.DateTime) { Value = ochtendTijd.AddDays(1) };
+            command.Parameters.Add(ochtend);
+            command.Parameters.Add(nacht);
+
+            SqlDataReader data = command.ExecuteReader();
+            //lees alle waardes uit
+            while (data.Read())
+            {
+                result.Add(LeesBestellingsItemMetStatus(data));
+            }
+            connection.Close();
+            return result;
+        }
+
+        private List<BestellingsitemModel> HaalVoorwaardelijkItemsOp(string voorwaarde)//string voorwaarde is een deel van een query die bepaald welke items de query moet selecteren
         {
             List<BestellingsitemModel> result = new List<BestellingsitemModel>();
             StringBuilder sb = new StringBuilder();
@@ -69,7 +109,7 @@ namespace DataAdaptor
                         "FROM HEEFT_ITEM h " +
                         "INNER JOIN MENU m ON h.menuId = m.menu_id " +
                         "INNER JOIN BESTELLING b ON b.bestellingId = h.bestellingId ");
-            sb.Append(selecteerQuery);
+            sb.Append(voorwaarde);
 
             SqlCommand command = new SqlCommand(sb.ToString(), connection);
 
@@ -185,6 +225,25 @@ namespace DataAdaptor
             int btwPercentage = data.GetFieldValue<int>(9);
 
             return new BestellingsitemModel(naam, commentaar, hoeveelheid, tafelId, id, timestamp, prijs, categorie, bestellingId, btwPercentage);
+        }
+
+        private BestellingsitemModel LeesBestellingsItemMetStatus(SqlDataReader data)
+        {
+            BestellingsitemModel item = LeesBestellingsItem(data);
+
+            switch (data.GetFieldValue<string>(9))
+            {
+                case "besteld":
+                    item.Status = BestellingsItemStatus.besteld;
+                    break;
+                case "gereed":
+                    item.Status = BestellingsItemStatus.gereed;
+                    break;
+                case "afgeleverd":
+                    item.Status = BestellingsItemStatus.afgeleverd;
+                    break;
+            }
+            return item;
         }
 
     }
