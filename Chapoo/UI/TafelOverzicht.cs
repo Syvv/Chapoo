@@ -20,8 +20,7 @@ namespace UI
         //kleuren
         //refresher voor de kleuren, vrij, bezet, bestelling klaar
 
-        public WerknemerModel HuidigeWerknemer { get; set; }        
-        private DAOFactory factory;
+        public WerknemerModel HuidigeWerknemer { get; set; }
         public TafelService TafelLogica;
 
         public TafelOverzicht(WerknemerModel werknemer)
