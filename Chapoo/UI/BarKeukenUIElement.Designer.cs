@@ -86,8 +86,8 @@
             this.GereedstellenBtn.BackColor = System.Drawing.SystemColors.Info;
             this.GereedstellenBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.GereedstellenBtn.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.GereedstellenBtn.Location = new System.Drawing.Point(2400, 10);
-            this.GereedstellenBtn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.GereedstellenBtn.Location = new System.Drawing.Point(2350, 10);
+            this.GereedstellenBtn.Margin = new System.Windows.Forms.Padding(6);
             this.GereedstellenBtn.MinimumSize = new System.Drawing.Size(500, 58);
             this.GereedstellenBtn.Name = "GereedstellenBtn";
             this.GereedstellenBtn.Size = new System.Drawing.Size(500, 63);
@@ -99,7 +99,7 @@
             // 
             this.Timestamp.AutoSize = true;
             this.Timestamp.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.Timestamp.Location = new System.Drawing.Point(2900, 19);
+            this.Timestamp.Location = new System.Drawing.Point(2850, 19);
             this.Timestamp.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Timestamp.MinimumSize = new System.Drawing.Size(200, 48);
             this.Timestamp.Name = "Timestamp";
@@ -119,11 +119,11 @@
             this.Controls.Add(this.MenuItem);
             this.Controls.Add(this.Hoeveelheid);
             this.Controls.Add(this.Tafelnummer);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.MaximumSize = new System.Drawing.Size(3100, 231);
-            this.MinimumSize = new System.Drawing.Size(3100, 77);
+            this.Margin = new System.Windows.Forms.Padding(6);
+            this.MaximumSize = new System.Drawing.Size(3050, 231);
+            this.MinimumSize = new System.Drawing.Size(3050, 77);
             this.Name = "BarKeukenUIElement";
-            this.Size = new System.Drawing.Size(3100, 77);
+            this.Size = new System.Drawing.Size(3100, 79);
             this.ResumeLayout(false);
             this.PerformLayout();
 
