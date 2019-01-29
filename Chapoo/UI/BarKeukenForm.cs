@@ -28,17 +28,14 @@ namespace UI
             InitializeComponent();
             this.werknemer = werknemer;
             this.factory = factory;
-            bestellingLogica = new BestellingsItemService(werknemer, factory);
-            Bestellingen = bestellingLogica.GetBestellingsitems();
+            bestellingLogica = new BestellingsItemService();
+            Bestellingen = bestellingLogica.GetBestellingsitems(werknemer, factory);
             maxContainerHeight = this.Height - 35; //The full height of the screen minus the height of the Controls at the top.
             BuildUI();
-            
-            System.Timers.Timer timer = new System.Timers.Timer
-            {
-                Interval = 60000 //1 minute
-            };
+
+            System.Timers.Timer timer = new System.Timers.Timer { Interval = 60000 }; //1 minute
             timer.Elapsed += (s, e) => {
-                //BarKeukenQueue.getBestellingen(this.user);
+                bestellingLogica.GetBestellingsitems(werknemer, factory);
                 BuildUI();
             };
             timer.Start();
@@ -61,7 +58,8 @@ namespace UI
                 int y = 0;
                 foreach (BestellingsitemModel b in Bestellingen)
                 {
-                    BarKeukenUIElement uiElement = new BarKeukenUIElement(b, bestellingLogica, (item) => { Bestellingen.Remove(item); BuildUI(); }){ Top = y};
+                    BarKeukenUIElement uiElement = new BarKeukenUIElement(b, bestellingLogica, (item) => { Bestellingen.Remove(item); BuildUI(); }, factory)
+                        { Top = y};
                     ItemLijstContainer.Controls.Add(uiElement);
                     y += uiElement.Height + 5;
                 }

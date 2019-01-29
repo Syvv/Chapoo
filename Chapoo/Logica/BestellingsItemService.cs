@@ -10,19 +10,10 @@ namespace Logica
 {
     public class BestellingsItemService
     {
-        private BestellingsItemDAO DAO;
-        private WerknemerModel werknemer;
-        private DAOFactory factory;
 
-        public BestellingsItemService(WerknemerModel werknemer, DAOFactory factory)
+        public List<BestellingsitemModel> GetBestellingsitems(WerknemerModel werknemer, DAOFactory factory)
         {
-            this.werknemer = werknemer;
-            this.factory = factory;
-            DAO = factory.CreateBestellingsItemDAO();
-        }
-
-        public List<BestellingsitemModel> GetBestellingsitems()
-        {
+            BestellingsItemDAO DAO = factory.CreateBestellingsItemDAO();
             if(werknemer.Functie==Functie.Bar)
             {
                 return DAO.HaalBarItemsOp();
@@ -30,12 +21,14 @@ namespace Logica
             return DAO.HaalKeukenItemsOp();
         }
 
-        public void StelBestellingsItemGereed(BestellingsitemModel item)
+        public void StelBestellingsItemGereed(BestellingsitemModel item, DAOFactory factory)
         {
+            BestellingsItemDAO DAO = factory.CreateBestellingsItemDAO();
             DAO.StelBestellingsItemGereed(item);
         }
-        public bool InsertBestellingItems(List<BestellingsitemModel> bestellingsitems)
+        public bool InsertBestellingItems(List<BestellingsitemModel> bestellingsitems, DAOFactory factory)
         {
+            BestellingsItemDAO DAO = factory.CreateBestellingsItemDAO();
             try
             {
                 DAO.InsertBestellingItems(bestellingsitems);

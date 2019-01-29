@@ -9,13 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Model;
 using Logica;
+using DataAdaptor;
 
 namespace UI
 {
     public partial class BarKeukenUIElement : UserControl
     {
         public delegate void HerbouwUI(BestellingsitemModel bestellingsitem);
-        public BarKeukenUIElement(BestellingsitemModel item, BestellingsItemService logica, HerbouwUI herbouwUI)
+        public BarKeukenUIElement(BestellingsitemModel item, BestellingsItemService logica, HerbouwUI herbouwUI, DAOFactory factory)
         {
             InitializeComponent();
             Tafelnummer.Text = "Tafel " + item.Tafel + ":";
@@ -28,7 +29,7 @@ namespace UI
 
             GereedstellenBtn.Click += (s, e) =>
             {
-                logica.StelBestellingsItemGereed(item);
+                logica.StelBestellingsItemGereed(item, factory);
                 herbouwUI(item);
             };
         }
