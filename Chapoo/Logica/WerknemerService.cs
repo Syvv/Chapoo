@@ -8,12 +8,8 @@ using DataAdaptor;
 
 namespace Logica
 {
-    public class Werknemer
+    public class WerknemerService
     {
-        [Obsolete("Don't use a non empty constructor")]
-        public Werknemer(DAOFactory factory)
-        {
-        }
 
         public Model.WerknemerModel CheckInlogGegevens(string gebruikersnaam, string wachtwoord, DAOFactory factory)
         {

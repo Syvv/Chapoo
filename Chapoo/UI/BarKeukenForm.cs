@@ -29,13 +29,30 @@ namespace UI
             this.werknemer = werknemer;
             this.factory = factory;
             bestellingLogica = new BestellingsItemService();
-            Bestellingen = bestellingLogica.GetBestellingsitems(werknemer, factory);
+            try
+            {
+                Bestellingen = bestellingLogica.GetBestellingsitems(werknemer, factory);
+            }catch(System.Data.SqlClient.SqlException ex)
+            {
+                MessageBox.Show("Er is iets foutgegaan bij het verbinding maken met de database!", "Er is iets fout gegaan!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            
+
             maxContainerHeight = this.Height - 35; //The full height of the screen minus the height of the Controls at the top.
             BuildUI();
 
             System.Timers.Timer timer = new System.Timers.Timer { Interval = 60000 }; //1 minute
             timer.Elapsed += (s, e) => {
-                bestellingLogica.GetBestellingsitems(werknemer, factory);
+                try
+                {
+                    Bestellingen = bestellingLogica.GetBestellingsitems(werknemer, factory);
+                }
+                catch (System.Data.SqlClient.SqlException ex)
+                {
+                    MessageBox.Show("Er is iets foutgegaan bij het verbinding maken met de database!", "Er is iets fout gegaan!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 BuildUI();
             };
             timer.Start();
