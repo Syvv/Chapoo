@@ -21,8 +21,7 @@ namespace Logica
             BestellingDao = Factory.CreateBestellingsItemDAO();
         }
 
-        private string Opmerking { get; set; }
-        private int BestellingsId { get; set; }
+        //private int BestellingsId { get; set; }
 
         public List<BestellingsitemModel> BesteldeItems(int bestellingsId)
         {
@@ -32,9 +31,9 @@ namespace Logica
         }
 
         //rekening opstellen Prijs
-        public RekeningModel RekeningOpstellen()//Test de While Loop
+        public RekeningModel RekeningOpstellen(int bestellingsId)//Test de While Loop
         {
-            List<BestellingsitemModel> besteldeItems = BesteldeItems(BestellingsId);
+            List<BestellingsitemModel> besteldeItems = BesteldeItems(bestellingsId);
 
             double btw21 = 0;
             double btw09 = 0;
@@ -61,17 +60,6 @@ namespace Logica
             RekeningModel rekening = new RekeningModel(totaalBedrag, btw09, btw21);
 
             return rekening;
-        }
-
-        //Opmerking toevoegen
-        public void OpmerkingToevoegen(string opmerking)
-        {
-            this.Opmerking = opmerking;
-        }
-        //Opmerking Weergeven
-        public string OpmerkingWeergeven()
-        {
-            return (string) Opmerking;
         }
 
         //Fooi toevoegenbij Eindbedrag invullen
@@ -113,5 +101,24 @@ namespace Logica
 
             RekeningDataLaag.InsertRekening(rekening);
         }
+
+
+
+
+
+
+
+
+
+        //private string Opmerking { get; set; }
+        //public void OpmerkingToevoegen(string opmerking)
+        //{
+        //    this.Opmerking = opmerking;
+        //}
+        ////Opmerking Weergeven
+        //public string OpmerkingWeergeven()
+        //{
+        //    return (string)Opmerking;
+        //}
     }
 }

@@ -12,8 +12,8 @@ namespace UI
 {
     public partial class RekeningOpmerkingForm : Form
     {
-        private string Opmerking { get; set; }
-        public RekeningOpmerkingForm(ref string opmerking)
+        public string Opmerking { get; set; }
+        public RekeningOpmerkingForm(string opmerking)
         {
             InitializeComponent();
             this.Opmerking = opmerking;
