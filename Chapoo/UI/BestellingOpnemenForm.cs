@@ -16,49 +16,43 @@ namespace UI
 {
     public partial class BestellingOpnemenForm : BaseFormMobile
     {
-        public MenuItemService MenuItemService = new MenuItemService();
-        BestelItemControl BestelItem { get; set; }
-        BestelKnoppenControl BestelKnoppen { get; set; }
+        private MenuItemService MenuItemService { get; }
+        private BestelItemControl BestelItem { get; set; }
+        private BestelKnoppenControl BestelKnoppen { get; set; }
+        //Hoort bestelling hier?
         private BestellingModel Bestelling { get; set; }
         private WerknemerModel Werknemer { get; set;}
         private TafelModel Tafel { get; set; }
+        private BestellingsitemModel BestellingItemModel { get; set; }
+        //Lijst aanmaken van bestellingitems
+        //Voorraad toonen
 
-        public BestellingOpnemenForm()
-        {
-            this.Tafel = new TafelModel(1);
-            this.Werknemer = new WerknemerModel(1);
-            this.Bestelling = new BestellingModel(Werknemer, Tafel);
-            this.BestelKnoppen = new BestelKnoppenControl(Bestelling);
-            foreach (MenuItemModel menuItem in MenuItemService.GetItems())
-            {
-                BestelItem = new BestelItemControl(menuItem, this, BestelKnoppen);                
-                pnlMain.Controls.Add(BestelItem);
-            }            
-            pnlBottom.Controls.Add(BestelKnoppen);
-        }
 
         public BestellingOpnemenForm(WerknemerModel werknemer, TafelModel tafel)
         {
             this.Tafel = tafel;
-            this.Werknemer = new WerknemerModel(1);
+            this.Werknemer = werknemer;
             this.Bestelling = new BestellingModel(Werknemer, Tafel);
-            this.BestelKnoppen = new BestelKnoppenControl(Bestelling);
-            foreach (MenuItemModel menuItem in MenuItemService.GetItems())
+            this.BestelKnoppen = new BestelKnoppenControl(Bestelling, Tafel);
+            this.MenuItemService = new MenuItemService();
+
+            txtTafel.Text += " " + Tafel.Id.ToString();
+
+            foreach(MenuItemModel menuItem in MenuItemService.GetItems())
             {
                 BestelItem = new BestelItemControl(menuItem, this, BestelKnoppen);
                 pnlMain.Controls.Add(BestelItem);
-            }
+            }           
+
             pnlBottom.Controls.Add(BestelKnoppen);
         }
 
         private void Bestelling_opnemen_form_Load(object sender, EventArgs e)
         {
-
         }
 
         private void backButton1_Click(object sender, EventArgs e)
         {
-            //new TafelOverzicht(Werknemer, ).Show();
         }
     }
 }

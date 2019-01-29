@@ -35,5 +35,56 @@ namespace DataAdaptor
             connection.Close();
             return bestellingId;
         }
+        public bool CheckVoorOpenstaandeBestelling(int bestellingId)
+        {
+            bool bestellingStaatOpen = false;
+            StringBuilder sb = new StringBuilder();
+            SqlDataReader data;
+
+            connection.Open();
+
+            sb.Append("SELECT bestellingId FROM REKENING WHERE bestellingId = @bestellingId");
+
+            String sql = sb.ToString();
+            using (SqlCommand cmd = new SqlCommand(sql, connection))
+            {
+                cmd.Parameters.AddWithValue("@bestellingId", bestellingId);
+                data = cmd.ExecuteReader();
+            }
+            
+            if (!data.HasRows)
+                bestellingStaatOpen = true;
+
+            connection.Close();
+
+            return bestellingStaatOpen;
+        }
+        public int GetLaatsteBestelling(TafelModel tafel)
+        {
+            int bestellingId = 0;
+
+            StringBuilder sb = new StringBuilder();
+            SqlDataReader data;
+
+            connection.Open();
+
+            sb.Append("SELECT max(bestellingId) FROM BESTELLING WHERE tafelId = @tafelId");
+
+            String sql = sb.ToString();
+            using (SqlCommand cmd = new SqlCommand(sql, connection))
+            {
+                cmd.Parameters.AddWithValue("@tafelId", tafel);
+                data = cmd.ExecuteReader();
+            }
+
+            while (data.Read())
+            {
+                bestellingId = (int)data["bestellingId"];
+            }
+
+            connection.Close();
+
+            return bestellingId;
+        }
     }
 }

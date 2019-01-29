@@ -9,14 +9,14 @@ namespace Model
     public class TafelModel
     {
         public int Id { get; set; }
-        public Status Statuss { get; set; }
+        public Status Status { get; set; }
         public int Zitplaatsen { get; set; }
         public BestellingModel Bestelling { get; set; }
 
         public TafelModel(int id, Status status, int zitplaatsen, BestellingModel bestelling)
         {
             this.Id = id;
-            this.Statuss = status;
+            this.Status = status;
             this.Zitplaatsen = zitplaatsen;
             this.Bestelling = bestelling;
         }

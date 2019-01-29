@@ -14,7 +14,7 @@ namespace UI
 {
     public partial class RekeningGeldOverzicht : UserControl
     {
-        private RekeningModel rekening;
+        private RekeningModel rekening { get; set; }
         public RekeningGeldOverzicht(RekeningModel rekening)
         {
             InitializeComponent();
@@ -27,6 +27,13 @@ namespace UI
             OutBtw21.Text = string.Format("€ {0:F2} ", rekening.Btw21);
             OutBtw6.Text = string.Format("€ {0:F2}", rekening.Btw6);
             OutFooi.Text = string.Format("€ {0:F2}", rekening.Fooi);
+        }
+
+        private void BtnOpmerking_Click(object sender, EventArgs e)
+        {
+            string opmerking = rekening.Opmerking;
+            new RekeningOpmerkingForm(ref opmerking).ShowDialog();//kan niet kloppen
+            this.rekening.Opmerking = opmerking;
         }
     }
 }

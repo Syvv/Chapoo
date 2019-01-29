@@ -21,5 +21,9 @@ namespace Model
             this.Prijs = prijs;
             this.Categorie = categorie;
         }
+        public ItemModel(int menuId)
+        {
+            this.MenuId = menuId;
+        }
     }
 }

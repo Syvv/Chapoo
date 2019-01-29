@@ -42,7 +42,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BestellingModel.cs" />
     <Compile Include="BestellingsitemModel.cs" />
     <Compile Include="Enummeraties.cs" />
     <Compile Include="ItemModel.cs" />
@@ -50,6 +49,7 @@
     <Compile Include="NoSuchUserException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RekeningModel.cs" />
+    <Compile Include="BestellingModel.cs" />
     <Compile Include="TafelModel.cs" />
     <Compile Include="WerknemerModel.cs" />
   </ItemGroup>
