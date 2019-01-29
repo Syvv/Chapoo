@@ -55,7 +55,7 @@ namespace UI
             OutTotaalbedrag.Text = string.Format("€ {0:F2} ", Rekening.Totaalbedrag);
         }
 
-        k private void FooiToevoegen_Load(object sender, EventArgs e)
+        private void FooiToevoegen_Load(object sender, EventArgs e)
         {
 
         }

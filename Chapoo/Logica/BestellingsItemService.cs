@@ -38,7 +38,6 @@ namespace Logica
         {
             try
             {
-                DAO = new BestellingsItemDAO();
                 DAO.InsertBestellingItems(bestellingsitems);
             }
             catch (Exception)
