@@ -14,7 +14,6 @@ namespace DataAdaptor
         private SqlConnection Connection;
         //Instances zodat er niet meer dan 1 bestaat op een moment
         private BestellingsItemDAO BestellingsItemDAO = null;
-        private ItemDAO ItemDAO = null;
         private RekeningDAO RekeningDAO = null;
         private TafelDAO TafelDAO = null;
         private WerknemerDAO WerknemerDAO = null;
@@ -36,15 +35,6 @@ namespace DataAdaptor
                 BestellingsItemDAO = new BestellingsItemDAO(Connection);
             }
             return BestellingsItemDAO;
-        }
-
-        public ItemDAO CreateItemDAO()
-        {
-            if (ItemDAO == null)
-            {
-                ItemDAO = new ItemDAO();
-            }
-            return ItemDAO;
         }
 
         public RekeningDAO CreateRekeningDAO()
