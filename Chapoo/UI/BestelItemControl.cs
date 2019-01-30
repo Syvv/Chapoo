@@ -73,7 +73,7 @@ namespace UI
             {
                 Add = true;                
                 BestellingOpnemenForm.pnlBottom.Controls.Add(ItemOpties);
-                addButton1.BackColor = Color.FromArgb(106, 57, 55);
+                addButton1.BackColor = Color.FromArgb(255, 178, 178);
                 BestelKnoppen.BestelItemControls.Add(this);
                 this.Aantal = 1;
             }
