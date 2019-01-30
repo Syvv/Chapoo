@@ -125,7 +125,7 @@ namespace UI
 
         private void BetalingAfronden(BetaalMethode methode)
         {
-            Rekening.Methode = methode;
+            Rekening.BetaalMethode = methode;
 
             if (FooiIngevuldCheck())
             {

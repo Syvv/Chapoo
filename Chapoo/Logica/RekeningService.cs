@@ -84,39 +84,11 @@ namespace Logica
             return false;
         }
 
-
         //rekening versturen
         public void RekeningBetaling(RekeningModel rekening, int BestellingsId)//naam verbeteren
         {
             RekeningDAO RekeningDataLaag = DAOFactory.Instance.CreateRekeningDAO();
             RekeningDataLaag.InsertRekening(rekening, BestellingsId);
         }
-
-
-
-
-
-
-
-
-
-        //private string Opmerking { get; set; }
-        //public void OpmerkingToevoegen(string opmerking)
-        //{
-        //    this.Opmerking = opmerking;
-        //}
-        ////Opmerking Weergeven
-        //public string OpmerkingWeergeven()
-        //{
-        //    return (string)Opmerking;
-        //}
-        //fooi handmatig toevoegen als er los fooi gegeven wordt.
-        //public double NieuwTotaalbedrag(double fooi, RekeningModel rekening) //als het goed is kan deze weg
-        //{
-        //    rekening.Fooi = fooi;
-        //    rekening.Totaalbedrag += fooi;
-
-        //    return rekening.Totaalbedrag;
-        //}
     }
 }
