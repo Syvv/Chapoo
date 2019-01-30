@@ -28,7 +28,7 @@ namespace DataAdaptor
                 command.Parameters.AddWithValue("@totaalbedrag", rekening.Totaalbedrag);
                 command.Parameters.AddWithValue("@fooi", rekening.Fooi);
                 command.Parameters.AddWithValue("@opmerking", rekening.Opmerking);
-                command.Parameters.AddWithValue("@betaalmanier", rekening.Methode); //deze nog verandern
+                command.Parameters.AddWithValue("@betaalmanier", rekening.BetaalMethode);
                 command.ExecuteNonQuery();
             }
 
@@ -51,39 +51,6 @@ namespace DataAdaptor
 
             connection.Close();
             return bestellingsid;
-        }
-        public List<BestellingsitemModel> OphalenBestellingen(int bestellingId)
-        {
-            List<BestellingsitemModel> bestellingen = new List<BestellingsitemModel>();
-
-            StringBuilder sb = new StringBuilder();
-            connection.Open();
-
-            sb.Append("SELECT m.item, m.prijs, m.categorie, ht.hoeveelheid FROM HEEFT_ITEM as ht, MENU as m, BESTELLING as b Where b.bestellingid = ht.bestellingId and ht.menuid = m.menu_id and b.bestellingId = @bestellingId");
-
-            SqlCommand command = new SqlCommand(sb.ToString(), connection);
-            command.Parameters.AddWithValue("@bestellingId", bestellingId);
-
-            SqlDataReader reader = command.ExecuteReader();
-            while (reader.Read())
-            {
-                string naam = reader.GetString(0);
-                int hoeveelheid = reader.GetInt32(3);
-                double prijs = reader.GetDouble(1);
-                Categorie categorie = (Categorie)reader.GetValue(2);
-
-                string commentaar = "";
-                int tafel = 0;
-                int id = bestellingId;
-                DateTime timestamp = DateTime.MinValue;
-
-                BestellingsitemModel x = new BestellingsitemModel(naam, commentaar, hoeveelheid, tafel,id,timestamp , prijs, categorie,0,0);
-
-                bestellingen.Add(x);
-            }
-
-            connection.Close();
-            return bestellingen;
         }
     }
 }

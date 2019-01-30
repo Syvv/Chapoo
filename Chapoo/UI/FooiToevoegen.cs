@@ -125,11 +125,12 @@ namespace UI
 
         private void BetalingAfronden(BetaalMethode methode)
         {
-            Rekening.Methode = methode;
+            Rekening.BetaalMethode = methode;
 
             if (FooiIngevuldCheck())
             {
                 RekeningLogica.RekeningBetaling(Rekening, BestellingsId);
+                MessageBox.Show("bestelling is gelukt");
             }
         }
     }

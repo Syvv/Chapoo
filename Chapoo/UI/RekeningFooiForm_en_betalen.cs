@@ -23,10 +23,10 @@ namespace UI
             InitializeComponent();
             this.Rekening = Rekening;
             this.BestellingsId = BestellingsId;
-            Test();
+            OpenenUserControlFooiToevoegen();
         }
         
-        private void Test()
+        private void OpenenUserControlFooiToevoegen()
         {
             Form = new FooiToevoegen(Rekening, BestellingsId);
             pnlMain.Controls.Add(this.Form);

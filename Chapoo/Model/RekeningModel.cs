@@ -15,7 +15,7 @@ namespace Model
         public string Opmerking { get; set; }
         public TafelModel Tafel { get; set; }
         public BestellingModel Bestelling { get; set; }
-        public BetaalMethode Methode {get; set;}
+        public BetaalMethode BetaalMethode {get; set;}
 
         public RekeningModel(double totaalbedrag, double btw6, double btw21, double fooi, string opmerking, TafelModel tafel, BestellingModel bestelling, BetaalMethode Methode)
         {
@@ -26,17 +26,13 @@ namespace Model
             this.Opmerking = opmerking;
             this.Tafel = tafel;
             this.Bestelling = bestelling;
-            this.Methode = Methode;
+            this.BetaalMethode = Methode;
         }
         public RekeningModel(double Totaalbedrag, double btw6, double btw21)
         {
             this.Totaalbedrag = Totaalbedrag;
             this.Btw6 = btw6;
             this.Btw21 = btw21;
-        }
-        public RekeningModel(BestellingModel bestelling)
-        {
-            this.Bestelling = bestelling;
         }
     }
 }
