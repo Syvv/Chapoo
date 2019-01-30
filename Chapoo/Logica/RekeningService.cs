@@ -16,6 +16,12 @@ namespace Logica
 
             return besteldeItems;
         }
+        public int BestellingsIdOphalen(int tafelId)
+        {
+            RekeningDAO RekeningDataLaag = DAOFactory.Instance.CreateRekeningDAO();
+
+            return (int)RekeningDataLaag.BestellingsIdOphalen(tafelId);
+        }
 
         //rekening opstellen Prijs
         public RekeningModel RekeningOpstellen(int BestellingsId)//Test de While Loop en BTW
@@ -80,10 +86,10 @@ namespace Logica
 
 
         //rekening versturen
-        public void RekeningBetaling(RekeningModel rekening)//naam verbeteren
+        public void RekeningBetaling(RekeningModel rekening, int BestellingsId)//naam verbeteren
         {
             RekeningDAO RekeningDataLaag = DAOFactory.Instance.CreateRekeningDAO();
-            RekeningDataLaag.InsertRekening(rekening);
+            RekeningDataLaag.InsertRekening(rekening, BestellingsId);
         }
 
 

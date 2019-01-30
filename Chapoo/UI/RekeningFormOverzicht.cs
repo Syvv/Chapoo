@@ -22,6 +22,7 @@ namespace UI
         private RekeningModel Rekening { get; set; }
         private TafelModel Tafel { get; set; }
         private WerknemerModel Werknemer { get; set; }
+        private int BestellingsId { get; set; }
 
         public RekeningFormOverzicht(TafelModel tafel, WerknemerModel werknemer)
         {
@@ -30,17 +31,18 @@ namespace UI
             this.RekeningLogica = new RekeningService();            
             this.Tafel = tafel;
             this.Werknemer = werknemer;
-
+            this.BestellingsId = BestellingsIdOphalen(Tafel.Id);
+            
             WeergevenRekeningItems();
             WeergevenRekeningPrijzen();//naam aanpassen
-
-            //this.Tafel.Bestelling.Id = 1;
-
-            this.Rekening.Bestelling.Id = 2;
 
             this.btnMenuAfrekenen.Click += new EventHandler(btnMenuAfrekenen_Click);
             this.btnMenuOverzicht.Click += new EventHandler(btnMenuOverzicht_Click);
             this.btnMenuOpnemen.Click += new EventHandler(btnMenuOpnemen_Click);
+        }
+        public int BestellingsIdOphalen(int tafelId)
+        {
+            return (int) RekeningLogica.BestellingsIdOphalen(tafelId);
         }
 
         private void btnMenuOpnemen_Click(object sender, EventArgs e)
@@ -60,21 +62,25 @@ namespace UI
 
         private void WeergevenRekeningItems()
         {
-            int bestellingId = 2;
-            List<BestellingsitemModel> BestellingenLijst = RekeningLogica.BesteldeItems(bestellingId);
-            int y = 40;
-
-            foreach(BestellingsitemModel item in BestellingenLijst) //lokoatie aanpassen
+            try
             {
-                this.Rekeningitem = new RekeningItem(item.Naam, item.Hoeveelheid, item.Prijs, item.Hoeveelheid * item.Prijs);
-                pnlMain.Controls.Add(this.Rekeningitem);
+                List<BestellingsitemModel> BestellingenLijst = RekeningLogica.BesteldeItems(BestellingsId);
+                int y = 40;
 
-                y += 10;//de hoogte van de RekeningItem
-            }            
+                foreach(BestellingsitemModel item in BestellingenLijst) //lokoatie aanpassen
+                {
+                    this.Rekeningitem = new RekeningItem(item.Naam, item.Hoeveelheid, item.Prijs, item.Hoeveelheid * item.Prijs);
+                    pnlMain.Controls.Add(this.Rekeningitem);
+
+                    y += 10;//de hoogte van de RekeningItem
+                }  
+            }
+            catch { MessageBox.Show("nog geen bestelling gedaan"); }
+          
         }
         private void WeergevenRekeningPrijzen()  //lokatie aanpassen
         {            
-            this.Geldoverzicht = new RekeningGeldOverzicht(Rekening);
+            this.Geldoverzicht = new RekeningGeldOverzicht(Rekening, BestellingsId);
             Geldoverzicht.Top = 550; //nog aanpassen
             pnlBottom.Controls.Add(this.Geldoverzicht);
         }

@@ -17,7 +17,8 @@ namespace UI
     {
         RekeningModel Rekening { get; set; }
         FooiToevoegen Form { get; set; }
-        public RekeningFooiForm_en_betalen(RekeningModel Rekening)
+        private int BestellingsId { get; set; }
+        public RekeningFooiForm_en_betalen(RekeningModel Rekening, int BestellingsId)
         {
             InitializeComponent();
             this.Rekening = Rekening;
@@ -26,7 +27,7 @@ namespace UI
         
         private void Test()
         {
-            Form = new FooiToevoegen(Rekening);
+            Form = new FooiToevoegen(Rekening, BestellingsId);
             pnlMain.Controls.Add(this.Form);
         }
     }

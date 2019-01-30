@@ -16,7 +16,7 @@ namespace DataAdaptor
             this.connection = connection;
         }
         
-        public void InsertRekening(RekeningModel rekening)
+        public void InsertRekening(RekeningModel rekening, int BestellingsId)
         {
             StringBuilder sb = new StringBuilder();
             connection.Open();
@@ -24,8 +24,7 @@ namespace DataAdaptor
             sb.Append("INSERT INTO REKENING(bestellingId, totaalbedrag, fooi, opmerking, betaalmanier) VALUES(@bestellingId, @totaalbedrag, @fooi, @opmerking , @betaalmanier)");
             using(SqlCommand command = new SqlCommand(sb.ToString(), connection))
             {
-                command.Parameters.AddWithValue("@bestellingId", rekening.Bestelling.Id);
-                //command.Parameters.AddWithValue("@bestellingId", 2);
+                command.Parameters.AddWithValue("@bestellingId", BestellingsId);
                 command.Parameters.AddWithValue("@totaalbedrag", rekening.Totaalbedrag);
                 command.Parameters.AddWithValue("@fooi", rekening.Fooi);
                 command.Parameters.AddWithValue("@opmerking", rekening.Opmerking);
@@ -34,6 +33,24 @@ namespace DataAdaptor
             }
 
             connection.Close();
+        }
+        public int BestellingsIdOphalen(int tafelId)
+        {
+            StringBuilder sb = new StringBuilder();
+            connection.Open();
+
+            sb.Append("select b.bestellingId from BESTELLING as b, REKENING as r where tafelId = @tafelId and b.bestellingId != r.bestellingId");
+
+            SqlCommand command = new SqlCommand(sb.ToString(), connection);
+            command.Parameters.AddWithValue("@tafelId", tafelId);
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            reader.Read();
+            int bestellingsid = reader.GetInt32(0);
+
+            connection.Close();
+            return bestellingsid;
         }
         public List<BestellingsitemModel> OphalenBestellingen(int bestellingId)
         {
