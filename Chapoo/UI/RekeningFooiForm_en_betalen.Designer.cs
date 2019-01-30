@@ -28,15 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.pnlTop.SuspendLayout();
             this.SuspendLayout();
             // 
             // RekeningFooiForm_en_betalen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(567, 496);
+            this.ClientSize = new System.Drawing.Size(436, 687);
             this.Name = "RekeningFooiForm_en_betalen";
             this.Text = "RekeningFooiForm_en_betalen";
+            this.Controls.SetChildIndex(this.pnlTop, 0);
+            this.pnlTop.ResumeLayout(false);
+            this.pnlTop.PerformLayout();
             this.ResumeLayout(false);
 
         }

@@ -130,6 +130,7 @@ namespace UI
             if (FooiIngevuldCheck())
             {
                 RekeningLogica.RekeningBetaling(Rekening, BestellingsId);
+                MessageBox.Show("bestelling is gelukt");
             }
         }
     }
