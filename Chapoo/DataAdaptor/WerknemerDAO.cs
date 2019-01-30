@@ -34,6 +34,7 @@ namespace DataAdaptor
             SqlDataReader data = command.ExecuteReader();
             if(!data.HasRows)
             {
+                connection.Close();
                 throw new NoSuchUserException();
             }
             data.Read();
