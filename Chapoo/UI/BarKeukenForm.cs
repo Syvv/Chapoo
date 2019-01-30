@@ -16,19 +16,17 @@ namespace UI
 {
     public partial class BarKeukenForm : Form
     {
-        List<BestellingsitemModel> Bestellingen = new List<BestellingsitemModel>(); //List with all orders that have to be shown
-        BestellingsItemService bestellingLogica;
+        private List<BestellingsitemModel> Bestellingen = new List<BestellingsitemModel>(); //List with all orders that have to be shown
+        private BestellingsItemService bestellingLogica;
         private WerknemerModel werknemer;
-        delegate void CreateTimerCallback(); //Callback for invoking from the timer thread
-        private int maxContainerHeight;
-        System.Timers.Timer timer;
-        BarKeukenHeader header;
+        private delegate void CreateTimerCallback(); //Callback for invoking from the timer thread
+        private System.Timers.Timer timer;
+        private BarKeukenHeader header;
 
         public BarKeukenForm(Model.WerknemerModel werknemer)
         {
             InitializeComponent();
             this.werknemer = werknemer;
-            maxContainerHeight = this.Height - 35; //The full height of the screen minus the height of the Controls at the top.
 
             if(werknemer.Functie==Functie.Bar)
             {
@@ -51,26 +49,26 @@ namespace UI
             }
 
             InitialiseTimer();
-            BuildUI();
+            BouwUI();
         }
 
         
-        private void BuildUI()
+        private void BouwUI()
         {
             if(this.InvokeRequired)//Check if we're calling from a different thread
             {
                 //if so invoke the method from a delegate instead
-                CreateTimerCallback cb = new CreateTimerCallback(BuildUI);
+                CreateTimerCallback cb = new CreateTimerCallback(BouwUI);
                 this.Invoke(cb);
             }
             else
             {
                 Controls.Clear();
-                Panel ItemLijstContainer = new Panel() { Top = 60, AutoSize = true, AutoScroll = true, Width = 1600, };
+                Panel ItemLijstContainer = new Panel() { Top = 60, AutoScroll = true, Width = 1600, Height = 900 };
                 int y = 0;
                 foreach (BestellingsitemModel b in Bestellingen)
                 {
-                    BarKeukenUIElement uiElement = new BarKeukenUIElement(b, bestellingLogica, (item) => { Bestellingen.Remove(item); BuildUI(); })
+                    BarKeukenUIElement uiElement = new BarKeukenUIElement(b, bestellingLogica, (item) => { Bestellingen.Remove(item); BouwUI(); })
                         { Top = y};
                     if(b.Status==BestellingsItemStatus.gereed|| b.Status == BestellingsItemStatus.afgeleverd)
                     {
@@ -105,7 +103,7 @@ namespace UI
                     MessageBox.Show("Er is iets foutgegaan bij het verbinding maken met de database!", "Er is iets fout gegaan!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                BuildUI();
+                BouwUI();
             }
             else
             {
@@ -119,7 +117,7 @@ namespace UI
                     MessageBox.Show("Er is iets foutgegaan bij het verbinding maken met de database!", "Er is iets fout gegaan!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                BuildUI();
+                BouwUI();
             }
         }
 
@@ -136,7 +134,7 @@ namespace UI
                     MessageBox.Show("Er is iets foutgegaan bij het verbinding maken met de database!", "Er is iets fout gegaan!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                BuildUI();
+                BouwUI();
             };
             timer.Start();
         }
