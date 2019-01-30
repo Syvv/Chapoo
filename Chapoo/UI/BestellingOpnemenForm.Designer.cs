@@ -52,6 +52,5 @@
         }
 
         #endregion
-        private System.Windows.Forms.FontDialog fontDialog1;
     }
 }
