@@ -39,7 +39,7 @@ namespace DataAdaptor
             StringBuilder sb = new StringBuilder();
             connection.Open();
 
-            sb.Append("select b.bestellingId from BESTELLING as b, REKENING as r where tafelId = @tafelId and b.bestellingId != r.bestellingId");
+            sb.Append("select b.bestellingId from BESTELLING as b where tafelId = @tafelId AND (bestellingId NOT IN (SELECT bestellingId from REKENING))");
 
             SqlCommand command = new SqlCommand(sb.ToString(), connection);
             command.Parameters.AddWithValue("@tafelId", tafelId);

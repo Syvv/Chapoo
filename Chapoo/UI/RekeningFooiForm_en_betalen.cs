@@ -22,6 +22,7 @@ namespace UI
         {
             InitializeComponent();
             this.Rekening = Rekening;
+            this.BestellingsId = BestellingsId;
             Test();
         }
         
