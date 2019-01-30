@@ -20,7 +20,6 @@ namespace UI
         BestellingsItemService bestellingLogica;
         private WerknemerModel werknemer;
         delegate void CreateTimerCallback(); //Callback for invoking from the timer thread
-        private int maxContainerHeight;
         System.Timers.Timer timer;
         BarKeukenHeader header;
 
@@ -28,7 +27,6 @@ namespace UI
         {
             InitializeComponent();
             this.werknemer = werknemer;
-            maxContainerHeight = this.Height - 35; //The full height of the screen minus the height of the Controls at the top.
 
             if(werknemer.Functie==Functie.Bar)
             {
@@ -66,7 +64,7 @@ namespace UI
             else
             {
                 Controls.Clear();
-                Panel ItemLijstContainer = new Panel() { Top = 60, AutoSize = true, AutoScroll = true, Width = 1600, };
+                Panel ItemLijstContainer = new Panel() { Top = 60, AutoScroll = true, Width = 1600, Height = 900 };
                 int y = 0;
                 foreach (BestellingsitemModel b in Bestellingen)
                 {
