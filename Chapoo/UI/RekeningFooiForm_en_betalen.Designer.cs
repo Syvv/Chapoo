@@ -28,7 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.pnlTop.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // btnMenuOpnemen
+            // 
+            this.btnMenuOpnemen.Click += new System.EventHandler(this.btnMenuOpnemen_Click);
             // 
             // RekeningFooiForm_en_betalen
             // 
@@ -37,6 +42,9 @@
             this.ClientSize = new System.Drawing.Size(567, 496);
             this.Name = "RekeningFooiForm_en_betalen";
             this.Text = "RekeningFooiForm_en_betalen";
+            this.Controls.SetChildIndex(this.pnlTop, 0);
+            this.pnlTop.ResumeLayout(false);
+            this.pnlTop.PerformLayout();
             this.ResumeLayout(false);
 
         }

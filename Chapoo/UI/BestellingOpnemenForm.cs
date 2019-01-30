@@ -20,18 +20,17 @@ namespace UI
         private BestelItemControl BestelItem { get; set; }
         private BestelKnoppenControl BestelKnoppen { get; set; }
 
-        private WerknemerModel Werknemer { get; set;}
-        private TafelModel Tafel { get; set; }
+        public WerknemerModel Werknemer { get; set;}
+        public TafelModel Tafel { get; set; }
 
         public BestellingOpnemenForm(WerknemerModel werknemer, TafelModel tafel)
         {
             this.Tafel = tafel;
             this.Werknemer = werknemer;
-            this.BestelKnoppen = new BestelKnoppenControl(Tafel,  this);
+            this.BestelKnoppen = new BestelKnoppenControl(this);
             this.MenuItemService = new MenuItemService();
 
             this.btnMenuAfrekenen.Click += new EventHandler(btnMenuAfrekenen_Click);
-            this.btnMenuOverzicht.Click += new EventHandler(btnMenuOverzicht_Click);
             this.btnMenuOpnemen.Click += new EventHandler(btnMenuOpnemen_Click);
 
             txtTafel.Text += " " + Tafel.Id.ToString();
@@ -39,7 +38,7 @@ namespace UI
             foreach(MenuItemModel menuItem in MenuItemService.Categoriseren(Categorie.Frisdrank))
             {
                 BestelItem = new BestelItemControl(menuItem, this, BestelKnoppen);
-//Ook nog ff naar kijken
+
                 if (menuItem.Voorraad == 0)
                 {
                     BestelItem.addButton1.Hide();
@@ -60,7 +59,6 @@ namespace UI
 
         private void btnMenuAfrekenen_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("bestellings id moet nog in tafel id komen");
             new RekeningFormOverzicht(Tafel, Werknemer).Show();
             this.Close();
         }

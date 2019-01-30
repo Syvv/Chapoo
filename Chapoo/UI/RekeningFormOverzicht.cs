@@ -37,7 +37,6 @@ namespace UI
             WeergevenRekeningPrijzen();//naam aanpassen
 
             this.btnMenuAfrekenen.Click += new EventHandler(btnMenuAfrekenen_Click);
-            this.btnMenuOverzicht.Click += new EventHandler(btnMenuOverzicht_Click);
             this.btnMenuOpnemen.Click += new EventHandler(btnMenuOpnemen_Click);
         }
         public int BestellingsIdOphalen(int tafelId)
@@ -47,7 +46,8 @@ namespace UI
 
         private void btnMenuOpnemen_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            new BestellingOpnemenForm(Werknemer, Tafel).Show();
+            this.Close();
         }
 
         private void btnMenuOverzicht_Click(object sender, EventArgs e)

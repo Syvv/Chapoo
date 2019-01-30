@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 using Model;
 using Logica;
+using System.Windows.Forms;
 
 namespace UI
 {
     public class BestellingHelperClass
     {
+
         public List<BestellingsitemModel> CreateBestellingItemList(List<BestelItemControl> bestelItemControls, BestellingModel bestelling, int tafelId)
         {
             BestellingService bestellingService = new BestellingService();
@@ -39,6 +42,10 @@ namespace UI
                         bestellingsitem = new BestellingsitemModel(menuId, bestellingId, timestamp, hoeveelheid, commentaar);
                     }
                     bestellingsItems.Add(bestellingsitem);
+                }
+                else
+                {
+                    MessageBox.Show(bestelItemControl.naam + " vooraad is lager dan opgegeven hoeveelheid");
                 }
             }
 
