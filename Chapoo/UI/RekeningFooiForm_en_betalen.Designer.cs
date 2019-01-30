@@ -31,6 +31,10 @@
             this.pnlTop.SuspendLayout();
             this.SuspendLayout();
             // 
+            // btnMenuOpnemen
+            // 
+            this.btnMenuOpnemen.Click += new System.EventHandler(this.btnMenuOpnemen_Click);
+            // 
             // RekeningFooiForm_en_betalen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

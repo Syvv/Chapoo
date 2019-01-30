@@ -11,6 +11,7 @@ using Model;
 
 namespace UI
 {
+
     public partial class BestelItemControl : UserControl
     {
         public bool Add = false;
@@ -19,9 +20,28 @@ namespace UI
         public BestelKnoppenControl BestelKnoppen { get; set; }
 
         public MenuItemModel MenuItem { get; set; }
-        public DateTime TimeStamp { get; set; } 
+        public DateTime TimeStamp { get; set; }
+        public string naam;
         public string Commentaar = " ";
-        public int Aantal { get; set; }
+
+        private int aantal;
+        public int Aantal {
+            get
+            {
+                return aantal;
+            }
+            set
+            {
+                if(value > MenuItem.Voorraad)
+                {
+                    aantal = 0;
+                }
+                else
+                {
+                    aantal = value;
+                }
+            }
+        }
 
         public BestelItemControl(MenuItemModel item, BestellingOpnemenForm bestellingOpnemenForm, BestelKnoppenControl bestelKnoppen)
         {
@@ -31,6 +51,7 @@ namespace UI
             this.BackColor = Color.FromArgb(245, 239, 237);
             this.BestellingOpnemenForm = bestellingOpnemenForm;
             this.BestelKnoppen = bestelKnoppen;
+            this.naam = item.Naam;
         }
 
         private void addButton1_Click(object sender, EventArgs e)

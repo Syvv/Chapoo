@@ -31,10 +31,6 @@
             this.pnlTop.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnMenuOverzicht
-            // 
-            this.btnMenuOverzicht.Click += new System.EventHandler(this.btnMenuOverzicht_Click);
-            // 
             // btnMenuOpnemen
             // 
             this.btnMenuOpnemen.Click += new System.EventHandler(this.btnMenuOpnemen_Click);

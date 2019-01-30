@@ -18,6 +18,7 @@ namespace UI
         public BestellingModel Bestelling { get; set; }
         private MenuItemService MenuItemService { get; set; }
         public TafelModel Tafel { get; set; }
+        public WerknemerModel Werknemer {get; set;} 
         private BestellingsItemService bestellingsItemService { get; set; }
         private BestellingOpnemenForm BestellingOpnemenForm { get; set; }
         public List<BestelItemControl> BestelItemControls = new List<BestelItemControl>();
@@ -27,11 +28,12 @@ namespace UI
         TimeSpan now = DateTime.Now.TimeOfDay;
 
 
-        public BestelKnoppenControl(TafelModel tafel,  BestellingOpnemenForm bestellingOpnemenForm)
+        public BestelKnoppenControl(BestellingOpnemenForm bestellingOpnemenForm)
         {
             InitializeComponent();
             this.BestellingOpnemenForm = bestellingOpnemenForm;
-            this.Tafel = tafel;
+            this.Tafel = bestellingOpnemenForm.Tafel;
+            this.Werknemer = bestellingOpnemenForm.Werknemer;
             MenuItemService = new MenuItemService();
         }
         public BestelKnoppenControl()
@@ -41,7 +43,7 @@ namespace UI
         private void btnVerstuur_Click(object sender, EventArgs e)
         {
             bestellingsItemService = new BestellingsItemService();
-
+            Bestelling = new BestellingModel(Werknemer, Tafel);
             BestellingHelperClass bestellingHelper = new BestellingHelperClass();
             List<BestellingsitemModel> bestellingsItems = bestellingHelper.CreateBestellingItemList(BestelItemControls, Bestelling, Tafel.Id);
 
