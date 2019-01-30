@@ -43,7 +43,6 @@
     <Compile Include="BestellingsItemDAO.cs" />
     <Compile Include="BestellingDAO.cs" />
     <Compile Include="DAOFactory.cs" />
-    <Compile Include="DataConnection.cs" />
     <Compile Include="MenuItemDAO.cs" />
     <Compile Include="RekeningDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
