@@ -17,16 +17,21 @@ namespace UI
     {
         private RekeningModel Rekening { get; set; }
         private RekeningService RekeningLogica;
-        public RekeningGeldOverzicht(RekeningModel rekening)
+        private int BestellingsId { get; set; }
+        public RekeningGeldOverzicht(RekeningModel rekening, int BestellingsId)
         {
             InitializeComponent();
             this.Rekening = rekening;
             this.RekeningLogica = new RekeningService();
+            this.BestellingsId = BestellingsId;
             PrijzenWeergeven();
+
+            lblOpmerking.Hide();
+            OutOpmerking.Hide();
         }
         private void PrijzenWeergeven()
         {
-            this.Rekening = RekeningLogica.RekeningOpstellen(Rekening.Bestelling.Id);
+            this.Rekening = RekeningLogica.RekeningOpstellen(BestellingsId);
             OutTotaalBedrag.Text = string.Format("€ {0:F2} ", Rekening.Totaalbedrag);
             OutBtw21.Text = string.Format("€ {0:F2} ", Rekening.Btw21);
             OutBtw6.Text = string.Format("€ {0:F2}", Rekening.Btw6);
@@ -40,11 +45,14 @@ namespace UI
             form.ShowDialog();
 
             this.Rekening.Opmerking = form.Opmerking;
+            lblOpmerking.Show();
+            OutOpmerking.Show();
+            OutOpmerking.Text = Rekening.Opmerking;
         }
 
         private void BtnFooi_Click(object sender, EventArgs e) //deze sluiten???
         {
-            new FooiToevoegen(this.Rekening).Show();
+            new RekeningFooiForm_en_betalen(this.Rekening, BestellingsId).Show();
         }
     }
 }

@@ -16,10 +16,6 @@ namespace DataAdaptor
         {
             this.connection = connection ?? throw new ArgumentNullException(nameof(connection));
         }
-        public BestellingsItemDAO()
-        {
-
-        }
         public void InsertBestellingItems(List<BestellingsitemModel> bestellingsitems)
         {
             StringBuilder sb = new StringBuilder();
@@ -133,7 +129,7 @@ namespace DataAdaptor
                         "FROM HEEFT_ITEM h " +
                         "INNER JOIN MENU m ON h.menuId = m.menu_id " +
                         "INNER JOIN BESTELLING b ON b.bestellingId = h.bestellingId " +
-                        "WHERE h.bestellingsId = @bestellingsId");
+                        "WHERE h.bestellingId = @bestellingsId");
 
             SqlCommand command = new SqlCommand(sb.ToString(), connection);
             command.Parameters.AddWithValue("@bestellingsId",bestellingsId);

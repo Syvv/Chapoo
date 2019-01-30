@@ -16,6 +16,12 @@ namespace Logica
 
             return besteldeItems;
         }
+        public int BestellingsIdOphalen(int tafelId)
+        {
+            RekeningDAO RekeningDataLaag = DAOFactory.Instance.CreateRekeningDAO();
+
+            return (int)RekeningDataLaag.BestellingsIdOphalen(tafelId);
+        }
 
         //rekening opstellen Prijs
         public RekeningModel RekeningOpstellen(int BestellingsId)//Test de While Loop en BTW
@@ -28,7 +34,8 @@ namespace Logica
 
             foreach (BestellingsitemModel item in besteldeItems)
             {
-                while (item.Hoeveelheid > 0) //Deze testen
+                int hoeveelheid = item.Hoeveelheid;
+                while (hoeveelheid > 0) //Deze testen
                 {
                     double btwPercentage = 100 + item.BtwPercentage;
                     //if (item.Categorie == Categorie.SterkeDrank || item.Categorie == Categorie.Wijn || item.Categorie == Categorie.Bier)
@@ -44,6 +51,7 @@ namespace Logica
                         btw09 += btw;
                     }
                     totaalBedrag += item.Prijs;
+                    hoeveelheid--;
                 }
             }
             double db_btw = btw21 + btw09;
@@ -78,13 +86,10 @@ namespace Logica
 
 
         //rekening versturen
-        public void RekeningBetaling(RekeningModel rekening)//naam verbeteren
+        public void RekeningBetaling(RekeningModel rekening, int BestellingsId)//naam verbeteren
         {
-            //fooi en niew eindbedragtoevoegen
-
-
             RekeningDAO RekeningDataLaag = DAOFactory.Instance.CreateRekeningDAO();
-            RekeningDataLaag.InsertRekening(rekening);
+            RekeningDataLaag.InsertRekening(rekening, BestellingsId);
         }
 
 

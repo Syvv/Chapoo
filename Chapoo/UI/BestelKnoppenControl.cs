@@ -16,28 +16,22 @@ namespace UI
     public partial class BestelKnoppenControl : UserControl
     {
         public BestellingModel Bestelling { get; set; }
-        private BestellingService BestellingService { get; set; }
         private MenuItemService MenuItemService { get; set; }
         public TafelModel Tafel { get; set; }
-        int TafelId { get; set; }
         private BestellingsItemService bestellingsItemService { get; set; }
         private BestellingOpnemenForm BestellingOpnemenForm { get; set; }
+        public List<BestelItemControl> BestelItemControls = new List<BestelItemControl>();
 
         TimeSpan start = new TimeSpan(10, 0, 0);
         TimeSpan end = new TimeSpan(17, 0, 0);
         TimeSpan now = DateTime.Now.TimeOfDay;
-        
-
-        public List<BestelItemControl> BestelItemControls = new List<BestelItemControl>();
 
 
-        public BestelKnoppenControl(TafelModel tafel, List<BestelItemControl> bestelItemControls, BestellingOpnemenForm bestellingOpnemenForm)
+        public BestelKnoppenControl(TafelModel tafel,  BestellingOpnemenForm bestellingOpnemenForm)
         {
             InitializeComponent();
-            this.Tafel = tafel;
-            this.TafelId = tafel.Id;
-            this.BestelItemControls = bestelItemControls;
             this.BestellingOpnemenForm = bestellingOpnemenForm;
+            this.Tafel = tafel;
             MenuItemService = new MenuItemService();
         }
         public BestelKnoppenControl()
@@ -46,57 +40,48 @@ namespace UI
         }
         private void btnVerstuur_Click(object sender, EventArgs e)
         {
-            BestellingService = new BestellingService();
             bestellingsItemService = new BestellingsItemService();
 
-            int laatsteBestellingId = BestellingService.GetLaatseBestelling(TafelId);
-            bool bestellingOpen = BestellingService.CheckVoorOpenstaandeBestelling(laatsteBestellingId);
-
-            List<BestellingsitemModel> bestellingsItems = new List<BestellingsitemModel>();
-
-            foreach (BestelItemControl bestelItemControl in BestelItemControls)
-            {
-                int menuId = bestelItemControl.MenuItem.MenuId;
-                DateTime timestamp = bestelItemControl.TimeStamp;
-                int hoeveelheid = bestelItemControl.Aantal;
-                string commentaar = bestelItemControl.Commentaar;
-
-                
-                if (hoeveelheid > 0)
-                {
-                    BestellingsitemModel bestellingsitem;
-
-                    if (bestellingOpen)
-                    {
-                       bestellingsitem = new BestellingsitemModel(menuId, laatsteBestellingId, timestamp, hoeveelheid, commentaar);
-                    }
-                    else
-                    {
-                        //Creeër nieuw bestelling en geef de bestellingId mee van de nieuwe Bestelling
-                        int bestellingId = BestellingService.InsertBestelling(Bestelling);
-                        bestellingsitem = new BestellingsitemModel(menuId, bestellingId, timestamp, hoeveelheid, commentaar);
-                    }
-                    bestellingsItems.Add(bestellingsitem);
-                }
-            }
+            BestellingHelperClass bestellingHelper = new BestellingHelperClass();
+            List<BestellingsitemModel> bestellingsItems = bestellingHelper.CreateBestellingItemList(BestelItemControls, Bestelling, Tafel.Id);
 
             if (bestellingsItems.Any())
             {
                bool exeception = bestellingsItemService.InsertBestellingItems(bestellingsItems);
-               MessageBox.Show(exeception.ToString());
+                if (!exeception)
+                {
+                    MessageBox.Show("Task failed succesfully");
+                }
             }
-             
+
+            BestellingOpnemenForm.pnlMain.Controls.Clear();
+            btnFris.PerformClick();
         }
 
         private void btnOverzicht_Click(object sender, EventArgs e)
         {
-
+            BestellingOpnemenForm.pnlMain.Controls.Clear();
+            foreach (BestelItemControl bestelItemControl in BestelItemControls)
+            {
+                BestellingOpnemenForm.pnlMain.Controls.Add(bestelItemControl);
+            }
         }
 
         private void btnFris_Click(object sender, EventArgs e)
         {
             this.BestellingOpnemenForm.pnlMain.Controls.Clear();
-            this.MenuItemService.Categoriseren(Categorie.Frisdrank);
+            List<MenuItemModel> menuItems = MenuItemService.Categoriseren(Categorie.Frisdrank);
+
+            foreach (MenuItemModel menuItem in menuItems)
+            {
+                BestelItemControl bestelItem = new BestelItemControl(menuItem, BestellingOpnemenForm, this);
+                if (menuItem.Voorraad == 0)
+                {
+                    bestelItem.addButton1.Hide();
+                    bestelItem.lblItem.ForeColor = Color.FromArgb(255, 0, 0);
+                }
+                this.BestellingOpnemenForm.pnlMain.Controls.Add(bestelItem);
+            }
         }
 
         private void btnBier_Click(object sender, EventArgs e)
@@ -108,6 +93,11 @@ namespace UI
             foreach(MenuItemModel menuItem in menuItems)
             {
                 BestelItemControl bestelItem = new BestelItemControl(menuItem, BestellingOpnemenForm, this);
+                if (menuItem.Voorraad == 0)
+                {
+                    bestelItem.addButton1.Hide();
+                    bestelItem.lblItem.ForeColor = Color.FromArgb(255, 0, 0);
+                }
                 this.BestellingOpnemenForm.pnlMain.Controls.Add(bestelItem);
             }
         }
@@ -120,6 +110,11 @@ namespace UI
             foreach (MenuItemModel menuItem in menuItems)
             {
                 BestelItemControl bestelItem = new BestelItemControl(menuItem, BestellingOpnemenForm, this);
+                if (menuItem.Voorraad == 0)
+                {
+                    bestelItem.addButton1.Hide();
+                    bestelItem.lblItem.ForeColor = Color.FromArgb(255, 0, 0);
+                }
                 this.BestellingOpnemenForm.pnlMain.Controls.Add(bestelItem);
             }
         }
@@ -127,61 +122,130 @@ namespace UI
         private void btnSterk_Click(object sender, EventArgs e)
         {
             this.BestellingOpnemenForm.pnlMain.Controls.Clear();
-            this.MenuItemService.Categoriseren(Categorie.SterkeDrank);
+            List<MenuItemModel> menuItems = MenuItemService.Categoriseren(Categorie.SterkeDrank);
+
+            foreach (MenuItemModel menuItem in menuItems)
+            {
+                BestelItemControl bestelItem = new BestelItemControl(menuItem, BestellingOpnemenForm, this);
+                if (menuItem.Voorraad == 0)
+                {
+                    bestelItem.addButton1.Hide();
+                    bestelItem.lblItem.ForeColor = Color.FromArgb(255, 0, 0);
+                }
+                this.BestellingOpnemenForm.pnlMain.Controls.Add(bestelItem);
+            }
         }
 
         private void btnWarm_Click(object sender, EventArgs e)
         {
             this.BestellingOpnemenForm.pnlMain.Controls.Clear();
-            this.MenuItemService.Categoriseren(Categorie.KoffieThee);
+            List<MenuItemModel> menuItems = MenuItemService.Categoriseren(Categorie.KoffieThee);
+
+            foreach (MenuItemModel menuItem in menuItems)
+            {
+                BestelItemControl bestelItem = new BestelItemControl(menuItem, BestellingOpnemenForm, this);
+                if (menuItem.Voorraad == 0)
+                {
+                    bestelItem.addButton1.Hide();
+                    bestelItem.lblItem.ForeColor = Color.FromArgb(255, 0, 0);
+                }
+                this.BestellingOpnemenForm.pnlMain.Controls.Add(bestelItem);
+            }
         }
 
         private void btnNa_Click(object sender, EventArgs e)
         {
             this.BestellingOpnemenForm.pnlMain.Controls.Clear();
+            List<MenuItemModel> menuItems;
 
             if ((now > start) && (now < end))
             {
-                this.MenuItemService.Categoriseren(Categorie.LunchNagerecht);
+                menuItems = MenuItemService.Categoriseren(Categorie.LunchNagerecht);
             }
             else
             {
-                this.MenuItemService.Categoriseren(Categorie.DinerNagerecht);
-            }            
+               menuItems = MenuItemService.Categoriseren(Categorie.DinerNagerecht);
+            }
+
+            foreach (MenuItemModel menuItem in menuItems)
+            {
+                BestelItemControl bestelItem = new BestelItemControl(menuItem, BestellingOpnemenForm, this);
+                if (menuItem.Voorraad == 0)
+                {
+                    bestelItem.addButton1.Hide();
+                    bestelItem.lblItem.ForeColor = Color.FromArgb(255, 0, 0);
+                }
+                this.BestellingOpnemenForm.pnlMain.Controls.Add(bestelItem);
+            }
         }
 
         private void btnVoor_Click(object sender, EventArgs e)
         {
             this.BestellingOpnemenForm.pnlMain.Controls.Clear();
+            List<MenuItemModel> menuItems;
 
             if ((now > start) && (now < end))
             {
-                this.MenuItemService.Categoriseren(Categorie.LunchVoorgerecht);
+                menuItems = MenuItemService.Categoriseren(Categorie.LunchVoorgerecht);
             }
             else
             {
-                this.MenuItemService.Categoriseren(Categorie.DinerVoorgerecht);
+                menuItems = MenuItemService.Categoriseren(Categorie.DinerVoorgerecht);
+            }
+
+            foreach (MenuItemModel menuItem in menuItems)
+            {
+                BestelItemControl bestelItem = new BestelItemControl(menuItem, BestellingOpnemenForm, this);
+                if (menuItem.Voorraad == 0)
+                {
+                    bestelItem.addButton1.Hide();
+                    bestelItem.lblItem.ForeColor = Color.FromArgb(255, 0, 0);
+                }
+                this.BestellingOpnemenForm.pnlMain.Controls.Add(bestelItem);
             }
         }
 
         private void btnHoofd_Click(object sender, EventArgs e)
         {
             this.BestellingOpnemenForm.pnlMain.Controls.Clear();
+            List<MenuItemModel> menuItems;
 
             if ((now > start) && (now < end))
             {
-                this.MenuItemService.Categoriseren(Categorie.LunchHoofdgerecht);
+                menuItems = MenuItemService.Categoriseren(Categorie.LunchHoofdgerecht);
             }
             else
             {
-                this.MenuItemService.Categoriseren(Categorie.DinerHoofdgerecht);
+                menuItems = MenuItemService.Categoriseren(Categorie.DinerHoofdgerecht);
+            }
+
+            foreach (MenuItemModel menuItem in menuItems)
+            {
+                BestelItemControl bestelItem = new BestelItemControl(menuItem, BestellingOpnemenForm, this);
+                if (menuItem.Voorraad == 0)
+                {
+                    bestelItem.addButton1.Hide();
+                    bestelItem.lblItem.ForeColor = Color.FromArgb(255, 0, 0);
+                }
+                this.BestellingOpnemenForm.pnlMain.Controls.Add(bestelItem);
             }
         }
 
         private void btnTussen_Click(object sender, EventArgs e)
         {
             this.BestellingOpnemenForm.pnlMain.Controls.Clear();
-            this.MenuItemService.Categoriseren(Categorie.DinerTussengerecht);
+            List<MenuItemModel> menuItems = MenuItemService.Categoriseren(Categorie.DinerTussengerecht);
+
+            foreach (MenuItemModel menuItem in menuItems)
+            {
+                BestelItemControl bestelItem = new BestelItemControl(menuItem, BestellingOpnemenForm, this);
+                if (menuItem.Voorraad == 0)
+                {
+                    bestelItem.addButton1.Hide();
+                    bestelItem.lblItem.ForeColor = Color.FromArgb(255, 0, 0);
+                }
+                this.BestellingOpnemenForm.pnlMain.Controls.Add(bestelItem);
+            }
         }
     }
 }

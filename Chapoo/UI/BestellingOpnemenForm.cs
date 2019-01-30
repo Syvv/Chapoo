@@ -22,26 +22,29 @@ namespace UI
 
         private WerknemerModel Werknemer { get; set;}
         private TafelModel Tafel { get; set; }
-        private BestellingsitemModel BestellingItemModel { get; set; }
-        private List<BestelItemControl> BestelItemControls = new List<BestelItemControl>();
-        //Lijst aanmaken van bestellingitems
-        //Voorraad toonen
-
 
         public BestellingOpnemenForm(WerknemerModel werknemer, TafelModel tafel)
         {
             this.Tafel = tafel;
             this.Werknemer = werknemer;
-            this.BestelKnoppen = new BestelKnoppenControl(Tafel, BestelItemControls, this);
+            this.BestelKnoppen = new BestelKnoppenControl(Tafel,  this);
             this.MenuItemService = new MenuItemService();
+
             this.btnMenuAfrekenen.Click += new EventHandler(btnMenuAfrekenen_Click);
+            this.btnMenuOverzicht.Click += new EventHandler(btnMenuOverzicht_Click);
+            this.btnMenuOpnemen.Click += new EventHandler(btnMenuOpnemen_Click);
 
             txtTafel.Text += " " + Tafel.Id.ToString();
 
             foreach(MenuItemModel menuItem in MenuItemService.Categoriseren(Categorie.Frisdrank))
             {
                 BestelItem = new BestelItemControl(menuItem, this, BestelKnoppen);
-                BestelItemControls.Add(BestelItem);
+//Ook nog ff naar kijken
+                if (menuItem.Voorraad == 0)
+                {
+                    BestelItem.addButton1.Hide();
+                    BestelItem.lblItem.ForeColor = Color.FromArgb(255, 0, 0);
+                }
                 pnlMain.Controls.Add(BestelItem);
             }           
 
@@ -57,7 +60,24 @@ namespace UI
 
         private void btnMenuAfrekenen_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Hello there");
+            MessageBox.Show("bestellings id moet nog in tafel id komen");
+            new RekeningFormOverzicht(Tafel, Werknemer).Show();
+            this.Close();
+        }
+
+        private void btnMenuAfrekenen_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMenuOverzicht_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMenuOpnemen_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

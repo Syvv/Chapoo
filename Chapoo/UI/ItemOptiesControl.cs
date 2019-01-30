@@ -43,7 +43,6 @@ namespace UI
             {
                 Aantal = Aantal * 10 + 1;
             }
-            txtAantal.Text = Aantal.ToString();
             BestelItemControl.addButton1.Text = Aantal.ToString();
             BestelItemControl.Aantal = Aantal;
         }
@@ -58,7 +57,6 @@ namespace UI
             {
                 Aantal = Aantal * 10 + 2;
             }
-            txtAantal.Text = Aantal.ToString();
             BestelItemControl.addButton1.Text = Aantal.ToString();
             BestelItemControl.Aantal = Aantal;
         }
@@ -73,7 +71,6 @@ namespace UI
             {
                 Aantal = Aantal * 10 + 3;
             }
-            txtAantal.Text = Aantal.ToString();
             BestelItemControl.addButton1.Text = Aantal.ToString();
             BestelItemControl.Aantal = Aantal;
         }
@@ -88,7 +85,6 @@ namespace UI
             {
                 Aantal = Aantal * 10 + 4;
             }
-            txtAantal.Text = Aantal.ToString();
             BestelItemControl.addButton1.Text = Aantal.ToString();
             BestelItemControl.Aantal = Aantal;
         }
@@ -103,7 +99,6 @@ namespace UI
             {
                 Aantal = Aantal * 10 + 5;
             }
-            txtAantal.Text = Aantal.ToString();
             BestelItemControl.addButton1.Text = Aantal.ToString();
             BestelItemControl.Aantal = Aantal;
         }
@@ -118,7 +113,6 @@ namespace UI
             {
                 Aantal = Aantal * 10 + 6;
             }
-            txtAantal.Text = Aantal.ToString();
             BestelItemControl.addButton1.Text = Aantal.ToString();
             BestelItemControl.Aantal = Aantal;
         }
@@ -133,7 +127,6 @@ namespace UI
             {
                 Aantal = Aantal * 10 + 7;
             }
-            txtAantal.Text = Aantal.ToString();
             BestelItemControl.Aantal = Aantal;
         }
 
@@ -147,7 +140,6 @@ namespace UI
             {
                 Aantal = Aantal * 10 + 8;
             }
-            txtAantal.Text = Aantal.ToString();
             BestelItemControl.addButton1.Text = Aantal.ToString();
             BestelItemControl.Aantal = Aantal;
         }
@@ -162,7 +154,6 @@ namespace UI
             {
                 Aantal = Aantal * 10 + 9;
             }
-            txtAantal.Text = Aantal.ToString();
             BestelItemControl.addButton1.Text = Aantal.ToString();
             BestelItemControl.Aantal = Aantal;
         }
@@ -170,7 +161,6 @@ namespace UI
         private void btnNul_Click(object sender, EventArgs e)
         {
             Aantal = Aantal * 10;
-            txtAantal.Text = Aantal.ToString();
             BestelItemControl.addButton1.Text = Aantal.ToString();
             BestelItemControl.Aantal = Aantal;
         }
@@ -179,7 +169,6 @@ namespace UI
         {
             Aantal = 0;
             BestelItemControl.addButton1.Text = "x";
-            txtAantal.Text = "";
             BestelItemControl.Aantal = Aantal;
         }
 

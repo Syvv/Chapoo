@@ -34,6 +34,9 @@ namespace Model
             this.Btw6 = btw6;
             this.Btw21 = btw21;
         }
-        
+        public RekeningModel(BestellingModel bestelling)
+        {
+            this.Bestelling = bestelling;
+        }
     }
 }

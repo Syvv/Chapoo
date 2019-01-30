@@ -38,7 +38,6 @@
             this.btnAcht = new StyleGuide.BaseButton();
             this.btnNegen = new StyleGuide.BaseButton();
             this.btnNul = new StyleGuide.BaseButton();
-            this.txtAantal = new System.Windows.Forms.TextBox();
             this.txtComment = new System.Windows.Forms.RichTextBox();
             this.btnVoegToe = new StyleGuide.BaseButton();
             this.btnDelete = new StyleGuide.BaseButton();
@@ -50,7 +49,7 @@
             this.bntEen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bntEen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.bntEen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.bntEen.Location = new System.Drawing.Point(35, 59);
+            this.bntEen.Location = new System.Drawing.Point(29, 31);
             this.bntEen.Name = "bntEen";
             this.bntEen.Size = new System.Drawing.Size(46, 43);
             this.bntEen.TabIndex = 0;
@@ -63,7 +62,7 @@
             this.btnTwee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTwee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnTwee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnTwee.Location = new System.Drawing.Point(87, 59);
+            this.btnTwee.Location = new System.Drawing.Point(81, 31);
             this.btnTwee.Name = "btnTwee";
             this.btnTwee.Size = new System.Drawing.Size(46, 43);
             this.btnTwee.TabIndex = 1;
@@ -76,7 +75,7 @@
             this.btnDrie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDrie.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnDrie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnDrie.Location = new System.Drawing.Point(139, 59);
+            this.btnDrie.Location = new System.Drawing.Point(133, 31);
             this.btnDrie.Name = "btnDrie";
             this.btnDrie.Size = new System.Drawing.Size(46, 43);
             this.btnDrie.TabIndex = 2;
@@ -89,7 +88,7 @@
             this.btnVier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnVier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnVier.Location = new System.Drawing.Point(35, 108);
+            this.btnVier.Location = new System.Drawing.Point(29, 80);
             this.btnVier.Name = "btnVier";
             this.btnVier.Size = new System.Drawing.Size(46, 43);
             this.btnVier.TabIndex = 3;
@@ -102,7 +101,7 @@
             this.vtnVijf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.vtnVijf.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.vtnVijf.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.vtnVijf.Location = new System.Drawing.Point(87, 108);
+            this.vtnVijf.Location = new System.Drawing.Point(81, 80);
             this.vtnVijf.Name = "vtnVijf";
             this.vtnVijf.Size = new System.Drawing.Size(46, 43);
             this.vtnVijf.TabIndex = 4;
@@ -115,7 +114,7 @@
             this.vtnZes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.vtnZes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.vtnZes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.vtnZes.Location = new System.Drawing.Point(139, 108);
+            this.vtnZes.Location = new System.Drawing.Point(133, 80);
             this.vtnZes.Name = "vtnZes";
             this.vtnZes.Size = new System.Drawing.Size(46, 43);
             this.vtnZes.TabIndex = 5;
@@ -128,7 +127,7 @@
             this.vtnZeven.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.vtnZeven.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.vtnZeven.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.vtnZeven.Location = new System.Drawing.Point(35, 157);
+            this.vtnZeven.Location = new System.Drawing.Point(29, 129);
             this.vtnZeven.Name = "vtnZeven";
             this.vtnZeven.Size = new System.Drawing.Size(46, 43);
             this.vtnZeven.TabIndex = 6;
@@ -141,7 +140,7 @@
             this.btnAcht.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAcht.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnAcht.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnAcht.Location = new System.Drawing.Point(87, 157);
+            this.btnAcht.Location = new System.Drawing.Point(81, 129);
             this.btnAcht.Name = "btnAcht";
             this.btnAcht.Size = new System.Drawing.Size(46, 43);
             this.btnAcht.TabIndex = 7;
@@ -154,7 +153,7 @@
             this.btnNegen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNegen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnNegen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnNegen.Location = new System.Drawing.Point(139, 157);
+            this.btnNegen.Location = new System.Drawing.Point(133, 129);
             this.btnNegen.Name = "btnNegen";
             this.btnNegen.Size = new System.Drawing.Size(46, 43);
             this.btnNegen.TabIndex = 8;
@@ -167,20 +166,13 @@
             this.btnNul.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNul.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnNul.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnNul.Location = new System.Drawing.Point(139, 206);
+            this.btnNul.Location = new System.Drawing.Point(133, 178);
             this.btnNul.Name = "btnNul";
             this.btnNul.Size = new System.Drawing.Size(46, 43);
             this.btnNul.TabIndex = 9;
             this.btnNul.Text = "0";
             this.btnNul.UseVisualStyleBackColor = true;
             this.btnNul.Click += new System.EventHandler(this.btnNul_Click);
-            // 
-            // txtAantal
-            // 
-            this.txtAantal.Location = new System.Drawing.Point(35, 31);
-            this.txtAantal.Name = "txtAantal";
-            this.txtAantal.Size = new System.Drawing.Size(150, 22);
-            this.txtAantal.TabIndex = 10;
             // 
             // txtComment
             // 
@@ -209,7 +201,7 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnDelete.Location = new System.Drawing.Point(35, 206);
+            this.btnDelete.Location = new System.Drawing.Point(29, 178);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(46, 43);
             this.btnDelete.TabIndex = 13;
@@ -238,7 +230,6 @@
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnVoegToe);
             this.Controls.Add(this.txtComment);
-            this.Controls.Add(this.txtAantal);
             this.Controls.Add(this.btnNul);
             this.Controls.Add(this.btnNegen);
             this.Controls.Add(this.btnAcht);
@@ -253,7 +244,6 @@
             this.Name = "ItemOptiesControl";
             this.Size = new System.Drawing.Size(584, 276);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -269,7 +259,6 @@
         protected StyleGuide.BaseButton btnAcht;
         protected StyleGuide.BaseButton btnNegen;
         protected StyleGuide.BaseButton btnNul;
-        protected System.Windows.Forms.TextBox txtAantal;
         protected System.Windows.Forms.RichTextBox txtComment;
         protected StyleGuide.BaseButton btnVoegToe;
         protected StyleGuide.BaseButton btnDelete;

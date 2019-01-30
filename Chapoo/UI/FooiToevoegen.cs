@@ -18,12 +18,14 @@ namespace UI
         private RekeningModel Rekening;
         private RekeningService RekeningLogica;
         private bool IsGoedGekeurd = false; 
+        private int BestellingsId { get; set; }
 
-        public FooiToevoegen(RekeningModel rekening)
+        public FooiToevoegen(RekeningModel rekening, int BestellingsId)
         {
             InitializeComponent();
             this.Rekening = rekening;
             this.RekeningLogica = new RekeningService();
+            this.BestellingsId = BestellingsId;
 
             BeginPrijzenWeeergeven();
         }
@@ -127,7 +129,7 @@ namespace UI
 
             if (FooiIngevuldCheck())
             {
-                RekeningLogica.RekeningBetaling(Rekening);
+                RekeningLogica.RekeningBetaling(Rekening, BestellingsId);
             }
         }
     }
