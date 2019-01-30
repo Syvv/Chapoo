@@ -10,8 +10,8 @@ namespace DataAdaptor
     public class DAOFactory
     {
         //Connection Info
-        private string ConnectionString = "Data Source=den1.mssql7.gear.host;Initial Catalog=chapoo1819f01;User ID=chapoo1819f01;Password=Pu0Q_utpxc-k";
-        private SqlConnection Connection;
+        private readonly string ConnectionString = "Data Source=den1.mssql7.gear.host;Initial Catalog=chapoo1819f01;User ID=chapoo1819f01;Password=Pu0Q_utpxc-k";
+        private readonly SqlConnection Connection;
         //Instances zodat er niet meer dan 1 bestaat op een moment
         private BestellingsItemDAO BestellingsItemDAO = null;
         private RekeningDAO RekeningDAO = null;
