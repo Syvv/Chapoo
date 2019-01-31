@@ -19,14 +19,15 @@ namespace UI
         private RekeningService RekeningLogica;
         private bool IsGoedGekeurd = false; 
         private int BestellingsId { get; set; }
+        private Form form;
 
-        public FooiToevoegen(RekeningModel rekening, int BestellingsId)
+        public FooiToevoegen(RekeningModel rekening, int BestellingsId, Form form)
         {
             InitializeComponent();
             this.Rekening = rekening;
             this.RekeningLogica = new RekeningService();
             this.BestellingsId = BestellingsId;
-
+            this.form = form;
             BeginPrijzenWeeergeven();
         }
 
@@ -99,7 +100,7 @@ namespace UI
                 string test = TbInvullen.Text;
                 if (string.IsNullOrEmpty(test))
                 {
-                    return true;
+                    return false;
                 }
             }
             return false;
@@ -108,19 +109,22 @@ namespace UI
         private void BtnPin_Click(object sender, EventArgs e)
         {
             FooiCheck();
-            BetalingAfronden(BetaalMethode.pin);            
+            BetalingAfronden(BetaalMethode.pin);
+            form.Close();
         }
 
         private void BtnContant_Click(object sender, EventArgs e)
         {
             FooiCheck();
             BetalingAfronden(BetaalMethode.cash);
+            form.Close();
         }
 
         private void BtnCreditcard_Click(object sender, EventArgs e)
         {
             FooiCheck();
             BetalingAfronden(BetaalMethode.creditcard);
+            form.Close();
         }
 
         private void BetalingAfronden(BetaalMethode methode)

@@ -12,13 +12,15 @@ namespace UI
 {
     public class BestellingHelperClass
     {
-
+        //Leest de lijst met bestelItemControls uit, en maak hier een list met BestellingItems van
         public List<BestellingsitemModel> CreateBestellingItemList(List<BestelItemControl> bestelItemControls, BestellingModel bestelling, int tafelId)
         {
             BestellingService bestellingService = new BestellingService();
             List<BestellingsitemModel> bestellingsItems = new List<BestellingsitemModel>();
 
+            //Pak de laastebestelling id
             int laatsteBestellingId = bestellingService.GetLaatseBestelling(tafelId);
+            //Kijk of de bestelling nog openstaand, aan de hand van de bestellingId
             bool bestellingOpen = bestellingService.CheckVoorOpenstaandeBestelling(laatsteBestellingId);
 
             foreach (BestelItemControl bestelItemControl in bestelItemControls)
@@ -34,10 +36,12 @@ namespace UI
 
                     if (bestellingOpen)
                     {
+                        //Als de bestelling nog open is gebruik dan de laatsteBestellingId
                         bestellingsitem = new BestellingsitemModel(menuId, laatsteBestellingId, timestamp, hoeveelheid, commentaar);
                     }
                     else
                     {
+                        //Als de bestelling niet open is maak een nieuwe bestelling
                         int bestellingId = bestellingService.InsertBestelling(bestelling);
                         bestellingsitem = new BestellingsitemModel(menuId, bestellingId, timestamp, hoeveelheid, commentaar);
                     }

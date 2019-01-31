@@ -90,9 +90,5 @@ namespace UI
         {
             this.BackColor = Color.FromArgb(0, 0, 0);
         }
-        private void BestelItem_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

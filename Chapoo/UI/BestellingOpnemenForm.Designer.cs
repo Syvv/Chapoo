@@ -31,9 +31,13 @@
             this.pnlTop.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnMenuOpnemen
+            // backButton1
             // 
-            this.btnMenuOpnemen.Click += new System.EventHandler(this.btnMenuOpnemen_Click);
+            this.backButton1.Click += new System.EventHandler(this.backButton1_Click_1);
+            // 
+            // uitlogButton1
+            // 
+            this.uitlogButton1.Click += new System.EventHandler(this.uitlogButton1_Click);
             // 
             // BestellingOpnemenForm
             // 

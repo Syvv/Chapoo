@@ -18,6 +18,7 @@ namespace UI
         private RekeningModel Rekening { get; set; }
         private RekeningService RekeningLogica;
         private int BestellingsId { get; set; }
+        private string opmerking = "";
         public RekeningGeldOverzicht(RekeningModel rekening, int BestellingsId)
         {
             InitializeComponent();
@@ -40,11 +41,10 @@ namespace UI
 
         private void BtnOpmerking_Click(object sender, EventArgs e) //kijken of lukt
         {
-            string opmerking = Rekening.Opmerking;
+            opmerking = Rekening.Opmerking;
             RekeningOpmerkingForm form = new RekeningOpmerkingForm(opmerking);
             form.ShowDialog();
-
-            this.Rekening.Opmerking = form.Opmerking;
+            opmerking = form.Opmerking;
             lblOpmerking.Show();
             OutOpmerking.Show();
             OutOpmerking.Text = Rekening.Opmerking;
@@ -52,6 +52,7 @@ namespace UI
 
         private void BtnFooi_Click(object sender, EventArgs e) //deze sluiten???
         {
+            this.Rekening.Opmerking = this.opmerking;
             new RekeningFooiForm_en_betalen(this.Rekening, BestellingsId).Show();
         }
     }

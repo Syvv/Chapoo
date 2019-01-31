@@ -26,9 +26,9 @@ namespace DataAdaptor
 
             int tafelId = bestelling.Tafel.Id;
             int werknemerId = bestelling.Werknemer.Id;
-            int bestellingId = 0;
+           int bestellingId = 0;
 
-            sb.Append("INSERT INTO BESTELLING (tafelId, werknemerId) VALUES(@tafelId, @werknemerId); SELECT SCOPE_IDENTITY();");
+            sb.Append("INSERT INTO BESTELLING (tafelId, werknemerId) VALUES(@tafelId, @werknemerId); SELECT SCOPE_IDENTITY()");
 
             String sql = sb.ToString();
             using (SqlCommand cmd = new SqlCommand(sql, connection))

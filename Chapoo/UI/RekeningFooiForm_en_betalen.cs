@@ -26,6 +26,7 @@ namespace UI
             this.Rekening = Rekening;
             this.Werknemer = werknemer;
             this.Tafel = tafel;
+            this.BestellingsId = BestellingsId;
             Test();
         }
         public RekeningFooiForm_en_betalen(RekeningModel rekening, int bestellingId)
@@ -33,11 +34,12 @@ namespace UI
             InitializeComponent();
             this.Rekening = rekening;
             this.BestellingsId = bestellingId;
+            Test();
         }
         private void Test()
         {
-            Form = new FooiToevoegen(Rekening, BestellingsId);
-            pnlMain.Controls.Add(this.Form);
+            Form = new FooiToevoegen(Rekening, BestellingsId, this);
+            pnlMain.Controls.Add(Form);
         }
 
         private void btnMenuOpnemen_Click(object sender, EventArgs e)

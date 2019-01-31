@@ -31,7 +31,8 @@ namespace UI
             this.MenuItemService = new MenuItemService();
 
             this.btnMenuAfrekenen.Click += new EventHandler(btnMenuAfrekenen_Click);
-            this.btnMenuOpnemen.Click += new EventHandler(btnMenuOpnemen_Click);
+            this.backButton1.Click += new EventHandler(backButton1_Click_1);
+            this.uitlogButton1.Click += new EventHandler(uitlogButton1_Click);
 
             txtTafel.Text += " " + Tafel.Id.ToString();
 
@@ -49,13 +50,6 @@ namespace UI
 
             pnlBottom.Controls.Add(BestelKnoppen);
         }
-        private void Bestelling_opnemen_form_Load(object sender, EventArgs e)
-        {
-        }
-
-        private void backButton1_Click(object sender, EventArgs e)
-        {
-        }
 
         private void btnMenuAfrekenen_Click(object sender, EventArgs e)
         {
@@ -63,19 +57,16 @@ namespace UI
             this.Close();
         }
 
-        private void btnMenuAfrekenen_Click_1(object sender, EventArgs e)
+        private void backButton1_Click_1(object sender, EventArgs e)
         {
-
+            new TafelOverzicht(Werknemer).Show();
+            this.Close();
         }
 
-        private void btnMenuOverzicht_Click(object sender, EventArgs e)
+        private void uitlogButton1_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void btnMenuOpnemen_Click(object sender, EventArgs e)
-        {
-
+            new Login().Show();
+            this.Close();
         }
     }
 }

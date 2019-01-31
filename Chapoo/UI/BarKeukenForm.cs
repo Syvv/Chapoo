@@ -23,7 +23,7 @@ namespace UI
         private System.Timers.Timer timer;
         private BarKeukenHeader header;
 
-        public BarKeukenForm(Model.WerknemerModel werknemer)
+        public BarKeukenForm(WerknemerModel werknemer)
         {
             InitializeComponent();
             this.werknemer = werknemer;
@@ -64,7 +64,7 @@ namespace UI
             else
             {
                 Controls.Clear();
-                Panel ItemLijstContainer = new Panel() { Top = 60, AutoScroll = true, Width = 1600, Height = 900 };
+                Panel ItemLijstContainer = new Panel() { Top = 60, AutoScroll = true, Width = 1600, Height = 715 };
                 int y = 0;
                 foreach (BestellingsitemModel b in Bestellingen)
                 {
