@@ -37,20 +37,22 @@
             // lblItem
             // 
             this.lblItem.AutoSize = true;
-            this.lblItem.Location = new System.Drawing.Point(16, 12);
+            this.lblItem.Location = new System.Drawing.Point(55, 12);
             this.lblItem.Name = "lblItem";
             this.lblItem.Size = new System.Drawing.Size(34, 17);
             this.lblItem.TabIndex = 0;
             this.lblItem.Text = "item";
+            this.lblItem.Click += new System.EventHandler(this.lblItem_Click);
             // 
             // LblAantal
             // 
             this.LblAantal.AutoSize = true;
-            this.LblAantal.Location = new System.Drawing.Point(398, 12);
+            this.LblAantal.Location = new System.Drawing.Point(14, 12);
             this.LblAantal.Name = "LblAantal";
             this.LblAantal.Size = new System.Drawing.Size(47, 17);
             this.LblAantal.TabIndex = 1;
             this.LblAantal.Text = "aantal";
+            this.LblAantal.Click += new System.EventHandler(this.LblAantal_Click);
             // 
             // LblPrijs
             // 

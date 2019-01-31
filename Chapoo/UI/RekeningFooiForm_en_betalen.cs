@@ -26,20 +26,20 @@ namespace UI
             this.Rekening = Rekening;
             this.Werknemer = werknemer;
             this.Tafel = tafel;
-            this.BestellingsId = BestellingsId;
-            Test();
+            FooiToevoegenControlItemOpen();
         }
         public RekeningFooiForm_en_betalen(RekeningModel rekening, int bestellingId)
         {
             InitializeComponent();
             this.Rekening = rekening;
             this.BestellingsId = bestellingId;
-            Test();
+            FooiToevoegenControlItemOpen();
+            this.Rekening = Rekening;
         }
-        private void Test()
+        private void FooiToevoegenControlItemOpen()
         {
-            Form = new FooiToevoegen(Rekening, BestellingsId, this);
-            pnlMain.Controls.Add(Form);
+            Form = new FooiToevoegen(Rekening, BestellingsId);
+            pnlMain.Controls.Add(this.Form);
         }
 
         private void btnMenuOpnemen_Click(object sender, EventArgs e)

@@ -16,9 +16,19 @@ namespace UI
         {
             InitializeComponent();
             lblItem.Text = item;
-            LblAantal.Text = aantal.ToString();
+            LblAantal.Text = aantal.ToString() + "x";
             LblPrijs.Text = string.Format("€ {0:F2} ", prijs);
             LblTotaalprijs.Text = string.Format("€ {0:F2} ", totPrijs);
+        }
+
+        private void LblAantal_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

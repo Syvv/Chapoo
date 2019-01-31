@@ -31,16 +31,23 @@ namespace UI
             this.RekeningLogica = new RekeningService();            
             this.Tafel = tafel;
             this.Werknemer = werknemer;
-            this.BestellingsId = BestellingsIdOphalen(Tafel.Id);
-            
-            WeergevenRekeningItems();
-            WeergevenRekeningPrijzen();//naam aanpassen
 
+            try
+            {
+                this.BestellingsId = BestellingsIdOphalen(Tafel.Id);
+                WeergevenRekeningItems();
+                WeergevenRekeningPrijzen();//naam aanpassen
+            }
+            catch
+            {
+                MessageBox.Show("Er is nog geen bestelling gedaan.");
+            }  
+            this.btnMenuAfrekenen.Click += new EventHandler(btnMenuAfrekenen_Click);
             this.btnMenuOpnemen.Click += new EventHandler(btnMenuOpnemen_Click);
         }
         public int BestellingsIdOphalen(int tafelId)
-        {
-            return (int) RekeningLogica.BestellingsIdOphalen(tafelId);
+        {            
+            return (int)RekeningLogica.BestellingsIdOphalen(tafelId);            
         }
 
         private void btnMenuOpnemen_Click(object sender, EventArgs e)
@@ -49,6 +56,15 @@ namespace UI
             this.Close();
         }
 
+        private void btnMenuOverzicht_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void btnMenuAfrekenen_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
 
         private void WeergevenRekeningItems()
         {
@@ -57,7 +73,9 @@ namespace UI
                 List<BestellingsitemModel> BestellingenLijst = RekeningLogica.BesteldeItems(BestellingsId);
                 int y = 40;
 
-                foreach(BestellingsitemModel item in BestellingenLijst) //lokoatie aanpassen
+                RekeningsItemAanhef x = new RekeningsItemAanhef();
+                pnlMain.Controls.Add(x);
+                foreach(BestellingsitemModel item in BestellingenLijst)
                 {
                     this.Rekeningitem = new RekeningItem(item.Naam, item.Hoeveelheid, item.Prijs, item.Hoeveelheid * item.Prijs);
                     pnlMain.Controls.Add(this.Rekeningitem);
