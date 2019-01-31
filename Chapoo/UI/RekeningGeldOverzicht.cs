@@ -41,18 +41,19 @@ namespace UI
 
         private void BtnOpmerking_Click(object sender, EventArgs e) //kijken of lukt
         {
-            opmerking = Rekening.Opmerking;
+            this.opmerking = Rekening.Opmerking;
             RekeningOpmerkingForm form = new RekeningOpmerkingForm(opmerking);
             form.ShowDialog();
-            opmerking = form.Opmerking;
+            this.opmerking = form.Opmerking;
+            Rekening.Opmerking = this.opmerking;
+
             lblOpmerking.Show();
             OutOpmerking.Show();
             OutOpmerking.Text = Rekening.Opmerking;
         }
 
         private void BtnFooi_Click(object sender, EventArgs e) //deze sluiten???
-        {
-            this.Rekening.Opmerking = this.opmerking;
+        {            
             new RekeningFooiForm_en_betalen(this.Rekening, BestellingsId).Show();
         }
     }

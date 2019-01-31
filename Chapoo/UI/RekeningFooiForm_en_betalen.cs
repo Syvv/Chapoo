@@ -38,7 +38,7 @@ namespace UI
         }
         private void FooiToevoegenControlItemOpen()
         {
-            Form = new FooiToevoegen(Rekening, BestellingsId);
+            Form = new FooiToevoegen(Rekening, BestellingsId, this);
             pnlMain.Controls.Add(this.Form);
         }
 

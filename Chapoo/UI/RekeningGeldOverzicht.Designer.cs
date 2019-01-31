@@ -40,6 +40,9 @@
             this.BtnFooi = new System.Windows.Forms.Button();
             this.lblOpmerking = new System.Windows.Forms.Label();
             this.OutOpmerking = new System.Windows.Forms.Label();
+            this.BtnCreditcard = new System.Windows.Forms.Button();
+            this.BtnContant = new System.Windows.Forms.Button();
+            this.BtnPin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblBtw9
@@ -164,10 +167,40 @@
             this.OutOpmerking.TabIndex = 11;
             this.OutOpmerking.Text = "x";
             // 
+            // BtnCreditcard
+            // 
+            this.BtnCreditcard.Location = new System.Drawing.Point(402, 212);
+            this.BtnCreditcard.Name = "BtnCreditcard";
+            this.BtnCreditcard.Size = new System.Drawing.Size(151, 39);
+            this.BtnCreditcard.TabIndex = 14;
+            this.BtnCreditcard.Text = "Creditcard";
+            this.BtnCreditcard.UseVisualStyleBackColor = true;
+            // 
+            // BtnContant
+            // 
+            this.BtnContant.Location = new System.Drawing.Point(215, 212);
+            this.BtnContant.Name = "BtnContant";
+            this.BtnContant.Size = new System.Drawing.Size(151, 39);
+            this.BtnContant.TabIndex = 13;
+            this.BtnContant.Text = "Cash / contant";
+            this.BtnContant.UseVisualStyleBackColor = true;
+            // 
+            // BtnPin
+            // 
+            this.BtnPin.Location = new System.Drawing.Point(26, 212);
+            this.BtnPin.Name = "BtnPin";
+            this.BtnPin.Size = new System.Drawing.Size(151, 39);
+            this.BtnPin.TabIndex = 12;
+            this.BtnPin.Text = "Pin";
+            this.BtnPin.UseVisualStyleBackColor = true;
+            // 
             // RekeningGeldOverzicht
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.BtnCreditcard);
+            this.Controls.Add(this.BtnContant);
+            this.Controls.Add(this.BtnPin);
             this.Controls.Add(this.OutOpmerking);
             this.Controls.Add(this.lblOpmerking);
             this.Controls.Add(this.BtnFooi);
@@ -201,5 +234,8 @@
         private System.Windows.Forms.Button BtnFooi;
         private System.Windows.Forms.Label lblOpmerking;
         private System.Windows.Forms.Label OutOpmerking;
+        private System.Windows.Forms.Button BtnCreditcard;
+        private System.Windows.Forms.Button BtnContant;
+        private System.Windows.Forms.Button BtnPin;
     }
 }

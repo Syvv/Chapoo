@@ -53,8 +53,13 @@ namespace UI
 
         private void btnMenuAfrekenen_Click(object sender, EventArgs e)
         {
-            new RekeningFormOverzicht(Tafel, Werknemer).Show();
-            this.Close();
+            try
+            {
+                new RekeningFormOverzicht(Tafel, Werknemer).Show();
+                this.Close();
+            }
+            catch { MessageBox.Show("1. geen tafelbestelling"); }
+            
         }
 
         private void backButton1_Click_1(object sender, EventArgs e)
