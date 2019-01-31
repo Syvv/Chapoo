@@ -32,13 +32,13 @@ namespace UI
             this.Tafel = tafel;
             this.Werknemer = werknemer;
 
-            try
+            //try
             {
                 this.BestellingsId = BestellingsIdOphalen(Tafel.Id);
                 WeergevenRekeningItems();
                 WeergevenRekeningPrijzen();//naam aanpassen
             }
-            catch
+            //catch
             {
                 MessageBox.Show("Er is nog geen bestelling gedaan.");
             }  
