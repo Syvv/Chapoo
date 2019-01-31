@@ -21,148 +21,170 @@ namespace UI
         {
             InitializeComponent();
             this.BestelItemControl = bestelItemControl;
-            this.Aantal = 0;
+            this.Aantal = bestelItemControl.Aantal;
             this.BestellingOpnemenForm = bestellingOpnemenForm;
             this.BestelKnoppen = bestelKnoppen;
+            txtComment.Text = BestelItemControl.Commentaar;
+            txtComment.TextChanged += new System.EventHandler(txtComment_TextChanged);
         }
 
         private void btnComment_Click(object sender, EventArgs e)
         {
-            this.BestelItemControl.Commentaar = txtComment.Text;
             this.BestellingOpnemenForm.pnlBottom.Controls.Clear();
             this.BestellingOpnemenForm.pnlBottom.Controls.Add(BestelKnoppen);
         }
 
         private void bntEen_Click(object sender, EventArgs e)
         {
-            if(Aantal == 0)
+            int aantal = BestelItemControl.Aantal;
+
+            if (aantal == 0)
             {
-                Aantal += 1;
+                aantal += 1;
             }
             else
             {
-                Aantal = Aantal * 10 + 1;
+                aantal = aantal * 10 + 1;
             }
-            BestelItemControl.addButton1.Text = Aantal.ToString();
-            BestelItemControl.Aantal = Aantal;
+            BestelItemControl.addButton1.Text = aantal.ToString();
+
+            BestelItemControl.Aantal = aantal;
         }
 
         private void btnTwee_Click(object sender, EventArgs e)
         {
-            if (Aantal == 0)
+            int aantal = BestelItemControl.Aantal;
+
+            if (aantal == 0)
             {
-                Aantal += 2;
+                aantal += 2;
             }
             else
             {
-                Aantal = Aantal * 10 + 2;
+                aantal = aantal * 10 + 2;
             }
-            BestelItemControl.addButton1.Text = Aantal.ToString();
-            BestelItemControl.Aantal = Aantal;
+            BestelItemControl.addButton1.Text = aantal.ToString();
+            BestelItemControl.Aantal = aantal;
         }
 
         private void btnDrie_Click(object sender, EventArgs e)
         {
-            if (Aantal == 0)
+            int aantal = BestelItemControl.Aantal;
+
+            if (aantal == 0)
             {
-                Aantal += 3;
+                aantal += 3;
             }
             else
             {
-                Aantal = Aantal * 10 + 3;
+                aantal = aantal * 10 + 3;
             }
-            BestelItemControl.addButton1.Text = Aantal.ToString();
-            BestelItemControl.Aantal = Aantal;
+            BestelItemControl.addButton1.Text = aantal.ToString();
+            BestelItemControl.Aantal = aantal;
         }
 
         private void btnVier_Click(object sender, EventArgs e)
         {
-            if (Aantal == 0)
+            int aantal = BestelItemControl.Aantal;
+
+            if (aantal == 0)
             {
-                Aantal += 4;
+                aantal += 4;
             }
             else
             {
-                Aantal = Aantal * 10 + 4;
+                aantal = aantal * 10 + 4;
             }
-            BestelItemControl.addButton1.Text = Aantal.ToString();
-            BestelItemControl.Aantal = Aantal;
+            BestelItemControl.addButton1.Text = aantal.ToString();
+            BestelItemControl.Aantal = aantal;
         }
 
         private void vtnVijf_Click(object sender, EventArgs e)
         {
-            if (Aantal == 0)
+            int aantal = BestelItemControl.Aantal;
+
+            if (aantal == 0)
             {
-                Aantal += 5;
+                aantal += 5;
             }
             else
             {
-                Aantal = Aantal * 10 + 5;
+                aantal = aantal * 10 + 5;
             }
-            BestelItemControl.addButton1.Text = Aantal.ToString();
-            BestelItemControl.Aantal = Aantal;
+            BestelItemControl.addButton1.Text = aantal.ToString();
+            BestelItemControl.Aantal = aantal;
         }
 
         private void vtnZes_Click(object sender, EventArgs e)
         {
-            if (Aantal == 0)
+            int aantal = BestelItemControl.Aantal;
+
+            if (aantal == 0)
             {
-                Aantal += 6;
+                aantal += 6;
             }
             else
             {
-                Aantal = Aantal * 10 + 6;
+                aantal = aantal * 10 + 6;
             }
-            BestelItemControl.addButton1.Text = Aantal.ToString();
-            BestelItemControl.Aantal = Aantal;
+            BestelItemControl.addButton1.Text = aantal.ToString();
+            BestelItemControl.Aantal = aantal;
         }
 
         private void vtnZeven_Click(object sender, EventArgs e)
         {
-            if (Aantal == 0)
+            int aantal = BestelItemControl.Aantal;
+
+            if (aantal == 0)
             {
-                Aantal += 7;
+                aantal += 7;
             }
             else
             {
-                Aantal = Aantal * 10 + 7;
+                aantal = aantal * 10 + 7;
             }
-            BestelItemControl.Aantal = Aantal;
+            BestelItemControl.Aantal = aantal;
         }
 
         private void btnAcht_Click(object sender, EventArgs e)
         {
-            if (Aantal == 0)
+            int aantal = BestelItemControl.Aantal;
+
+            if (aantal == 0)
             {
-                Aantal += 8;
+                aantal += 8;
             }
             else
             {
-                Aantal = Aantal * 10 + 8;
+                aantal = aantal * 10 + 8;
             }
-            BestelItemControl.addButton1.Text = Aantal.ToString();
-            BestelItemControl.Aantal = Aantal;
+            BestelItemControl.addButton1.Text = aantal.ToString();
+            BestelItemControl.Aantal = aantal;
         }
 
         private void btnNegen_Click(object sender, EventArgs e)
         {
-            if (Aantal == 0)
+            int aantal = BestelItemControl.Aantal;
+
+            if (aantal == 0)
             {
-                Aantal += 9;
+                aantal += 9;
             }
             else
             {
-                Aantal = Aantal * 10 + 9;
+                aantal = aantal * 10 + 9;
             }
-            BestelItemControl.addButton1.Text = Aantal.ToString();
-            BestelItemControl.Aantal = Aantal;
+            BestelItemControl.addButton1.Text = aantal.ToString();
+            BestelItemControl.Aantal = aantal;
         }
 
         private void btnNul_Click(object sender, EventArgs e)
         {
-            Aantal = Aantal * 10;
-            BestelItemControl.addButton1.Text = Aantal.ToString();
-            BestelItemControl.Aantal = Aantal;
+            int aantal = BestelItemControl.Aantal;
+
+            aantal = aantal * 10;
+            BestelItemControl.addButton1.Text = aantal.ToString();
+            BestelItemControl.Aantal = aantal;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -174,7 +196,22 @@ namespace UI
 
         private void txtComment_TextChanged(object sender, EventArgs e)
         {
+            this.BestelItemControl.Commentaar = txtComment.Text;
 
+            if (string.IsNullOrEmpty(BestelItemControl.Commentaar))
+            {
+                BestelItemControl.commentIcon.Hide();
+            }
+            else
+            {
+                BestelItemControl.commentIcon.Show();
+            }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            BestellingOpnemenForm.pnlBottom.Controls.Clear();
+            BestellingOpnemenForm.pnlBottom.Controls.Add(BestelKnoppen);
         }
     }
 }

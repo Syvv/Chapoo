@@ -35,6 +35,11 @@ namespace UI
             this.Tafel = bestellingOpnemenForm.Tafel;
             this.Werknemer = bestellingOpnemenForm.Werknemer;
             MenuItemService = new MenuItemService();
+
+            this.btnVerstuur.Enabled = false;
+            this.btnVerstuur.BackColor = Color.FromArgb(157, 199, 200);
+            this.btnVerstuur.ForeColor = Color.FromArgb(255, 255, 255);
+
         }
         public BestelKnoppenControl()
         {
@@ -100,6 +105,7 @@ namespace UI
             {
                 BestellingOpnemenForm.pnlMain.Controls.Add(bestelItemControl);
             }
+            this.btnVerstuur.Enabled = true;
         }
 
         private void btnFris_Click(object sender, EventArgs e)

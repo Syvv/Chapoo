@@ -77,9 +77,9 @@
             this.btnMenuAfrekenen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMenuAfrekenen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnMenuAfrekenen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnMenuAfrekenen.Location = new System.Drawing.Point(281, 3);
+            this.btnMenuAfrekenen.Location = new System.Drawing.Point(287, -1);
             this.btnMenuAfrekenen.Name = "btnMenuAfrekenen";
-            this.btnMenuAfrekenen.Size = new System.Drawing.Size(244, 38);
+            this.btnMenuAfrekenen.Size = new System.Drawing.Size(297, 38);
             this.btnMenuAfrekenen.TabIndex = 12;
             this.btnMenuAfrekenen.Text = "Afrekenen";
             this.btnMenuAfrekenen.UseVisualStyleBackColor = true;
@@ -89,12 +89,13 @@
             this.btnMenuOpnemen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMenuOpnemen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnMenuOpnemen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnMenuOpnemen.Location = new System.Drawing.Point(31, 3);
+            this.btnMenuOpnemen.Location = new System.Drawing.Point(-1, -1);
             this.btnMenuOpnemen.Name = "btnMenuOpnemen";
-            this.btnMenuOpnemen.Size = new System.Drawing.Size(244, 38);
+            this.btnMenuOpnemen.Size = new System.Drawing.Size(291, 38);
             this.btnMenuOpnemen.TabIndex = 10;
             this.btnMenuOpnemen.Text = "Opnemen";
             this.btnMenuOpnemen.UseVisualStyleBackColor = true;
+            this.btnMenuOpnemen.Click += new System.EventHandler(this.btnMenuOpnemen_Click);
             // 
             // txtTafel
             // 
@@ -109,11 +110,12 @@
             // uitlogButton1
             // 
             this.uitlogButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uitlogButton1.BackgroundImage")));
+            this.uitlogButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.uitlogButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.uitlogButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.uitlogButton1.Location = new System.Drawing.Point(530, 54);
+            this.uitlogButton1.Location = new System.Drawing.Point(504, 54);
             this.uitlogButton1.Name = "uitlogButton1";
-            this.uitlogButton1.Size = new System.Drawing.Size(42, 39);
+            this.uitlogButton1.Size = new System.Drawing.Size(67, 60);
             this.uitlogButton1.TabIndex = 8;
             this.uitlogButton1.UseVisualStyleBackColor = true;
             // 
@@ -127,11 +129,12 @@
             // backButton1
             // 
             this.backButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("backButton1.BackgroundImage")));
+            this.backButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.backButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.backButton1.Location = new System.Drawing.Point(14, 48);
+            this.backButton1.Location = new System.Drawing.Point(-1, 54);
             this.backButton1.Name = "backButton1";
-            this.backButton1.Size = new System.Drawing.Size(50, 50);
+            this.backButton1.Size = new System.Drawing.Size(97, 51);
             this.backButton1.TabIndex = 1;
             this.backButton1.Text = " ";
             this.backButton1.UseVisualStyleBackColor = true;

@@ -30,6 +30,8 @@ namespace UI
             this.BestelKnoppen = new BestelKnoppenControl(this);
             this.MenuItemService = new MenuItemService();
 
+            this.btnMenuOpnemen.BackColor = Color.FromArgb(157, 199, 200);
+
             this.btnMenuAfrekenen.Click += new EventHandler(btnMenuAfrekenen_Click);
             this.backButton1.Click += new EventHandler(backButton1_Click_1);
             this.uitlogButton1.Click += new EventHandler(uitlogButton1_Click);

@@ -39,6 +39,11 @@
             // 
             this.uitlogButton1.Click += new System.EventHandler(this.uitlogButton1_Click);
             // 
+            // btnMenuOpnemen
+            // 
+            this.btnMenuOpnemen.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnMenuOpnemen.UseVisualStyleBackColor = false;
+            // 
             // BestellingOpnemenForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);

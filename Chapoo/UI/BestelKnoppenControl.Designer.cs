@@ -163,7 +163,7 @@
             this.btnVerstuur.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerstuur.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnVerstuur.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnVerstuur.Location = new System.Drawing.Point(168, 197);
+            this.btnVerstuur.Location = new System.Drawing.Point(168, 198);
             this.btnVerstuur.Name = "btnVerstuur";
             this.btnVerstuur.Size = new System.Drawing.Size(122, 49);
             this.btnVerstuur.TabIndex = 9;
@@ -176,7 +176,7 @@
             this.btnOverzicht.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOverzicht.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnOverzicht.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnOverzicht.Location = new System.Drawing.Point(296, 197);
+            this.btnOverzicht.Location = new System.Drawing.Point(296, 198);
             this.btnOverzicht.Name = "btnOverzicht";
             this.btnOverzicht.Size = new System.Drawing.Size(122, 49);
             this.btnOverzicht.TabIndex = 10;

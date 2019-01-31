@@ -60,6 +60,9 @@
     <Compile Include="BaseButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CommentIcon.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="HomeButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -117,6 +120,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\comment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\comment1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
