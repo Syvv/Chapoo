@@ -46,7 +46,7 @@
             // 
             this.lblBtw9.AutoSize = true;
             this.lblBtw9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBtw9.Location = new System.Drawing.Point(22, 25);
+            this.lblBtw9.Location = new System.Drawing.Point(22, 14);
             this.lblBtw9.Name = "lblBtw9";
             this.lblBtw9.Size = new System.Drawing.Size(72, 20);
             this.lblBtw9.TabIndex = 0;
@@ -56,7 +56,7 @@
             // 
             this.LblBtw21.AutoSize = true;
             this.LblBtw21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblBtw21.Location = new System.Drawing.Point(22, 52);
+            this.LblBtw21.Location = new System.Drawing.Point(22, 41);
             this.LblBtw21.Name = "LblBtw21";
             this.LblBtw21.Size = new System.Drawing.Size(76, 20);
             this.LblBtw21.TabIndex = 1;
@@ -66,7 +66,7 @@
             // 
             this.LblTotaalBedrag.AutoSize = true;
             this.LblTotaalBedrag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTotaalBedrag.Location = new System.Drawing.Point(22, 117);
+            this.LblTotaalBedrag.Location = new System.Drawing.Point(22, 106);
             this.LblTotaalBedrag.Name = "LblTotaalBedrag";
             this.LblTotaalBedrag.Size = new System.Drawing.Size(106, 20);
             this.LblTotaalBedrag.TabIndex = 2;
@@ -76,7 +76,7 @@
             // 
             this.OutBtw6.AutoSize = true;
             this.OutBtw6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OutBtw6.Location = new System.Drawing.Point(160, 25);
+            this.OutBtw6.Location = new System.Drawing.Point(160, 14);
             this.OutBtw6.Name = "OutBtw6";
             this.OutBtw6.Size = new System.Drawing.Size(54, 20);
             this.OutBtw6.TabIndex = 3;
@@ -86,7 +86,7 @@
             // 
             this.OutBtw21.AutoSize = true;
             this.OutBtw21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OutBtw21.Location = new System.Drawing.Point(160, 52);
+            this.OutBtw21.Location = new System.Drawing.Point(160, 41);
             this.OutBtw21.Name = "OutBtw21";
             this.OutBtw21.Size = new System.Drawing.Size(54, 20);
             this.OutBtw21.TabIndex = 4;
@@ -96,7 +96,7 @@
             // 
             this.OutTotaalBedrag.AutoSize = true;
             this.OutTotaalBedrag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OutTotaalBedrag.Location = new System.Drawing.Point(160, 116);
+            this.OutTotaalBedrag.Location = new System.Drawing.Point(160, 105);
             this.OutTotaalBedrag.Name = "OutTotaalBedrag";
             this.OutTotaalBedrag.Size = new System.Drawing.Size(54, 20);
             this.OutTotaalBedrag.TabIndex = 5;
@@ -106,7 +106,7 @@
             // 
             this.LblFooi.AutoSize = true;
             this.LblFooi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblFooi.Location = new System.Drawing.Point(22, 78);
+            this.LblFooi.Location = new System.Drawing.Point(22, 67);
             this.LblFooi.Name = "LblFooi";
             this.LblFooi.Size = new System.Drawing.Size(41, 20);
             this.LblFooi.TabIndex = 6;
@@ -116,7 +116,7 @@
             // 
             this.OutFooi.AutoSize = true;
             this.OutFooi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OutFooi.Location = new System.Drawing.Point(160, 78);
+            this.OutFooi.Location = new System.Drawing.Point(160, 67);
             this.OutFooi.Name = "OutFooi";
             this.OutFooi.Size = new System.Drawing.Size(54, 20);
             this.OutFooi.TabIndex = 7;
@@ -125,7 +125,7 @@
             // BtnOpmerking
             // 
             this.BtnOpmerking.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnOpmerking.Location = new System.Drawing.Point(407, 25);
+            this.BtnOpmerking.Location = new System.Drawing.Point(407, 14);
             this.BtnOpmerking.Name = "BtnOpmerking";
             this.BtnOpmerking.Size = new System.Drawing.Size(132, 44);
             this.BtnOpmerking.TabIndex = 8;
@@ -136,7 +136,7 @@
             // BtnFooi
             // 
             this.BtnFooi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnFooi.Location = new System.Drawing.Point(407, 89);
+            this.BtnFooi.Location = new System.Drawing.Point(407, 78);
             this.BtnFooi.Name = "BtnFooi";
             this.BtnFooi.Size = new System.Drawing.Size(132, 44);
             this.BtnFooi.TabIndex = 9;
@@ -148,7 +148,7 @@
             // 
             this.lblOpmerking.AutoSize = true;
             this.lblOpmerking.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOpmerking.Location = new System.Drawing.Point(22, 165);
+            this.lblOpmerking.Location = new System.Drawing.Point(22, 154);
             this.lblOpmerking.Name = "lblOpmerking";
             this.lblOpmerking.Size = new System.Drawing.Size(90, 20);
             this.lblOpmerking.TabIndex = 10;
@@ -158,7 +158,7 @@
             // 
             this.OutOpmerking.AutoSize = true;
             this.OutOpmerking.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OutOpmerking.Location = new System.Drawing.Point(160, 165);
+            this.OutOpmerking.Location = new System.Drawing.Point(160, 154);
             this.OutOpmerking.Name = "OutOpmerking";
             this.OutOpmerking.Size = new System.Drawing.Size(17, 20);
             this.OutOpmerking.TabIndex = 11;
@@ -181,7 +181,7 @@
             this.Controls.Add(this.LblBtw21);
             this.Controls.Add(this.lblBtw9);
             this.Name = "RekeningGeldOverzicht";
-            this.Size = new System.Drawing.Size(585, 240);
+            this.Size = new System.Drawing.Size(584, 276);
             this.ResumeLayout(false);
             this.PerformLayout();
 

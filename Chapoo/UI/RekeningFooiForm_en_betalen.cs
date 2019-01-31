@@ -26,15 +26,17 @@ namespace UI
             this.Rekening = Rekening;
             this.Werknemer = werknemer;
             this.Tafel = tafel;
-            Test();
+            FooiToevoegenControlItemOpen();
         }
         public RekeningFooiForm_en_betalen(RekeningModel rekening, int bestellingId)
         {
             InitializeComponent();
             this.Rekening = rekening;
             this.BestellingsId = bestellingId;
+            FooiToevoegenControlItemOpen();
+            this.Rekening = Rekening;
         }
-        private void Test()
+        private void FooiToevoegenControlItemOpen()
         {
             Form = new FooiToevoegen(Rekening, BestellingsId);
             pnlMain.Controls.Add(this.Form);
