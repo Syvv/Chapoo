@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnUitloggen.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="uitlogButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAd
-        hwAAHYcBj+XxZQAAAcJJREFUWEft17suBVEUBuChILSi0XoFlUQh4QWUSDwClcQDeAgegIbKA0gUEo0C
+        iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
+        dAAAEnQB3mYfeAAAAcJJREFUWEft17suBVEUBuChILSi0XoFlUQh4QWUSDwClcQDeAgegIbKA0gUEo0C
         jUJJaMQlhMTtXyN7sqyz9pi15irxJ1/Cnj3LHydzOclfyAB8NuQZzLkGbVhdJsEUbUidZsAUbQh3X8Ir
         yHmVFySr4M0B8Fm1FAwWwZpd4DNCwRsIaxu0EAs/uaglKJpYQb5GNkGN3FjUOyzAb4kV/AC+TrahJ3KT
         1Qv0QyzzsM6MA6UPtHk78CPaJqt98EabtwVZtA1Wp1Am9ISRM7MLRx7wkAW1PR7phaMdsOIFz0Hb46Uu

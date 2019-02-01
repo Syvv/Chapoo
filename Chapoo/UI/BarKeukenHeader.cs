@@ -30,11 +30,7 @@ namespace UI
             {
                 Headertext.Text = "Te bereiden drankjes in de Bar";
             }
-        }
-
-        private void btnUitloggen_Click(object sender, EventArgs e)
-        {
-            logOut();
+            this.uitlogButton.FlatAppearance.BorderSize  = 0;
         }
 
         private void Togglebtn_Click(object sender, EventArgs e)
@@ -67,6 +63,11 @@ namespace UI
             }
 
             refresh(isShowingOnlyCurrentOrders);
+        }
+
+        private void uitlogButton_Click(object sender, EventArgs e)
+        {
+            logOut();
         }
     }
 }

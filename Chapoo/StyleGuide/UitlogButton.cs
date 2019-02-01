@@ -10,6 +10,7 @@ namespace StyleGuide
         {
             FlatStyle = FlatStyle.Flat;
             Bitmap objBitmap = new Bitmap(Properties.Resources.logout, new Size(40, 40));
+            FlatAppearance.BorderSize = 0;
             Image image = objBitmap;
             BackgroundImage = image;
             Size = new Size(50, 50);

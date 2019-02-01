@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BarKeukenHeader));
             this.label1 = new System.Windows.Forms.Label();
             this.Headertext = new System.Windows.Forms.Label();
-            this.btnUitloggen = new StyleGuide.UitlogButton();
+            this.uitlogButton = new StyleGuide.UitlogButton();
             this.Togglebtn = new StyleGuide.BaseButton();
             this.SuspendLayout();
             // 
@@ -39,10 +39,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1600, 25);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(1067, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(311, 51);
+            this.label1.Size = new System.Drawing.Size(196, 31);
             this.label1.TabIndex = 1;
             this.label1.Text = "(Commentaar:)";
             // 
@@ -50,25 +49,24 @@
             // 
             this.Headertext.AutoSize = true;
             this.Headertext.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Headertext.Location = new System.Drawing.Point(144, 25);
-            this.Headertext.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Headertext.Location = new System.Drawing.Point(96, 16);
             this.Headertext.Name = "Headertext";
-            this.Headertext.Size = new System.Drawing.Size(669, 51);
+            this.Headertext.Size = new System.Drawing.Size(421, 31);
             this.Headertext.TabIndex = 2;
             this.Headertext.Text = "Te bereiden gerechten in Keuken:";
             // 
-            // btnUitloggen
+            // uitlogButton
             // 
-            this.btnUitloggen.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUitloggen.BackgroundImage")));
-            this.btnUitloggen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUitloggen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnUitloggen.Location = new System.Drawing.Point(28, 23);
-            this.btnUitloggen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnUitloggen.Name = "btnUitloggen";
-            this.btnUitloggen.Size = new System.Drawing.Size(50, 50);
-            this.btnUitloggen.TabIndex = 0;
-            this.btnUitloggen.UseVisualStyleBackColor = true;
-            this.btnUitloggen.Click += new System.EventHandler(this.btnUitloggen_Click);
+            this.uitlogButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uitlogButton.BackgroundImage")));
+            this.uitlogButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.uitlogButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.uitlogButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.uitlogButton.Location = new System.Drawing.Point(14, 8);
+            this.uitlogButton.Name = "uitlogButton";
+            this.uitlogButton.Size = new System.Drawing.Size(76, 50);
+            this.uitlogButton.TabIndex = 4;
+            this.uitlogButton.UseVisualStyleBackColor = true;
+            this.uitlogButton.Click += new System.EventHandler(this.uitlogButton_Click);
             // 
             // Togglebtn
             // 
@@ -76,10 +74,10 @@
             this.Togglebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Togglebtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.Togglebtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Togglebtn.Location = new System.Drawing.Point(2725, 5);
-            this.Togglebtn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Togglebtn.Location = new System.Drawing.Point(1817, 3);
+            this.Togglebtn.Margin = new System.Windows.Forms.Padding(4);
             this.Togglebtn.Name = "Togglebtn";
-            this.Togglebtn.Size = new System.Drawing.Size(290, 92);
+            this.Togglebtn.Size = new System.Drawing.Size(193, 59);
             this.Togglebtn.TabIndex = 3;
             this.Togglebtn.Text = "Bestellingen van vandaag laten zien";
             this.Togglebtn.UseVisualStyleBackColor = false;
@@ -87,28 +85,26 @@
             // 
             // BarKeukenHeader
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.Controls.Add(this.uitlogButton);
             this.Controls.Add(this.Togglebtn);
             this.Controls.Add(this.Headertext);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnUitloggen);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.MaximumSize = new System.Drawing.Size(3050, 100);
-            this.MinimumSize = new System.Drawing.Size(3050, 100);
+            this.MaximumSize = new System.Drawing.Size(2033, 64);
+            this.MinimumSize = new System.Drawing.Size(2033, 64);
             this.Name = "BarKeukenHeader";
-            this.Size = new System.Drawing.Size(3050, 100);
+            this.Size = new System.Drawing.Size(2033, 64);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private StyleGuide.UitlogButton btnUitloggen;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label Headertext;
         private StyleGuide.BaseButton Togglebtn;
+        private StyleGuide.UitlogButton uitlogButton;
     }
 }
