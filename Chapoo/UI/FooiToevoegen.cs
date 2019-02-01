@@ -20,15 +20,23 @@ namespace UI
         private bool IsGoedGekeurd = false; 
         private int BestellingsId { get; set; }
         private Form form;
+        private WerknemerModel Werknemer { get; set; }
 
-        public FooiToevoegen(RekeningModel rekening, int BestellingsId, Form form)
+        public double Fooi { get; set; }
+
+        public FooiToevoegen(RekeningModel rekening, int BestellingsId, Form form, WerknemerModel werknemer)
         {
             InitializeComponent();
             this.Rekening = rekening;
             this.RekeningLogica = new RekeningService();
             this.BestellingsId = BestellingsId;
             this.form = form;
+
+            this.Werknemer = werknemer;
             BeginPrijzenWeeergeven();
+
+            lblOptieKeuze.Text = "Fooi zit in het totaalbedrag";
+            LblOption.Text = "Totaalbedrag";
         }
 
         private void RadioBtnFooiInTotaal_CheckedChanged(object sender, EventArgs e)
@@ -57,6 +65,7 @@ namespace UI
         {
             OutBedrag.Text = string.Format("€ {0:F2} ", Rekening.Totaalbedrag);
             OutTotaalbedrag.Text = string.Format("€ {0:F2} ", Rekening.Totaalbedrag);
+            OutFooi.Text = string.Format("€ 0,00 ");
         }
 
         private void FooiCheck()
@@ -100,7 +109,7 @@ namespace UI
                 string test = TbInvullen.Text;
                 if (string.IsNullOrEmpty(test))
                 {
-                    return false;
+                    return true;
                 }
             }
             return false;
@@ -110,31 +119,35 @@ namespace UI
         {
             FooiCheck();
             BetalingAfronden(BetaalMethode.pin);
-            form.Close();
+            //form.Close();
         }
 
         private void BtnContant_Click(object sender, EventArgs e)
         {
             FooiCheck();
             BetalingAfronden(BetaalMethode.cash);
-            form.Close();
+            //form.Close();
         }
 
         private void BtnCreditcard_Click(object sender, EventArgs e)
         {
             FooiCheck();
             BetalingAfronden(BetaalMethode.creditcard);
-            form.Close();
+            //form.Close();
         }
 
         private void BetalingAfronden(BetaalMethode methode)
         {
             Rekening.BetaalMethode = methode;
 
+            
             if (FooiIngevuldCheck())
             {
                 RekeningLogica.RekeningBetaling(Rekening, BestellingsId);
                 MessageBox.Show("bestelling is gelukt");
+
+                new TafelOverzicht(Werknemer).Show();
+                form.Close();
             }
         }
     }

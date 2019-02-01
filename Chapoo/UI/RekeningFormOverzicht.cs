@@ -40,7 +40,7 @@ namespace UI
             }
             //catch
             {
-                MessageBox.Show("Er is nog geen bestelling gedaan.");
+                //MessageBox.Show("Er is nog geen bestelling gedaan.");
             }  
             this.btnMenuAfrekenen.Click += new EventHandler(btnMenuAfrekenen_Click);
             this.btnMenuOpnemen.Click += new EventHandler(btnMenuOpnemen_Click);
@@ -63,7 +63,7 @@ namespace UI
 
         private void btnMenuAfrekenen_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         private void WeergevenRekeningItems()
@@ -88,9 +88,15 @@ namespace UI
         }
         private void WeergevenRekeningPrijzen()  //lokatie aanpassen
         {            
-            this.Geldoverzicht = new RekeningGeldOverzicht(Rekening, BestellingsId);
+            this.Geldoverzicht = new RekeningGeldOverzicht(Rekening, BestellingsId, Werknemer, this);
             Geldoverzicht.Top = 550; //nog aanpassen
             pnlBottom.Controls.Add(this.Geldoverzicht);
+        }
+
+        private void uitlogButton1_Click(object sender, EventArgs e)
+        {
+            new Login().Show();
+            this.Close();
         }
     }
 }

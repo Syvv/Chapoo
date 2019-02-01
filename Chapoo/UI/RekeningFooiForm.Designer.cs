@@ -1,6 +1,6 @@
 ﻿namespace UI
 {
-    partial class RekeningFormOverzicht
+    partial class RekeningFooiForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,26 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlTop.SuspendLayout();
-            this.SuspendLayout();
-            // 
-            // uitlogButton1
-            // 
-            this.uitlogButton1.Click += new System.EventHandler(this.uitlogButton1_Click);
-            // 
-            // RekeningFormOverzicht
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(581, 853);
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "RekeningFormOverzicht";
-            this.Text = "RekeningFormOverzicht";
-            this.Controls.SetChildIndex(this.pnlTop, 0);
-            this.pnlTop.ResumeLayout(false);
-            this.pnlTop.PerformLayout();
-            this.ResumeLayout(false);
-
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Text = "RekeningFooiForm";
         }
 
         #endregion

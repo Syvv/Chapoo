@@ -17,18 +17,26 @@ namespace UI
     {
         private RekeningModel Rekening { get; set; }
         private RekeningService RekeningLogica;
+        private WerknemerModel Werknemer { get; set; }
         private int BestellingsId { get; set; }
-        private string opmerking = "";
-        public RekeningGeldOverzicht(RekeningModel rekening, int BestellingsId)
+        private RekeningFormOverzicht Form { get; set; }
+
+        private string opmerking = "x";
+        public RekeningGeldOverzicht(RekeningModel rekening, int BestellingsId, WerknemerModel werknemer, RekeningFormOverzicht form)
         {
             InitializeComponent();
             this.Rekening = rekening;
             this.RekeningLogica = new RekeningService();
             this.BestellingsId = BestellingsId;
+            this.Form = form;
+
+            this.Werknemer = werknemer;
             PrijzenWeergeven();
 
             lblOpmerking.Hide();
             OutOpmerking.Hide();
+
+            Rekening.Opmerking = " ";
         }
         private void PrijzenWeergeven()
         {
@@ -54,7 +62,42 @@ namespace UI
 
         private void BtnFooi_Click(object sender, EventArgs e) //deze sluiten???
         {            
-            new RekeningFooiForm_en_betalen(this.Rekening, BestellingsId).Show();
+            new RekeningFooiForm_en_betalen(this.Rekening, BestellingsId, Werknemer).Show();
+            //this.Hide();
+            Form.Close();
+        }
+
+        private void BtnPin_Click(object sender, EventArgs e)
+        {
+            //FooiCheck();
+            BetalingAfronden(BetaalMethode.pin);
+            //form.Close();
+        }
+
+        private void BtnContant_Click(object sender, EventArgs e)
+        {
+            //FooiCheck();
+            BetalingAfronden(BetaalMethode.cash);
+            //form.Close();
+        }
+
+        private void BtnCreditcard_Click(object sender, EventArgs e)
+        {
+            //FooiCheck();
+            BetalingAfronden(BetaalMethode.creditcard);
+            //form.Close();
+        }
+        private void BetalingAfronden(BetaalMethode methode)
+        {
+            Rekening.BetaalMethode = methode;
+
+            //if (FooiIngevuldCheck())
+            {
+                RekeningLogica.RekeningBetaling(Rekening, BestellingsId);
+                MessageBox.Show("bestelling is gelukt");
+            }
+            new TafelOverzicht(Werknemer).Show();
+            this.Hide();
         }
     }
 }

@@ -175,6 +175,7 @@
             this.BtnCreditcard.TabIndex = 14;
             this.BtnCreditcard.Text = "Creditcard";
             this.BtnCreditcard.UseVisualStyleBackColor = true;
+            this.BtnCreditcard.Click += new System.EventHandler(this.BtnCreditcard_Click);
             // 
             // BtnContant
             // 
@@ -184,6 +185,7 @@
             this.BtnContant.TabIndex = 13;
             this.BtnContant.Text = "Cash / contant";
             this.BtnContant.UseVisualStyleBackColor = true;
+            this.BtnContant.Click += new System.EventHandler(this.BtnContant_Click);
             // 
             // BtnPin
             // 
@@ -193,6 +195,7 @@
             this.BtnPin.TabIndex = 12;
             this.BtnPin.Text = "Pin";
             this.BtnPin.UseVisualStyleBackColor = true;
+            this.BtnPin.Click += new System.EventHandler(this.BtnPin_Click);
             // 
             // RekeningGeldOverzicht
             // 
