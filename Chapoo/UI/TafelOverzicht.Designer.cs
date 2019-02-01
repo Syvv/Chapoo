@@ -197,14 +197,14 @@
             // uitlogButton1
             // 
             this.uitlogButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("uitlogButton1.BackgroundImage")));
+            this.uitlogButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.uitlogButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.uitlogButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.uitlogButton1.Location = new System.Drawing.Point(425, 25);
+            this.uitlogButton1.Location = new System.Drawing.Point(430, 25);
             this.uitlogButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.uitlogButton1.Name = "uitlogButton1";
-            this.uitlogButton1.Size = new System.Drawing.Size(43, 39);
+            this.uitlogButton1.Size = new System.Drawing.Size(71, 59);
             this.uitlogButton1.TabIndex = 9;
-            this.uitlogButton1.Text = "1";
             this.uitlogButton1.UseVisualStyleBackColor = true;
             this.uitlogButton1.Click += new System.EventHandler(this.uitlogButton1_Click);
             // 
@@ -212,6 +212,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(581, 853);
             this.Controls.Add(this.tafelButton7);
             this.Controls.Add(this.tafelButton8);
