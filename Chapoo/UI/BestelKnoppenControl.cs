@@ -65,7 +65,7 @@ namespace UI
                 int hoeveelheid = bestelItemControl.Aantal;
                 string commentaar = bestelItemControl.Commentaar;
 
-                if (hoeveelheid > 0)
+                if (bestelItemControl.Add)
                 {
                     BestellingsitemModel bestellingsitem;
 
@@ -83,10 +83,6 @@ namespace UI
 
                     bestellingsItems.Add(bestellingsitem);
                 }
-                else
-                {
-                    MessageBox.Show(bestelItemControl.naam + " vooraad is lager dan opgegeven hoeveelheid");
-                }
             }
 
             if (bestellingsItems.Any())
@@ -95,7 +91,9 @@ namespace UI
             }
 
             BestellingOpnemenForm.pnlMain.Controls.Clear();
+            BestelItemControls.Clear();
             btnFris.PerformClick();
+            this.btnVerstuur.Enabled = false;
         }
 
         private void btnOverzicht_Click(object sender, EventArgs e)

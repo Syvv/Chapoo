@@ -44,6 +44,7 @@ namespace UI
             }  
             this.btnMenuAfrekenen.Click += new EventHandler(btnMenuAfrekenen_Click);
             this.btnMenuOpnemen.Click += new EventHandler(btnMenuOpnemen_Click);
+            this.btnMenuAfrekenen.BackColor = Color.FromArgb(157, 199, 200);
         }
         public int BestellingsIdOphalen(int tafelId)
         {            

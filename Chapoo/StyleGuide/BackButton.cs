@@ -10,6 +10,7 @@ namespace StyleGuide
             FlatStyle = FlatStyle.Flat;
             BackgroundImage = Properties.Resources.arrow;
             Size = new Size(50, 50);
+            FlatAppearance.BorderSize = 0;
             ForeColor = Color.FromArgb(255, 255, 255);
             if (this.BackgroundImage == null)
                 return;
