@@ -45,6 +45,7 @@ namespace UI
             this.btnMenuAfrekenen.Click += new EventHandler(btnMenuAfrekenen_Click);
             this.btnMenuOpnemen.Click += new EventHandler(btnMenuOpnemen_Click);
             this.btnMenuAfrekenen.BackColor = Color.FromArgb(157, 199, 200);
+            txtTafel.Text = tafel.Id.ToString() ;
         }
         public int BestellingsIdOphalen(int tafelId)
         {            
@@ -98,6 +99,11 @@ namespace UI
         {
             new Login().Show();
             this.Close();
+        }
+
+        private void txtTafel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

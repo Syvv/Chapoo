@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="UI.BarKeukenForm" Collapsed="true">
+    <Position X="11.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAQIACAACAAAAgCgCAACAEQAAAAAAAAAAIQAAAA=</HashCode>
+      <FileName>BarKeukenForm.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="BestellingsItemService" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="UI.BarKeukenHeader" Collapsed="true">
+    <Position X="11.25" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEEAAACAAIBQABACAAAACAAAAAAAAAgCAAAAggAA=</HashCode>
+      <FileName>BarKeukenHeader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UI.BarKeukenUIElement" Collapsed="true">
+    <Position X="11.25" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAJAAAACKAAACAAAAAAgAAAAACAAAAAA=</HashCode>
+      <FileName>BarKeukenUIElement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UI.BestelItemControl" Collapsed="true">
+    <Position X="16.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABIAAACAACAgJBhAAACIAAACAAYAAgABCAIAAAAAAAA=</HashCode>
+      <FileName>BestelItemControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UI.BestelKnoppenControl" Collapsed="true">
+    <Position X="18.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIEAAAACEHWAEADgICiAICwKWAAAAEACAAAAgQGAABQ=</HashCode>
+      <FileName>BestelKnoppenControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UI.BestellingHelperClass" Collapsed="true">
+    <Position X="20" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BestellingHelperClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UI.BestellingOpnemenForm" Collapsed="true">
+    <Position X="13" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAADAAIAAAAAqAAAgCAAAAABAAIAAAAgAAAAA=</HashCode>
+      <FileName>BestellingOpnemenForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UI.FooiToevoegen" Collapsed="true">
+    <Position X="14.75" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gQACgANCECEAIIQCAEiAACSCBEAAAAUABAAAEADAAIA=</HashCode>
+      <FileName>FooiToevoegen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UI.ItemOptiesControl" Collapsed="true">
+    <Position X="16.5" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CEAAAAgOCCAIIAhIIBCABABCAAAAQwDACIBAAQAQAQQ=</HashCode>
+      <FileName>ItemOptiesControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UI.Login" Collapsed="true">
+    <Position X="18.25" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAABAAABCABAACAAAAAAAAAABAAAAAIgA=</HashCode>
+      <FileName>Login.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UI.Program" Collapsed="true">
+    <Position X="20" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UI.RekeningFooiForm">
+    <Position X="8.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RekeningFooiForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UI.RekeningFooiForm_en_betalen" Collapsed="true">
+    <Position X="14.75" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACADIAAIAAAAyAAAACAAAACAAAAAAAAgEAAAA=</HashCode>
+      <FileName>RekeningFooiForm_en_betalen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UI.RekeningFormOverzicht" Collapsed="true">
+    <Position X="16.5" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAACADIAAIAAECqAACCCAAAAABAAAAAQAgAAAIA=</HashCode>
+      <FileName>RekeningFormOverzicht.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UI.RekeningGeldOverzicht" Collapsed="true">
+    <Position X="18.25" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gIACgANCCCAAAIAACgiCACSCICAIAIEAACAgAAVAIAA=</HashCode>
+      <FileName>RekeningGeldOverzicht.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UI.RekeningItem" Collapsed="true">
+    <Position X="8.5" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAACCAAAAAAAACCAABCAAACAAAACAAAAAAAAAA=</HashCode>
+      <FileName>RekeningItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UI.RekeningOpmerkingForm" Collapsed="true">
+    <Position X="13" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACgAAAAAAACAAAACCAAAIAAAAAQAAABAAAg=</HashCode>
+      <FileName>RekeningOpmerkingForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UI.RekeningsItemAanhef" Collapsed="true">
+    <Position X="14.75" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAACCAAAAAAAACCAABCAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RekeningsItemAanhef.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UI.TafelOverzicht" Collapsed="true">
+    <Position X="22" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAABAiAAIAABAACAAAACAAgEAAQAABAAAgAAAAA=</HashCode>
+      <FileName>TafelOverzicht.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UI.VoorraadMelding" Collapsed="true">
+    <Position X="13" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACCEAABgBACAAAACAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>VoorraadMelding.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UI.Properties.Resources" Collapsed="true">
+    <Position X="16.5" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UI.Properties.Settings" Collapsed="true">
+    <Position X="18.25" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Logica.BestellingsItemService">
+    <Position X="13.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Logica.MenuItemService">
+    <Position X="15" Y="4.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Logica.RekeningService">
+    <Position X="10" Y="4.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Logica.TafelService">
+    <Position X="16.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Logica.WerknemerService">
+    <Position X="15" Y="6.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Model.BestellingModel" Collapsed="true">
+    <Position X="1" Y="7" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Model.BestellingsitemModel" Collapsed="true">
+    <Position X="3.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Model.ItemModel" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Model.MenuItemModel" Collapsed="true">
+    <Position X="1" Y="4.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Model.NoSuchUserException" Collapsed="true">
+    <Position X="2.75" Y="7" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Model.RekeningModel" Collapsed="true">
+    <Position X="4.5" Y="7" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Model.TafelModel" Collapsed="true">
+    <Position X="1" Y="8" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Model.WerknemerModel" Collapsed="true">
+    <Position X="2.75" Y="8" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="DataAdaptor.BestellingDAO" Collapsed="true">
+    <Position X="11.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="DataAdaptor.BestellingsItemDAO" Collapsed="true">
+    <Position X="13.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="DataAdaptor.DAOFactory" Collapsed="true">
+    <Position X="15.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="DataAdaptor.MenuItemDAO" Collapsed="true">
+    <Position X="11.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="DataAdaptor.RekeningDAO" Collapsed="true">
+    <Position X="13.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="DataAdaptor.TafelDAO" Collapsed="true">
+    <Position X="15" Y="1.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="DataAdaptor.WerknemerDAO" Collapsed="true">
+    <Position X="11.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Logica.BestellingService">
+    <Position X="11.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Enum Name="Model.Categorie" Collapsed="true">
+    <Position X="4.5" Y="9.25" Width="1.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Enum Name="Model.Functie" Collapsed="true">
+    <Position X="1" Y="10" Width="1.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Enum Name="Model.Status" Collapsed="true">
+    <Position X="2.75" Y="10" Width="1.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Enum Name="Model.BetaalMethode" Collapsed="true">
+    <Position X="2.75" Y="9.25" Width="1.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Enum Name="Model.BestellingsItemStatus" Collapsed="true">
+    <Position X="1" Y="9.25" Width="1.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

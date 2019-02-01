@@ -45,9 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BarKeukenForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="BarKeukenForm.cs" />
     <Compile Include="BarKeukenForm.Designer.cs">
       <DependentUpon>BarKeukenForm.cs</DependentUpon>
     </Compile>
@@ -214,6 +212,8 @@
     <EmbeddedResource Include="VoorraadMelding.resx">
       <DependentUpon>VoorraadMelding.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

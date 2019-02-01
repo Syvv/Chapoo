@@ -31,9 +31,17 @@
             this.pnlTop.SuspendLayout();
             this.SuspendLayout();
             // 
+            // backButton1
+            // 
+            this.backButton1.FlatAppearance.BorderSize = 0;
+            // 
             // uitlogButton1
             // 
             this.uitlogButton1.Click += new System.EventHandler(this.uitlogButton1_Click);
+            // 
+            // txtTafel
+            // 
+            this.txtTafel.Click += new System.EventHandler(this.txtTafel_Click);
             // 
             // RekeningFormOverzicht
             // 

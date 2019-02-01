@@ -14,7 +14,7 @@ using DataAdaptor;
 
 namespace UI
 {
-    public partial class BarKeukenForm : Form
+    public partial class BarKeukenForm
     {
         private List<BestellingsitemModel> Bestellingen = new List<BestellingsitemModel>(); //List with all orders that have to be shown
         private BestellingsItemService bestellingLogica;
@@ -28,7 +28,7 @@ namespace UI
             InitializeComponent();
             this.werknemer = werknemer;
 
-            if(werknemer.Functie==Functie.Bar)
+            if (werknemer.Functie == Functie.Bar)
             {
                 header = new BarKeukenHeader(LogOut, ShowOrders, false); //initialize the header with false (indicates this isn't a kitchen)
             }
@@ -36,13 +36,14 @@ namespace UI
             {
                 header = new BarKeukenHeader(LogOut, ShowOrders, true); //initialize the header with true (indicates this is a kitchen)
             }
-            
+
             bestellingLogica = new BestellingsItemService();
             //Get all currently open orders
             try
             {
                 Bestellingen = bestellingLogica.GetBestellingsitems(werknemer);
-            }catch(System.Data.SqlClient.SqlException)
+            }
+            catch (System.Data.SqlClient.SqlException)
             {
                 MessageBox.Show("Er is iets foutgegaan bij het verbinding maken met de database!", "Er is iets fout gegaan!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -52,10 +53,10 @@ namespace UI
             BouwUI();
         }
 
-        
+
         private void BouwUI()
         {
-            if(this.InvokeRequired)//Check if we're calling from a different thread
+            if (this.InvokeRequired)//Check if we're calling from a different thread
             {
                 //if so invoke the method from a delegate instead
                 CreateTimerCallback cb = new CreateTimerCallback(BouwUI);
@@ -69,8 +70,8 @@ namespace UI
                 foreach (BestellingsitemModel b in Bestellingen)
                 {
                     BarKeukenUIElement uiElement = new BarKeukenUIElement(b, bestellingLogica, (item) => { Bestellingen.Remove(item); BouwUI(); })
-                        { Top = y};
-                    if(b.Status==BestellingsItemStatus.gereed|| b.Status == BestellingsItemStatus.afgeleverd)
+                    { Top = y };
+                    if (b.Status == BestellingsItemStatus.gereed || b.Status == BestellingsItemStatus.afgeleverd)
                     {
                         uiElement.StyleAsFinished();
                     }
@@ -80,7 +81,7 @@ namespace UI
                 Controls.Add(header);
                 Controls.Add(ItemLijstContainer);
             }
-            
+
         }
 
         private void LogOut()
@@ -91,7 +92,7 @@ namespace UI
 
         private void ShowOrders(bool showCurrentOrdersOnly)
         {
-            if(showCurrentOrdersOnly)
+            if (showCurrentOrdersOnly)
             {
                 timer.Start();
                 try
@@ -124,7 +125,8 @@ namespace UI
         private void InitialiseTimer()
         {
             timer = new System.Timers.Timer { Interval = 60000 }; //1 minute
-            timer.Elapsed += (s, e) => {
+            timer.Elapsed += (s, e) =>
+            {
                 try
                 {
                     Bestellingen = bestellingLogica.GetBestellingsitems(werknemer);
@@ -142,6 +144,14 @@ namespace UI
         private void BarKeukenForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        public BestellingsItemService BestellingsItemService
+        {
+            get => default(BestellingsItemService);
+            set
+            {
+            }
         }
     }
 }
