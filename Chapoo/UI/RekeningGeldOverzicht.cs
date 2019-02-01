@@ -35,6 +35,8 @@ namespace UI
 
             lblOpmerking.Hide();
             OutOpmerking.Hide();
+            LblFooi.Hide();
+            OutFooi.Hide();
 
             Rekening.Opmerking = " ";
         }
@@ -58,6 +60,7 @@ namespace UI
             lblOpmerking.Show();
             OutOpmerking.Show();
             OutOpmerking.Text = Rekening.Opmerking;
+
         }
 
         private void BtnFooi_Click(object sender, EventArgs e) //deze sluiten???

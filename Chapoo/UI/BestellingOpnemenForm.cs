@@ -60,7 +60,7 @@ namespace UI
                 new RekeningFormOverzicht(Tafel, Werknemer).Show();
                 this.Close();
             }
-            catch { MessageBox.Show("1. geen tafelbestelling"); }
+            catch { MessageBox.Show("Er is nog geen bestelling gedaan"); }
             
         }
 
