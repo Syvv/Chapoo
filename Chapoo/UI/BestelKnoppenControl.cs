@@ -80,7 +80,10 @@ namespace UI
                         int bestellingId = bestellingService.InsertBestelling(Bestelling);
                         bestellingsitem = new BestellingsitemModel(menuId, bestellingId, timestamp, hoeveelheid, commentaar);
                     }
-
+                    if(bestellingsitem.Hoeveelheid < 1)
+                    {
+                        bestellingsitem.Hoeveelheid = 1;
+                    }
                     bestellingsItems.Add(bestellingsitem);
                 }
             }

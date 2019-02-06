@@ -75,19 +75,36 @@ namespace UI
                 double ingevuld = Convert.ToDouble(TbInvullen.Text);
                 if (RadioBtnFooiInTotaal.Checked)
                 {
-                    if (RekeningLogica.FooiControlleren(Rekening, ingevuld))
+                    if (TbInvullen.Text.Contains(','))
                     {
-                        MessageBox.Show("bedrag is te laag");
-                        return;
+                        //MessageBox.Show("Er zit een komma in, inplaats van een punt");
+                        string fooi = TbInvullen.Text;
+                        fooi = fooi.Replace(',', '.');
+                        ingevuld = Convert.ToDouble(fooi);
                     }
-                    RekeningLogica.FooiToevoegenInBedrag(ref Rekening, ingevuld);
+                    //else
+                    {
+                        if (RekeningLogica.FooiControlleren(Rekening, ingevuld))
+                        {
+                            MessageBox.Show("bedrag is te laag");
+                            return;
+                        }
+                        RekeningLogica.FooiToevoegenInBedrag(ref Rekening, ingevuld);
 
-                    OutFooi.Text = string.Format("€ {0:F2} ", Rekening.Fooi);
-                    OutTotaalbedrag.Text = string.Format("€ {0:F2} ", Rekening.Totaalbedrag);
+                        OutFooi.Text = string.Format("€ {0:F2} ", Rekening.Fooi);
+                        OutTotaalbedrag.Text = string.Format("€ {0:F2} ", Rekening.Totaalbedrag);
+                    }
                     
                 }
                 if (RadioBtnFooiLos.Checked)
                 {
+                    if (TbInvullen.Text.Contains(','))
+                    {
+                        //MessageBox.Show("Er zit een komma in, inplaats van een punt");
+                        string fooi = TbInvullen.Text;
+                        fooi = fooi.Replace(',', '.');
+                        ingevuld = Convert.ToDouble(fooi);
+                    }
                     RekeningLogica.FooiLosToevoegen(ref Rekening, ingevuld);
                     OutTotaalbedrag.Text = string.Format("€ {0:F2} ", Rekening.Totaalbedrag);
                 }

@@ -46,24 +46,24 @@ namespace DataAdaptor
 
         public List<BestellingsitemModel> HaalBarItemsOp()
         {
-            return HaalVoorwaardelijkItemsOp("WHERE (m.categorie = 'F' OR m.categorie = 'B' OR m.categorie = 'W' OR m.categorie = 'G' OR m.categorie = 'K') AND status = 'besteld'");
+            return HaalVoorwaardelijkItemsOp("WHERE (m.categorie = 'F' OR m.categorie = 'B' OR m.categorie = 'W' OR m.categorie = 'G' OR m.categorie = 'K') AND status = 'besteld' ");
         }
 
         public List<BestellingsitemModel> HaalKeukenItemsOp()
         {
             return HaalVoorwaardelijkItemsOp("WHERE (m.categorie = 'LV' OR m.categorie = 'LH' OR m.categorie = 'LN' OR m.categorie = 'DV' OR m.categorie = 'DT' OR m.categorie = 'DH' " +
-                        "OR m.categorie = 'DN') AND status = 'besteld'");
+                        "OR m.categorie = 'DN') AND status = 'besteld' ");
         }
 
         public List<BestellingsitemModel> HaalBarBestellingsitemsVandaagOp(DateTime ochtendTijd)
         {
-            return HaalBestellingsitemsVandaagOp(ochtendTijd, " AND (m.categorie = 'F' OR m.categorie = 'B' OR m.categorie = 'W' OR m.categorie = 'G' OR m.categorie = 'K');");
+            return HaalBestellingsitemsVandaagOp(ochtendTijd, " AND (m.categorie = 'F' OR m.categorie = 'B' OR m.categorie = 'W' OR m.categorie = 'G' OR m.categorie = 'K')");
         }
 
         public List<BestellingsitemModel> HaalKeukenBestellingsitemsVandaagOp(DateTime ochtendTijd)
         {
             return HaalBestellingsitemsVandaagOp(ochtendTijd, " AND (m.categorie = 'LV' OR m.categorie = 'LH' OR m.categorie = 'LN' OR m.categorie = 'DV' OR m.categorie = 'DT' OR m.categorie = 'DH' " +
-                        "OR m.categorie = 'DN');");
+                        "OR m.categorie = 'DN')");
         }
 
         private List<BestellingsitemModel> HaalBestellingsitemsVandaagOp(DateTime ochtendTijd, string queryToAdd)
@@ -76,8 +76,9 @@ namespace DataAdaptor
                         "FROM HEEFT_ITEM h " +
                         "INNER JOIN MENU m ON h.menuId = m.menu_id " +
                         "INNER JOIN BESTELLING b ON b.bestellingId = h.bestellingId " +
-                        "WHERE (h.timestamp BETWEEN @ochtend AND @nacht)");
+                        "WHERE (h.timestamp BETWEEN @ochtend AND @nacht) ");
             sb.Append(queryToAdd);
+            sb.Append(" ORDER BY h.timestamp ASC");
 
             SqlCommand command = new SqlCommand(sb.ToString(), connection);
             SqlParameter ochtend = new SqlParameter("@ochtend", System.Data.SqlDbType.DateTime) { Value = ochtendTijd};
@@ -106,6 +107,7 @@ namespace DataAdaptor
                         "INNER JOIN MENU m ON h.menuId = m.menu_id " +
                         "INNER JOIN BESTELLING b ON b.bestellingId = h.bestellingId ");
             sb.Append(voorwaarde);
+            sb.Append("ORDER BY h.timestamp ASC");
 
             SqlCommand command = new SqlCommand(sb.ToString(), connection);
 
